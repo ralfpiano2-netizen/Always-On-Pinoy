@@ -1,7 +1,8 @@
-import { presentMediaHTML } from './present-media.js?v=focused-10';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=ringtones-1';
+import { presentMediaHTML } from './present-media.js?v=ringtones-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=focused-10';
+import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=ringtones-1';
 import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=exhibit-text-2';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
@@ -9,14 +10,14 @@ import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountFeed } from './exhibits/feed.js?v=focused-10';
-import { mountTransitions } from './exhibits/transitions.js?v=focused-1';
-import { mountTV } from './exhibits/tvguide.js?v=focused-1';
-import { mountStreet } from './exhibits/pisonet.js?v=focused-1';
-import { mountNokia } from './exhibits/nokia.js?v=focused-1';
-import { mountChainText } from './exhibits/chaintext.js?v=focused-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=focused-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=focused-10';
+import { mountFeed } from './exhibits/feed.js?v=ringtones-1';
+import { mountTransitions } from './exhibits/transitions.js?v=ringtones-1';
+import { mountTV } from './exhibits/tvguide.js?v=ringtones-1';
+import { mountStreet } from './exhibits/pisonet.js?v=ringtones-1';
+import { mountNokia } from './exhibits/nokia.js?v=ringtones-1';
+import { mountChainText } from './exhibits/chaintext.js?v=ringtones-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=ringtones-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=ringtones-1';
 
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
@@ -131,7 +132,7 @@ function renderMap() {
     <div class="map-wing"><h3>Wing 2, the 2020s</h3>
       <a class="map-stop" href="#void"><strong>${esc(SITE.wing2020)}</strong><small>One endless feed</small></a>
       <a class="map-stop" href="#pause"><strong>Your pause</strong><small>Conclusion, credits and references</small></a></div>
-    <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 21 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>`;
+    <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 21 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
 function markMap() {
@@ -456,6 +457,7 @@ async function boot() {
   wireDialogs();
   mountMedia();
   wireSound();
+  mountRingtones();
   wireTicket();
   await loadIndex();
   fillSlots();

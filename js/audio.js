@@ -2,7 +2,7 @@
 // synthesized stand-in (or silence), so the museum sounds right before any recording exists.
 import { asset } from './assets.js';
 import { SLOTS } from './slots.js';
-import { GUIDE } from './content.js?v=focused-10';
+import { GUIDE } from './content.js?v=ringtones-1';
 
 let ctx = null;
 let master = null;
@@ -14,6 +14,9 @@ const emit = (name, detail) => document.dispatchEvent(new CustomEvent(name, { de
 
 export const isOn = () => on;
 export const state = () => (ctx ? ctx.state : 'none');
+
+// The radio shares the existing master mute, narration ducking, and tab lifecycle.
+export const musicChannel = () => ctx ? { context: ctx, output: bus.music } : null;
 
 function build() {
   const AC = window.AudioContext || window.webkitAudioContext;

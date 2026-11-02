@@ -1,10 +1,10 @@
-import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=focused-10';
+import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=ringtones-1';
 // The 2020s void: one endless feed where every 2000s artifact returns as its descendant. The feed
 // times how long the visitor lingers on each zone and leans the next cards that way. Nothing is
 // stored or sent; the "algorithm" lives in this tab. The only way out is Pause.
-import { ARTIFACTS, ZONES, VOID_NOTES } from '../content.js?v=focused-10';
+import { ARTIFACTS, ZONES, VOID_NOTES } from '../content.js?v=ringtones-1';
 import { pickNext } from '../logic.js';
-import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=focused-1';
+import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=ringtones-1';
 import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js';
 import { broadcast } from '../scenes.js';
 

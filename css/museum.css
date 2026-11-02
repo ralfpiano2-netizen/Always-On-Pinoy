@@ -1104,3 +1104,19 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .story-sources summary { cursor: pointer; text-decoration: underline; }
 .story-sources ul { padding-left: 20px; margin-top: 12px; }
 .story-sources li + li { margin-top: 8px; }
+
+
+/* Music controls live in the Menu, leaving the exhibit view quiet. */
+.ringtone-panel { margin-top: 24px; padding: 20px; border: 1px solid var(--label-line); background: #fffaf0; color: #27241f; }
+.ringtone-panel h3 { margin: 0 0 10px; font: 600 25px/1.2 var(--font-label); }
+.ringtone-panel > p { margin: 8px 0; font: 400 17px/1.5 var(--font-label); }
+.ringtone-panel .ringtone-note { font-size: 15px; color: #5b5348; }
+.ringtone-panel #ringtone-status { font-weight: 600; min-height: 1.5em; }
+.ringtone-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0; }
+.ringtone-controls label { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font: 400 15px/1.5 var(--font-label); }
+.ringtone-controls input { width: 150px; min-height: 44px; accent-color: #24575a; }
+.ringtone-panel details { margin-top: 12px; font: 400 15px/1.5 var(--font-label); }
+.ringtone-panel summary { cursor: pointer; }
+.ringtone-panel li { margin-top: 9px; }
+.ringtone-panel a { text-decoration: underline; }
+@media(max-width:480px) { .ringtone-panel { padding: 14px; } .ringtone-controls label { width: 100%; } }
