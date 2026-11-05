@@ -14,7 +14,7 @@ import { mountFeed } from './exhibits/feed.js?v=feed-credits-20261105-1';
 import { mountTransitions } from './exhibits/transitions.js?v=feed-credits-20261105-1';
 import { mountTV } from './exhibits/tvguide.js?v=feed-credits-20261105-1';
 import { mountStreet } from './exhibits/pisonet.js?v=feed-credits-20261105-1';
-import { mountNokia } from './exhibits/nokia.js?v=feed-credits-20261105-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=sms-20261105-1';
 import { mountChainText } from './exhibits/chaintext.js?v=feed-credits-20261105-1';
 import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=feed-credits-20261105-1';
 import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=feed-credits-20261105-1';
@@ -92,6 +92,7 @@ function renderArtifactStory(a) {
   const presentMedia = presentMediaHTML(a.id);
   $('#artifact-read-title').textContent = a.title;
   $('#artifact-read-body').innerHTML = `<article class="artifact-story">
+    ${a.id === 'ao-13' ? messageDemoHTML() : ''}
     ${a.details ? detailedStoryHTML(a.details, pastMedia, presentMedia) : c ? `<p class="story-intro">${esc(c.intro)}</p><h3>2000s</h3>${pastMedia}${documentParagraphs(c.past)}<h3>2020s</h3>${presentMedia}${documentParagraphs(c.present)}<h3>What connects them</h3>${documentParagraphs(c.synthesis)}` : `<h3>2000s</h3>${pastMedia}<p>${esc(a.body)}</p><h3>2020s</h3>${presentMedia}<p>${esc(a.now.body)}</p><p class="label-cite is-note">${esc(a.note)}</p>`}
     ${c ? '<p class="story-note">Author–date links open the supporting sources. The Archive contains all 21 comparisons and the full reference list.</p>' : ''}
     <button class="btn btn--plain" type="button" data-open="archive-dialog">Explore all 21 comparisons</button></article>`;

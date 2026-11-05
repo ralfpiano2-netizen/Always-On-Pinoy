@@ -1047,6 +1047,9 @@ html[data-effects="off"] :is(.hud-clock, .ps-blink, .profile-name, .pause-btn) {
 html[data-effects="off"] .card-media * { animation-play-state: paused !important; }
 html[data-effects="off"] #glitter { visibility: hidden; }
 .label-actions { display: flex; margin-top: 14px; }
+.sms-demo { width: 100%; margin: 14px 0; padding: 14px; background: #e0e8cb; color: #26321c; border: 1px solid #849369; border-radius: 2px; }
+.sms-demo-title { margin-bottom: 10px; font: 500 13px/1.4 var(--font-mono); }
+.sms-demo-message { margin: 12px 0 0; font: 400 14px/1.6 var(--font-mono); overflow-wrap: anywhere; }
 .label-interaction { margin-top: 12px; border-top: 1px solid var(--label-line); padding-top: 10px; }
 .label-interaction summary { cursor: pointer; font: 400 14px/1.5 var(--font-label); text-underline-offset: 3px; }
 .label-interaction[open] summary { color: var(--sofa); }

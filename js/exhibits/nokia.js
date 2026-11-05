@@ -2,17 +2,26 @@
 // scratch-off load card, a 3GP arriving over Bluetooth, one earphone each, and Mama's padala.
 import { multitap, KEYMAP } from '../logic.js';
 import { wallet } from '../state.js';
-import { sfx, playMusic, playSlot } from '../audio.js?v=feed-credits-20261105-1';
+import { sfx, playMusic, playSlot, isOn, state as audioState } from '../audio.js?v=feed-credits-20261105-1';
 import { $, $$, esc } from '../ui.js';
 import { person } from '../sprites.js';
 
 const REPLIES = ['eow dn! hehe. txt u l8r ;)', 'musta? d2 me sa skul. ingatz!', 'hahaha korni mo! gud nyt :)', 'ok po. GM ko 2 sa lahat ha'];
+const GREETING = 'eow! gising ka pa? tara, kwentuhan muna :)';
 const MAMA = 'Anak, napadala ko na. Kunin mo bukas sa pawnshop, dalhin ang ID. Miss na kita. Ingat lagi.';
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'];
 const LABEL = { '1': '.,?', '0': 'space', '*': '', '#': '' };
 
 // Sounds that arrive late (a reply, a finished transfer) stay quiet once the visitor has left.
 const here = () => document.documentElement.dataset.stop === 'zone-3';
+
+export function messageDemoHTML() {
+  return `<div class="sms-demo" aria-label="Incoming text demonstration">
+    <p class="sms-demo-title">1 new message</p>
+    <button class="btn btn--small" type="button" data-receive-text>Receive a text</button>
+    <p class="sms-demo-message" data-sms-message role="status">Try a simulated incoming text. Turn Sound on to hear the retro SMS alert.</p>
+  </div>`;
+}
 
 export function mountNokia(zone) {
   const host = $('#zone-3-devices', zone);
@@ -56,6 +65,10 @@ export function mountNokia(zone) {
   let mode = 'compose';
   let noteTimer = 0;
   let snake = null;
+  let greetingTimer = 0;
+  let greeted = false;
+  let greetingHeard = false;
+  let lastAlertAt = -Infinity;
   const inbox = [];
   const balance = () => (wallet.infinite ? 'Unli' : `P${wallet.balance.toFixed(2)}`);
 
@@ -85,15 +98,46 @@ export function mountNokia(zone) {
   const receive = (from, text) => {
     inbox.unshift({ from, text });
     if (inbox.length > 5) inbox.pop();
-    if (here()) {
+    let sounded = false;
+    if (here() && phone.classList.contains('is-on') && document.visibilityState === 'visible'
+        && isOn() && audioState() === 'running' && performance.now() - lastAlertAt > 2100) {
+      lastAlertAt = performance.now();
       sfx.sms();
       sfx.vibrate([120, 60, 120]);
+      sounded = true;
     }
     phone.classList.remove('is-buzzing');
     void phone.offsetWidth;
     phone.classList.add('is-buzzing');
     read(inbox[0]);
+    for (const preview of document.querySelectorAll('[data-sms-message]')) {
+      preview.textContent = `${from}: ${text}${isOn() ? '' : ' · Sound is off.'}`;
+    }
+    return sounded;
   };
+  const atTexting = () => here() && $('[data-stage]', zone).dataset.active === 'ao-13';
+  const greet = () => {
+    greetingTimer = 0;
+    if (!atTexting() || document.visibilityState !== 'visible') return;
+    // A menu or unrelated overlay should not receive an unexpected notification.
+    const dialog = document.querySelector('dialog[open]');
+    if (dialog && !(dialog.id === 'artifact-dialog' && $('#artifact-read-title').textContent === 'Nokia texting')) return;
+    greeted = true;
+    greetingHeard = receive('Barkada', GREETING) || greetingHeard;
+  };
+  const scheduleGreeting = () => {
+    clearTimeout(greetingTimer);
+    // Step and section observers can arrive in either order; check the active
+    // artifact in greet() after both have settled, not in this event handler.
+    if (!greeted || (isOn() && !greetingHeard)) greetingTimer = setTimeout(greet, 650);
+  };
+  document.addEventListener('click', e => {
+    if (!e.target.closest('[data-receive-text]')) return;
+    clearTimeout(greetingTimer);
+    greet();
+  });
+  document.addEventListener('sound', ({ detail }) => { if (detail.on) scheduleGreeting(); });
+  document.addEventListener('close', scheduleGreeting, true);
   const showInbox = () => {
     mode = 'inbox';
     lcd.innerHTML = `<p class="lcd-title">Inbox</p>${inbox.length
@@ -280,7 +324,7 @@ export function mountNokia(zone) {
   $('[data-try="ao-14"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="scratch">Scratch it all</button>
     <button class="btn btn--small" type="button" data-act="load">Load ₱30</button><p class="try-status" aria-live="polite">Scratch the silver strip on the card.</p>`;
 
-  $('[data-try="ao-13"]', zone).innerHTML = `<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
+  $('[data-try="ao-13"]', zone).innerHTML = `${messageDemoHTML()}<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
 
   /* 3GP over Bluetooth: wait out the transfer, then watch a few blocky seconds. */
   const cpBody = $('.cp-body', host);
@@ -393,6 +437,8 @@ export function mountNokia(zone) {
 
   let mamaSent = false;
   document.addEventListener('step:enter', ({ detail }) => {
+    clearTimeout(greetingTimer);
+    if (detail.id === 'ao-13') scheduleGreeting();
     if (detail.zone !== 3) { stopSnake(); return; }
     if (detail.id !== 'ao-13') stopSnake();
     // The foil is painted once, so a half-scratched card survives leaving and coming back.
