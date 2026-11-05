@@ -1,7 +1,7 @@
-import { PRESENT_IMAGES } from './present-media.js?v=stories-20261104-1';
+import { PRESENT_IMAGES } from './present-media.js?v=images-20261104-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
 import { esc } from './ui.js';
-import { disable, enable, isOn } from './audio.js?v=stories-20261104-1';
+import { disable, enable, isOn } from './audio.js?v=images-20261104-1';
 
 const image = (id, file, title, alt, caption, credit, source, extra = {}) => ({ id, type: 'image', src: `assets/sources/${file}`, title, alt, caption, credit, source, ...extra });
 const video = (id, youtube, title, caption, credit) => ({ id, type: 'video', youtube, title, caption, credit, source: `https://www.youtube.com/watch?v=${youtube}` });
@@ -200,7 +200,7 @@ export function artifactMediaHTML(id) {
 export function archiveMediaHTML(domain = '', lens = '', era = '') {
   const items = MEDIA.filter(m => m.domain && (!domain || domain === m.domain) && (!lens || lens === m.lens) && (!era || era === m.era));
   if (!items.length) return '';
-  return `<section class="archive-media" aria-labelledby="archive-media-title"><h3 id="archive-media-title">From the source collection</h3><p>Photographs related to the archive entries below.</p><div class="archive-media-grid">${items.map(m => previewCard(m.id, m)).join('')}</div></section>`;
+  return `<section class="archive-media" aria-labelledby="archive-media-title"><h3 id="archive-media-title">From the source collection</h3><p>Photographs related to the archive entries below.</p><div class="archive-media-grid">${items.map(figureHTML).join('')}</div></section>`;
 }
 
 function figureHTML(item) {
