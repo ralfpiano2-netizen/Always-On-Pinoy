@@ -114,6 +114,12 @@ html[data-era="pause"] { --sky: #050506; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* Modal dialogs make the page inert, but do not stop its scrolling by default.
+   Keep the museum at the same artifact when a wheel/touch gesture starts on a
+   dialog header or backdrop. Reserve the scrollbar space to avoid reflow. */
+html { scrollbar-gutter: stable; }
+html:has(dialog[open]) { overflow: hidden; overscroll-behavior: none; }
+dialog { overscroll-behavior: contain; }
 body {
   margin: 0;
   background: var(--sky);

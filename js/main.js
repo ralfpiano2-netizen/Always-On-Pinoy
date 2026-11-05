@@ -451,6 +451,17 @@ function wireSound() {
 }
 
 async function boot() {
+  // A slow asset request must not pull a visitor back to the original deep link
+  // after they have already scrolled, opened a story, or used the map.
+  const arrivalId = location.hash.slice(1);
+  const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+  // Let this boot handle the fragment once the dynamically rendered stops exist.
+  // Otherwise the browser can schedule its own late fragment scroll as well.
+  if (arrivalId && !reload) history.replaceState(null, '', location.pathname + location.search);
+  let arrivalCancelled = false;
+  const cancelArrival = () => { arrivalCancelled = true; };
+  const arrivalStoppers = [...GLIDE_STOPPERS, 'scroll'];
+  for (const type of arrivalStoppers) addEventListener(type, cancelArrival, { passive: true, once: true });
   if (reduceMotion()) document.documentElement.classList.add('reduce-motion');
   renderSteps();
   renderMap();
@@ -483,8 +494,8 @@ async function boot() {
   watchSteps(onStep);
   watchProgress();
   // A reload keeps the browser's restored position; only a fresh visit jumps to the link's target.
-  const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
-  if (location.hash.length > 1 && !reload) document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+  if (arrivalId && !reload && !arrivalCancelled) document.getElementById(arrivalId)?.scrollIntoView({ behavior: 'instant' });
+  for (const type of arrivalStoppers) removeEventListener(type, cancelArrival);
 }
 
 boot();
