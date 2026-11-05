@@ -252,7 +252,7 @@ function glitter() {
 export function mountTransitions() {
   const reduce = reduceMotion();
   rewind(reduce);
-  signoff(reduce);
-  upgrade(reduce);
+  if ($('#signoff')) signoff(reduce);
+  if ($('#upgrade')) upgrade(reduce);
   glitter();
 }

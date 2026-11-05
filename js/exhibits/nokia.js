@@ -324,7 +324,7 @@ export function mountNokia(zone) {
   $('[data-try="ao-14"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="scratch">Scratch it all</button>
     <button class="btn btn--small" type="button" data-act="load">Load ₱30</button><p class="try-status" aria-live="polite">Scratch the silver strip on the card.</p>`;
 
-  $('[data-try="ao-13"]', zone).innerHTML = `${messageDemoHTML()}<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
+  $('[data-try="ao-13"]', zone).innerHTML = `<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
 
   /* 3GP over Bluetooth: wait out the transfer, then watch a few blocky seconds. */
   const cpBody = $('.cp-body', host);

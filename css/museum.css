@@ -1133,3 +1133,68 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .ringtone-panel li { margin-top: 9px; }
 .ringtone-panel a { text-decoration: underline; }
 @media(max-width:480px) { .ringtone-panel { padding: 14px; } .ringtone-controls label { width: 100%; } }
+
+
+/* Each artifact is a complete past–present story in the original pixel rooms. */
+.step:has(.label-comparison) {
+  min-height: 100svh; align-items: flex-start;
+  padding: calc(var(--hud-h) + 24px) 12px 64px; scroll-margin-top: 0;
+}
+.label.label-comparison { padding: 22px; max-width: 640px; }
+.zone > .steps, .step, .label-comparison, .artifact-era, .era-copy { min-width: 0; }
+.label-comparison .label-head > span:last-child { min-width: 0; white-space: normal; overflow: visible; text-overflow: clip; }
+.label-comparison .btn { max-width: 100%; white-space: normal; text-align: left; }
+.label-comparison > h3 { font-size: clamp(28px, 3vw, 36px); margin-block: 10px 16px; }
+.comparison-intro { font: italic 400 19px/1.5 var(--font-label); margin-bottom: 22px; }
+.comparison-jumps { position: sticky; top: calc(var(--hud-h) + 6px); z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; padding-block: 8px; background: var(--label-bg); border-bottom: 1px solid var(--label-line); font: 400 12px/1.5 var(--font-mono); }
+.comparison-jumps a { padding: 6px 9px; border: 1px solid var(--label-line); text-decoration: underline; text-underline-offset: 3px; }
+.artifact-era, .artifact-connection { scroll-margin-top: calc(var(--hud-h) + 76px); }
+.artifact-era { padding: 22px 0; border-top: 1px solid var(--label-line); }
+.artifact-era > h4 {
+  display: inline-block; padding: 6px 10px; margin: 0 0 12px;
+  font: 500 13px/1.5 var(--font-mono); background: #ead1ad; color: #653813;
+}
+.artifact-era--present > h4 { background: #d6e6df; color: #244b43; }
+.era-subtitle { font: 600 24px/1.2 var(--font-label); margin-bottom: 16px; }
+.era-copy p, .artifact-connection p { font: 400 18px/1.65 var(--font-label); margin-bottom: 14px; overflow-wrap: anywhere; }
+.era-copy a, .artifact-connection a { text-decoration: underline; text-underline-offset: 3px; }
+.label.label-comparison .artifact-card-media { margin: 4px 0 20px; }
+.label.label-comparison .artifact-card-media img {
+  width: 100%; height: clamp(260px, 44svh, 420px); object-fit: contain;
+  padding: 8px; background: #ece7dc; border: 1px solid var(--label-line);
+}
+.label-comparison .present-figure { margin: 0 0 24px; padding: 4px 0 20px; }
+.label-comparison .present-figure img { width: 100%; height: clamp(260px, 44svh, 420px); object-fit: contain; }
+.label-comparison :is(.present-figure, .artifact-card-media) figcaption { font-size: 13px; line-height: 1.5; }
+.artifact-connection { padding: 18px; background: #e7ede7; border-left: 3px solid #4f756b; margin: 4px 0 20px; }
+.artifact-connection h4 { font: 600 23px/1.2 var(--font-label); margin-bottom: 12px; }
+.artifact-connection p:last-child { margin-bottom: 0; }
+.label-comparison .story-sources { margin-block: 18px; font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+.label-comparison .story-sources ul { padding-left: 20px; margin-top: 12px; }
+.label-comparison .story-note { font-size: 13px; line-height: 1.5; color: var(--label-dim); }
+.label-comparison .story-note .btn { padding: 4px 0; font-size: 12px; }
+.comparison-next { display: block; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--label-line); font: 500 13px/1.6 var(--font-mono); text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 900px) {
+  .zone { grid-template-columns: minmax(0, 1fr) min(560px, 45vw); }
+  .zone > .stage { gap: 24px; padding-inline: 28px 24px; }
+  .zone-card { min-width: 0; max-width: 100%; }
+  .zone-card h2 { font-size: clamp(26px, 2.5vw, 42px); }
+  .step:has(.label-comparison) { padding: calc(var(--hud-h) + 24px) 28px 72px 0; }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .zone > .stage { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: calc(var(--hud-h) + 16px) 20px 20px; }
+  .zone-card { position: relative; align-self: center; text-align: center; flex: 0 0 auto; max-width: 100%; }
+  .zone-card h2 { font-size: 28px; }
+  .zone-place { font-size: 16px; }
+  .zone > .stage .scene { width: auto; height: calc(100svh - 190px); max-width: 100%; flex: 0 1 auto; }
+}
+@media (max-width: 480px) {
+  .label.label-comparison { padding: 18px; }
+  .step:has(.label-comparison) { padding-inline: 10px; }
+  .era-copy p, .artifact-connection p { font-size: 17px; line-height: 1.65; }
+  .comparison-intro { font-size: 18px; }
+}
+@media (max-width: 899px) {
+  .zone { grid-template-columns: minmax(0, 1fr); }
+  .stage[data-active^="ao-"] .zone-card { display: none; }
+}

@@ -10,11 +10,10 @@ import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountFeed } from './exhibits/feed.js?v=feed-credits-20261105-1';
-import { mountTransitions } from './exhibits/transitions.js?v=feed-credits-20261105-1';
+import { mountTransitions } from './exhibits/transitions.js?v=inline-20261105-1';
 import { mountTV } from './exhibits/tvguide.js?v=feed-credits-20261105-1';
 import { mountStreet } from './exhibits/pisonet.js?v=feed-credits-20261105-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=sms-20261105-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=inline-20261105-1';
 import { mountChainText } from './exhibits/chaintext.js?v=feed-credits-20261105-1';
 import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=feed-credits-20261105-1';
 import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=feed-credits-20261105-1';
@@ -101,14 +100,34 @@ function renderArtifactStory(a) {
 function stepHTML(a) {
   const no = accession(a);
   const long = LONG.has(a.id);
+  const c = COMPARISONS.find(c => c.id === a.comparison);
+  const details = a.details;
+  const past = details ? details.past.map(documentParagraphs).join('') : documentParagraphs(c?.past || SHORT_LABELS[a.id] || a.body);
+  const present = details ? details.present.map(documentParagraphs).join('') : documentParagraphs(c?.present || a.now.body);
+  const connection = details?.connection || c?.synthesis || 'The shared anticipation of a live event connects the reconstructed viewing scene with newer ways to follow a fight. Broadcasts, streams and clips add viewing routes; gathering with other people continues alongside personal screens.';
+  const sources = details ? `<details class="story-sources"><summary>Sources for this comparison</summary><ul>${details.sources.map(source => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join('')}</ul></details>` : '';
+  const next = ARTIFACTS[a.n];
+  const nextZone = next && next.zone !== a.zone ? ZONES.find(z => z.n === next.zone) : null;
+  const nextId = nextZone?.id || next?.id || 'pause';
+  const nextTitle = nextZone ? `Zone ${nextZone.n} · ${nextZone.title}` : next?.title;
   return `<article class="step${long ? ' is-long' : ''}"${long ? ' data-progress' : ''} id="${a.id}" data-step="${a.id}" aria-labelledby="${a.id}-title">
-    <div class="label" data-label="${a.id}">
+    <div class="label label-comparison" data-label="${a.id}">
       <div class="label-head"><span class="label-no">${no}</span><span>${esc(a.when)}, ${esc(a.medium.toLowerCase())}</span></div>
       <h3 id="${a.id}-title">${esc(a.title)}</h3>
-      ${artifactCardMediaHTML(a.id)}
-      <p class="label-body">${documentText(SHORT_LABELS[a.id] || a.body)}</p>
-      <div class="label-actions"><button class="btn btn--small" type="button" data-read-artifact="${a.id}" aria-haspopup="dialog">Read more</button></div>
-      <details class="label-interaction" hidden><summary>Try the exhibit</summary><div class="try" data-try="${a.id}"></div></details>
+      <p class="comparison-intro">${esc(details?.intro || c?.intro || SHORT_LABELS[a.id])}</p>
+      <nav class="comparison-jumps" aria-label="Jump within ${esc(a.title)}"><a href="#${a.id}-past">2000s</a><a href="#${a.id}-present">2020s</a><a href="#${a.id}-connection">The connection</a></nav>
+      <section class="artifact-era artifact-era--past" id="${a.id}-past" aria-labelledby="${a.id}-past-title"><h4 id="${a.id}-past-title">${esc(details?.pastHeading || '2000s')}</h4>
+        ${artifactCardMediaHTML(a.id)}<div class="era-copy">${past}</div>
+        ${a.id === 'ao-13' ? messageDemoHTML() : ''}
+        <details class="label-interaction" hidden><summary>Try the exhibit</summary><div class="try" data-try="${a.id}"></div></details>
+      </section>
+      <section class="artifact-era artifact-era--present" id="${a.id}-present" aria-labelledby="${a.id}-present-title"><h4 id="${a.id}-present-title">${esc(details?.presentHeading || '2020s')}</h4>
+        <p class="era-subtitle">${esc(a.now.title)}</p>${presentMediaHTML(a.id)}<div class="era-copy">${present}</div>
+      </section>
+      <section class="artifact-connection" id="${a.id}-connection" aria-labelledby="${a.id}-connection-title"><h4 id="${a.id}-connection-title">What connects them</h4>${documentParagraphs(connection)}</section>
+      ${sources}
+      <p class="story-note">Author–date links open the supporting sources. <button class="btn btn--plain" type="button" data-open="archive-dialog">Explore the Archive</button></p>
+      <a class="comparison-next" href="#${nextId}">${next ? `Next · ${esc(nextTitle)}` : 'Continue to the closing reflection'} <span aria-hidden="true">↓</span></a>
       ${!a.comparison ? '<p class="label-cite is-note">Supplemental curatorial scene</p>' : ''}
       <span class="stamp" aria-hidden="true">${no}<br>stamped</span>
     </div>
@@ -130,12 +149,8 @@ function renderMap() {
       `<li><a href="#${a.id}" data-map-artifact="${a.id}"><span>${accession(a)}</span>${esc(a.title)}</a></li>`).join('')}</ul>`;
   $('#map-body').innerHTML = `
     <div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>2026, the ticket</small></a></div>
-    <div class="map-wing"><h3>Wing 1, “${esc(SITE.wing2000)}”, the 2000s</h3>${ZONES.map(zone).join('')}
-      <a class="map-stop" href="#signoff"><strong>Sign-off</strong><small>23:59, the broadcast day ends</small></a></div>
-    <div class="map-wing"><a class="map-stop" href="#upgrade"><strong>The upgrade</strong><small>The 2010s in a few seconds</small></a></div>
-    <div class="map-wing"><h3>Wing 2, the 2020s</h3>
-      <a class="map-stop" href="#void"><strong>${esc(SITE.wing2020)}</strong><small>The 2020s comparisons</small></a>
-      <a class="map-stop" href="#pause"><strong>Your pause</strong><small>Conclusion, credits and references</small></a></div>
+    <div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s & 2020s</h3>${ZONES.map(zone).join('')}</div>
+    <div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div>
     <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 21 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
@@ -145,7 +160,7 @@ function markMap() {
 
 function renderPassport() {
   $('#passport-body').innerHTML = `
-    <p class="passport-summary">${passport.count()} of 18 artifacts stamped. A label is stamped after it has been on screen for a second.</p>
+    <p class="passport-summary">${passport.count()} of 18 artifacts stamped. An artifact is stamped after its heading has been on screen for a second.</p>
     <div class="passport-grid">${ARTIFACTS.map(a =>
       `<a class="passport-slot${passport.has(a.id) ? ' is-stamped' : ''}" data-zone="${a.zone}" href="#${a.id}"><span><b>${accession(a)}</b>${esc(a.title)}${passport.has(a.id) ? '<span class="sr-only">, stamped</span>' : ''}</span></a>`).join('')}</div>`;
 }
@@ -325,7 +340,7 @@ function watchStamps() {
   const timers = new Map();
   const io = new IntersectionObserver(entries => {
     for (const e of entries) {
-      const id = e.target.dataset.label;
+      const id = e.target.closest('[data-label]').dataset.label;
       if (e.intersectionRatio >= 0.6) {
         if (!timers.has(id)) timers.set(id, setTimeout(() => { timers.delete(id); passport.stamp(id); }, 1000));
       } else {
@@ -334,7 +349,7 @@ function watchStamps() {
       }
     }
   }, { threshold: [0, 0.6] });
-  for (const el of $$('.label[data-label]')) io.observe(el);
+  for (const el of $$('.label[data-label]')) io.observe(el.querySelector('.label-head') || el);
   document.addEventListener('stamp', ({ detail }) => {
     $(`[data-label="${detail.id}"]`)?.classList.add('is-stamped');
     $('#hud-count').textContent = detail.count;
@@ -454,11 +469,14 @@ function wireSound() {
 async function boot() {
   // A slow asset request must not pull a visitor back to the original deep link
   // after they have already scrolled, opened a story, or used the map.
-  const arrivalId = location.hash.slice(1);
-  const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+  const requestedId = location.hash.slice(1);
+  const arrivalId = ['void', 'upgrade', 'signoff'].includes(requestedId) ? 'pause' : requestedId;
+  // Accession/era anchors remain valid when a revision changes the cards' heights.
+  // Avoid restoring an obsolete pixel offset into a different artifact.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   // Let this boot handle the fragment once the dynamically rendered stops exist.
   // Otherwise the browser can schedule its own late fragment scroll as well.
-  if (arrivalId && !reload) history.replaceState(null, '', location.pathname + location.search);
+  if (arrivalId) history.replaceState(null, '', location.pathname + location.search);
   let arrivalCancelled = false;
   const cancelArrival = () => { arrivalCancelled = true; };
   const arrivalStoppers = [...GLIDE_STOPPERS, 'scroll'];
@@ -476,7 +494,6 @@ async function boot() {
   wireTicket();
   await loadIndex();
   fillSlots();
-  mountFeed($('#void'));
   mountTransitions();
   mountTV($('#zone-1'));
   mountStreet($('#zone-2'));
@@ -494,8 +511,8 @@ async function boot() {
   watchSections(onSection);
   watchSteps(onStep);
   watchProgress();
-  // A reload keeps the browser's restored position; only a fresh visit jumps to the link's target.
-  if (arrivalId && !reload && !arrivalCancelled) document.getElementById(arrivalId)?.scrollIntoView({ behavior: 'instant' });
+  // Restore the requested artifact or era unless the visitor has already taken control.
+  if (arrivalId && !arrivalCancelled) document.getElementById(arrivalId)?.scrollIntoView({ behavior: 'instant' });
   for (const type of arrivalStoppers) removeEventListener(type, cancelArrival);
 }
 
