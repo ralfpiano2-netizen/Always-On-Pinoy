@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=images-20261104-2';
+import { COMPARISONS } from './exhibit-text.js?v=parlor-20261104-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.

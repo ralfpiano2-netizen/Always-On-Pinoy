@@ -1,7 +1,7 @@
-import { PRESENT_IMAGES } from './present-media.js?v=images-20261104-2';
+import { PRESENT_IMAGES } from './present-media.js?v=parlor-20261104-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
 import { esc } from './ui.js';
-import { disable, enable, isOn } from './audio.js?v=images-20261104-2';
+import { disable, enable, isOn } from './audio.js?v=parlor-20261104-1';
 
 const image = (id, file, title, alt, caption, credit, source, extra = {}) => ({ id, type: 'image', src: `assets/sources/${file}`, title, alt, caption, credit, source, ...extra });
 const video = (id, youtube, title, caption, credit) => ({ id, type: 'video', youtube, title, caption, credit, source: `https://www.youtube.com/watch?v=${youtube}` });
@@ -30,7 +30,7 @@ export const MEDIA = [
 {"id": "bpo", "type": "image", "src": "assets/sources/bpo.jpg", "title": "A call-center workplace", "alt": "Headset-wearing workers sit at computers in a call-center sales area.", "caption": "The workplace image accompanying GMA News Online’s April 4, 2013 report on night-shift work. Its capture date is not established; the article provides later context for the BPO comparison.", "credit": "GMA News Online, in Siegfried Alegado’s 2013 report", "source": "https://www.gmanetwork.com/news/topstories/nation/302384/sleepless-in-phl-more-pinoys-work-the-graveyard-shift/story/"},
 {"id": "pisonet", "type": "image", "src": "assets/sources/pisonet-2010.jpg", "title": "A coin-operated PisoNet cabinet", "alt": "A blue-and-black computer cabinet with a monitor, keyboard and coin-operated timer controls.", "caption": "A PisoNet cabinet photographed on March 26, 2010. The source credits the build to Junaid Ibrahim. This dated reference illustrates the machine; it is not presented as a photograph taken in 2005.", "credit": "Naidz24 / Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:First_Peso_Net.jpg", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/", "supplementary": true},
 {"id": "cafe", "type": "image", "src": "assets/sources/cafe-2005.webp", "title": "A shared room for online play", "alt": "Players sit at computers in a small internet café with plastic chairs and green walls.", "caption": "Leevets Cyberspace Cafe, identified by the source author as circa 2005. Reproduced in Back2Gaming’s later computer-shop retrospective; the source’s dating is retained.", "credit": "BossMac Suba / Back2Gaming", "source": "https://www.back2gaming.com/games/classic-computer-shop-games-for-that-nostalgia-fix/"},
-{"id": "eva", "type": "image", "src": "assets/sources/eva-pageants.jpg", "title": "A pageant tradition discussed on Drag Race", "alt": "Drag performers talk together in a brightly colored Drag Race Philippines setting.", "caption": "A 2022 Drag Race Philippines image accompanying Eva Le Queen’s discussion of why pageants matter to the LGBT community. This is the exhibit’s 2020s counterpart, not a photograph of a 2000s barangay pageant.", "credit": "Drag Race Philippines, via ABS-CBN News", "source": "https://www.abs-cbn.com/entertainment/09/13/22/eva-le-queen-explains-why-pageants-matter-to-lgbt-community"},
+{"id": "parlor", "type": "image", "src": "https://images.squarespace-cdn.com/content/v1/636b5e138fd7c9613e2a8b61/ac242733-0327-459b-8810-913eafae8246/Tsupet%2Bby%2BDe%2BLa%2BSalle-College%2Bof%2BSaint%2BBenilde%2BPhotography%2Bstudent%2BLou%2BRussell%2BFajardo.jpg", "title": "Karla Salon: the neighborhood parlor", "alt": "Clients and workers inside Karla Salon, with hairdressing chairs, mirrors, hairstyle posters, and a large storefront sign.", "caption": "Karla Salon, photographed by Lou Russell Fajardo for Tsupet, a documentary series about Filipino gay parlor workers. Reproduced in Art+ Magazine on June 2, 2023. A later reference for the parlor setting discussed in this 2000s artifact; the image’s capture date is not established.", "credit": "Lou Russell Fajardo, Tsupet / Art+ Magazine", "source": "https://artplus.ph/features/filipino-parloristas-star-in-international-exhibition-in-china", "width": 2500, "height": 1669},
 {"id": "prepaid", "type": "image", "src": "assets/sources/prepaid-recollection.jpg", "title": "Prepaid phone-load cards", "alt": "A collection of Globe, Smart and other prepaid telephone cards.", "caption": "Phone-load cards reproduced in Aldwin Chester Yap Dumago’s GSM recollection. They illustrate the scratch-card format; they are not Level Up! gaming cards. The photograph’s capture date is not established.", "credit": "As shared by Aldwin Chester Yap Dumago / LinkedIn", "source": "https://www.linkedin.com/posts/aldwindumago_the-photo-brings-back-so-many-memories-of-share-7463885287283183616-atRs/"},
 {"id": "nokia6600", "type": "image", "src": "assets/sources/nokia6600.jpg", "title": "A Nokia 6600 handset", "alt": "A Nokia 6600 handset with its color screen and physical keypad.", "caption": "A Nokia 6600 photographed by Chrattac in November 2006. A period handset reference for local media sharing, rather than a photograph of a particular Bluetooth transfer.", "credit": "Chrattac / Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Nokia_6600.jpg", "license": "Public domain", "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nokia_6600.jpg#Licensing", "supplementary": true},
 {"id": "mp3", "type": "image", "src": "assets/sources/ipod-nano.png", "title": "A portable music player", "alt": "Front, side and back views of a silver fourth-generation iPod nano.", "caption": "A reference image of a fourth-generation iPod nano, dated March 18, 2009. It illustrates a portable digital music player; it does not document the generic low-cost player or shared-earphone scene in the reconstruction.", "credit": "Matthieu Riegler / Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:IPod_nano.png", "license": "CC BY 3.0", "licenseUrl": "https://creativecommons.org/licenses/by/3.0/", "supplementary": true},
@@ -108,7 +108,7 @@ const SETS = {
   "ao-11": {
     "title": "Parlor and barangay pageant",
     "ids": [
-      "eva"
+      "parlor"
     ]
   },
   "ao-12": {
@@ -175,7 +175,7 @@ const CARD_LABELS = {
   "ao-08": "Friendster layout · 2007",
   "ao-09": "Leevets café · c. 2005 (source date)",
   "ao-10": "TriNoma · reference photo",
-  "ao-11": "2020s counterpart · Drag Race, 2022",
+  "ao-11": "Karla Salon · later reference, published 2023",
   "ao-12": "OPM artists · retrospective collage",
   "ao-13": "Nokia · later reference photo",
   "ao-14": "Phone-load cards · format reference",

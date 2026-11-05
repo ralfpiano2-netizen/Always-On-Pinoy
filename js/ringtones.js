@@ -1,6 +1,6 @@
 // Short, single-voice arrangements, synthesized locally after a visitor opts in.
 // The pitches are adapted to a small phone-speaker register; these are reconstructions.
-import { enable, isOn, musicChannel } from './audio.js?v=images-20261104-2';
+import { enable, isOn, musicChannel } from './audio.js?v=parlor-20261104-1';
 import { esc } from './ui.js';
 
 const repeat = (phrase, times = 2) => Array(times).fill(phrase).join(' ');

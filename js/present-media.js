@@ -129,7 +129,7 @@ export const PRESENT_IMAGES = {
     "id": "present-drag",
     "type": "image",
     "src": "assets/sources/eva-pageants.jpg",
-    "title": "A pageant tradition discussed on Drag Race",
+    "title": "Drag Race Philippines · 2022",
     "alt": "Drag performers talk together in a brightly colored Drag Race Philippines setting.",
     "caption": "A 2022 Drag Race Philippines image accompanying Eva Le Queen’s discussion of why pageants matter to the LGBT community. This is the exhibit’s 2020s counterpart, not a photograph of a 2000s barangay pageant.",
     "credit": "Drag Race Philippines, via ABS-CBN News",
