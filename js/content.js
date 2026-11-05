@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=exhibit-text-2';
+import { COMPARISONS } from './exhibit-text.js?v=stories-20261104-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -187,7 +187,7 @@ for (const a of ARTIFACTS) {
   a.synthesis = comparison.synthesis;
   a.cite = [];
   a.note = 'From the supplied museum exhibit text. Full comparison and references in the Archive.';
-  a.now = { title: PRESENT_TITLES[n], body: comparison.present, cite: [] };
+  a.now = { title: PRESENT_TITLES[n], body: comparison.presentSummary || comparison.present, cite: [] };
 }
 // These three interactive scenes are supplemental to the document's 21 comparisons.
 for (const id of ['ao-05', 'ao-07', 'ao-17']) {
@@ -197,7 +197,7 @@ for (const id of ['ao-05', 'ao-07', 'ao-17']) {
 }
 ARTIFACTS.find(a => a.id === 'ao-05').now = { title: 'Live events across more screens', body: 'Streaming and clips offer more ways to follow an event. Live broadcasts and shared viewing continue alongside personal feeds.', cite: [] };
 ARTIFACTS.find(a => a.id === 'ao-07').now = { title: 'Mobile access, with continuing limits', body: 'Mobile devices add routes to online activity. Device cost, coverage and connectivity still shape who can participate.', cite: [] };
-ARTIFACTS.find(a => a.id === 'ao-17').now = { title: 'Music across recordings, clips and concerts', body: 'Listeners can share music through more media while continuing to find belonging through songs, performances and fan communities.', cite: [] };
+ARTIFACTS.find(a => a.id === 'ao-17').now = { title: 'Music across recordings, clips and playlists', body: 'A prepared library once set the songs a player could carry. Streaming, shared playlists, and prompt-based discovery add ways to choose and pass music on.', cite: [] };
 ZONES[0].intro = 'Television schedules helped organize household routines. Following dramas, performances and personalities gave audiences shared references; scheduled and shared viewing continue alongside on-demand services.';
 ZONES[1].intro = 'Computer shops, malls and community venues brought digital activity and social life into shared physical settings. Newer platforms add routes to participation while these places remain relevant.';
 ZONES[2].intro = 'Prepaid access and keypad phones shaped everyday communication. Messages, local media sharing and remittance services show earlier ways to connect across distance, alongside continuing questions of access and trust.';
@@ -211,6 +211,7 @@ ARTIFACTS.find(a => a.id === 'ao-17').details = {
   ],
   "present": [
     "In the 2020s, discovery can begin in a playlist as well as with a file someone transfers. Spotify’s November 2024 Philippine anniversary report described its Pinoy Music hub, with playlists such as Tatak Pinoy, KALYE, P-Pop on the Rise, and OPM selections organized by decade. These categories offer different routes into local music (Spotify, 2024).",
+    "Spotify’s April 2025 expansion brought AI Playlist in beta to Premium listeners in the Philippines. A listener can describe an idea and refine a suggested selection. This prompt-based feature is a specific example, distinct from treating all personalized recommendations as the same tool (Spotify, 2025).",
     "A song can also reach someone through a short video. TikTok’s Philippine year-end report for 2024 highlighted artists including Lola Amour, Denise Julia, Toneejay, and Maki in its discussion of music discovery. Such platform reports describe their own services; they do not measure every Filipino listener’s habits (TikTok, 2024).",
     "Listening still reaches beyond an individual screen. Spotify’s 2024 Philippine anniversary event included live performances by Ben&Ben, Moira Dela Torre, and Maki. A person might encounter a track through a playlist and later join other listeners at a performance. Streaming and gathering can coexist (Spotify, 2024)."
   ],
@@ -225,9 +226,32 @@ ARTIFACTS.find(a => a.id === 'ao-17').details = {
       "url": "https://newsroom.spotify.com/2024-11-01/philippines-10-year-anniversary-ben-and-ben/"
     },
     {
+      "title": "Spotify (2025, April 24). Spotify expands AI Playlist in beta to Premium listeners in 40+ new markets.",
+      "url": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/"
+    },
+    {
       "title": "TikTok (2024), Year on TikTok: Philippines",
       "url": "https://newsroom.tiktok.com/year-on-tiktok-2024-philippines?lang=en-PH"
     }
+  ]
+};
+
+ARTIFACTS.find(a => a.id === 'ao-07').details = {
+  intro: 'The timer makes the price of access visible. This reconstructed PisoNet scene asks who can get online, for how long, and with what kind of device.',
+  pastHeading: '2000s · Borrowing time on a shared machine',
+  past: [
+    'The coin slot and countdown are curatorial devices for showing a short, paid session. They do not document the opening date or pricing of a particular shop. Internet-café research from 2007 provides the wider setting: cafés offered access to browsing and social networking for surveyed users (DigitalFilipino, 2007).',
+    'A shared machine ties access to a place, a turn, and the time someone can afford. The practical question in this scene is what a visitor would choose to do before that time ran out.'
+  ],
+  presentHeading: '2020s · Carrying access, facing new limits',
+  present: [
+    'A smartphone can move an online session away from the rented computer. It does not make access unlimited. A person still needs a suitable device, an available connection, and a way to pay for service.',
+    'GSMA’s 2026 roadmap for Philippine 5G identifies coverage and spectrum capacity as continuing concerns. The report supports examining the conditions of access, rather than assuming that a 5G symbol means the same experience everywhere (GSMA, 2026).'
+  ],
+  connection: 'The visible countdown has become a different set of limits: data, battery, coverage, device cost, and the time a person chooses to give a screen. The museum’s contrast between a timed session and an open-ended feed is an interpretive scene. It invites reflection on access and personal boundaries rather than claiming that everyone is continuously connected.',
+  sources: [
+    { title: 'DigitalFilipino (2007, July 11). Young Filipino Internet user report 2007.', url: 'https://digitalfilipino.com/young-filipino-internet-user-report-2007/' },
+    { title: 'GSMA (2026, February 11). Accelerating 5G and 5G-Advanced in Philippines: A roadmap for success.', url: 'https://www.gsma.com/connectivity-for-good/spectrum/gsma_resources/accelerating-5g-and-5g-advanced-in-philippines/' }
   ]
 };
 

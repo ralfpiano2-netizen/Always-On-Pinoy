@@ -1,7 +1,7 @@
-import { PRESENT_IMAGES } from './present-media.js?v=ringtones-1';
+import { PRESENT_IMAGES } from './present-media.js?v=stories-20261104-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
 import { esc } from './ui.js';
-import { disable, enable, isOn } from './audio.js?v=ringtones-1';
+import { disable, enable, isOn } from './audio.js?v=stories-20261104-1';
 
 const image = (id, file, title, alt, caption, credit, source, extra = {}) => ({ id, type: 'image', src: `assets/sources/${file}`, title, alt, caption, credit, source, ...extra });
 const video = (id, youtube, title, caption, credit) => ({ id, type: 'video', youtube, title, caption, credit, source: `https://www.youtube.com/watch?v=${youtube}` });

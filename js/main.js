@@ -1,23 +1,23 @@
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=ringtones-1';
-import { presentMediaHTML } from './present-media.js?v=ringtones-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=stories-20261104-1';
+import { presentMediaHTML } from './present-media.js?v=stories-20261104-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=ringtones-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=exhibit-text-2';
+import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=stories-20261104-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=stories-20261104-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountFeed } from './exhibits/feed.js?v=ringtones-1';
-import { mountTransitions } from './exhibits/transitions.js?v=ringtones-1';
-import { mountTV } from './exhibits/tvguide.js?v=ringtones-1';
-import { mountStreet } from './exhibits/pisonet.js?v=ringtones-1';
-import { mountNokia } from './exhibits/nokia.js?v=ringtones-1';
-import { mountChainText } from './exhibits/chaintext.js?v=ringtones-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=ringtones-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=ringtones-1';
+import { mountFeed } from './exhibits/feed.js?v=stories-20261104-1';
+import { mountTransitions } from './exhibits/transitions.js?v=stories-20261104-1';
+import { mountTV } from './exhibits/tvguide.js?v=stories-20261104-1';
+import { mountStreet } from './exhibits/pisonet.js?v=stories-20261104-1';
+import { mountNokia } from './exhibits/nokia.js?v=stories-20261104-1';
+import { mountChainText } from './exhibits/chaintext.js?v=stories-20261104-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=stories-20261104-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=stories-20261104-1';
 
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
@@ -50,11 +50,14 @@ function documentText(text) {
 function documentReferencesHTML() {
   return `<p>${esc(DOCUMENT_SCOPE)}</p><ul class="ref-list">${DOCUMENT_REFERENCES.map(ref => `<li>${ref.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.apa)}</a>` : esc(ref.apa)}</li>`).join('')}</ul>`;
 }
+function documentParagraphs(text) {
+  return text.split(/\n\n+/).map(paragraph => `<p>${documentText(paragraph)}</p>`).join('');
+}
 function comparisonHTML(c, era = '') {
   return `<details class="archive-card document-comparison" id="${c.id}"><summary><span>${esc(c.domain)} · ${esc(LENS_LABEL[c.lens])}</span><h3>${esc(c.title)}</h3></summary><div class="comparison-copy"><p>${esc(c.intro)}</p>
-    ${era !== '2020s' ? `<h4>2000s</h4><p>${documentText(c.past)}</p>` : ''}
-    ${era !== '2000s' ? `<h4>2020s</h4><p>${documentText(c.present)}</p>` : ''}
-    <h4>Synthesis</h4><p>${documentText(c.synthesis)}</p></div></details>`;
+    ${era !== '2020s' ? `<h4>2000s</h4>${documentParagraphs(c.past)}` : ''}
+    ${era !== '2000s' ? `<h4>2020s</h4>${documentParagraphs(c.present)}` : ''}
+    <h4>Synthesis</h4>${documentParagraphs(c.synthesis)}</div></details>`;
 }
 
 const SHORT_LABELS = {
@@ -79,15 +82,15 @@ const SHORT_LABELS = {
 };
 
 function detailedStoryHTML(details) {
-  const paragraphs = list => list.map(text => `<p>${esc(text)}</p>`).join('');
-  return `<p class="story-intro">${esc(details.intro)}</p><h3>2000s · Carrying a music collection</h3>${paragraphs(details.past)}<h3>2020s · Discovery, sharing, and gathering</h3>${paragraphs(details.present)}<h3>What connects them</h3><p>${esc(details.connection)}</p><details class="story-sources"><summary>Sources for this comparison</summary><ul>${details.sources.map(source => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join('')}</ul></details>`;
+  const paragraphs = list => list.map(text => `<p>${documentText(text)}</p>`).join('');
+  return `<p class="story-intro">${esc(details.intro)}</p><h3>${esc(details.pastHeading || '2000s · Carrying a music collection')}</h3>${paragraphs(details.past)}<h3>${esc(details.presentHeading || '2020s · Discovery, sharing, and gathering')}</h3>${paragraphs(details.present)}<h3>What connects them</h3>${documentParagraphs(details.connection)}<details class="story-sources"><summary>Sources for this comparison</summary><ul>${details.sources.map(source => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join('')}</ul></details>`;
 }
 
 function renderArtifactStory(a) {
   const c = COMPARISONS.find(c => c.id === a.comparison);
   $('#artifact-read-title').textContent = a.title;
   $('#artifact-read-body').innerHTML = `<article class="artifact-story">
-    ${a.details ? detailedStoryHTML(a.details) : c ? `<p class="story-intro">${esc(c.intro)}</p><h3>2000s</h3><p>${documentText(c.past)}</p><h3>2020s</h3><p>${documentText(c.present)}</p><h3>What connects them</h3><p>${documentText(c.synthesis)}</p>` : `<p>${esc(a.body)}</p><h3>2020s</h3><p>${esc(a.now.body)}</p><p class="label-cite is-note">${esc(a.note)}</p>`}
+    ${a.details ? detailedStoryHTML(a.details) : c ? `<p class="story-intro">${esc(c.intro)}</p><h3>2000s</h3>${documentParagraphs(c.past)}<h3>2020s</h3>${documentParagraphs(c.present)}<h3>What connects them</h3>${documentParagraphs(c.synthesis)}` : `<p>${esc(a.body)}</p><h3>2020s</h3><p>${esc(a.now.body)}</p><p class="label-cite is-note">${esc(a.note)}</p>`}
     ${a.details ? artifactCardMediaHTML(a.id) : artifactMediaHTML(a.id)}
     <h3>Present-day visual</h3>${presentMediaHTML(a.id)}
     ${c ? '<p class="story-note">Author–date links open the supporting sources. The Archive contains all 21 comparisons and the full reference list.</p>' : ''}

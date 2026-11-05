@@ -1,4 +1,4 @@
-// Exhibit text supplied in Philippine_Pop_Culture_Museum_Content.docx.
+// Exhibit text developed from the supplied museum document, the Milestone 2 worksheet, and verified sources reviewed on November 4, 2026.
 export const COMPARISONS = [
   {
     "id": "comparison-01",
@@ -15,60 +15,66 @@ export const COMPARISONS = [
     "title": "Nokia phones and messages worth waiting for",
     "intro": "A few characters could carry affection, an invitation, or an urgent update. The keypad phone made keeping in touch a familiar part of Filipino daily life.",
     "past": "Texting developed its own shorthand and etiquette (Lichauco, 2001). Prepaid access and relatively affordable messages helped people communicate where fixed-line service was difficult to obtain (Lichauco, 2001). Phones also carried media: Nokia's 2003 announcement for the 6600 described video clips and local sharing through Bluetooth and infrared (Nokia, 2003).",
-    "present": "Group chats, voice calls, and video sharing give conversations more forms. Commercial 5G services introduced in 2020 supported activities such as streaming and online gaming, although access still depended on compatible devices, coverage, and cost (Smart Communications, 2020). A barkada conversation can continue across places without everyone gathering around the same phone or computer.",
-    "synthesis": "The texting culture of the 2000s made mobile conversation part of ordinary relationships, with shorthand and prepaid access shaping how messages were exchanged (Lichauco, 2001). Group chats continue that social function through richer media and more persistent conversations. Comparing the devices helps explain continuity in the habit of keeping others close across distance. Nokia’s 2003 handset announcement documents video and local sharing (Nokia, 2003), while Smart’s 2020 rollout announcement documents the later expansion of 5G service (Smart Communications, 2020). These milestones also make today’s expectation of availability easier to examine: greater technical capacity expands opportunities to communicate, while cost, coverage, and personal boundaries still affect whether a conversation can happen.",
+    "present": "Messenger’s 2024 rollout added shared photo and video albums, HD photographs, and file transfers up to 100 MB. A conversation can become a place to keep and revisit experiences, rather than a sequence of messages that disappears from view (Crisan, 2024).\n\nA study of 32,810 WhatsApp messages among 26 male amateur-football friends in Buenos Aires examined how remembering together sustained connection before, during, and after COVID-19 lockdown. This is an Argentine case, not a survey of Filipino barkadas; it offers a useful question for this exhibit: what memories does your group chat keep alive (Bietti & Mayor, 2023)?\n\nThese application features do not require 5G in every case. GSMA’s 2026 Philippine roadmap treats coverage and spectrum capacity as continuing challenges. A newer network label does not remove differences in location, device access, or affordability (GSMA, 2026).",
+    "synthesis": "The keypad phone and the shared album answer a familiar need: keeping other people close across distance. SMS shorthand and prepaid access shaped how people exchanged messages (Lichauco, 2001); a persistent chat can also hold photographs and shared memories (Crisan, 2024). Bluetooth made local file sharing possible on handsets such as the Nokia 6600 (Nokia, 2003), while networked albums give a group another place to return to those files. The change is in what a conversation can contain and how it can be revisited. The social bond still depends on the people participating, and being reachable need not mean being available all the time.",
     "domain": "Social",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Shared albums and richer messages let a group chat hold memories as well as updates. Devices, coverage, cost, and personal boundaries still shape who can take part."
   },
   {
     "id": "comparison-03",
     "title": "Computer shops and the barkada in the game",
     "intro": "The game was on a screen, but your teammate might be in the next chair. Computer shops combined digital play with the company of people sharing the room.",
     "past": "Netopia and neighborhood internet cafés offered access to research, social networking, and games (DigitalFilipino, 2007; Limos, 2021). Contemporary reporting described students gathering in internet cafés to play Ragnarok Online, an online world that continued while individual players were logged out (Gokongwei-Cheng, 2003). Computer shops brought access to digital play into a shared physical venue.",
-    "present": "A 2023 study of 507 Mobile Legends respondents identified habit and social influence among factors associated with playing intentions (A. K. S. Ong et al., 2023). A systematic review of online gaming communities found opportunities for friendship, but also possible tensions with offline relationships (Tushya et al., 2025). These broader findings do not establish outcomes for every Filipino player.",
-    "synthesis": "Computer shops and contemporary mobile games both place play within social relationships (Limos, 2021; A. K. S. Ong et al., 2023). The connection helps visitors ask how access, shared routines, and interaction shape participation. The cited review supports considering gaming as a social setting while recognizing that online and offline relationships can interact in different ways (Tushya et al., 2025). A newer device or meeting space does not guarantee the same experience for every player.",
+    "present": "A Philippine study of 507 Mobile Legends respondents identified habit and social influence among factors associated with playing intentions (A. K. S. Ong et al., 2023). The invitation to play can still be an invitation to spend time with a barkada, even when teammates are in different places.\n\nA separate systematic review of 33 studies examines how virtual identities and community membership shape social capital, including access to support and the experience of marginalization. It supports asking who feels included in a gaming community; it does not establish that every game or every Filipino player benefits in the same way (Sachan et al., 2025).",
+    "synthesis": "The café chair and the mobile-game lobby are different meeting arrangements. In a computer shop, a rented machine and the person in the next seat help organize the encounter (Limos, 2021). In a mobile game, habit and social influence can encourage people to return (A. K. S. Ong et al., 2023). Neither physical proximity nor online membership guarantees belonging. Read together, the examples invite a closer question: who gets to join, receive help, and feel welcome? Research on online gaming also documents varied interactions between online and offline relationships (Tushya et al., 2025).",
     "domain": "Social",
-    "lens": "Space"
+    "lens": "Space",
+    "presentSummary": "A mobile-game lobby can bring friends together across locations. Social influence matters, while belonging also depends on how a community treats its members."
   },
   {
     "id": "comparison-04",
     "title": "Night shifts and a different working day",
     "intro": "For someone leaving a call-center shift, morning can mean the end of the day. Work connected to distant customers changes the rhythm of life close to home.",
     "past": "The BPO industry connected Philippine workers to international service operations (Messenger & Ghosheh, 2010). A headset and a night-shift schedule made that relationship part of everyday life. The ILO's work on offshoring examined working conditions in the Philippines alongside other countries participating in this industry (Messenger & Ghosheh, 2010). In later reporting, Siegfried Alegado connects overseas service schedules with night work and its benefits and costs for workers (Alegado, 2013). His 2013 article offers retrospective context, rather than evidence dated within the 2000s.",
-    "present": "Online freelancing brings some service work into homes and individual workspaces (King-Dejardin, 2021). Delivery platforms such as Grab and Foodpanda organize another kind of work around orders and demand (Fairwork, 2023; Yamano et al., 2023). Research documents flexibility alongside concerns about income security, worker protection, and safety (Fairwork, 2023; King-Dejardin, 2021; Yamano et al., 2023).",
-    "synthesis": "BPO schedules show that technology-linked work was already reorganizing local routines around demand from elsewhere (Alegado, 2013; Messenger & Ghosheh, 2010). Freelancing and delivery platforms bring further ways for work to follow customers, orders, and distant clients (King-Dejardin, 2021; Yamano et al., 2023). The earlier experience is useful for questioning what flexible work actually means. Being able to work outside conventional hours does not necessarily mean controlling those hours. Reading the periods together directs attention to who sets schedules, who absorbs uncertainty, and what protections workers can rely on, while recognizing that the employment arrangements differ. Alegado’s account makes the worker’s experience of altered hours visible alongside the institutional research (Alegado, 2013).",
+    "present": "Online freelancing can move service work from an office into a home, but a home is also a place for care and family routines. An ILO study of Philippine homeworking describes opportunities to combine earning with domestic responsibilities alongside irregular income, insecurity, and gaps in protection. It covers different kinds of homeworking, so the findings should not be read as one experience shared by all remote workers (King-Dejardin, 2021).\n\nDelivery platforms such as Grab and Foodpanda organize another kind of work around orders and demand. Research on these arrangements also raises questions about income, worker protection, and safety (Fairwork, 2023; Yamano et al., 2023).",
+    "synthesis": "A headset connects the call-center worker to a distant customer; a laptop at home can connect a freelancer to a distant client. In both cases, the working day is shaped by demands beyond the immediate room (Messenger & Ghosheh, 2010; King-Dejardin, 2021). The settings and employment arrangements differ. Their connection helps visitors ask who controls the schedule, where rest begins, and who carries the risk when work is uncertain. Flexibility is more meaningful when workers can use it alongside reliable pay, care responsibilities, and protection.",
     "domain": "Economic",
-    "lens": "Time"
+    "lens": "Time",
+    "presentSummary": "Work can follow a freelancer into the home or a rider onto the road. Flexibility coexists with questions about reliable income, care responsibilities, safety, and protection."
   },
   {
     "id": "comparison-05",
     "title": "The mall trip and the shopping feed",
     "intro": "A shopping trip can also be a meal, a meeting, or an afternoon with friends. The attraction of browsing continues even when the storefront moves onto a screen.",
     "past": "Mall of Asia opened in 2006 (SM Prime Holdings, n.d.), and TriNoma followed in 2007 (GMANews.TV, 2007b). SM North EDSA, which opened in 1985 (SM Prime Holdings, n.d.), continued to expand its place in urban shopping and leisure. These settings brought products, food, and shared time into a physical destination. Jore-Annie Rico and Kim Robert C. de Leon’s later critical essay examines the mall as a social space shaped by commercial power and unequal access (Rico & de Leon, 2017). Their 2017 discussion supplies interpretation alongside the opening dates.",
-    "present": "Shopee, Lazada, and TikTok Shop offer digital routes to sellers and products. Livestream shopping combines demonstrations with a host and a responding audience. Filipino live-selling experiences show how entertainment and purchasing can happen within the same broadcast (Guiao, 2023). Budol becomes a playful way to describe having been persuaded to buy.",
-    "synthesis": "The mall combined browsing with leisure and social interaction (Rico & de Leon, 2017) before shopping feeds brought similar invitations onto phones. Livestream selling continues the combination of entertainment, persuasion, and purchasing through a different setting (Guiao, 2023). This connection helps explain why an online purchase can begin during an activity that feels like watching or socializing. The earlier mall experience gives visitors a familiar reference for recognizing those influences and considering their own decisions. Physical stores remain relevant, even as digital channels create more occasions to encounter a product and imagine buying it. Rico and de Leon’s discussion invites a further question (Rico & de Leon, 2017): who can comfortably participate in a space organized around consumption?",
+    "present": "Digital storefronts add another setting for browsing. A 2023 Philippine live-selling profile describes a former flight attendant selling clothes from home, showing how a personal workspace can become a place for demonstration and persuasion (Guiao, 2023). A seller can show an item while viewers respond within the broadcast. The profile is an example, rather than evidence of typical seller earnings.\n\nThe attraction is partly social: watching a host, hearing other buyers, and joining the conversation can sit alongside the decision to purchase. The museum uses this comparison to ask when an activity that feels like entertainment becomes shopping.",
+    "synthesis": "The mall gathered stores, food, and company into one destination (Rico & de Leon, 2017). A live-selling stream brings a host, products, and an audience into a shared viewing session (Guiao, 2023). Both can turn browsing into a social occasion, although their spaces and barriers to entry differ. The transition from a mall corridor to a screen therefore changes how a visitor encounters persuasion. Before saying ‘mine,’ what information would help you judge an item’s condition, price, and usefulness?",
     "domain": "Economic",
-    "lens": "Space"
+    "lens": "Space",
+    "presentSummary": "Live selling can turn a room at home into a storefront and a broadcast into a shopping encounter. The pleasure of browsing and the influence of an audience continue in another setting."
   },
   {
     "id": "comparison-06",
     "title": "Gaming cards remittances and the digital wallet",
     "intro": "Scratch a card, enter a code, and physical money becomes access to a digital world. The prepaid gaming card captures an early encounter between cash and online consumption.",
     "past": "Level Up! prepaid cards gave Ragnarok players paid access to the game (Gokongwei-Cheng, 2003). Remittance counters offered another way to move value across distance, including between overseas workers and their families (Torres, 2006). Contemporary reporting described Cebuana Lhuillier expanding its transfer partnerships in 2006 (Torres, 2006).",
-    "present": "GCash, Maya, bank transfers, and QR Ph sit within a wider digital payment system. The BSP reported that digital payments accounted for 57.4 percent of monthly retail payment volume in 2024 (Bangko Sentral ng Pilipinas, 2025). This figure covers digital payments collectively, rather than e-wallets or QR transactions alone.",
-    "synthesis": "Gaming cards and remittance services show earlier ways of moving value beyond an immediate cash purchase (Gokongwei-Cheng, 2003; Torres, 2006). They provide historical context for e-wallets and mobile transfers without being treated as their sole origins. The connection makes today's payment interfaces easier to understand: money still has to reach a person, a service, or an account through an organized channel. The BSP’s report documents the scale of digital payments in 2024 (Bangko Sentral ng Pilipinas, 2025). Reading these examples together invites visitors to consider how convenience depends on access and trust. A newer interface may shorten a transaction while cash-based services continue to meet other customers' needs.",
+    "present": "GCash, Maya, bank transfers, and QR Ph sit within a wider digital payment system. Digital payments accounted for 57.4 percent of monthly retail payment volume in 2024; this is a share of all digital payments, not an e-wallet-only statistic (Bangko Sentral ng Pilipinas, 2025).\n\nA 2026 research paper uses data from late 2019 through 2024 to examine digital payments and cash demand. It finds a negative long-run relationship, with results varying by payment measure and banknote denomination. This is evidence of changing payment patterns, not a finding that cash has disappeared or that every household has moved online (Canare & Galang, 2026).",
+    "synthesis": "A gaming card converted money into access through a code; a remittance counter moved value toward a recipient elsewhere (Gokongwei-Cheng, 2003; Torres, 2006). A phone-based transfer offers another interface for moving value through an organized system. These examples share a dependence on trust: the payment must arrive, and the recipient must be able to use it. The newer interface can reduce steps while introducing questions about connectivity, account access, and what happens when a transaction fails. Cash and digital channels can continue to serve different needs.",
     "domain": "Economic",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Digital payments made up 57.4% of monthly retail payment volume in 2024. Newer research finds changing cash demand, while cash and digital channels continue to serve different needs."
   },
   {
     "id": "comparison-07",
     "title": "A text message and a gathering at EDSA",
     "intro": "A message can invite someone to leave the screen and show up. During EDSA II, mobile communication became part of the coordination around a national political crisis.",
     "past": "In January 2001, SMS helped circulate information and calls to assemble (Rafael, 2003). Vicente Rafael's analysis examines the cell phone together with the crowd, including the class assumptions attached to political participation (Rafael, 2003). EDSA III and the 2003 Oakwood Mutiny were distinct events within the period's struggles over authority; reporting on detained Magdalo officers documents part of Oakwood's aftermath (GMANews.TV, 2007a).",
-    "present": "Hashtags, posts, and online groups offer additional ways to circulate demands and organize participation. Digital visibility can support a physical gathering, but receiving or sharing a message does not automatically lead to attendance or sustained action.",
-    "synthesis": "EDSA II helps us understand how a communication network can support participation in a shared physical space (Rafael, 2003). Contemporary posts and hashtags can also circulate invitations and demands, connecting online attention with action elsewhere. The earlier event remains relevant because it shows that receiving a message, joining a crowd, and sustaining a political commitment are different forms of participation. Its lesson for the present is to look beyond visibility and ask how people organize, whose voices are included, and what collective work continues after a message has been shared.",
+    "present": "A post can be an invitation, a joke, a shared grievance, or a way of finding others who care about the same issue. Arugay’s 2026 comparative report on Southeast Asian youth activism describes memes and popular-culture references as resources for accountability movements, including in the Philippines. It places digital expression alongside organizing in streets and other political arenas (Arugay, 2026).\n\nThe report also examines tensions between visible performance and sustained democratic participation. A widely shared image can open a conversation without proving that a movement has achieved its demands. Online attention and collective action need to be examined together (Arugay, 2026).",
+    "synthesis": "At EDSA II, the text message mattered through its relationship with people who assembled in a physical place (Rafael, 2003). Memes and hashtags add different cultural forms to that relationship between communication and gathering (Arugay, 2026). The continuity is the work of turning a message into a shared purpose. What happens after the repost—discussion, checking information, attending, organizing, or following up—helps determine whether attention becomes a durable commitment. The exhibit invites visitors to distinguish visibility, participation, and political outcomes.",
     "domain": "Political",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Memes and hashtags can express demands and help people find a shared cause. A repost, a gathering, and sustained civic work are related but distinct forms of participation."
   },
   {
     "id": "comparison-08",
@@ -85,10 +91,11 @@ export const COMPARISONS = [
     "title": "Political feeds and competing accounts of history",
     "intro": "Two people can open their phones and encounter different accounts of the same country. Repeated messages can make each account feel widely shared and difficult to question.",
     "past": "Television, radio, newspapers, personal networks, and SMS helped shape political attention. Institutions and public figures competed to make their versions of events credible. The history of networked political participation already included questions about whose voices were heard (Rafael, 2003).",
-    "present": "Research on the 2022 Philippine elections describes parallel information environments aligned with political identities and the accumulated effects of historical distortion (J. C. Ong et al., 2022). Other research examines organized disinformation work, including Philippine troll operations (J. C. Ong & Tapsell, 2022). These practices involve people and resources as well as platform systems.",
-    "synthesis": "Political communication in the 2000s already involved unequal visibility and competition over whose account deserved trust (Rafael, 2003). Research on contemporary influence operations shows how these concerns continue through organized digital activity and longer-running historical narratives (J. C. Ong & Tapsell, 2022; J. C. Ong et al., 2022). The past is relevant as a reminder that a platform is part of a social and institutional struggle over credibility. Comparing periods helps visitors ask who produced a message, what interests its circulation serves, and what evidence supports it, instead of assuming that repetition or popularity makes an account reliable.",
+    "present": "Research on the 2022 Philippine elections describes parallel information environments and the accumulated effects of historical distortion (J. C. Ong et al., 2022). Arugay and Baquisal’s election analysis also considers prior voting patterns, information consumption, material incentives, and long-standing grievances. This makes the story larger than a single viral post: messages meet political experiences and loyalties that already exist (Arugay & Baquisal, 2022).\n\nOrganized disinformation work involves people, resources, and business arrangements as well as platform systems (J. C. Ong & Tapsell, 2022). Repetition or familiarity alone cannot establish whether a historical claim is accurate.",
+    "synthesis": "Political messages circulate within unequal relationships of visibility and trust (Rafael, 2003). Contemporary research shows why the same message can be received differently across political communities (Arugay & Baquisal, 2022; J. C. Ong et al., 2022). Looking back helps a visitor slow the feed down: who produced this account, what evidence supports it, what has been left out, and why might it feel familiar? Examining those questions connects the older struggle over public narratives with present habits of sharing and interpretation.",
     "domain": "Political",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Political messages meet existing loyalties, grievances, and habits of getting information. Checking a familiar account means examining its source, evidence, and missing context."
   },
   {
     "id": "comparison-10",
@@ -145,50 +152,55 @@ export const COMPARISONS = [
     "title": "Payatas Ondoy and places exposed to risk",
     "intro": "Environmental danger gathers in particular places. Waste systems, housing, drainage, and development decisions shape who lives with that danger and who has the means to avoid it.",
     "past": "The July 2000 Payatas landfill failure exposed the consequences of hazardous conditions around a waste site (Jafari et al., 2013). An engineering investigation identified interacting factors including heavy rain, elevated leachate, gas, and a steep slope (Jafari et al., 2013). During the 2009 Ondoy emergency, mobile transfers and text-based donations helped connect people with relief efforts (GMANews.TV, 2009a).",
-    "present": "Manila Bay reclamation raises different questions about development and environmental risk. Reporting in 2023 described concerns about altered water flow and possible flooding impacts (GMA Integrated News, 2023). The World Bank's climate and development report places Philippine climate risks within wider development choices (World Bank Group, 2022).",
-    "synthesis": "Payatas and Ondoy make earlier environmental vulnerability and collective response visible (GMANews.TV, 2009a; Jafari et al., 2013). Present debates over reclamation and climate risk revisit questions about where danger accumulates and who has the resources to respond (GMA Integrated News, 2023; World Bank Group, 2022). These events involve different physical mechanisms; their connection is the relationship between environmental conditions, development choices, and people's exposure. The earlier experiences remain useful for assessing present proposals and responses: visitors can ask whether vulnerable residents are considered before a project proceeds or an emergency occurs, and how responsibility extends beyond relief after a disaster.",
+    "present": "Manila Bay reclamation raises questions about development and exposure. Reporting in 2023 described concerns about altered water flow and possible flooding impacts (GMA Integrated News, 2023).\n\nThe World Bank’s 2022 climate report estimates that, without action, climate-related economic damage could reach as much as 13.6 percent of Philippine GDP by 2040. This is an upper-end modeled outcome under the report’s assumptions, not an observed loss in 2026. The report also identifies unequal impacts, with poorer households especially exposed (World Bank Group, 2022).",
+    "synthesis": "The Payatas landfill failure, Ondoy, and present climate risks involve different physical processes (Jafari et al., 2013; World Bank Group, 2022). Their connection is the question of where danger accumulates and who has the means to respond. Remembering relief efforts after Ondoy (GMANews.TV, 2009a) can lead to a further question: what would protect a community before the next emergency? Housing, waste systems, drainage, and development decisions belong in that story alongside individual preparedness. A hazard map is useful when its location, date, hazard, and assumptions are understood.",
     "domain": "Environmental",
-    "lens": "Space"
+    "lens": "Space",
+    "presentSummary": "Past disasters raise a present question: what protects people before the next emergency? Climate projections and development debates direct attention to unequal exposure and prevention."
   },
   {
     "id": "comparison-16",
     "title": "Ukay ukay and the life of a good find",
     "intro": "A secondhand garment carries a history into someone else's wardrobe. Finding the right piece can combine affordability with the pleasure of discovering something distinctive.",
     "past": "Physical secondhand shops provided places to search through used clothing and judge an item's fit, material, and condition. Ukay-ukay's longer history matters here: it did not begin with the 2020s interest in sustainability (Biana, 2020). Hazel Biana's research considers it a possible sustainable-fashion model, with limitations (Biana, 2020).",
-    "present": "Digital listings give secondhand sellers additional routes to customers. Carousell's 2024 report describes fashion activity among its Philippine users, offering a platform-specific view of online secondhand shopping (Carousell, 2024). A garment can move between physical racks and digital storefronts, sometimes returning as a nostalgic style.",
-    "synthesis": "Physical ukay-ukay offers a practical history for today's digital thrifting (Biana, 2020). Searching for value in used clothing continues while listings give garments more routes to another owner (Carousell, 2024). The connection is helpful because it grounds sustainability in an existing practice of extending use, rather than treating it only as a new online identity. A secondhand label alone does not settle the environmental value of a purchase (Biana, 2020). The earlier emphasis on condition, usefulness, and keeping a good find encourages visitors to consider what happens to clothing after the excitement of discovery.",
+    "present": "A secondhand search can now begin with a listing as well as a rack. Carousell’s review of activity from January through October 2024 found that Philippine users were most active on the platform between 9 and 11 p.m. Its regional comparison covers its own markets and categories, rather than all Filipino shoppers (Carousell, 2024).\n\nA photograph, description, and conversation with the seller now help a buyer judge a garment before meeting or arranging delivery. The chance to extend an item’s useful life remains part of the appeal. Biana’s analysis treats ukay-ukay as a possible sustainable-fashion model with limitations; buying secondhand alone does not establish the impact of an entire wardrobe (Biana, 2020).",
+    "synthesis": "The rack and the listing offer two ways to find a garment with a previous owner. The skill of judging condition and usefulness remains relevant as discovery moves between physical and digital settings (Biana, 2020; Carousell, 2024). The past offers a practical way to think about sustainability: how long will this item be worn, maintained, repaired, or passed on? Those are visitor questions, rather than a claim that a pictured upcycled item represents all ukay-ukay. A good find has a story after the purchase as well as before it.",
     "domain": "Environmental",
-    "lens": "Space"
+    "lens": "Space",
+    "presentSummary": "Secondhand discovery moves between racks and online listings. Condition, repeated use, and what happens after purchase matter alongside the excitement of a good find."
   },
   {
     "id": "comparison-17",
     "title": "Jeepneys rail lines and the daily journey",
     "intro": "A commute shapes the time left for everything else. Waiting, transferring, and finding an affordable route are part of how people experience the city.",
     "past": "Jeepneys and buses shared urban journeys with developing rail services. LRT-2 began opening in phases in 2003 (Light Rail Transit Authority, n.d.), while MRT-3's official history records full operations in 2000 (Metro Rail Transit Corporation, n.d.). The lines had separate development timelines and served different routes.",
-    "present": "E-bikes, electric vehicles, cycling, and public transport enter continuing debates about accessible mobility. Research on Filipino commuters' e-bike adoption examines practical barriers and acceptance (Gumasing, 2025). It also notes that environmental performance depends partly on the electricity supply (Gumasing, 2025). Affordability and usable infrastructure remain important alongside vehicle technology.",
-    "synthesis": "The coexistence of road transport and developing rail services in the 2000s (Light Rail Transit Authority, n.d.; Metro Rail Transit Corporation, n.d.) provides context for present discussions of e-bikes, electric vehicles, cycling, and public transit. Each period faces the practical task of connecting people to work and other activities within the time and money available. This history is useful when assessing claims of transport progress. A newer vehicle or system matters through the journey it enables, including affordability and access (Gumasing, 2025). Reading the periods together keeps attention on commuters and infrastructure alongside the technology powering a vehicle.",
+    "present": "E-bikes, electric vehicles, cycling, and public transport enter continuing debates about accessible mobility. Research on Filipino commuters’ e-bike adoption examines practical barriers and acceptance, and notes that environmental performance depends partly on the electricity supply (Gumasing, 2025).\n\nThe Department of Energy reported 66,685 hybrid, plug-in hybrid, and battery-electric vehicle sales for January–August 2026, or 24.7 percent of vehicle sales in that period. It also reported 1,876 registered charging stations by the end of August. The sales share includes hybrids; it is not a battery-electric-only figure or the share of every vehicle already on Philippine roads (Department of Energy, 2026).",
+    "synthesis": "Rail expansion in the 2000s and the growth of electric mobility change different parts of a journey (Light Rail Transit Authority, n.d.; Metro Rail Transit Corporation, n.d.; Department of Energy, 2026). Neither a new vehicle nor a national sales figure tells the whole commuter’s story. The useful comparison is the trip a person can actually make: its cost, waiting time, route, safety, and supporting infrastructure. Reading the periods together keeps public access and practical use in view alongside technological change.",
     "domain": "Environmental",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Electric mobility is growing alongside public transport and other ways of travelling. A useful journey still depends on affordability, routes, safety, and supporting infrastructure."
   },
   {
     "id": "comparison-18",
     "title": "OPM bands and belonging through music",
     "intro": "A band shirt can begin a conversation without a word. Music gives people something to recognize in one another and a way to carry a favorite performance into everyday life.",
     "past": "Kamikazee and Sponge Cola were part of the period's recorded and live band culture. Contemporary coverage of the 2006 Kami nAPO Muna tribute project places both among participating performers (The Philippine Star, 2006), providing a specific record of their presence in the music scene.",
-    "present": "Listeners encounter music through concerts, recordings, clips, and fan communities. A person can follow an OPM rock band and enjoy BINI or SB19; these forms of attachment coexist. Gabrillo's work on musical multimedia helps connect performances with the several media through which audiences experience them (Gabrillo, 2024).",
-    "synthesis": "The 2006 APO tribute brought several bands into a shared recording project (The Philippine Star, 2006). The museum uses this example to consider how recordings, gigs, and objects such as a band shirt can express affiliation. Contemporary fan communities continue those practices through additional digital forms (Gabrillo, 2024). The connection helps visitors recognize continuity between live-gig attachment and present online participation, even when the music or artist format differs. It also explains why older songs remain culturally relevant: listeners can carry their earlier meanings into new settings, while younger audiences encounter the same performances through different media.",
+    "present": "OPM can reach a listener through a recording, a concert, a short clip, or a playlist. Spotify’s 2024 Philippine anniversary report describes its Pinoy Music hub, including Tatak Pinoy, KALYE, and P-Pop on the Rise. These are examples of how one platform organizes discovery, not a complete measure of Filipino listening (Spotify, 2024).\n\nIn April 2025, Spotify included the Philippines in the expansion of AI Playlist in beta for Premium listeners. It lets users describe an idea and refine a suggested playlist. Choosing with a written prompt adds another route to music discovery; it is distinct from merely calling every personalized recommendation an ‘AI playlist’ (Spotify, 2025). Concerts, friends, and fan communities continue to offer other routes into music (Gabrillo, 2024).",
+    "synthesis": "The 2006 Kami nAPO Muna tribute brought bands into a shared recording project (The Philippine Star, 2006). A contemporary playlist also brings songs into a chosen sequence, although its selection can involve editors, listeners, and software in different ways (Spotify, 2024; Spotify, 2025). The connection is the act of finding music and giving it meaning. A recommendation may begin the encounter; singing along, sharing a track, or going to a gig makes it part of a relationship. Which song would you choose yourself, and which one did a platform introduce?",
     "domain": "Aesthetics",
-    "lens": "Space"
+    "lens": "Space",
+    "presentSummary": "OPM discovery spans gigs, clips, friends, and playlists. Curated selections and prompt-based tools add ways to encounter music while listeners continue to make it their own."
   },
   {
     "id": "comparison-19",
     "title": "Low rise denim and returning styles",
     "intro": "One generation's old outfit can become another's new discovery. Returning styles reveal how an object can stay recognizable while acquiring a different meaning.",
     "past": "Low-rise denim appeared among the period's fashion trends (Maddela, 2019). F4's popularity also made long hairstyles a recognizable media reference in the Philippines (Francisco, 2003). Contemporary reporting on Meteor Garden and later reflections on 2000s fashion document these associations.",
-    "present": "Preview's 2023 denim guide discusses renewed interest in low-rise jeans alongside other silhouettes (Cruz, 2023). Its 2019 discussion of Y2K style shows that the revival was already developing before the decade turned (Maddela, 2019). These examples invite visitors to consider how an earlier look can be adapted and combined with newer clothing.",
-    "synthesis": "Returning denim styles and recognizable hairstyles show the past becoming material for present self-expression (Cruz, 2023; Francisco, 2003; Maddela, 2019). A 2000s look can be worn again, adapted, or combined with other references, acquiring meaning for someone who did not experience its earlier popularity. This connection helps explain why nostalgia can influence current fashion without recreating a whole decade. Knowing an item's earlier context also reveals how style circulated across borders before today's feeds. The present wearer contributes a new interpretation, making revival an ongoing exchange between historical reference and personal choice.",
+    "present": "Preview’s 2023 denim guide discusses renewed interest in low-rise jeans alongside other silhouettes (Cruz, 2023). Its 2019 discussion of Y2K style shows the revival developing before the decade turned (Maddela, 2019). These are dated fashion examples, not a survey establishing what all Filipinos wear in 2026.\n\nThe return of an earlier look can mean something different to someone wearing it for the first time. Pairing an old silhouette with a new outfit allows nostalgia, discovery, and personal interpretation to coexist.",
+    "synthesis": "Returning styles make the past available as material for self-expression (Cruz, 2023; Francisco, 2003; Maddela, 2019). A wearer can recognize a look from childhood, encounter it through an older photograph, or simply like its shape. Revival therefore does not recreate a whole decade. It selects parts of an earlier style and gives them a place in another moment. The useful question is not only ‘Is it back?’ but ‘What changes when someone else wears it now?’",
     "domain": "Aesthetics",
-    "lens": "Overall"
+    "lens": "Overall",
+    "presentSummary": "Low-rise denim’s revival offers an earlier silhouette to another generation. Dated fashion examples show reinterpretation, rather than a universal return to the 2000s wardrobe."
   },
   {
     "id": "comparison-20",
@@ -205,10 +217,11 @@ export const COMPARISONS = [
     "title": "Papaya soap glutathione and the filtered face",
     "intro": "A beauty product and a camera filter offer different ways to change an appearance. Both can enter the moment when someone considers how they want to be seen.",
     "past": "Papaya-soap businesses (Bayonet, 2008) and glutathione-supplement marketing (The Philippine Star, 2007) were documented features of beauty commerce. These records show commercial popularity, rather than establish product effectiveness. Mendoza's later study of the Philippine skin-whitening industry examines consumer information, trust, and regulation (Mendoza, 2014).",
-    "present": "Digital filters can alter the image itself. International reporting on AI-powered effects such as TikTok's Bold Glamour describes convincing enhancement and concerns about appearance expectations (Diaz, 2023). This illustrates the technology, rather than measuring its use among Filipinos. Physical beauty products continue alongside screen-based alteration.",
-    "synthesis": "Research on the skin-whitening industry examines consumer information and regulation (Mendoza, 2014), while reporting on AI filters discusses enhancement and appearance expectations (Diaz, 2023). The museum brings these different practices together to examine socially valued ideals of appearance. The earlier beauty market provides context for asking whose features are promoted and what information people receive about changing themselves. That connection is helpful when evaluating a contemporary filter: an effect may feel personal while still presenting a recognizable standard of beauty. Comparing the periods encourages visitors to examine both commercial promises and screen-based expectations, distinguish popularity from effectiveness, and consider how freely people feel able to choose their own appearance.",
+    "present": "A beauty filter can change the displayed image rather than the physical body. Reporting on AI-powered effects such as TikTok’s Bold Glamour describes convincing enhancement and concerns about appearance expectations (Diaz, 2023).\n\nA 2026 study examines links among AI beauty-filter use, negative body image, and appearance self-esteem through two studies, one with 468 social-media users and another with 312 BeautyPlus Cam users. Its findings give context for questions about idealized appearance. They do not measure Philippine usage or establish that every user experiences harm; the cross-sectional evidence also limits causal conclusions (Garg et al., 2026).",
+    "synthesis": "Papaya soap and glutathione products belong to a physical beauty market; a filter edits the image that other people see. These are different practices, connected here through the ideals they invite people to pursue (Mendoza, 2014; Garg et al., 2026). The change from a product to a software effect does not settle who defines a desirable face. What features does an effect change, whose appearance does it treat as the standard, and how does the unfiltered face feel afterward? The exhibit offers those questions without treating enhancement, popularity, safety, and personal worth as the same thing.",
     "domain": "Aesthetics",
-    "lens": "Technology"
+    "lens": "Technology",
+    "presentSummary": "Beauty filters edit the displayed face while physical products remain part of beauty culture. New research raises questions about idealized appearance, with limits on what it can establish about Filipino users."
   }
 ];
 export const DOCUMENT_REFERENCES = [
@@ -248,6 +261,16 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.abs-cbn.com/entertainment/09/13/22/eva-le-queen-explains-why-pageants-matter-to-lgbt-community"
   },
   {
+    "id": "doc-ref-arugay2026",
+    "apa": "Arugay, A. A. (2026, August 19). From memes to movements: The Gen Z accountability crusade and democratic resilience in Southeast Asia (Report No. 314). Toda Peace Institute. https://toda.org/publications/policy-briefs-and-reports/report-314-full-text/",
+    "url": "https://toda.org/publications/policy-briefs-and-reports/report-314-full-text/"
+  },
+  {
+    "id": "doc-ref-arugay-baquisal2022",
+    "apa": "Arugay, A. A., & Baquisal, J. K. A. (2022). Mobilized and polarized: Social media and disinformation narratives in the 2022 Philippine elections. Pacific Affairs, 95(3), 549–573. https://doi.org/10.5509/2022953549",
+    "url": "https://doi.org/10.5509/2022953549"
+  },
+  {
     "id": "doc-ref-08",
     "apa": "Bangko Sentral ng Pilipinas. (2025). From surge to stability: Digital payments driving a steady transition — 2024 status of digital payments in the Philippines. https://www.bsp.gov.ph/PaymentAndSettlement/2024_Report_on_E-payments_Measurement.pdf",
     "url": "https://www.bsp.gov.ph/PaymentAndSettlement/2024_Report_on_E-payments_Measurement.pdf"
@@ -268,9 +291,19 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://doi.org/10.59588/2243-786X.1126"
   },
   {
+    "id": "doc-ref-bietti-mayor2023",
+    "apa": "Bietti, L. M., & Mayor, E. (2023). A longitudinal study of conversational remembering in WhatsApp group messages before, during, and after COVID-19 lockdown. Memory, Mind & Media, 2, Article e5. https://doi.org/10.1017/mem.2023.5",
+    "url": "https://doi.org/10.1017/mem.2023.5"
+  },
+  {
     "id": "doc-ref-12",
     "apa": "Cabalfin, E. R. G. (2000). “Mala-baklang espasyo” sa arkitekturang Filipino: Estetika, morpolohiya, konteksto (panimulang pagtuklas at paggalugad). Muhon, 1–24. https://tuklas.up.edu.ph/Record/IPP-00000263121",
     "url": "https://tuklas.up.edu.ph/Record/IPP-00000263121"
+  },
+  {
+    "id": "doc-ref-canare-galang2026",
+    "apa": "Canare, T. A., & Galang, I. M. R. (2026). Digital payments and cash demand in the Philippines (BSP Discussion Paper No. 2026-01). Bangko Sentral ng Pilipinas. https://www.bsp.gov.ph/Sites/researchsite/Publications/BSP-Discussion-Papers/DP202601.pdf",
+    "url": "https://www.bsp.gov.ph/Sites/researchsite/Publications/BSP-Discussion-Papers/DP202601.pdf"
   },
   {
     "id": "doc-ref-13",
@@ -283,9 +316,19 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://doi.org/10.3390/su15118502"
   },
   {
+    "id": "doc-ref-crisan2024",
+    "apa": "Crisan, L. (2024, April 9). HD photos, shared albums and more on Messenger. Meta. https://about.fb.com/news/2024/04/hd-photos-shared-albums-and-more-on-messenger/",
+    "url": "https://about.fb.com/news/2024/04/hd-photos-shared-albums-and-more-on-messenger/"
+  },
+  {
     "id": "doc-ref-15",
     "apa": "Cruz, N. (2023, February 18). 5 denim trends of 2023 to update your wardrobe. Preview.ph. https://www.preview.ph/fashion/denim-trends-2023-a00300-20230218",
     "url": "https://www.preview.ph/fashion/denim-trends-2023-a00300-20230218"
+  },
+  {
+    "id": "doc-ref-doe2026",
+    "apa": "Department of Energy. (2026, September 23). EV adoption gains ground as DOE strengthens safety, charging ecosystem. https://doe.gov.ph/ev-adoption-gains-ground-as-doe-strengthens-safety-charging-ecosystem",
+    "url": "https://doe.gov.ph/ev-adoption-gains-ground-as-doe-strengthens-safety-charging-ecosystem"
   },
   {
     "id": "doc-ref-16",
@@ -316,6 +359,11 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-21",
     "apa": "Gabrillo, J. (2024). Pop convergence: Musical multimedia in Manila. Oxford University Press. https://academic.oup.com/book/58171",
     "url": "https://academic.oup.com/book/58171"
+  },
+  {
+    "id": "doc-ref-garg2026",
+    "apa": "Garg, A., Goel, P., Rana, N. P., & Mishra, A. (2026). AI beauty filters, and appearance self-esteem: An empirical investigation. Journal of Consumer Behaviour, 25(4), 1678–1700. https://doi.org/10.1002/cb.70141",
+    "url": "https://doi.org/10.1002/cb.70141"
   },
   {
     "id": "doc-ref-22",
@@ -356,6 +404,11 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-29",
     "apa": "Gokongwei-Cheng, L. (2003, December 15). The business of online gaming. The Philippine Star. https://www.philstar.com/lifestyle/business-life/2003/12/15/231729/business-online-gaming/amp/",
     "url": "https://www.philstar.com/lifestyle/business-life/2003/12/15/231729/business-online-gaming/amp/"
+  },
+  {
+    "id": "doc-ref-gsma2026",
+    "apa": "GSMA. (2026, February 11). Accelerating 5G and 5G-Advanced in Philippines: A roadmap for success. https://www.gsma.com/connectivity-for-good/spectrum/gsma_resources/accelerating-5g-and-5g-advanced-in-philippines/",
+    "url": "https://www.gsma.com/connectivity-for-good/spectrum/gsma_resources/accelerating-5g-and-5g-advanced-in-philippines/"
   },
   {
     "id": "doc-ref-30",
@@ -443,16 +496,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://casebook-static.pages.dev/research/parallel-public-spheres-influence-operations-2022-philippine-elections/"
   },
   {
-    "id": "doc-ref-47",
-    "apa": "The Philippine Star. (2006, September 3). A fitting tribute to the APO. https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo",
-    "url": "https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo"
-  },
-  {
-    "id": "doc-ref-48",
-    "apa": "The Philippine Star. (2007, October 8). Making business out of Pinoy’s vanity. https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity",
-    "url": "https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity"
-  },
-  {
     "id": "doc-ref-49",
     "apa": "Philstar.com. (2023, June 27). PSA: 1 in 10 Filipino families owned streaming subscriptions in 2022. https://www.philstar.com/business/technology/2023/06/27/2276977/psa-1-10-filipino-families-owned-streaming-subscriptions-2022",
     "url": "https://www.philstar.com/business/technology/2023/06/27/2276977/psa-1-10-filipino-families-owned-streaming-subscriptions-2022"
@@ -478,6 +521,11 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.abs-cbn.com/entertainment/showbiz/movies-series/2025/8/21/on-this-day-the-birth-of-pinoy-big-brother-and-the-hosts-who-shaped-it-0837"
   },
   {
+    "id": "doc-ref-sachan2025",
+    "apa": "Sachan, T., Chhabra, D., & Abraham, B. (2025). Social capital in online gaming communities: A systematic review examining the role of virtual identities. Cyberpsychology, Behavior, and Social Networking, 28(3), 147–161. https://doi.org/10.1089/cyber.2024.0375",
+    "url": "https://doi.org/10.1089/cyber.2024.0375"
+  },
+  {
     "id": "doc-ref-54",
     "apa": "Schellewald, A. (2021). On getting carried away by the TikTok algorithm. AoIR Selected Papers of Internet Research, 2021. https://doi.org/10.5210/spir.v2021i0.12039",
     "url": "https://doi.org/10.5210/spir.v2021i0.12039"
@@ -493,9 +541,29 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://smart.com.ph/About/newsroom/full-news/2020/09/28/smart-expands-nationwide-5g-rollout-to-key-vismin-areas"
   },
   {
+    "id": "doc-ref-spotify2024",
+    "apa": "Spotify. (2024, November 1). Celebrating 10 years of Spotify in the Philippines. https://newsroom.spotify.com/2024-11-01/philippines-10-year-anniversary-ben-and-ben/",
+    "url": "https://newsroom.spotify.com/2024-11-01/philippines-10-year-anniversary-ben-and-ben/"
+  },
+  {
+    "id": "doc-ref-spotify2025",
+    "apa": "Spotify. (2025, April 24). Spotify expands AI Playlist in beta to Premium listeners in 40+ new markets. https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/",
+    "url": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/"
+  },
+  {
     "id": "doc-ref-57",
     "apa": "Supreme Court of the Philippines. (2008, December 23). Garcillano v. House of Representatives Committees, G.R. No. 170338. https://lawphil.net/judjuris/juri2008/dec2008/gr_170338_2008.html",
     "url": "https://lawphil.net/judjuris/juri2008/dec2008/gr_170338_2008.html"
+  },
+  {
+    "id": "doc-ref-47",
+    "apa": "The Philippine Star. (2006, September 3). A fitting tribute to the APO. https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo",
+    "url": "https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo"
+  },
+  {
+    "id": "doc-ref-48",
+    "apa": "The Philippine Star. (2007, October 8). Making business out of Pinoy’s vanity. https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity",
+    "url": "https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity"
   },
   {
     "id": "doc-ref-58",

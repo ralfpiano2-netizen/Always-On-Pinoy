@@ -1,5 +1,5 @@
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, CLOSING } from './exhibit-text.js?v=exhibit-text-2';
-import { MEDIA } from './media.js?v=exhibit-text-2';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, CLOSING } from './exhibit-text.js?v=stories-20261104-1';
+import { MEDIA } from './media.js?v=stories-20261104-1';
 
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const TOPICS = [
