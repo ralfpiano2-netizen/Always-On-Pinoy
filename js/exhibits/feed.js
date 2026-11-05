@@ -1,10 +1,8 @@
-import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=parlor-20261104-1';
-// The 2020s void: one endless feed where every 2000s artifact returns as its descendant. The feed
-// times how long the visitor lingers on each zone and leans the next cards that way. Nothing is
-// stored or sent; the "algorithm" lives in this tab. The only way out is Pause.
-import { ARTIFACTS, ZONES, VOID_NOTES } from '../content.js?v=parlor-20261104-1';
-import { pickNext } from '../logic.js';
-import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=parlor-20261104-1';
+import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=feed-credits-20261105-1';
+// The 2020s feed groups artifacts that share the same comparison. Each connection appears
+// once, with all related accession numbers, so the collection does not repeat itself.
+import { ARTIFACTS, VOID_NOTES } from '../content.js?v=feed-credits-20261105-1';
+import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=feed-credits-20261105-1';
 import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js';
 import { broadcast } from '../scenes.js';
 
@@ -44,21 +42,34 @@ const VISUAL = {
   'ao-18': `<div class="vv vv-qr">${dots(49, 'qr')}<p>Scan to pay</p></div>`,
 };
 
-// The first pass shows each artifact once, zones interleaved: 1, 2, 3, 1, 2, 3...
+const comparisonKey = a => a.comparison || a.id;
+
+// Interleave the zones while showing shared comparisons only once.
 export function firstPass() {
   const byZone = [1, 2, 3].map(z => ARTIFACTS.filter(a => a.zone === z));
-  return byZone[0].flatMap((_, i) => byZone.map(list => list[i]));
+  const seen = new Set();
+  return byZone[0].flatMap((_, i) => byZone.map(list => list[i])).filter(a => {
+    const key = comparisonKey(a);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 const count = n => (n >= 10 ? `${(n / 10).toFixed(1)}K` : String(n * 97));
 
 export function cardEl(a, why = '') {
+  const related = ARTIFACTS.filter(item => comparisonKey(item) === comparisonKey(a));
+  const ancestor = related.length > 1
+    ? `From ${related.map(accession).join(' · ')}`
+    : `Was ${accession(a)}, ${a.title}`;
   const el = document.createElement('article');
   el.className = 'card';
   el.dataset.card = a.id;
   el.dataset.zone = a.zone;
+  el.dataset.comparison = comparisonKey(a);
   el.innerHTML = `<div class="card-media"></div>
-    <p class="ancestor"><i aria-hidden="true"></i>Was ${accession(a)}, ${esc(a.title)}</p>
+    <p class="ancestor"><i aria-hidden="true"></i>${esc(ancestor)}</p>
     ${why ? `<p class="card-why">${esc(why)}</p>` : ''}
     <h3>${esc(a.now.title)}</h3>
     <p class="card-body">${esc(a.now.body)}</p>
@@ -100,57 +111,12 @@ export function mountFeed(voidEl) {
   const toasts = $('#toasts', voidEl);
   const timerEl = $('#void-timer', voidEl);
   const pauseBtn = $('#pause-btn', voidEl);
-  const weights = { 1: 1, 2: 1, 3: 1 };
-  const recent = [];
-  let shown = 0;
-
-  const watch = new IntersectionObserver(entries => {
-    for (const e of entries) {
-      const card = e.target;
-      if (e.isIntersecting) card.dataset.seen = String(performance.now());
-      else if (card.dataset.seen) {
-        weights[card.dataset.zone] += (performance.now() - Number(card.dataset.seen)) / 1000;
-        delete card.dataset.seen;
-      }
-    }
-  }, { root: feed, threshold: 0.6 });
-
-  const add = (a, why) => {
-    const el = cardEl(a, why);
-    feed.insertBefore(el, sentinel);
+  for (const a of firstPass()) {
+    const el = cardEl(a);
+    feed.append(el);
     // SMIL ignores the reduced-motion stylesheet, so the rider map's dots are paused by hand.
     if (reduceMotion() || document.documentElement.dataset.effects !== 'on') for (const svg of el.querySelectorAll('svg')) svg.pauseAnimations();
-    watch.observe(el);
-    recent.push(a.id);
-    if (recent.length > 4) recent.shift();
-    shown++;
-  };
-
-  // After the first pass the feed recycles, leaning toward the zone the visitor lingers on.
-  const more = () => {
-    for (let i = 0; i < 6; i++) {
-      const a = pickNext(ARTIFACTS, weights, recent);
-      const top = Object.entries(weights).sort((x, y) => y[1] - x[1])[0][0];
-      const zone = ZONES[Number(top) - 1];
-      add(a, Number(top) === a.zone && weights[top] > 2 ? `Because you lingered on Zone ${zone.n}, ${zone.title}` : 'Suggested for you');
-    }
-    // Keep the DOM bounded: drop the oldest cards and hold the visible card steady. The position
-    // is read before the removal, since the shrinking feed clamps it partway through.
-    const cards = feed.querySelectorAll('.card');
-    if (cards.length > 60) {
-      const old = [...cards].slice(0, 18);
-      const removed = old.reduce((sum, c) => sum + c.offsetHeight, 0);
-      const top = feed.scrollTop;
-      for (const c of old) { watch.unobserve(c); c.remove(); }
-      feed.scrollTop = top - removed;
-    }
-  };
-
-  const sentinel = document.createElement('div');
-  sentinel.className = 'feed-sentinel';
-  feed.append(sentinel);
-  for (const a of firstPass()) add(a);
-  new IntersectionObserver(entries => { if (entries[0].isIntersecting) more(); }, { root: feed, rootMargin: '0px 0px 200% 0px' }).observe(sentinel);
+  }
   // The feed takes the scroll only once the void fills the screen; until then the page scrolls.
   new IntersectionObserver(([e]) => feed.classList.toggle('is-docked', e.intersectionRatio >= 0.97), { threshold: [0, 0.97] }).observe(voidEl);
 

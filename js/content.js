@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=parlor-20261104-1';
+import { COMPARISONS } from './exhibit-text.js?v=feed-credits-20261105-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -289,10 +289,10 @@ export const VOID_NOTES = [
 
 export const CREDITS = {
   members: [
-    { name: 'Member 1', role: 'Curation and copywriting' },
-    { name: 'Member 2', role: 'Asset prototyping and web integration' },
-    { name: 'Member 3', role: 'Quality assurance and final report' },
+    { name: 'Ralf Kevin Piano', role: 'Curation and copywriting; asset prototyping and web integration; quality assurance and final report.' },
+    { name: 'Jonathan Restua', role: 'Contributor of artifact images, links, and keywords; reviewer and prototype tester.' },
+    { name: 'Catherine Gatilago', role: 'Contributor of artifact images, links, and keywords; reviewer and prototype tester.' },
   ],
   // Names only what ships: when generated sound or the guide voice lands, it is added here.
-  ai: 'The pixel reconstructions were generated with AI tools (OpenAI image generation), and the site was built with AI assistance. Original photographs, layout images and videos are credited separately in their galleries and below. Research and curation are the group’s own.',
+  ai: 'The pixel reconstructions were generated with AI tools (OpenAI image generation), and the site was built with AI assistance. Original photographs, layout images and videos are credited separately in their galleries and below.',
 };

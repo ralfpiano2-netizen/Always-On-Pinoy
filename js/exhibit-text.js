@@ -109,6 +109,7 @@ export const COMPARISONS = [
   },
   {
     "id": "comparison-11",
+    "presentSummary": "Streaming adds on-demand ways to follow dramas and reality programs. Scheduled broadcasts and shared viewing continue, while access to subscriptions remains uneven.",
     "title": "Television appointments and the next episode",
     "intro": "An opening theme could signal that it was time to sit down. Following a story meant making room for it in the day's schedule.",
     "past": "Pangako Sa 'Yo attracted audiences during its original 2000–2002 run (ABS-CBN, 2022; Anarcon & Maglipon, 2020), while Meteor Garden became a Philippine viewing phenomenon in 2003 (Flores, 2003). Reality formats added other reasons to keep watching: Pinoy Big Brother began in 2005 (Sabio, 2025), following StarStruck's 2003 launch (Anarcon, 2019). Viewers followed performers and participants as their stories developed.",

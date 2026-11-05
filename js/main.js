@@ -1,23 +1,23 @@
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=parlor-20261104-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=parlor-20261104-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=feed-credits-20261105-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=feed-credits-20261105-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=parlor-20261104-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=parlor-20261104-1';
+import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=feed-credits-20261105-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=feed-credits-20261105-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountFeed } from './exhibits/feed.js?v=parlor-20261104-1';
-import { mountTransitions } from './exhibits/transitions.js?v=parlor-20261104-1';
-import { mountTV } from './exhibits/tvguide.js?v=parlor-20261104-1';
-import { mountStreet } from './exhibits/pisonet.js?v=parlor-20261104-1';
-import { mountNokia } from './exhibits/nokia.js?v=parlor-20261104-1';
-import { mountChainText } from './exhibits/chaintext.js?v=parlor-20261104-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=parlor-20261104-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=parlor-20261104-1';
+import { mountFeed } from './exhibits/feed.js?v=feed-credits-20261105-1';
+import { mountTransitions } from './exhibits/transitions.js?v=feed-credits-20261105-1';
+import { mountTV } from './exhibits/tvguide.js?v=feed-credits-20261105-1';
+import { mountStreet } from './exhibits/pisonet.js?v=feed-credits-20261105-1';
+import { mountNokia } from './exhibits/nokia.js?v=feed-credits-20261105-1';
+import { mountChainText } from './exhibits/chaintext.js?v=feed-credits-20261105-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=feed-credits-20261105-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=feed-credits-20261105-1';
 
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
@@ -133,7 +133,7 @@ function renderMap() {
       <a class="map-stop" href="#signoff"><strong>Sign-off</strong><small>23:59, the broadcast day ends</small></a></div>
     <div class="map-wing"><a class="map-stop" href="#upgrade"><strong>The upgrade</strong><small>The 2010s in a few seconds</small></a></div>
     <div class="map-wing"><h3>Wing 2, the 2020s</h3>
-      <a class="map-stop" href="#void"><strong>${esc(SITE.wing2020)}</strong><small>One endless feed</small></a>
+      <a class="map-stop" href="#void"><strong>${esc(SITE.wing2020)}</strong><small>The 2020s comparisons</small></a>
       <a class="map-stop" href="#pause"><strong>Your pause</strong><small>Conclusion, credits and references</small></a></div>
     <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 21 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
