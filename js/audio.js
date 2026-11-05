@@ -2,7 +2,7 @@
 // synthesized stand-in (or silence), so the museum sounds right before any recording exists.
 import { asset } from './assets.js';
 import { SLOTS } from './slots.js';
-import { GUIDE } from './content.js?v=images-20261104-1';
+import { GUIDE } from './content.js?v=images-20261104-2';
 
 let ctx = null;
 let master = null;

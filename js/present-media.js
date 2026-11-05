@@ -143,7 +143,9 @@ export const PRESENT_IMAGES = {
     "alt": "Spotify promotional artwork for its AI Playlist feature.",
     "caption": "Artwork accompanying Spotify’s April 2025 expansion of AI Playlist in beta, including the Philippines. Connects the prepared MP3 library with prompt-based music discovery.",
     "credit": "Spotify Newsroom",
-    "source": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/"
+    "source": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/",
+    "width": 1920,
+    "height": 733
   },
   "ai-playlist-steps": {
     "id": "present-ai-playlist-steps",
@@ -153,7 +155,9 @@ export const PRESENT_IMAGES = {
     "alt": "Spotify’s illustrated sequence for creating an AI Playlist from a written idea.",
     "caption": "Official interface demonstration: describe an idea, receive a selection, and refine it. This documents a particular Premium beta feature, rather than every kind of personalized playlist.",
     "credit": "Spotify Newsroom",
-    "source": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/"
+    "source": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/",
+    "width": 3240,
+    "height": 1620
   },
   "phone-trial": {
     "id": "present-phone-trial",
@@ -163,7 +167,9 @@ export const PRESENT_IMAGES = {
     "alt": "A smartphone running a mobile-network speed test at the BGC Amphitheater.",
     "caption": "Globe’s August 2025 photograph of a 5G-Advanced pilot trial in Taguig. A documented test setting; its result does not describe every subscriber’s connection.",
     "credit": "Globe Telecom",
-    "source": "https://www.globe.com.ph/about-us/newsroom/corporate/first-5g-advanced-live-pilot-trial-ph"
+    "source": "https://www.globe.com.ph/about-us/newsroom/corporate/first-5g-advanced-live-pilot-trial-ph",
+    "width": 860,
+    "height": 1147
   },
   "network-team": {
     "id": "present-network-team",
@@ -173,7 +179,9 @@ export const PRESENT_IMAGES = {
     "alt": "Globe’s network team during a 5G-Advanced field trial at Bonifacio High Street.",
     "caption": "A field-trial team in Globe’s August 2025 report. The image makes the infrastructure and work behind mobile access visible alongside the handset.",
     "credit": "Globe Telecom",
-    "source": "https://www.globe.com.ph/about-us/newsroom/corporate/first-5g-advanced-live-pilot-trial-ph"
+    "source": "https://www.globe.com.ph/about-us/newsroom/corporate/first-5g-advanced-live-pilot-trial-ph",
+    "width": 860,
+    "height": 645
   },
   "secondhand": {
     "id": "present-secondhand",
@@ -183,7 +191,9 @@ export const PRESENT_IMAGES = {
     "alt": "Carousell’s Philippine Year-in-Secondhand graphic for 2024.",
     "caption": "Carousell’s Philippine infographic links secondhand fashion and renewed interest in 2000s digital cameras. Its figures describe platform activity from January through October 2024.",
     "credit": "Carousell Press",
-    "source": "https://press.carousell.com/2024/11/26/ukay-ukay-goes-digital-on-carousell-filipinos-lead-the-region-in-secondhand-fashion-transactions-gen-z-users-brings-back-retro-2000s-digital-cameras/"
+    "source": "https://press.carousell.com/2024/11/26/ukay-ukay-goes-digital-on-carousell-filipinos-lead-the-region-in-secondhand-fashion-transactions-gen-z-users-brings-back-retro-2000s-digital-cameras/",
+    "width": 810,
+    "height": 580
   },
   "home-work": {
     "id": "present-home-work",
@@ -193,7 +203,9 @@ export const PRESENT_IMAGES = {
     "alt": "A woman works at a laptop in a room lined with books.",
     "caption": "Image accompanying ABS-CBN’s May 2024 feature on virtual-assistant work. The domestic setting supports the story about earning, care, and the boundaries of a working day.",
     "credit": "ABS-CBN News, Benise Balaoing feature",
-    "source": "https://www.abs-cbn.com/lifestyle/2024/5/11/mompreneur-helps-mothers-get-virtual-assistant-jobs-1336"
+    "source": "https://www.abs-cbn.com/lifestyle/2024/5/11/mompreneur-helps-mothers-get-virtual-assistant-jobs-1336",
+    "width": 950,
+    "height": 632
   },
   "market-qr": {
     "id": "present-market-qr",
@@ -203,7 +215,9 @@ export const PRESENT_IMAGES = {
     "alt": "Quezon City Mayor Joy Belmonte makes a QR-code purchase at a public-market eatery.",
     "caption": "Project 4 Public Market during the Paleng-QR Ph launch in January 2024. An everyday setting for the payment comparison: the code sits beside the food and the seller.",
     "credit": "Michael Varcas / The Philippine Star",
-    "source": "https://www.philstar.com/nation/2024/01/20/2327093/paleng-qr-philippines-launched-quezon-city-public-market"
+    "source": "https://www.philstar.com/nation/2024/01/20/2327093/paleng-qr-philippines-launched-quezon-city-public-market",
+    "width": 800,
+    "height": 533
   },
   "ev-charging": {
     "id": "present-ev-charging",
@@ -213,7 +227,9 @@ export const PRESENT_IMAGES = {
     "alt": "ACMobility electric-vehicle charging bays at the Corinthians Carpark in Makati.",
     "caption": "ACMobility’s May 2025 station photograph illustrates the infrastructure needed around electric mobility. It is a dated local example alongside the national 2026 sales data.",
     "credit": "ACMobility",
-    "source": "https://www.acmobility.ph/news/acmobility-launches-ph-fastest-ev-chargers"
+    "source": "https://www.acmobility.ph/news/acmobility-launches-ph-fastest-ev-chargers",
+    "width": 1636,
+    "height": 1091
   },
   "beauty-filter": {
     "id": "present-beauty-filter",
@@ -223,7 +239,9 @@ export const PRESENT_IMAGES = {
     "alt": "Joanna Kenny demonstrates a before-and-after view of TikTok’s Bold Glamour effect.",
     "caption": "The National’s June 2023 example of Bold Glamour, credited to joannajkenny on TikTok. Shows an image transformation; the separate research discussion explains what studies can establish about appearance expectations.",
     "credit": "joannajkenny / TikTok, via The National",
-    "source": "https://www.thenationalnews.com/lifestyle/wellbeing/2023/06/25/beauty-filters-are-now-powered-by-ai-should-we-be-scared/"
+    "source": "https://www.thenationalnews.com/lifestyle/wellbeing/2023/06/25/beauty-filters-are-now-powered-by-ai-should-we-be-scared/",
+    "width": 812,
+    "height": 456
   },
   "youth-activism": {
     "id": "present-youth-activism",
@@ -233,7 +251,9 @@ export const PRESENT_IMAGES = {
     "alt": "A One Piece flag at an anti-corruption protest in Manila.",
     "caption": "Manila, 2025, reproduced in Toda Peace Institute’s 2026 report. A visible example of a pop-culture symbol entering a physical gathering, connecting the SMS-to-mobilization storyline with newer forms of expression.",
     "credit": "MJX Studio / Shutterstock, via Toda Peace Institute",
-    "source": "https://toda.org/publications/policy-briefs-and-reports/report-314-full-text/"
+    "source": "https://toda.org/publications/policy-briefs-and-reports/report-314-full-text/",
+    "width": 1280,
+    "height": 640
   },
   "gaming-team": {
     "id": "present-gaming-team",
@@ -243,7 +263,9 @@ export const PRESENT_IMAGES = {
     "alt": "Six professional Mobile Legends players pose in team jerseys at the MPL Philippines Season 15 press conference.",
     "caption": "MPL Philippines’ Season 15 press-conference photograph, published in February 2025. A professional gaming setting that coexists with remote play; it is separate from the studies of everyday players.",
     "credit": "MPL Philippines, via Michelle Lojo / Philstar.com",
-    "source": "https://www.philstar.com/sports/2025/02/14/2421479/new-mpl-ph-era-begins-season-15"
+    "source": "https://www.philstar.com/sports/2025/02/14/2421479/new-mpl-ph-era-begins-season-15",
+    "width": 800,
+    "height": 600
   }
 };
 export const PRESENT_GALLERIES = {
@@ -401,7 +423,7 @@ export const COMPARISON_MEDIA = {
 };
 
 export function presentFigureHTML(item) {
-  return `<figure class="present-figure"><img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption><strong>${esc(item.title)}</strong><p>${esc(item.caption)}</p><a href="${esc(item.source)}" target="_blank" rel="noopener noreferrer">${esc(item.credit)} · source ↗</a>${item.license ? ` · <a href="${esc(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(item.license)}</a>` : ''}</figcaption></figure>`;
+  return `<figure class="present-figure"><img src="${esc(item.src)}" alt="${esc(item.alt)}"${item.width ? ` width="${item.width}" height="${item.height}"` : ''} loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption><strong>${esc(item.title)}</strong><p>${esc(item.caption)}</p><a href="${esc(item.source)}" target="_blank" rel="noopener noreferrer">${esc(item.credit)} · source ↗</a>${item.license ? ` · <a href="${esc(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(item.license)}</a>` : ''}</figcaption></figure>`;
 }
 export function presentMediaHTML(id) {
   return (PRESENT_GALLERIES[id] || []).map(key => presentFigureHTML(PRESENT_IMAGES[key])).join('');
