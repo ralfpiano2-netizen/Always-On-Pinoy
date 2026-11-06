@@ -1,23 +1,23 @@
-import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=zone-futures-20261106-1';
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=zone-futures-20261106-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=zone-futures-20261106-1';
+import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=navigation-images-20261106-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=navigation-images-20261106-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=navigation-images-20261106-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=zone-futures-20261106-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=zone-futures-20261106-1';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=navigation-images-20261106-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=navigation-images-20261106-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
-import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=zone-futures-20261106-1';
-import { mountTransitions } from './exhibits/transitions.js?v=zone-futures-20261106-1';
-import { mountTV } from './exhibits/tvguide.js?v=zone-futures-20261106-1';
-import { mountStreet } from './exhibits/pisonet.js?v=zone-futures-20261106-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=zone-futures-20261106-1';
-import { mountChainText } from './exhibits/chaintext.js?v=zone-futures-20261106-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=zone-futures-20261106-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=zone-futures-20261106-1';
+import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=navigation-images-20261106-1';
+import { mountTransitions } from './exhibits/transitions.js?v=navigation-images-20261106-1';
+import { mountTV } from './exhibits/tvguide.js?v=navigation-images-20261106-1';
+import { mountStreet } from './exhibits/pisonet.js?v=navigation-images-20261106-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=navigation-images-20261106-1';
+import { mountChainText } from './exhibits/chaintext.js?v=navigation-images-20261106-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=navigation-images-20261106-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=navigation-images-20261106-1';
 
 const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
 const ALL_REFERENCES = [...DOCUMENT_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].sort((a,b)=>a.apa.localeCompare(b.apa));
@@ -147,13 +147,62 @@ function renderSteps() {
   }
 }
 
+const NAV_TITLES = {
+  'ao-01':'Dance crazes','ao-02':'Television stories','ao-05':'Pacquiao viewing','ao-06':'BPO night shift',
+  'ao-07':'Computer shops','ao-08':'Friendster profile','ao-10':'Mall hangouts','ao-11':'Parlor & pageant',
+  'ao-13':'Nokia messages','ao-14':'Prepaid access','ao-15':'EDSA II texts','ao-18':'Padala from abroad'
+};
+const ASPECTS = ['Time','Space','Technology'];
+function renderZoneNavigation() {
+  for (const z of ZONES) {
+    const entries=ARTIFACTS.filter(a=>a.zone===z.n),first=entries[0];
+    $(`#${z.id} .zone-card`).insertAdjacentHTML('beforeend',`<details class="zone-navigator" ${matchMedia('(min-width:1200px)').matches ? 'open' : ''}>
+      <summary>Jump through the museum</summary><nav class="zone-navigation" id="zone-navigation-${z.n}" data-selected-artifact="${first.id}" aria-label="Zone ${z.n} shortcuts">
+        <div class="zone-nav-group"><p class="zone-nav-heading">Aspects</p><div class="zone-nav-links zone-nav-links--three">${ZONES.map(other=>`<a href="#${other.id}" ${other.n===z.n ? 'aria-current="location"' : ''}>${ASPECTS[other.n-1]}</a>`).join('')}</div></div>
+        <div class="zone-nav-group"><p class="zone-nav-heading">Artifacts in this zone</p><div class="zone-nav-links zone-nav-links--artifacts">${entries.map(a=>`<a href="#${a.id}" data-zone-nav-artifact="${a.id}"><span>${accession(a)}</span>${esc(NAV_TITLES[a.id])}</a>`).join('')}</div></div>
+        <div class="zone-nav-group"><p class="zone-nav-heading">Decades</p><p class="zone-nav-context">${esc(NAV_TITLES[first.id])}</p><div class="zone-nav-links zone-nav-links--three"><a data-zone-nav-era="2000s" href="#${first.id}-past">2000s</a><a data-zone-nav-era="2020s" href="#${first.id}-present">2020s</a><a data-zone-nav-era="2030s" href="#zone-${z.n}-future">2030s</a></div><p class="zone-nav-note">The 2030s opens this zone’s future artifact.</p></div>
+      </nav></details>`);
+  }
+}
+function updateZoneNavigation(id,explicitEra) {
+  const artifact=BY_ID[id];
+  const n=artifact?.zone || Number(id.match(/^zone-(\d)/)?.[1]);
+  const nav=$(`#zone-navigation-${n}`);
+  if (!nav) return;
+  const selected=artifact || BY_ID[nav.dataset.selectedArtifact] || ARTIFACTS.find(a=>a.zone===n);
+  nav.dataset.selectedArtifact=selected.id;
+  const future=id.startsWith(`zone-${n}-future`);
+  const present=$(`#${selected.id}-present`).getBoundingClientRect();
+  const era=explicitEra || (future ? '2030s' : present.top<=innerHeight/2 ? '2020s' : '2000s');
+  $('.zone-nav-context',nav).textContent=NAV_TITLES[selected.id];
+  for (const a of $$('[data-zone-nav-artifact]',nav)) {
+    if (!future && a.dataset.zoneNavArtifact===selected.id) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
+  }
+  for (const a of $$('[data-zone-nav-era]',nav)) {
+    a.href='#'+(a.dataset.zoneNavEra==='2030s' ? `zone-${n}-future` : `${selected.id}-${a.dataset.zoneNavEra==='2000s'?'past':'present'}`);
+    if (a.dataset.zoneNavEra===era) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
+  }
+  const menu=$('#map-current');
+  if (menu) menu.innerHTML=`<p class="zone-nav-heading">Decades · ${esc(NAV_TITLES[selected.id])}</p><div class="zone-nav-links zone-nav-links--three"><a href="#${selected.id}-past">2000s</a><a href="#${selected.id}-present">2020s</a><a href="#zone-${n}-future">2030s</a></div>`;
+}
+function watchNavigationEras() {
+  const io=new IntersectionObserver(entries=>{
+    for (const entry of entries) if(entry.isIntersecting) {
+      const el=entry.target;
+      if(el.classList.contains('zone-future-step')) updateZoneNavigation(el.id,'2030s');
+      else updateZoneNavigation(el.closest('.step').dataset.step,el.id.endsWith('-present')?'2020s':'2000s');
+    }
+  },{rootMargin:'-45% 0px -45% 0px'});
+  for(const el of $$('.artifact-era, .zone-future-step')) io.observe(el);
+}
+
 function renderMap() {
   const zone = z => `<a class="map-stop" href="#${z.id}"><strong>Zone ${z.n}: ${esc(z.title)}</strong><small>${esc(z.place)}</small></a>
     <ul class="map-artifacts">${ARTIFACTS.filter(a => a.zone === z.n).map(a =>
       `<li><a href="#${a.id}" data-map-artifact="${a.id}"><span>${accession(a)}</span>${esc(a.title)}</a></li>`).join('')}<li class="map-future"><a href="#zone-${z.n}-future"><span>2030s</span>${esc(ZONE_FUTURES.find(f=>f.zone===z.n).title)}</a></li></ul>`;
   $('#map-body').innerHTML = `
     <div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>2026, the ticket</small></a></div>
-    <div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s, 2020s & 2030s</h3>${ZONES.map(zone).join('')}</div>
+    <div class="map-wing" id="map-current"><p class="zone-nav-heading">Decades · Dance crazes</p><div class="zone-nav-links zone-nav-links--three"><a href="#ao-01-past">2000s</a><a href="#ao-01-present">2020s</a><a href="#zone-1-future">2030s</a></div></div><div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s, 2020s & 2030s</h3>${ZONES.map(zone).join('')}</div>
     <div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div>
     <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 13 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
@@ -310,6 +359,7 @@ function onSection(section) {
     const step = $$('.step', section).find(s => { const box = s.getBoundingClientRect(); return box.top <= mid && box.bottom >= mid; });
     const active = step?.dataset.step ?? id;
     activate(section, active);
+    updateZoneNavigation(active);
     setClock(active.endsWith('-future') ? '2030s' : BY_ID[active]?.clock ?? ZONE_BY_ID[id].clock);
     mark(active);
   }
@@ -333,7 +383,7 @@ function activate(zoneEl, id) {
 function onStep(step) {
   const id = step.dataset.step;
   const zoneEl = step.closest('.zone');
-  if (zoneEl) activate(zoneEl, id);
+  if (zoneEl) { activate(zoneEl, id); updateZoneNavigation(id); }
   mark(id);
   setClock(id.endsWith('-future') ? '2030s' : BY_ID[id]?.clock ?? ZONE_BY_ID[id]?.clock ?? null);
   emit('step:enter', { id, zone: Number(zoneEl?.dataset.zone) });
@@ -410,7 +460,18 @@ function wireDialogs() {
     if (link && link.hash.length > 1) {
       e.preventDefault();
       link.closest('dialog')?.close();
-      go(resolveStop(link.hash.slice(1)));
+      const shortcuts=link.closest('.zone-navigator');
+      if(shortcuts && !matchMedia('(min-width:1200px)').matches) shortcuts.open=false;
+      const destination=resolveStop(link.hash.slice(1));
+      go(destination);
+      // Returning to the start of the same zone need not trigger its section observer.
+      if (ZONE_BY_ID[destination]) {
+        const zone=ZONE_BY_ID[destination];
+        activate(document.getElementById(destination),destination);
+        updateZoneNavigation(destination);
+        setClock(zone.clock);
+        emit('step:enter',{id:destination,zone:zone.n});
+      }
     }
   });
 }
@@ -487,6 +548,7 @@ async function boot() {
   for (const type of arrivalStoppers) addEventListener(type, cancelArrival, { passive: true, once: true });
   if (reduceMotion()) document.documentElement.classList.add('reduce-motion');
   renderSteps();
+  renderZoneNavigation();
   renderMap();
   renderArchive();
   renderFinale();
@@ -514,6 +576,7 @@ async function boot() {
   watchStamps();
   watchSections(onSection);
   watchSteps(onStep);
+  watchNavigationEras();
   watchProgress();
   // Restore the requested artifact or era unless the visitor has already taken control.
   if (arrivalId && !arrivalCancelled) document.getElementById(arrivalId)?.scrollIntoView({ behavior: 'instant' });

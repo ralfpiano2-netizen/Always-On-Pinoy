@@ -1,4 +1,4 @@
-import { esc } from './ui.js?v=zone-futures-20261106-1';
+import { esc } from './ui.js?v=navigation-images-20261106-1';
 
 export const FUTURE_REFERENCES = [
   {
@@ -45,8 +45,8 @@ export const FUTURE_REFERENCES = [
   },
   {
     "id": "future-ref-roblox",
-    "short": "Roblox, n.d.",
-    "apa": "Roblox. (n.d.). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "short": "Roblox, n.d.-a",
+    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
     "url": "https://create.roblox.com/docs/ai/accelerated-workflows"
   },
   {
@@ -63,8 +63,8 @@ export const FUTURE_REFERENCES = [
   },
   {
     "id": "future-ref-collab",
-    "short": "Roblox, n.d., collaboration",
-    "apa": "Roblox. (n.d.). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "short": "Roblox, n.d.-b",
+    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
     "url": "https://create.roblox.com/docs/projects/collaboration"
   }
 ];
@@ -113,8 +113,8 @@ const SOURCE = {
   },
   "roblox": {
     "id": "future-ref-roblox",
-    "short": "Roblox, n.d.",
-    "apa": "Roblox. (n.d.). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "short": "Roblox, n.d.-a",
+    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
     "url": "https://create.roblox.com/docs/ai/accelerated-workflows"
   },
   "cube": {
@@ -131,8 +131,8 @@ const SOURCE = {
   },
   "collab": {
     "id": "future-ref-collab",
-    "short": "Roblox, n.d., collaboration",
-    "apa": "Roblox. (n.d.). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "short": "Roblox, n.d.-b",
+    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
     "url": "https://create.roblox.com/docs/projects/collaboration"
   }
 };
@@ -171,7 +171,9 @@ export const ZONE_FUTURES = [
       "alt": "Google’s promotional illustration of its Gemini for Google TV experience.",
       "caption": "Today’s foundation · Google TV promotional illustration, January 2026. This depicts an existing announcement, not the proposed 2030s remote.",
       "source": "tv2026"
-    }
+    },
+    "conceptImage": "assets/concepts/ai-shared-viewing-remote-2030s-v1.jpg",
+    "conceptAlt": "AI-generated concept illustration of a shared-viewing remote with household icons and tactile buttons in a Filipino living room."
   },
   {
     "id": "zone-2-future",
@@ -208,7 +210,9 @@ export const ZONE_FUTURES = [
       "alt": "Roblox Studio interface demonstrating its AI Assistant planning workflow.",
       "caption": "Today’s foundation · Roblox Studio AI Assistant illustration, documentation reviewed November 6, 2026. It is an existing software interface, not the proposed table.",
       "source": "roblox"
-    }
+    },
+    "conceptImage": "assets/concepts/ai-barkada-creation-table-2030s-v1.jpg",
+    "conceptAlt": "AI-generated concept illustration of friends collaboratively designing a digital barangay on a shared creation table."
   },
   {
     "id": "zone-3-future",
@@ -243,45 +247,42 @@ export const ZONE_FUTURES = [
       "alt": "Two people having a lifelike conversation through Project Starline, the predecessor to Google Beam.",
       "caption": "Today’s foundation · Project Starline / Google Beam reference image from Google’s May 2025 announcement. The proposed smaller Philippine family unit is a museum concept.",
       "source": "beam"
-    }
+    },
+    "conceptImage": "assets/concepts/ai-family-presence-window-2030s-v1.jpg",
+    "conceptAlt": "AI-generated concept illustration of a smaller family telepresence display connecting a Filipino elder with a relative abroad."
   }
 ];
 
-function conceptSVG(item) {
-  const ink='#24233d', paper='#fffaf1', accent='#705693', mint='#b8d7ca';
-  const person=(x,y,color=accent)=>`<circle cx="${x}" cy="${y}" r="17" fill="${color}"/><path d="M${x-24} ${y+68}v-29q24-30 48 0v29" fill="${color}"/>`;
-  let object='';
-  if (item.kind==='remote') object=`<rect x="272" y="60" width="176" height="296" rx="34" fill="${ink}"/><rect x="288" y="82" width="144" height="72" rx="8" fill="${paper}"/><text x="360" y="110" text-anchor="middle" fill="${accent}" font-size="14" font-family="monospace">AI / FAMILY</text><path d="M305 131h110" stroke="${mint}" stroke-width="10"/><circle cx="360" cy="207" r="40" fill="${accent}"/><circle cx="360" cy="207" r="17" fill="${paper}"/><rect x="298" y="265" width="55" height="27" rx="9" fill="${mint}"/><rect x="366" y="265" width="55" height="27" rx="9" fill="#c5b3d6"/><rect x="298" y="309" width="123" height="20" rx="7" fill="${paper}"/>`;
-  else if(item.kind==='creation-table') object=`<path d="M144 142h432l45 146H99z" fill="${ink}"/><path d="M161 155h398l31 113H130z" fill="#d9cce8"/><path d="M161 288v65M559 288v65" stroke="${ink}" stroke-width="17"/><path d="M258 181l35-20 35 20-35 20z" fill="${paper}"/><path d="M258 181v42l35 20v-42z" fill="${mint}"/><path d="M293 201l35-20v42l-35 20z" fill="${accent}"/><rect x="369" y="197" width="100" height="42" rx="8" fill="${paper}"/><path d="M388 218h62" stroke="${mint}" stroke-width="9"/><circle cx="182" cy="98" r="20" fill="${accent}"/><circle cx="538" cy="98" r="20" fill="#497067"/><path d="M163 126l55 47M557 126l-54 47" stroke="${accent}" stroke-width="15" stroke-linecap="round"/>`;
-  else if (['screen','window','mirror'].includes(item.kind)) object=`<rect x="126" y="83" width="468" height="246" rx="10" fill="${ink}"/><rect x="140" y="97" width="440" height="218" rx="5" fill="#e3d9ed"/>${person(290,165)}${person(435,165,'#497067')}<path d="M200 280h320" stroke="${paper}" stroke-width="5"/><rect x="335" y="329" width="50" height="22" fill="${ink}"/><rect x="270" y="350" width="180" height="8" rx="4" fill="${ink}"/>`;
-  else if(item.kind==='phone'||item.kind==='profile') object=`<rect x="247" y="66" width="226" height="290" rx="25" fill="${ink}"/><rect x="260" y="88" width="200" height="241" rx="9" fill="${paper}"/>${person(360,135)}<rect x="280" y="227" width="160" height="13" rx="5" fill="${mint}"/><rect x="280" y="252" width="122" height="10" rx="5" fill="#d5c9df"/><rect x="280" y="277" width="160" height="25" rx="8" fill="${accent}"/><circle cx="360" cy="342" r="6" fill="${paper}"/>`;
-  else if(item.kind==='motion'||item.kind==='stage') object=`<path d="M120 310h480v32H120z" fill="${ink}"/><path d="M160 92v207M560 92v207M160 92h400" stroke="${accent}" stroke-width="12" fill="none"/>${person(285,170)}${person(435,170,'#497067')}<path d="M265 216l-46-37m86 37l45-38m66 38l-37-34m75 34l38-35" stroke="${accent}" stroke-width="13" stroke-linecap="round"/><circle cx="215" cy="141" r="6" fill="${mint}"/><circle cx="505" cy="144" r="6" fill="${mint}"/><path d="M230 117l-15-18m281 18l15-18" stroke="${accent}" stroke-width="3"/>`;
-  else if(item.kind==='hub'||item.kind==='table'||item.kind==='desk') object=`<rect x="153" y="109" width="200" height="134" rx="10" fill="${ink}"/><rect x="166" y="122" width="174" height="106" rx="4" fill="#d9cce8"/><path d="M125 275h470M175 275v72M545 275v72" stroke="${ink}" stroke-width="17"/><rect x="225" y="247" width="80" height="13" fill="${ink}"/><rect x="411" y="155" width="139" height="100" rx="12" fill="${mint}"/><circle cx="453" cy="194" r="15" fill="${paper}"/><path d="M270 154v47m-24-23h48" stroke="${accent}" stroke-width="9"/><rect x="438" y="220" width="85" height="9" fill="${accent}"/>`;
-  else object=`<rect x="149" y="91" width="422" height="255" rx="18" fill="${paper}" stroke="${accent}" stroke-width="5"/><rect x="149" y="91" width="422" height="48" rx="12" fill="${accent}"/><circle cx="205" cy="190" r="24" fill="${mint}"/><rect x="253" y="170" width="262" height="13" rx="5" fill="#c5b3d6"/><rect x="253" y="196" width="204" height="10" rx="4" fill="#e0d8e7"/><rect x="184" y="249" width="190" height="52" rx="8" fill="#e0ece5"/><path d="M414 250h14v14h-14zM442 250h14v14h-14zM470 250h14v14h-14zM414 278h14v14h-14zM442 278h14v14h-14zM470 278h14v14h-14z" fill="${ink}"/>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="${esc(item.title)}: museum concept illustration"><rect width="720" height="430" fill="#efe8f3"/><path d="M0 369h720" stroke="#c6b5d4" stroke-width="2"/><text x="30" y="38" fill="${accent}" font-size="15" font-family="monospace">2030s / CURATORIAL CONCEPT</text>${object}<rect x="40" y="370" width="640" height="44" rx="5" fill="${paper}"/><text x="360" y="398" text-anchor="middle" fill="${ink}" font-family="monospace" font-size="17">${esc(item.screen)}</text></svg>`;
+const REFERENCE_TITLES = {
+  shareplay:'SharePlay now available',tv:'Do more with Gemini on Google TV',tv2026:'Google introduces new Gemini for Google TV features',
+  roblox:'AI on Roblox',cube:'Accelerating creation, powered by Roblox’s Cube Foundation Model',collab:'Collaboration',
+  access:'Universal and meaningful connectivity',beam:'Google Beam: Our AI-first 3D video communication platform',beamfamilies:'How Google Beam connects military families globally'
+};
+function referenceHTML(key) {
+  const ref=SOURCE[key],title=REFERENCE_TITLES[key];
+  const apa=title ? esc(ref.apa).replace(esc(title),`<i>${esc(title)}</i>`) : esc(ref.apa);
+  return `<li>${apa} <a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.url)}</a></li>`;
 }
-
-
 export function futureZoneHTML(zone) {
   const f=ZONE_FUTURES.find(item=>item.zone===zone);
-  const illustration='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(conceptSVG(f));
+  const illustration=f.conceptImage;
   const sourceLinks=f.sources.map(key=>`<a href="${esc(SOURCE[key].url)}" target="_blank" rel="noopener noreferrer">${esc(SOURCE[key].short)} ↗</a>`).join(' · ');
   return `<article class="step zone-future-step" id="${f.id}" data-step="${f.id}" aria-labelledby="${f.id}-title">
     <div class="label label-zone-future">
       <div class="label-head"><span class="label-no">Zone ${zone} · Culmination</span><span>2030s · Possible future</span></div>
-      <h3 id="${f.id}-title">${esc(f.title)}</h3><p class="future-zone-intro">${esc(f.intro)}</p><nav class="comparison-jumps future-zone-jumps" aria-label="Within the Zone ${zone} culmination"><a href="#${f.id}-today">Today</a><a href="#${f.id}-proposal">2030s</a><a href="#${f.id}-values">Connection</a></nav>
+      <h3 id="${f.id}-title">${esc(f.title)}</h3><p class="future-zone-intro">${esc(f.intro)}</p><nav class="comparison-jumps future-zone-jumps" aria-label="Within the Zone ${zone} culmination"><a href="#${f.id}-today">Today</a><a href="#${f.id}-proposal">2030s</a><a href="#${f.id}-values">Connection</a><a href="#${f.id}-references">References</a></nav>
       <div class="future-artifact" data-future="${f.id}">
         <section class="future-today" aria-labelledby="${f.id}-today"><h4 id="${f.id}-today">The reality today · 2026</h4><p>${esc(f.today)}</p>
           <figure class="future-foundation-photo"><img src="${esc(f.photo.src)}" alt="${esc(f.photo.alt)}" loading="lazy" decoding="async" width="1200" height="700"><figcaption>${esc(f.photo.caption)} <a href="${esc(SOURCE[f.photo.source].url)}" target="_blank" rel="noopener noreferrer">Source & credit ↗</a></figcaption></figure>
           <p class="future-source-links">${sourceLinks}</p></section>
         <section class="future-proposal" aria-labelledby="${f.id}-proposal"><h4 id="${f.id}-proposal">The proposed advance · 2030s</h4>
-          <figure class="future-concept"><img src="${illustration}" alt="${esc(f.title)}. Original museum concept illustration, not a photograph or an announced product." width="720" height="430" loading="lazy" decoding="async"><figcaption>Original museum concept illustration · a scenario for 2030–2039.</figcaption></figure>
+          <figure class="future-concept"><img src="${illustration}" alt="${esc(f.conceptAlt)}" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>AI-generated concept illustration · OpenAI, 2026 · proposed 2030s device, not an existing product.</figcaption></figure>
           <ul class="future-features" aria-label="Concept features">${f.labels.map(text=>`<li>${esc(text.toLowerCase())}</li>`).join('')}</ul><p>${esc(f.scenario)}</p>
           <h4>What AI would improve</h4><p>${esc(f.aiRole)}</p><ul class="future-advances">${f.advances.map(text=>`<li>${esc(text)}</li>`).join('')}</ul></section>
         <div class="future-values" id="${f.id}-values"><h4>What this zone leaves us with</h4><p>${esc(f.connection)}</p></div><p class="future-question">${esc(f.question)}</p>
-        <details class="future-research"><summary>Research and scope</summary><p>${esc(f.foundation)}</p><p class="future-source-links">${sourceLinks}</p><p class="future-scope">The current developments above are documented. The proposed 2030s improvements are museum scenarios that would require research, testing, funding, and human decisions.</p></details>
+        <section class="future-research future-references" id="${f.id}-references" aria-labelledby="${f.id}-references-title"><h4 id="${f.id}-references-title">References for this future artifact</h4><p>${esc(f.foundation)}</p><p class="future-scope">These sources support the current technology and research. The 2030s design, improvements, and generated illustration are the museum’s proposed interpretation.</p><ol class="future-reference-list">${[...f.sources].sort((a,b)=>SOURCE[a].apa.localeCompare(SOURCE[b].apa)).map(referenceHTML).join('')}</ol></section>
       </div>
       <a class="comparison-next" href="#${f.next}">${zone<3 ? `Continue to Zone ${zone+1}` : 'Continue to the closing reflection'} <span aria-hidden="true">↓</span></a>
     </div></article>`;
 }
-export function futureCreditsHTML() { return '<p>The three zone culminations use original vector concept illustrations. Each is labeled as a possible 2030s scenario and cites its present-day foundations.</p>'; }
+export function futureCreditsHTML() { return '<p>The three 2030s concept illustrations were generated with OpenAI image generation for this museum on November 6, 2026. They depict proposed devices, not actual products or documented families. Real-world photographs and software illustrations are credited separately. Full research references appear within each future artifact.</p>'; }

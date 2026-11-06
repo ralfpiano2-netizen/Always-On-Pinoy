@@ -1,7 +1,7 @@
 // Short, single-voice arrangements, synthesized locally after a visitor opts in.
 // The pitches are adapted to a small phone-speaker register; these are reconstructions.
-import { enable, isOn, musicChannel } from './audio.js?v=zone-futures-20261106-1';
-import { esc } from './ui.js?v=zone-futures-20261106-1';
+import { enable, isOn, musicChannel } from './audio.js?v=navigation-images-20261106-1';
+import { esc } from './ui.js?v=navigation-images-20261106-1';
 
 const repeat = (phrase, times = 2) => Array(times).fill(phrase).join(' ');
 export const RINGTONE_TRACKS = [

@@ -2,10 +2,10 @@
 // the rewind (2026 back to 2000), the sign-off (the broadcast day ends) and the upgrade
 // (2010 up to 2026). Also the Wing 1 glitter trail.
 import { onProgress } from '../scroll.js';
-import { sfx, playSlot } from '../audio.js?v=zone-futures-20261106-1';
+import { sfx, playSlot } from '../audio.js?v=navigation-images-20261106-1';
 import { asset } from '../assets.js';
 import { placeholder } from '../scenes.js';
-import { $, reduceMotion } from '../ui.js?v=zone-futures-20261106-1';
+import { $, reduceMotion } from '../ui.js?v=navigation-images-20261106-1';
 
 // Canvases draw at the screen's density (capped at 2x), so the 2026 end of the upgrade is sharp.
 const DPR = Math.min(2, window.devicePixelRatio || 1);
