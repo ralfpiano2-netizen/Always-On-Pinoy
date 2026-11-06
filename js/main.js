@@ -1,22 +1,22 @@
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=feed-credits-20261105-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=feed-credits-20261105-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=dances-20261105-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=dances-20261105-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=feed-credits-20261105-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=feed-credits-20261105-1';
+import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=dances-20261105-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=dances-20261105-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountTransitions } from './exhibits/transitions.js?v=inline-20261105-1';
-import { mountTV } from './exhibits/tvguide.js?v=feed-credits-20261105-1';
-import { mountStreet } from './exhibits/pisonet.js?v=feed-credits-20261105-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=inline-20261105-1';
-import { mountChainText } from './exhibits/chaintext.js?v=feed-credits-20261105-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=feed-credits-20261105-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=feed-credits-20261105-1';
+import { mountTransitions } from './exhibits/transitions.js?v=dances-20261105-1';
+import { mountTV } from './exhibits/tvguide.js?v=dances-20261105-1';
+import { mountStreet } from './exhibits/pisonet.js?v=dances-20261105-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=dances-20261105-1';
+import { mountChainText } from './exhibits/chaintext.js?v=dances-20261105-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=dances-20261105-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=dances-20261105-1';
 
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
@@ -60,7 +60,7 @@ function comparisonHTML(c, era = '') {
 }
 
 const SHORT_LABELS = {
-  'ao-01': 'SexBomb’s “The Spageti Song” became a dance craze in 2003. Noontime performances made its choreography part of shared entertainment routines (Gloria, 2026).',
+  'ao-01': 'SexBomb’s Spageti Song, Vhong Navarro’s Pamela One, and Bayani Agbayani’s Otso-Otso connect the novelty-song moment of 2003–2004 with family time, shared play, and recognition for performers (Gloria, 2026; Gil, 2005; Lo, 2004).',
   'ao-02': 'Meteor Garden became a Philippine viewing phenomenon in 2003. Following its story and stars gave audiences shared references within the television schedule (Flores, 2003).',
   'ao-03': 'Pangako Sa ’Yo attracted audiences during its original 2000–2002 run. Following a story meant making room for it in the day’s television schedule (ABS-CBN, 2022; Anarcon & Maglipon, 2020).',
   'ao-04': 'StarStruck launched in 2003, followed by Pinoy Big Brother in 2005. Reality formats gave viewers reasons to keep following performers and participants as their stories developed (Anarcon, 2019; Sabio, 2025).',

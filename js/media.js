@@ -1,13 +1,15 @@
-import { PRESENT_IMAGES } from './present-media.js?v=feed-credits-20261105-1';
+import { PRESENT_IMAGES } from './present-media.js?v=dances-20261105-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
 import { esc } from './ui.js';
-import { disable, enable, isOn } from './audio.js?v=feed-credits-20261105-1';
+import { disable, enable, isOn } from './audio.js?v=dances-20261105-1';
 
 const image = (id, file, title, alt, caption, credit, source, extra = {}) => ({ id, type: 'image', src: `assets/sources/${file}`, title, alt, caption, credit, source, ...extra });
 const video = (id, youtube, title, caption, credit) => ({ id, type: 'video', youtube, title, caption, credit, source: `https://www.youtube.com/watch?v=${youtube}` });
 
 export const MEDIA = [
   ...Object.values(PRESENT_IMAGES),
+  {"id": "pamela-one", "type": "video", "youtube": "kvgj2eY8T4U", "title": "Pamela One — Vhong Navarro", "catalogLabel": "Dance artifact 02 of 03 · Popular by June 2004", "poster": "https://i.ytimg.com/vi/kvgj2eY8T4U/hqdefault.jpg", "posterAlt": "Preview of Vhong Navarro’s Pamela One performance on It’s Showtime.", "caption": "Pamela One was among the novelty songs frequently heard on Philippine radio in June 2004 (Gil, 2005). The visible preview and linked performance come from ABS-CBN Entertainment’s July 13, 2020 It’s Showtime upload: a later return to the dance, rather than original 2000s footage.", "credit": "Vhong Navarro / ABS-CBN Entertainment · Video uploaded July 13, 2020", "source": "https://www.youtube.com/watch?v=kvgj2eY8T4U", "related": "https://www.philstar.com/entertainment/2005/06/17/282039/rock-takes-over-novelty-songs"},
+  {"id": "otso-otso", "type": "video", "youtube": "e8rq5B9jsBk", "title": "Otso-Otso — Bayani Agbayani", "catalogLabel": "Dance artifact 03 of 03 · Documented hit in May 2004", "poster": "https://i.ytimg.com/vi/e8rq5B9jsBk/hqdefault.jpg", "posterAlt": "Preview of Bayani Agbayani and AC Bonifacio performing the Otso-Otso dance on The Kids’ Choice.", "caption": "In a May 2004 interview, Bayani Agbayani recalled suggesting a childhood song to composer Lito Camo and described dancing the recorded hit with his children (Lo, 2004). This October 14, 2018 The Kids’ Choice upload shows Bayani sharing the routine with AC Bonifacio. It is a later demonstration, rather than footage of the original craze.", "credit": "Bayani Agbayani and AC Bonifacio / ABS-CBN Entertainment · Video uploaded October 14, 2018", "source": "https://www.youtube.com/watch?v=e8rq5B9jsBk", "related": "https://www.philstar.com/entertainment/2004/05/22/250906/bayani-singer"},
   {"id": "pacquiao-getty-viewing", "type": "gallery", "title": "Public viewing · Mayweather–Pacquiao, 2015", "caption": "Photographs of fans gathering for public screenings in Manila and Marikina on May 3, 2015. A later example of the shared viewing culture described in this exhibit.", "credit": "Getty Images editorial photo collection; individual photographer credits appear in the gallery", "source": "https://www.gettyimages.com/photos/fans-in-manila-watch-manny-pacquiao-v-floyd-mayweather"},
   {"id": "pacquiao-star-post", "type": "post", "platform": "facebook", "title": "Fight-day fans · Philippine STAR", "caption": "A Philippine STAR post supplied for this exhibit. The post’s date and specific fight have not been independently verified. If the embedded post is unavailable, open the original on Facebook.", "credit": "Philippine STAR / Facebook", "source": "https://www.facebook.com/PhilippineSTAR/posts/1212759427554601/"},
   {"id": "pacquiao-morales-2005", "type": "video", "youtube": "OMNfDiqkjdk", "title": "Morales–Pacquiao I · March 19, 2005", "caption": "The linked upload is titled “Erik Morales vs Manny Pacquiao 1 | MAR 19, 2005 | NO COMMENTARY.” Fight footage provides context for the shared viewing described here; it does not document a Filipino household gathering.", "credit": "YouTube upload supplied by the exhibit contributor", "source": "https://www.youtube.com/watch?v=OMNfDiqkjdk"},
@@ -41,7 +43,9 @@ const SETS = {
   "ao-01": {
     "title": "Noontime show dance craze",
     "ids": [
-      "sexbomb"
+      "sexbomb",
+      "pamela-one",
+      "otso-otso"
     ]
   },
   "ao-02": {
@@ -189,7 +193,7 @@ export function artifactCardMediaHTML(id) {
   const set = SETS[id];
   const item = set && set.ids.map(key => BY_ID[key]).find(m => m.type === 'image');
   if (!item) return '';
-  return `<figure class="artifact-card-media"><img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" width="720" height="480"><figcaption><span>${esc(CARD_LABELS[id])}</span>${sourceLink(item.source, item.license ? item.credit.split(' / ')[0] : 'Source & credit')}${item.license ? ` · ${sourceLink(item.licenseUrl, item.license)}` : ''}</figcaption></figure>${set.ids.map(key => BY_ID[key]).filter(m => m.type !== 'image').map(figureHTML).join('')}`;
+  return `${id === 'ao-01' ? '<p class="dance-artifact-meta">Dance artifact 01 of 03 · 2003 dance craze</p><h5 class="dance-artifact-title">The Spageti Song — SexBomb Girls</h5>' : ''}<figure class="artifact-card-media"><img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" width="720" height="480"><figcaption><span>${esc(CARD_LABELS[id])}</span>${sourceLink(item.source, item.license ? item.credit.split(' / ')[0] : 'Source & credit')}${item.license ? ` · ${sourceLink(item.licenseUrl, item.license)}` : ''}</figcaption></figure>${set.ids.map(key => BY_ID[key]).filter(m => m.type !== 'image').map(figureHTML).join('')}`;
 }
 
 export function artifactMediaHTML(id) {
@@ -208,8 +212,8 @@ function figureHTML(item) {
     ? `<img class="media-original" src="${esc(item.src)}" alt="${esc(item.alt)}" decoding="async" loading="lazy">`
     : item.type === 'gallery'
     ? `<div class="media-source-gallery">${sourceLink(item.source, 'Browse public-viewing photographs ↗')}</div>`
-    : `<div class="${item.type === 'post' ? 'media-post' : 'media-video'}" data-video-container="${esc(item.id)}"><button class="media-play" type="button" data-play-video="${esc(item.id)}"><span class="media-play-symbol" aria-hidden="true">${item.type === 'post' ? '▧' : '▶'}</span><span>Load ${item.type === 'post' ? 'post' : 'video'}: ${esc(item.title)}</span><small>Loads a ${item.platform === 'facebook' ? 'Facebook' : 'YouTube'} ${item.type === 'post' ? 'post' : 'player'}.</small></button></div>`;
-  return `<figure class="media-figure"><h3>${esc(item.title)}</h3>${visual}<figcaption><p>${esc(item.caption)}</p><p class="media-credit">${esc(item.credit)} · ${sourceLink(item.source, item.type === 'video' ? (item.platform === 'facebook' ? 'Watch on Facebook' : 'Watch on YouTube') : 'View source')}${item.related ? ` · ${sourceLink(item.related, 'Read the account')}` : ''}${item.license ? `<br>${sourceLink(item.licenseUrl, item.license)} · image unchanged` : ''}</p></figcaption></figure>`;
+    : `<div class="${item.type === 'post' ? 'media-post' : 'media-video'}" data-video-container="${esc(item.id)}"><button class="media-play${item.poster ? ' media-play--poster' : ''}" type="button" data-play-video="${esc(item.id)}">${item.poster ? `<img class="media-poster" src="${esc(item.poster)}" alt="${esc(item.posterAlt)}" width="480" height="360" loading="lazy" decoding="async">` : ''}<span class="media-play-symbol" aria-hidden="true">${item.type === 'post' ? '▧' : '▶'}</span><span>Load ${item.type === 'post' ? 'post' : 'video'}: ${esc(item.title)}</span><small>Loads a ${item.platform === 'facebook' ? 'Facebook' : 'YouTube'} ${item.type === 'post' ? 'post' : 'player'}.</small></button></div>`;
+  return `<figure class="media-figure${item.poster ? ' dance-artifact' : ''}"${item.poster ? ` id="dance-${esc(item.id)}"` : ''}>${item.catalogLabel ? `<p class="dance-artifact-meta">${esc(item.catalogLabel)}</p>` : ''}<${item.catalogLabel ? 'h5' : 'h3'} class="media-title">${esc(item.title)}</${item.catalogLabel ? 'h5' : 'h3'}>${visual}<figcaption><p>${esc(item.caption)}</p><p class="media-credit">${esc(item.credit)} · ${sourceLink(item.source, item.type === 'video' ? (item.platform === 'facebook' ? 'Watch on Facebook' : 'Watch on YouTube') : 'View source')}${item.related ? ` · ${sourceLink(item.related, 'Read the account')}` : ''}${item.license ? `<br>${sourceLink(item.licenseUrl, item.license)} · image unchanged` : ''}</p></figcaption></figure>`;
 }
 
 export function mediaCreditsHTML() {

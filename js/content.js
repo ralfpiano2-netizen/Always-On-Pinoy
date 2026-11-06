@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=feed-credits-20261105-1';
+import { COMPARISONS } from './exhibit-text.js?v=dances-20261105-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -34,7 +34,7 @@ const NO_SOURCE = 'Curatorial note: written from the group’s research brief. N
 
 export const ARTIFACTS = [
   {
-    n: 1, id: 'ao-01', zone: 1, title: 'Noontime show dance craze', when: 'Early 2000s', medium: 'Pixel reconstruction of a broadcast', clock: '12:00',
+    n: 1, id: 'ao-01', zone: 1, title: 'Noontime dance crazes', when: 'Early 2000s', medium: 'Pixel reconstruction of a broadcast', clock: '12:00',
     body: 'At noon the whole country ate lunch in front of the same show. Variety programs turned novelty songs into nationwide dance crazes, like the SexBomb Girls’ “The Spageti Song”. You learned the steps by tuning in at the right hour, because the moment aired once, for everyone at the same time.',
     cite: ['gloria2026', 'sanchez2022'], note: null,
     now: { title: 'TikTok dance trends, 24/7', body: 'Dance crazes now cycle through short-form video feeds around the clock, learned and recreated on demand in personal micro-moments instead of at noon.', cite: ['gabrillo2024', 'gloria2026'] },

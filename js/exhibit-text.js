@@ -99,14 +99,15 @@ export const COMPARISONS = [
   },
   {
     "id": "comparison-10",
-    "title": "SexBomb and the dance people remembered",
-    "intro": "A familiar beat can bring back a movement before a date or a name. The SexBomb Girls made dance something audiences could recognize, repeat, and share with other people.",
-    "past": "The Spageti Song became a dance craze in 2003 (Gloria, 2026). SexBomb's noontime television performances helped place their choreography within shared entertainment routines (Gloria, 2026). Their story connects dance, recording, and audience participation in Philippine popular culture.",
-    "present": "TikTok gives participants another route into shared choreography. Users can learn a routine, record their own performance, and circulate it through their accounts. BINI's Pantropiko offers a Philippine example associated with a widely recognized TikTok dance craze (Anoc & Cruz, 2024; Basbas, 2024).",
-    "synthesis": "SexBomb's dance routines show an earlier form of participatory entertainment in which recognizable music and repeatable movements invited people to join (Gloria, 2026). TikTok challenges continue that appeal while allowing participants to publish and circulate their own performances (Anoc & Cruz, 2024; Basbas, 2024). The connection helps explain the familiarity of today's dance trends: the platform changes the route of participation, while shared choreography remains a way to feel included. Looking back also brings performers and creative work into view, prompting attention to who teaches a routine and whose contribution receives recognition as versions spread.",
+    "title": "SexBomb, Pamela One, and Otso-Otso: making time to join in",
+    "intro": "Three familiar dance crazes turn our attention to the people around the music: performers earning a living, families making time together, and friends learning how to welcome one another into the activity.",
+    "past": "The Spageti Song became a dance craze in 2003. SexBomb’s performances travelled into parties and social gatherings; founder Joy Cancio also saw the group as a livelihood through which members could help support their families (Gloria, 2026).\n\nThe collection also includes Pamela One by Vhong Navarro and Otso-Otso by Bayani Agbayani. Baby A. Gil’s 2005 column identifies all three among the novelty songs frequently heard on radio in June 2004, placing them within the same entertainment moment (Gil, 2005). Each song is credited here to its own performer.\n\nOtso-Otso offers a specific family story. In a May 2004 interview, Bayani recalled proposing a song remembered from childhood to Lito Camo, who developed its lyrics for the recording. He also described singing and dancing it with his children, alongside his account of protecting family time within a demanding work schedule (Lo, 2004). This example shows how a commercial hit could become something a parent and children did together.",
+    "present": "TikTok gives participants another route into shared choreography. Users can learn a routine, record their own performance, and circulate it through their accounts. BINI’s Pantropiko is a Philippine example of a widely recognized TikTok dance craze (Anoc & Cruz, 2024; Basbas, 2024).\n\nOlder dances also return to newer audiences. The Pamela One performance shown above was uploaded by It’s Showtime in July 2020. In 2023, ABS-CBN announced Jaze Capili’s new rendition of Pamela as part of its Isip Bata releases (ABS-CBN Entertainment, 2020; ABS-CBN, 2023). These examples show revival alongside new songs: a routine can connect generations without belonging only to the decade in which it became popular.",
+    "synthesis": "Together, these artifacts connect entertainment with care. SexBomb’s history brings the performers’ livelihoods into view; Bayani’s account shows a father making room to play with his children (Gloria, 2026; Lo, 2004). A shared dance can give family members or a barkada time and attention to offer one another. That possibility depends on how people are treated, rather than on everyone knowing the steps.\n\nPakikipagkapwa provides a curatorial lens for this connection: treating another person as a fellow human being, with a claim to respect (Pe-Pua & Protacio-Marcelino, 2000). Applied to a party or an online challenge, that means helping someone learn, allowing them to decline, avoiding humiliating jokes, and acknowledging performers and creators. These are questions the museum asks of participation, rather than motives it assumes for every dancer. Moving from a television schedule to a shareable video changes how a routine travels; care is expressed through the welcome, attention, and recognition people give one another.",
     "domain": "Cultural",
     "lens": "Time"
   },
+
   {
     "id": "comparison-11",
     "presentSummary": "Streaming adds on-demand ways to follow dramas and reality programs. Scheduled broadcasts and shared viewing continue, while access to subscriptions remains uneven.",
@@ -227,9 +228,24 @@ export const COMPARISONS = [
 ];
 export const DOCUMENT_REFERENCES = [
   {
+    "id": "dance-ref-otso2018",
+    "apa": "ABS-CBN Entertainment. (2018, October 14). The Kids’ Choice PH highlights: Bayani, itinuro ang Otso Otso dance kay AC [Video]. YouTube. https://www.youtube.com/watch?v=e8rq5B9jsBk",
+    "url": "https://www.youtube.com/watch?v=e8rq5B9jsBk"
+  },
+  {
+    "id": "dance-ref-pamela2020",
+    "apa": "ABS-CBN Entertainment. (2020, July 13). Vhong Navarro dances “Pamela One” | It’s Showtime [Video]. YouTube. https://www.youtube.com/watch?v=kvgj2eY8T4U",
+    "url": "https://www.youtube.com/watch?v=kvgj2eY8T4U"
+  },
+  {
     "id": "doc-ref-01",
     "apa": "ABS-CBN. (2022, August 1). Fan-picked teleseryes in the last 3 decades to be recognized in “Jeepney TV Fan Favorite Awards”. ABS-CBN Newsroom. https://corporate.abs-cbn.com/newsroom/news-releases/2022/8/1/jeepney-tv-fan-favorite-awards-group-5-voting-open?lang=en",
     "url": "https://corporate.abs-cbn.com/newsroom/news-releases/2022/8/1/jeepney-tv-fan-favorite-awards-group-5-voting-open?lang=en"
+  },
+  {
+    "id": "dance-ref-revival2023",
+    "apa": "ABS-CBN. (2023, October 20). It’s Showtime’s Imogen, Argus, Kulot, Jaze, and Lucas revive popular tunes. ABS-CBN Newsroom. https://corporate.abs-cbn.com/newsroom/news-releases/2023/9/5/its-showtime-imogen-argus-kulot-jaze-lucas-singles?lang=en",
+    "url": "https://corporate.abs-cbn.com/newsroom/news-releases/2023/9/5/its-showtime-imogen-argus-kulot-jaze-lucas-singles?lang=en"
   },
   {
     "id": "doc-ref-02",
@@ -367,6 +383,11 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://doi.org/10.1002/cb.70141"
   },
   {
+    "id": "dance-ref-gil2005",
+    "apa": "Gil, B. A. (2005, June 17). Rock takes over from novelty songs. The Philippine Star. https://www.philstar.com/entertainment/2005/06/17/282039/rock-takes-over-novelty-songs",
+    "url": "https://www.philstar.com/entertainment/2005/06/17/282039/rock-takes-over-novelty-songs"
+  },
+  {
     "id": "doc-ref-22",
     "apa": "Glasner, J. (2005, March 31). We’re a hit in Manila! Now what? WIRED. https://www.wired.com/2005/03/were-a-hit-in-manila-now-what/",
     "url": "https://www.wired.com/2005/03/were-a-hit-in-manila-now-what/"
@@ -452,6 +473,11 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.esquiremag.ph/long-reads/features/where-is-netopia-now-a00293-20210121"
   },
   {
+    "id": "dance-ref-lo2004",
+    "apa": "Lo, R. (2004, May 22). Bayani the singer. The Philippine Star. https://www.philstar.com/entertainment/2004/05/22/250906/bayani-singer",
+    "url": "https://www.philstar.com/entertainment/2004/05/22/250906/bayani-singer"
+  },
+  {
     "id": "doc-ref-38",
     "apa": "Maddela, O. (2019, October 3). These fashion experts want you to handle the revival of Y2K style wisely. Preview.ph. https://www.preview.ph/fashion/2000s-fashion-revival-jlo-a00190-20191003-lfrm",
     "url": "https://www.preview.ph/fashion/2000s-fashion-revival-jlo-a00190-20191003-lfrm"
@@ -495,6 +521,11 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-46",
     "apa": "Ong, J. C., Fallorina, R., Lanuza, J. M., Sanchez II, F., & Curato, N. (2022, October 27). Parallel public spheres: Influence operations in the 2022 Philippine elections. Technology and Social Change Project, Shorenstein Center. https://casebook-static.pages.dev/research/parallel-public-spheres-influence-operations-2022-philippine-elections/",
     "url": "https://casebook-static.pages.dev/research/parallel-public-spheres-influence-operations-2022-philippine-elections/"
+  },
+  {
+    "id": "dance-ref-kapwa2000",
+    "apa": "Pe-Pua, R., & Protacio-Marcelino, E. A. (2000). Sikolohiyang Pilipino (Filipino psychology): A legacy of Virgilio G. Enriquez. Asian Journal of Social Psychology, 3(1), 49–71. https://doi.org/10.1111/1467-839X.00054",
+    "url": "https://doi.org/10.1111/1467-839X.00054"
   },
   {
     "id": "doc-ref-49",

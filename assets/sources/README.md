@@ -229,3 +229,23 @@ The TagalogTime Facebook video was removed at the user’s request because Faceb
 The 18 present-day cards now reference 13 distinct source images, including the previously supplied 2022 drag image. Full per-image provenance, source URLs, dates, scope, and licenses are in js/present-media.js and work/present-media-sources.json. New remote images require an internet connection; source links remain available if a host rejects image loading. Interface illustrations, promotional art, and photographs are identified in captions. Commons smartphone image: Mictlancihuatl, CC BY-SA 4.0, unchanged. Commons 2022 rally image: Avito Dalan / PNA, public domain in the Philippines, unchanged.
 
 The expanded MP3 comparison draws on Apple’s 2005 iPod nano release, Spotify’s 2024 Philippine anniversary account, and TikTok’s 2024 Philippine annual report. It distinguishes the 2005 capacity example from the pictured 2009 reference image and labels earphone sharing as curatorial reconstruction.
+
+## Additional dance artifacts · AO-01
+
+Pamela One — Vhong Navarro. URL preview: https://i.ytimg.com/vi/kvgj2eY8T4U/hqdefault.jpg
+
+Pamela One was among the novelty songs frequently heard on Philippine radio in June 2004 (Gil, 2005). The visible preview and linked performance come from ABS-CBN Entertainment’s July 13, 2020 It’s Showtime upload: a later return to the dance, rather than original 2000s footage.
+
+Credit: Vhong Navarro / ABS-CBN Entertainment · Video uploaded July 13, 2020
+
+Source: https://www.youtube.com/watch?v=kvgj2eY8T4U
+
+Otso-Otso — Bayani Agbayani. URL preview: https://i.ytimg.com/vi/e8rq5B9jsBk/hqdefault.jpg
+
+In a May 2004 interview, Bayani Agbayani recalled suggesting a childhood song to composer Lito Camo and described dancing the recorded hit with his children (Lo, 2004). This October 14, 2018 The Kids’ Choice upload shows Bayani sharing the routine with AC Bonifacio. It is a later demonstration, rather than footage of the original craze.
+
+Credit: Bayani Agbayani and AC Bonifacio / ABS-CBN Entertainment · Video uploaded October 14, 2018
+
+Source: https://www.youtube.com/watch?v=e8rq5B9jsBk
+
+Full article and video references are included in the museum Archive. Thumbnails are linked from YouTube; remote files are not bundled or redated as 2000s photographs.
