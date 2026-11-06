@@ -1,22 +1,22 @@
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=dances-20261105-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=dances-20261105-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=dances-sb19-20261105-2';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=dances-sb19-20261105-2';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=dances-20261105-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=dances-20261105-1';
+import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=dances-sb19-20261105-2';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=dances-sb19-20261105-2';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
 import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountTransitions } from './exhibits/transitions.js?v=dances-20261105-1';
-import { mountTV } from './exhibits/tvguide.js?v=dances-20261105-1';
-import { mountStreet } from './exhibits/pisonet.js?v=dances-20261105-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=dances-20261105-1';
-import { mountChainText } from './exhibits/chaintext.js?v=dances-20261105-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=dances-20261105-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=dances-20261105-1';
+import { mountTransitions } from './exhibits/transitions.js?v=dances-sb19-20261105-2';
+import { mountTV } from './exhibits/tvguide.js?v=dances-sb19-20261105-2';
+import { mountStreet } from './exhibits/pisonet.js?v=dances-sb19-20261105-2';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=dances-sb19-20261105-2';
+import { mountChainText } from './exhibits/chaintext.js?v=dances-sb19-20261105-2';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=dances-sb19-20261105-2';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=dances-sb19-20261105-2';
 
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));

@@ -102,12 +102,11 @@ export const COMPARISONS = [
     "title": "SexBomb, Pamela One, and Otso-Otso: making time to join in",
     "intro": "Three familiar dance crazes turn our attention to the people around the music: performers earning a living, families making time together, and friends learning how to welcome one another into the activity.",
     "past": "The Spageti Song became a dance craze in 2003. SexBomb’s performances travelled into parties and social gatherings; founder Joy Cancio also saw the group as a livelihood through which members could help support their families (Gloria, 2026).\n\nThe collection also includes Pamela One by Vhong Navarro and Otso-Otso by Bayani Agbayani. Baby A. Gil’s 2005 column identifies all three among the novelty songs frequently heard on radio in June 2004, placing them within the same entertainment moment (Gil, 2005). Each song is credited here to its own performer.\n\nOtso-Otso offers a specific family story. In a May 2004 interview, Bayani recalled proposing a song remembered from childhood to Lito Camo, who developed its lyrics for the recording. He also described singing and dancing it with his children, alongside his account of protecting family time within a demanding work schedule (Lo, 2004). This example shows how a commercial hit could become something a parent and children did together.",
-    "present": "TikTok gives participants another route into shared choreography. Users can learn a routine, record their own performance, and circulate it through their accounts. BINI’s Pantropiko is a Philippine example of a widely recognized TikTok dance craze (Anoc & Cruz, 2024; Basbas, 2024).\n\nOlder dances also return to newer audiences. The Pamela One performance shown above was uploaded by It’s Showtime in July 2020. In 2023, ABS-CBN announced Jaze Capili’s new rendition of Pamela as part of its Isip Bata releases (ABS-CBN Entertainment, 2020; ABS-CBN, 2023). These examples show revival alongside new songs: a routine can connect generations without belonging only to the decade in which it became popular.",
-    "synthesis": "Together, these artifacts connect entertainment with care. SexBomb’s history brings the performers’ livelihoods into view; Bayani’s account shows a father making room to play with his children (Gloria, 2026; Lo, 2004). A shared dance can give family members or a barkada time and attention to offer one another. That possibility depends on how people are treated, rather than on everyone knowing the steps.\n\nPakikipagkapwa provides a curatorial lens for this connection: treating another person as a fellow human being, with a claim to respect (Pe-Pua & Protacio-Marcelino, 2000). Applied to a party or an online challenge, that means helping someone learn, allowing them to decline, avoiding humiliating jokes, and acknowledging performers and creators. These are questions the museum asks of participation, rather than motives it assumes for every dancer. Moving from a television schedule to a shareable video changes how a routine travels; care is expressed through the welcome, attention, and recognition people give one another.",
+    "present": "SB19’s GENTO provides the 2020s dance artifact in this comparison. The official 2023 music video linked beside its preview makes the choreography visible, while their PAGTATAG! interview explains the work behind the entertainment: Ken connected the song’s gold imagery with the group’s difficult journey and sustained effort (SB19 Official, 2023; Basbas, 2023).\n\nThere is a direct bridge between the eras. GMA Entertainment documented Rochelle Pangilinan joining the GENTO challenge in July 2023 and sharing her cover on Instagram and TikTok (Almazan, 2023). A performer associated with the earlier SexBomb moment participates in a newer group’s routine. Popular culture can carry experience forward through people as well as platforms.\n\nOlder songs also return to younger audiences. In 2023, ABS-CBN announced Jaze Capili’s rendition of Vhong Navarro’s Pamela as part of its Isip Bata releases (ABS-CBN, 2023). These examples place new dances alongside revivals and encounters between generations.",
+    "synthesis": "Together, these artifacts connect entertainment with care and sustained work. SexBomb’s history brings performers’ livelihoods into view; Bayani’s account shows a father making room to play with his children. SB19’s interview emphasizes the effort behind their journey (Gloria, 2026; Lo, 2004; Basbas, 2023). Read together, the examples ask us to recognize both the time people give one another and the labor that makes shared enjoyment possible.\n\nRochelle’s GENTO cover makes the connection visible across generations of performers (Almazan, 2023). Pakikipagkapwa provides a curatorial lens: treating another person as a fellow human being, with a claim to respect (Pe-Pua & Protacio-Marcelino, 2000). For a family, barkada, or online community, that can mean helping someone learn, accepting that they may decline, encouraging without humiliation, and acknowledging the creators. The museum offers this as a way to assess participation, rather than assuming every dancer has the same motives. A shared routine becomes a social bond through the attention, welcome, and recognition people give one another.",
     "domain": "Cultural",
     "lens": "Time"
   },
-
   {
     "id": "comparison-11",
     "presentSummary": "Streaming adds on-demand ways to follow dramas and reality programs. Scheduled broadcasts and shared viewing continue, while access to subscriptions remains uneven.",
@@ -253,6 +252,11 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.gmanetwork.com/news/topstories/nation/302384/sleepless-in-phl-more-pinoys-work-the-graveyard-shift/story/"
   },
   {
+    "id": "dance-ref-rochelle2023",
+    "apa": "Almazan, F. (2023, July 14). Rochelle Pangilinan takes on SB19’s “GENTO” dance challenge. GMA Entertainment. https://www.gmanetwork.com/entertainment/showbiznews/rochelle-pangilinan-takes-on-sb19s-gento-dance-challenge/103539/",
+    "url": "https://www.gmanetwork.com/entertainment/showbiznews/rochelle-pangilinan-takes-on-sb19s-gento-dance-challenge/103539/"
+  },
+  {
     "id": "doc-ref-03",
     "apa": "Anarcon, J. P. (2019, September 14). StarStruck. PEP.ph. https://www.pep.ph/peptionary/145975/starstruck-anatomy-of-a-reality-show-a724-20190914-lfrm7",
     "url": "https://www.pep.ph/peptionary/145975/starstruck-anatomy-of-a-reality-show-a724-20190914-lfrm7"
@@ -291,6 +295,11 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-08",
     "apa": "Bangko Sentral ng Pilipinas. (2025). From surge to stability: Digital payments driving a steady transition — 2024 status of digital payments in the Philippines. https://www.bsp.gov.ph/PaymentAndSettlement/2024_Report_on_E-payments_Measurement.pdf",
     "url": "https://www.bsp.gov.ph/PaymentAndSettlement/2024_Report_on_E-payments_Measurement.pdf"
+  },
+  {
+    "id": "dance-ref-basbas2023",
+    "apa": "Basbas, F. J. (2023, June 13). SB19 talk creating their new EP “PAGTATAG!” and challenging the industry with their company, 1Z Entertainment. Bandwagon. https://www.bandwagon.asia/articles/sb19-pagtatag-interview-1z-entertainment-pablo-josh-stell-ken-justin-june-2023",
+    "url": "https://www.bandwagon.asia/articles/sb19-pagtatag-interview-1z-entertainment-pablo-josh-stell-ken-justin-june-2023"
   },
   {
     "id": "doc-ref-09",
@@ -556,6 +565,11 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-sachan2025",
     "apa": "Sachan, T., Chhabra, D., & Abraham, B. (2025). Social capital in online gaming communities: A systematic review examining the role of virtual identities. Cyberpsychology, Behavior, and Social Networking, 28(3), 147–161. https://doi.org/10.1089/cyber.2024.0375",
     "url": "https://doi.org/10.1089/cyber.2024.0375"
+  },
+  {
+    "id": "dance-ref-sb19-2023",
+    "apa": "SB19 Official. (2023, May 19). SB19 “GENTO” music video [Video]. YouTube. https://www.youtube.com/watch?v=VZZA_38RUBI",
+    "url": "https://www.youtube.com/watch?v=VZZA_38RUBI"
   },
   {
     "id": "doc-ref-54",

@@ -2,7 +2,7 @@
 // the rewind (2026 back to 2000), the sign-off (the broadcast day ends) and the upgrade
 // (2010 up to 2026). Also the Wing 1 glitter trail.
 import { onProgress } from '../scroll.js';
-import { sfx, playSlot } from '../audio.js?v=dances-20261105-1';
+import { sfx, playSlot } from '../audio.js?v=dances-sb19-20261105-2';
 import { asset } from '../assets.js';
 import { placeholder } from '../scenes.js';
 import { $, reduceMotion } from '../ui.js';

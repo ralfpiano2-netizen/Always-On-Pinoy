@@ -249,3 +249,19 @@ Credit: Bayani Agbayani and AC Bonifacio / ABS-CBN Entertainment · Video upload
 Source: https://www.youtube.com/watch?v=e8rq5B9jsBk
 
 Full article and video references are included in the museum Archive. Thumbnails are linked from YouTube; remote files are not bundled or redated as 2000s photographs.
+
+## SB19 counterpart · AO-01, 2020s
+
+SB19 Official. (2023, May 19). SB19 “GENTO” music video [Video]. YouTube. https://www.youtube.com/watch?v=VZZA_38RUBI
+
+Visible URL preview: https://i.ytimg.com/vi/VZZA_38RUBI/hqdefault.jpg
+
+Rochelle Pangilinan’s GENTO cover, reported July 14, 2023 by Faye Almazan / GMA Entertainment. Image credit: rochellepangilinan (Instagram), via GMA.
+
+Image URL: https://aphrodite.gmanetwork.com/entertainment/articles/900_675_Main_Image07_0714_-20230714140359.jpg
+
+Source: https://www.gmanetwork.com/entertainment/showbiznews/rochelle-pangilinan-takes-on-sb19s-gento-dance-challenge/103539/
+
+The earlier BINI image has been replaced within AO-01 and its matching Archive comparison. Other research comparisons retain their own cited examples.
+
+GENTO uses a visible URL image and a direct official-video link: both tested SB19 embedded uploads returned “This video is unavailable” in the preview. No failed player is included.

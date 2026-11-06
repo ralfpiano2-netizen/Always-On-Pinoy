@@ -266,11 +266,37 @@ export const PRESENT_IMAGES = {
     "source": "https://www.philstar.com/sports/2025/02/14/2421479/new-mpl-ph-era-begins-season-15",
     "width": 800,
     "height": 600
+  },
+  "sb19": {
+    "id": "present-sb19-gento",
+    "type": "image",
+    "src": "https://i.ytimg.com/vi/VZZA_38RUBI/hqdefault.jpg",
+    "title": "SB19 · GENTO, 2023",
+    "linkLabel": "watch GENTO on YouTube",
+    "alt": "Preview of SB19 performing GENTO in their official music video.",
+    "caption": "Preview image from SB19’s official GENTO music video, released in May 2023. Open the credited YouTube source to watch the video. SB19’s June 2023 interview connects the song with the sustained work behind the group’s journey.",
+    "credit": "SB19 Official / 1Z Entertainment",
+    "source": "https://www.youtube.com/watch?v=VZZA_38RUBI",
+    "width": 480,
+    "height": 360
+  },
+  "rochelle-gento": {
+    "id": "present-rochelle-gento",
+    "type": "image",
+    "src": "https://aphrodite.gmanetwork.com/entertainment/articles/900_675_Main_Image07_0714_-20230714140359.jpg",
+    "title": "Rochelle Pangilinan joins GENTO · 2023",
+    "alt": "Rochelle Pangilinan pictured in GMA’s report about her GENTO dance cover.",
+    "caption": "Image accompanying Faye Almazan’s July 14, 2023 report. The report documents Rochelle’s GENTO cover on Instagram and TikTok, giving this exhibit a direct connection between a SexBomb performer and SB19’s newer dance craze.",
+    "credit": "rochellepangilinan / Instagram, via GMA Entertainment",
+    "source": "https://www.gmanetwork.com/entertainment/showbiznews/rochelle-pangilinan-takes-on-sb19s-gento-dance-challenge/103539/",
+    "width": 900,
+    "height": 675
   }
 };
 export const PRESENT_GALLERIES = {
   "ao-01": [
-    "bini"
+    "sb19",
+    "rochelle-gento"
   ],
   "ao-02": [
     "netflix"
@@ -336,7 +362,7 @@ export const PRESENT_GALLERIES = {
   ]
 };
 export const PRESENT_MEDIA = {
-  "ao-01": "bini",
+  "ao-01": "sb19",
   "ao-02": "netflix",
   "ao-03": "netflix",
   "ao-04": "netflix",
@@ -389,7 +415,8 @@ export const COMPARISON_MEDIA = {
     "reels"
   ],
   "comparison-10": [
-    "bini"
+    "sb19",
+    "rochelle-gento"
   ],
   "comparison-11": [
     "netflix"
@@ -423,7 +450,7 @@ export const COMPARISON_MEDIA = {
 };
 
 export function presentFigureHTML(item) {
-  return `<figure class="present-figure"><img src="${esc(item.src)}" alt="${esc(item.alt)}"${item.width ? ` width="${item.width}" height="${item.height}"` : ''} loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption><strong>${esc(item.title)}</strong><p>${esc(item.caption)}</p><a href="${esc(item.source)}" target="_blank" rel="noopener noreferrer">${esc(item.credit)} · source ↗</a>${item.license ? ` · <a href="${esc(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(item.license)}</a>` : ''}</figcaption></figure>`;
+  return `<figure class="present-figure"><img src="${esc(item.src)}" alt="${esc(item.alt)}"${item.width ? ` width="${item.width}" height="${item.height}"` : ''} loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption><strong>${esc(item.title)}</strong><p>${esc(item.caption)}</p><a href="${esc(item.source)}" target="_blank" rel="noopener noreferrer">${esc(item.credit)} · ${esc(item.linkLabel || 'source')} ↗</a>${item.license ? ` · <a href="${esc(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(item.license)}</a>` : ''}</figcaption></figure>`;
 }
 export function presentMediaHTML(id) {
   return (PRESENT_GALLERIES[id] || []).map(key => presentFigureHTML(PRESENT_IMAGES[key])).join('');

@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=dances-20261105-1';
+import { COMPARISONS } from './exhibit-text.js?v=dances-sb19-20261105-2';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -168,7 +168,7 @@ const DOCUMENT_MATCHES = { 'ao-01': 10, 'ao-02': 11, 'ao-03': 11, 'ao-04': 11,
 const PRESENT_TITLES = { 1: 'Profiles and recommended feeds', 2: 'Group chats and richer mobile media',
   3: 'Mobile games and social relationships', 4: 'Freelancing and platform work',
   5: 'Shopping feeds and live selling', 6: 'Digital wallets and payment channels',
-  7: 'Messages, gatherings and sustained participation', 10: 'TikTok choreography and Pantropiko',
+  7: 'Messages, gatherings and sustained participation', 10: 'SB19’s GENTO and shared dance culture',
   11: 'Streaming alongside scheduled television', 12: 'Drag, streaming and community',
   18: 'OPM and contemporary fan communities' };
 for (const a of ARTIFACTS) {
