@@ -1291,3 +1291,10 @@ html[data-effects="off"] #glitter { visibility: hidden; }
   .zone-navigator > summary { padding: 8px 10px; border: 1px solid #bdaf99; border-radius: 3px; background: #f6f2e9; color: #201d19; text-align: left; }
   .zone-navigator .zone-navigation { position: absolute; z-index: 6; left: 0; right: 0; top: 100%; max-height: 50svh; overflow: auto; overscroll-behavior: contain; box-shadow: 0 10px 30px #0003; }
 }
+
+/* A visible capability difference separates a scenario from its present baseline. */
+.future-capability { padding: 18px; background: #e4e9ec; border-left: 3px solid #506a78; }
+.future-capability strong { display: block; font: 600 13px/1.5 var(--font-mono); margin-bottom: 8px; }
+.future-engineering { padding: 16px 18px; border: 1px solid var(--label-line); margin: 24px 0; }
+.future-engineering p { margin-bottom: 0; }
+.future-concept img { image-rendering: auto; }

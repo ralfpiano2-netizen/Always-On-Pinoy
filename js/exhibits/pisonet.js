@@ -1,8 +1,8 @@
 // Zone 2, the street. A PisoNet that sells online time by the peso, the Friendster page inside it,
 // the LAN cafe's time slip and the parlor's final question.
 import { formatTimer } from '../logic.js';
-import { sfx, playMusic, playSlot } from '../audio.js?v=navigation-images-20261106-1';
-import { $, $$, go, esc } from '../ui.js?v=navigation-images-20261106-1';
+import { sfx, playMusic, playSlot } from '../audio.js?v=realistic-futures-20261106-1';
+import { $, $$, go, esc } from '../ui.js?v=realistic-futures-20261106-1';
 
 const PESO_SECONDS = 300;
 const SPEED = 10;

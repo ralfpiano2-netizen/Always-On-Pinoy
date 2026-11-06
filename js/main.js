@@ -1,23 +1,23 @@
-import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=navigation-images-20261106-1';
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=navigation-images-20261106-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=navigation-images-20261106-1';
+import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=realistic-futures-20261106-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=realistic-futures-20261106-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=realistic-futures-20261106-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=navigation-images-20261106-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=navigation-images-20261106-1';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=realistic-futures-20261106-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=realistic-futures-20261106-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
-import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=navigation-images-20261106-1';
-import { mountTransitions } from './exhibits/transitions.js?v=navigation-images-20261106-1';
-import { mountTV } from './exhibits/tvguide.js?v=navigation-images-20261106-1';
-import { mountStreet } from './exhibits/pisonet.js?v=navigation-images-20261106-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=navigation-images-20261106-1';
-import { mountChainText } from './exhibits/chaintext.js?v=navigation-images-20261106-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=navigation-images-20261106-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=navigation-images-20261106-1';
+import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=realistic-futures-20261106-1';
+import { mountTransitions } from './exhibits/transitions.js?v=realistic-futures-20261106-1';
+import { mountTV } from './exhibits/tvguide.js?v=realistic-futures-20261106-1';
+import { mountStreet } from './exhibits/pisonet.js?v=realistic-futures-20261106-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=realistic-futures-20261106-1';
+import { mountChainText } from './exhibits/chaintext.js?v=realistic-futures-20261106-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=realistic-futures-20261106-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=realistic-futures-20261106-1';
 
 const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
 const ALL_REFERENCES = [...DOCUMENT_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].sort((a,b)=>a.apa.localeCompare(b.apa));
