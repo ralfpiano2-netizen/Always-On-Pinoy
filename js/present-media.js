@@ -1,4 +1,4 @@
-import { esc } from './ui.js';
+import { esc } from './ui.js?v=future-2030s-20261105-1';
 
 export const PRESENT_IMAGES = {
   "bini": {
@@ -301,12 +301,6 @@ export const PRESENT_GALLERIES = {
   "ao-02": [
     "netflix"
   ],
-  "ao-03": [
-    "netflix"
-  ],
-  "ao-04": [
-    "netflix"
-  ],
   "ao-05": [
     "reels"
   ],
@@ -315,15 +309,11 @@ export const PRESENT_GALLERIES = {
     "grab"
   ],
   "ao-07": [
-    "phone-trial",
-    "network-team"
+    "gaming-team",
+    "gaming"
   ],
   "ao-08": [
     "reels"
-  ],
-  "ao-09": [
-    "gaming-team",
-    "gaming"
   ],
   "ao-10": [
     "selling",
@@ -331,10 +321,6 @@ export const PRESENT_GALLERIES = {
   ],
   "ao-11": [
     "drag"
-  ],
-  "ao-12": [
-    "music-live",
-    "ai-playlist-steps"
   ],
   "ao-13": [
     "messenger",
@@ -347,15 +333,6 @@ export const PRESENT_GALLERIES = {
   "ao-15": [
     "youth-activism"
   ],
-  "ao-16": [
-    "network-team",
-    "messenger"
-  ],
-  "ao-17": [
-    "ai-playlist",
-    "ai-playlist-steps",
-    "music-hub"
-  ],
   "ao-18": [
     "market-qr",
     "wallet"
@@ -364,21 +341,15 @@ export const PRESENT_GALLERIES = {
 export const PRESENT_MEDIA = {
   "ao-01": "sb19",
   "ao-02": "netflix",
-  "ao-03": "netflix",
-  "ao-04": "netflix",
   "ao-05": "reels",
   "ao-06": "home-work",
   "ao-07": "phone-trial",
   "ao-08": "reels",
-  "ao-09": "gaming-team",
   "ao-10": "selling",
   "ao-11": "drag",
-  "ao-12": "music-live",
   "ao-13": "messenger",
   "ao-14": "market-qr",
   "ao-15": "youth-activism",
-  "ao-16": "network-team",
-  "ao-17": "ai-playlist",
   "ao-18": "market-qr"
 };
 export const COMPARISON_MEDIA = {
@@ -427,25 +398,6 @@ export const COMPARISON_MEDIA = {
   "comparison-13": [
     "bini",
     "music-live"
-  ],
-  "comparison-16": [
-    "secondhand"
-  ],
-  "comparison-17": [
-    "ev-charging"
-  ],
-  "comparison-18": [
-    "music-live",
-    "ai-playlist-steps"
-  ],
-  "comparison-19": [
-    "secondhand"
-  ],
-  "comparison-20": [
-    "secondhand"
-  ],
-  "comparison-21": [
-    "beauty-filter"
   ]
 };
 

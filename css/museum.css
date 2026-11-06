@@ -565,17 +565,11 @@ html[data-era="2020"] .hud-clock { font-family: var(--font-ui); animation: clock
 .testi-row input[aria-invalid="true"] { border-color: var(--sofa); }
 .testi-error { font: 500 13px var(--font-mono); color: var(--sofa); }
 
-/* Zone 2: LAN cafe slip and chat, the mall mirror, the final question, the flyer wall. */
+/* Zone 2: LAN cafe slip and chat, the final question, the flyer wall. */
 .lan { position: absolute; left: 6cqw; right: 6cqw; top: 14cqh; display: grid; grid-template-columns: 30cqw 1fr; gap: 3cqw; align-items: start; }
 .lan-slip { padding: 2cqw; text-align: center; background: #fdf6e3; color: var(--ink); font: 400 3.4cqw/1.3 var(--font-mono); box-shadow: 0 1cqw 0 rgba(0, 0, 0, 0.3); transform: rotate(-3deg); }
 .lan-time { font: 600 5.2cqw/1.2 var(--font-pixel); color: var(--sofa); }
 .lan-chat { list-style: none; margin: 0; padding: 2cqw; display: grid; gap: 0.8cqw; background: rgba(5, 8, 12, 0.88); color: #7ee081; font: 400 3.1cqw/1.35 var(--font-pixel); }
-.mirror {
-  position: absolute; left: 30cqw; top: 11cqh; width: 40cqw; aspect-ratio: 3 / 5; padding: 2.4cqw;
-  background: #e2b84a; border-radius: 26cqw 26cqw 2cqw 2cqw; box-shadow: inset 0 0 0 1cqw #a8822a, 0 2cqw 0 rgba(0, 0, 0, 0.25);
-}
-.mirror-glass { height: 100%; display: grid; place-items: end center; padding-bottom: 8%; overflow: hidden; background: #9fd3ff; border-radius: 24cqw 24cqw 1cqw 1cqw; }
-.mirror-glass svg { width: 58%; height: auto; image-rendering: pixelated; }
 .qa { position: absolute; left: 9cqw; right: 9cqw; top: 15cqh; height: 33cqh; perspective: 120cqw; }
 .qa-card { position: relative; height: 100%; transform-style: preserve-3d; transition: transform 0.7s var(--ease-out); }
 .qa-card.is-flipped { transform: rotateY(180deg); }
@@ -1210,3 +1204,34 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .media-play--poster .media-play-symbol { background: rgba(0,0,0,.7); border-color: #fff; }
 .media-play--poster:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
 .dance-artifact .media-title { margin: 0 0 12px; font: 600 25px/1.25 var(--font-label); overflow-wrap: anywhere; }
+
+/* A third era is visible within each original room. */
+.artifact-era--future { border-top: 2px solid #9b83b6; }
+.artifact-era--future > h4 { background: #e6dcef; color: #4d3564; }
+.future-status { font: 500 12px/1.5 var(--font-mono); color: #654d7e; margin: 0 0 10px; }
+.artifact-era--future .future-status { display: none; }
+.future-artifact { min-width: 0; }
+.future-artifact > h5 { font: 600 27px/1.2 var(--font-label); margin: 0 0 18px; }
+.future-concept { margin: 0 0 14px; }
+.future-concept img { display: block; width: 100%; height: auto; aspect-ratio: 720/430; background: #efe8f3; border: 1px solid #c7b6d6; object-fit: contain; }
+.future-concept figcaption { font: 400 12px/1.5 var(--font-label); padding-top: 8px; color: #5d5066; }
+.future-features { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 14px 0 18px; }
+.future-features li { padding: 4px 7px; background: #ede6f2; color: #523a69; font: 400 11px/1.4 var(--font-mono); }
+.future-artifact > p, .future-values p, .future-research > p { font: 400 17px/1.65 var(--font-label); margin-bottom: 16px; overflow-wrap: anywhere; }
+.future-values { padding: 16px; background: #f0eaf3; border-left: 3px solid #8a6ca2; margin: 20px 0; }
+.future-values h6 { font: 600 21px/1.3 var(--font-label); margin-bottom: 10px; }
+.future-values p:last-child { margin-bottom: 0; }
+.future-artifact .future-question { font-style: italic; font-weight: 600; color: #513762; }
+.future-research { border: 1px solid #d2c4dc; padding: 12px; margin-top: 18px; }
+.future-research summary { cursor: pointer; font: 500 13px/1.5 var(--font-mono); color: #523a69; }
+.future-research[open] summary { margin-bottom: 14px; }
+.future-research .future-source-links, .future-research .future-scope { font-size: 13px; line-height: 1.6; }
+.future-source-links a { text-decoration: underline; text-underline-offset: 3px; }
+.future-foundation-photo { margin-bottom: 16px; }
+.future-foundation-photo img { display: block; width: 100%; height: auto; max-height: 360px; object-fit: contain; }
+.future-foundation-photo figcaption { font: 400 12px/1.5 var(--font-label); }
+.artifact-connection .future-bridge-note { font-size: 14px; color: #44594d; }
+.archive-futures { border-top: 2px solid #c7b6d6; margin-top: 22px; padding-top: 20px; }
+.archive-futures .future-artifact + .future-artifact { border-top: 1px solid #c7b6d6; margin-top: 22px; padding-top: 20px; }
+.label .artifact-era .media-figure .media-original { display: block; width: 100%; height: clamp(260px,44svh,420px); object-fit: contain; }
+@media(max-width:480px) { .comparison-jumps { gap: 5px; font-size: 11px; } .comparison-jumps a { padding: 6px 7px; } .future-artifact > h5 { font-size: 25px; } }

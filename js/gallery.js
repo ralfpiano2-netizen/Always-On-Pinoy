@@ -1,5 +1,5 @@
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, CLOSING } from './exhibit-text.js?v=dances-sb19-20261105-2';
-import { MEDIA } from './media.js?v=dances-sb19-20261105-2';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, CLOSING } from './exhibit-text.js?v=future-2030s-20261105-1';
+import { MEDIA } from './media.js?v=future-2030s-20261105-1';
 
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const TOPICS = [
@@ -7,8 +7,6 @@ const TOPICS = [
   { domain: 'Economic', title: 'Working and shopping', description: 'The places we work, the things we buy, and how money moves.' },
   { domain: 'Political', title: 'Participating in public life', description: 'Messages, recordings, and the question of whom we trust.' },
   { domain: 'Cultural', title: 'Stories and performances', description: 'The shows, dances, and performers we follow together.' },
-  { domain: 'Environmental', title: 'Living with environmental change', description: 'Shared spaces, everyday choices, and exposure to risk.' },
-  { domain: 'Aesthetics', title: 'Expressing identity', description: 'Music, style, and the ways we choose to be seen.' },
 ];
 const MEDIA_FOR = {
   'comparison-01': ['friendster'], 'comparison-02': ['nokia'],
@@ -48,7 +46,7 @@ function renderCollection() {
   document.getElementById('collection-title').textContent = selected.title;
   document.getElementById('topic-description').textContent = selected.description;
   document.getElementById('section-number').textContent = `${String(currentTopic + 1).padStart(2, '0')} / 06`;
-  document.getElementById('collection-count').textContent = `${entries.length} artifacts in this topic · 21 in the collection`;
+  document.getElementById('collection-count').textContent = `${entries.length} artifacts in this topic · 13 in the collection`;
   document.getElementById('artifact-list').innerHTML = entries.map(c => {
     const number = c.id.slice(-2);
     const preview = mediaFor(c).find(m => m.type === 'image');

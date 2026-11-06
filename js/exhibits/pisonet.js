@@ -1,30 +1,11 @@
 // Zone 2, the street. A PisoNet that sells online time by the peso, the Friendster page inside it,
-// the LAN cafe's time slip, the mall mirror, the parlor's final question and the gig flyer wall.
+// the LAN cafe's time slip and the parlor's final question.
 import { formatTimer } from '../logic.js';
-import { sfx, playMusic, playSlot } from '../audio.js?v=dances-sb19-20261105-2';
-import { $, $$, go, esc } from '../ui.js';
+import { sfx, playMusic, playSlot } from '../audio.js?v=future-2030s-20261105-1';
+import { $, $$, go, esc } from '../ui.js?v=future-2030s-20261105-1';
 
 const PESO_SECONDS = 300;
 const SPEED = 10;
-
-const r = (x, y, w, h, c) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`;
-
-// The mall mirror's paper doll. A plain face: no features, like the rest of the wing's people.
-function avatar({ hair, pants }) {
-  const HAIR = {
-    shag: r(7, 2, 10, 3, '#1e1e1e') + r(6, 4, 2, 9, '#1e1e1e') + r(16, 4, 2, 9, '#1e1e1e') + r(8, 5, 3, 2, '#1e1e1e') + r(13, 5, 3, 2, '#1e1e1e'),
-    emo: r(7, 2, 10, 3, '#1e1e1e') + r(7, 5, 7, 4, '#1e1e1e') + r(16, 4, 1, 7, '#1e1e1e'),
-    spiky: r(7, 3, 10, 2, '#4a2a12') + r(8, 1, 2, 2, '#4a2a12') + r(11, 0, 2, 3, '#4a2a12') + r(14, 1, 2, 2, '#4a2a12'),
-  };
-  const PANTS = {
-    denim: r(7, 24, 10, 2, '#8b5a2b') + r(7, 26, 4, 11, '#2f6fb3') + r(13, 26, 4, 11, '#2f6fb3') + r(7, 23, 10, 1, '#ffffff'),
-    cargo: r(7, 22, 10, 3, '#8e959c') + r(7, 25, 4, 12, '#8e959c') + r(13, 25, 4, 12, '#8e959c') + r(7, 29, 2, 3, '#5a5a5a') + r(15, 29, 2, 3, '#5a5a5a'),
-  };
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 40" shape-rendering="crispEdges" role="img" aria-label="Y2K outfit: ${hair} hair, ${pants === 'denim' ? 'low-waist denim' : 'cargo pants'}">` +
-    r(8, 4, 8, 9, '#e0ac7e') + r(11, 13, 2, 2, '#e0ac7e') + r(6, 15, 12, 9, '#3f6fc9') + r(9, 17, 6, 4, '#f2d24b') +
-    r(4, 16, 2, 8, '#e0ac7e') + r(18, 16, 2, 8, '#e0ac7e') + PANTS[pants] + r(6, 37, 5, 3, '#f7f2e6') + r(13, 37, 5, 3, '#f7f2e6') + HAIR[hair] +
-    '</svg>';
-}
 
 const TESTIMONIALS = [
   ['kristel_xoxo', 'jan! salamat sa pagiging bestfriend q since grade 4. ingatz lagi! mwah :)'],
@@ -74,7 +55,6 @@ export function mountStreet(zone) {
       <div class="lan-slip"><p>PC 07</p><p class="lan-time">01:00:00</p><p>Time left</p></div>
       <ol class="lan-chat" aria-label="In-game chat">${CHAT.map(line => `<li>${esc(line)}</li>`).join('')}</ol>
     </div>
-    <div class="mirror" data-show="ao-10"><div class="mirror-glass">${avatar({ hair: 'shag', pants: 'denim' })}</div></div>
     <div class="qa" data-show="ao-11">
       <div class="qa-card">
         <div class="qa-face qa-front"><p class="qa-kicker">Final question</p><p>Candidate number 8, if you could save one thing from the 2000s, what would it be, and why?</p></div>
@@ -90,7 +70,7 @@ export function mountStreet(zone) {
   const coin = $('.coin', host);
   const fsClock = $('.fs-clock', host);
   const fsOut = $('.fs-out', host);
-  $('[data-try="ao-07"]', zone).innerHTML = '<p class="try-status" aria-live="polite">Drag the coin into the slot, or tap it.</p>';
+  ($('[data-try="ao-07"]', zone) || document.createElement('div')).innerHTML = '<p class="try-status" aria-live="polite">Drag the coin into the slot, or tap it.</p>';
   const status = $('[data-try="ao-07"] .try-status', zone);
   let seconds = 0;
   let timer = 0;
@@ -106,8 +86,8 @@ export function mountStreet(zone) {
     screen.innerHTML = `<p class="ps-time">${formatTimer(seconds)}</p>
       <div class="ps-icons">
         <button type="button" data-go="ao-08"><i class="ico ico--fs"></i>Friendster</button>
-        <button type="button" data-go="ao-09" aria-label="Ragnarok Online"><i class="ico ico--ro"></i>RO</button>
-        <button type="button" data-go="ao-09"><i class="ico ico--dota"></i>DotA</button>
+        <button type="button" data-go="ao-07" aria-label="Ragnarok Online"><i class="ico ico--ro"></i>RO</button>
+        <button type="button" data-go="ao-07"><i class="ico ico--dota"></i>DotA</button>
         <button type="button" data-go="ao-08" aria-label="Internet Explorer"><i class="ico ico--ie"></i>IE</button>
       </div>`;
   };
@@ -172,7 +152,7 @@ export function mountStreet(zone) {
 
   /* Friendster: a profile song that waits for a tap, and testimonials that stay on this device. */
   const testis = $('.fs-testis', host);
-  $('[data-try="ao-08"]', zone).innerHTML = `
+  ($('[data-try="ao-08"]', zone) || document.createElement('div')).innerHTML = `
     <form class="testi-form" novalidate>
       <label for="testi-input">Write a testimonial</label>
       <div class="testi-row"><input id="testi-input" name="testi" maxlength="140" autocomplete="off" placeholder="ingatz lagi! :)"><button class="btn btn--small" type="submit">Post</button></div>
@@ -214,24 +194,13 @@ export function mountStreet(zone) {
       if (document.documentElement.dataset.stop === 'zone-2') sfx.timeUp();
     }
   };
-  $('[data-try="ao-09"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="extend">Pa-extend! One more hour</button><p class="try-status" aria-live="polite"></p>`;
-
-  /* The mall mirror. */
-  const look = { hair: 'shag', pants: 'denim' };
-  $('[data-try="ao-10"]', zone).innerHTML = `
-    <div class="seg" role="group" aria-label="Hair"><span>Hair</span>
-      <button class="btn btn--small" type="button" data-act="hair" data-value="shag" aria-pressed="true">Shag</button>
-      <button class="btn btn--small" type="button" data-act="hair" data-value="emo" aria-pressed="false">Emo</button>
-      <button class="btn btn--small" type="button" data-act="hair" data-value="spiky" aria-pressed="false">Spiky</button></div>
-    <div class="seg" role="group" aria-label="Pants"><span>Pants</span>
-      <button class="btn btn--small" type="button" data-act="pants" data-value="denim" aria-pressed="true">Low-waist</button>
-      <button class="btn btn--small" type="button" data-act="pants" data-value="cargo" aria-pressed="false">Cargo</button></div>`;
+  ($('[data-try="ao-09"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="extend">Pa-extend! One more hour</button><p class="try-status" aria-live="polite"></p>`;
 
   /* The parlor's final question. */
-  $('[data-try="ao-11"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="answer" aria-pressed="false">Hear her answer</button>`;
+  ($('[data-try="ao-11"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="answer" aria-pressed="false">Hear her answer</button>`;
 
   /* The flyer wall. */
-  $('[data-try="ao-12"]', zone).innerHTML = `<p class="try-status" aria-live="polite">Tap a flyer to hear the band.</p>`;
+  ($('[data-try="ao-12"]', zone) || document.createElement('div')).innerHTML = `<p class="try-status" aria-live="polite">Tap a flyer to hear the band.</p>`;
 
   zone.addEventListener('click', e => {
     const jump = e.target.closest('[data-go]');
@@ -252,11 +221,6 @@ export function mountStreet(zone) {
       if (!lanTimer) lanTimer = setInterval(lanTick, 1000);
       sfx.coin();
       $('.try-status', btn.parentElement).textContent = 'Extended. Bantay adds an hour to PC 07.';
-    } else if (act === 'hair' || act === 'pants') {
-      look[act] = btn.dataset.value;
-      for (const b of $$(`[data-act="${act}"]`, zone)) b.setAttribute('aria-pressed', String(b === btn));
-      $('.mirror-glass', host).innerHTML = avatar(look);
-      sfx.tick();
     } else if (act === 'answer') {
       const shown = $('.qa-card', host).classList.toggle('is-flipped');
       btn.setAttribute('aria-pressed', String(shown));

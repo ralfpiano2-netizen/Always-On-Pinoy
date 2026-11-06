@@ -1,9 +1,9 @@
 // Zone 1, the TV day. A CRT in the sala, a wall clock that spins to each show's hour, the family
 // gathering in front of the set, and the newspaper TV guide that ran the household's schedule.
 import { wallet } from '../state.js';
-import { sfx, playMusic, playSlot } from '../audio.js?v=dances-sb19-20261105-2';
+import { sfx, playMusic, playSlot } from '../audio.js?v=future-2030s-20261105-1';
 import { onProgress } from '../scroll.js';
-import { $, $$, img, go, esc } from '../ui.js';
+import { $, $$, img, go, esc } from '../ui.js?v=future-2030s-20261105-1';
 import { broadcast } from '../scenes.js';
 import { person, FAMILY, NEIGHBORS } from '../sprites.js';
 
@@ -173,7 +173,7 @@ export function mountTV(zone) {
     if (listing) go(listing.dataset.go);
   });
 
-  const tryRow = (id, html) => { $(`[data-try="${id}"]`, zone).innerHTML = html; };
+  const tryRow = (id, html) => { const row = $(`[data-try="${id}"]`, zone); if (row) row.innerHTML = html; };
   tryRow('ao-01', `<button class="btn btn--small" type="button" data-act="dance" aria-pressed="false">Sabayan, dance along</button>`);
   tryRow('ao-02', `<button class="btn btn--small" type="button" data-act="dub" data-lang="orig" aria-pressed="false">Original audio</button>
     <button class="btn btn--small" type="button" data-act="dub" data-lang="fil" aria-pressed="true">Tagalog dub</button>`);

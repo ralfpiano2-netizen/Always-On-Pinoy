@@ -2,8 +2,8 @@
 // scratch-off load card, a 3GP arriving over Bluetooth, one earphone each, and Mama's padala.
 import { multitap, KEYMAP } from '../logic.js';
 import { wallet } from '../state.js';
-import { sfx, playMusic, playSlot, isOn, state as audioState } from '../audio.js?v=dances-sb19-20261105-2';
-import { $, $$, esc } from '../ui.js';
+import { sfx, playMusic, playSlot, isOn, state as audioState } from '../audio.js?v=future-2030s-20261105-1';
+import { $, $$, esc } from '../ui.js?v=future-2030s-20261105-1';
 import { person } from '../sprites.js';
 
 const REPLIES = ['eow dn! hehe. txt u l8r ;)', 'musta? d2 me sa skul. ingatz!', 'hahaha korni mo! gud nyt :)', 'ok po. GM ko 2 sa lahat ha'];
@@ -321,10 +321,10 @@ export function mountNokia(zone) {
     if (clear / (alpha.length / 4) >= 0.6) reveal();
   });
   foil.addEventListener('pointerup', () => { scratching = false; });
-  $('[data-try="ao-14"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="scratch">Scratch it all</button>
+  ($('[data-try="ao-14"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="scratch">Scratch it all</button>
     <button class="btn btn--small" type="button" data-act="load">Load ₱30</button><p class="try-status" aria-live="polite">Scratch the silver strip on the card.</p>`;
 
-  $('[data-try="ao-13"]', zone).innerHTML = `<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
+  ($('[data-try="ao-13"]', zone) || document.createElement('div')).innerHTML = `<p class="try-status">Tap the keys, or select the phone and type with your number keys. Menu hides a game.</p>`;
 
   /* 3GP over Bluetooth: wait out the transfer, then watch a few blocky seconds. */
   const cpBody = $('.cp-body', host);
@@ -380,16 +380,16 @@ export function mountNokia(zone) {
       playClip();
     }, 100);
   };
-  $('[data-try="ao-16"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="accept">Accept the file</button><p class="try-status" aria-live="polite"></p>`;
+  ($('[data-try="ao-16"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="accept">Accept the file</button><p class="try-status" aria-live="polite"></p>`;
   const cpStatus = $('[data-try="ao-16"] .try-status', zone);
 
   /* One earphone each: sharing hands the other ear away, so you hear one side. */
   const mp3 = $('.mp3', host);
-  $('[data-try="ao-17"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="mp3" aria-pressed="false">Play track 03</button>
+  ($('[data-try="ao-17"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="mp3" aria-pressed="false">Play track 03</button>
     <button class="btn btn--small" type="button" data-act="share" aria-pressed="false">Share an earbud</button>`;
 
   /* Mama's padala text. */
-  $('[data-try="ao-18"]', zone).innerHTML = `<button class="btn btn--small" type="button" data-act="mama">Read Mama’s text</button>
+  ($('[data-try="ao-18"]', zone) || document.createElement('div')).innerHTML = `<button class="btn btn--small" type="button" data-act="mama">Read Mama’s text</button>
     <button class="btn btn--small" type="button" data-act="reply">Reply to Mama</button><p class="try-status" aria-live="polite"></p>`;
 
   zone.addEventListener('click', e => {
@@ -447,7 +447,8 @@ export function mountNokia(zone) {
     if (detail.id !== 'ao-17') {
       mp3.classList.remove('is-shared');
       for (const b of $$('[data-act="mp3"], [data-act="share"]', zone)) b.setAttribute('aria-pressed', 'false');
-      $('[data-act="mp3"]', zone).textContent = 'Play track 03';
+      const mp3Button = $('[data-act="mp3"]', zone);
+      if (mp3Button) mp3Button.textContent = 'Play track 03';
       playMusic(null);
     }
   });

@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=dances-sb19-20261105-2';
+import { COMPARISONS } from './exhibit-text.js?v=future-2030s-20261105-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -174,7 +174,8 @@ const PRESENT_TITLES = { 1: 'Profiles and recommended feeds', 2: 'Group chats an
 for (const a of ARTIFACTS) {
   const n = DOCUMENT_MATCHES[a.id];
   if (!n) continue;
-  const comparison = COMPARISONS[n - 1];
+  const comparison = COMPARISONS.find(c => c.id === `comparison-${String(n).padStart(2, '0')}`);
+  if (!comparison) continue;
   a.comparison = comparison.id;
   if (a.id === 'ao-14') a.title = 'Prepaid access card';
   a.body = comparison.past;
@@ -296,3 +297,20 @@ export const CREDITS = {
   // Names only what ships: when generated sound or the guide voice lands, it is added here.
   ai: 'The pixel reconstructions were generated with AI tools (OpenAI image generation), and the site was built with AI assistance. Original photographs, layout images and videos are credited separately in their galleries and below.',
 };
+
+// Twelve curated stops. Research accession identifiers remain stable across editions.
+const TOUR_IDS = ["ao-01", "ao-02", "ao-05", "ao-06", "ao-07", "ao-08", "ao-10", "ao-11", "ao-13", "ao-14", "ao-15", "ao-18"];
+export const TOUR_ARTIFACTS = ARTIFACTS.filter(a => TOUR_IDS.includes(a.id));
+const tour = Object.fromEntries(TOUR_ARTIFACTS.map(a => [a.id,a]));
+tour['ao-02'].title = 'Television stories and shared viewing';
+tour['ao-07'].title = 'Computer shops and shared access';
+tour['ao-07'].comparison = 'comparison-03';
+tour['ao-07'].details.intro = 'A coin, a turn, and a room of people. Computer shops made access a shared experience as well as a purchase.';
+tour['ao-07'].details.past.push(COMPARISONS.find(c=>c.id==='comparison-03').past);
+tour['ao-07'].details.present = [COMPARISONS.find(c=>c.id==='comparison-03').present];
+tour['ao-07'].details.presentHeading = '2020s · Mobile play and continuing access limits';
+tour['ao-07'].details.connection = COMPARISONS.find(c=>c.id==='comparison-03').synthesis;
+tour['ao-07'].details.sources = [];
+tour['ao-07'].now.title = 'Mobile games and the barkada';
+tour['ao-10'].title = 'Mall hangouts and shopping feeds';
+tour['ao-13'].title = 'Nokia messages and shared media';

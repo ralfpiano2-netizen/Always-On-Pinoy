@@ -137,105 +137,9 @@ export const COMPARISONS = [
     "synthesis": "Television performances, talent searches, and Asian entertainment gave audiences earlier ways to follow stars and participate in fandom across national boundaries (Flores, 2003). Contemporary P-pop connects with those familiar practices through a wider combination of concerts, broadcasters, and digital circulation (Basbas, 2024; Gabrillo, 2024). The comparison helps us place BINI and SB19 within a history of mediated performance while respecting the distinct influences behind each group. It also shows why international participation involves more than a viral clip: artists, institutions, and fans all contribute to how a performance reaches and retains an audience.",
     "domain": "Cultural",
     "lens": "Technology"
-  },
-  {
-    "id": "comparison-14",
-    "title": "Earth Hour and the time beyond it",
-    "intro": "Switching off a light becomes a public gesture when others join in. Earth Hour gives environmental concern a shared moment and a recognizable public gesture.",
-    "past": "The campaign already connected physical participation with digital communication. In 2009, WWF encouraged Filipinos to spread the Earth Hour message through blogs, online groups, web videos, and texts (GMANews.TV, 2009b). Environmental advocacy was using networked media before the 2020s.",
-    "present": "Climate concern also enters discussions of everyday choices and emotional well-being. A study of 433 young Filipino adults found an association between climate-change anxiety and mental-health measures (Reyes et al., 2023). This documents an experience within the study's sample, rather than showing that every young person feels or responds the same way.",
-    "synthesis": "Earth Hour's 2009 use of blogs, videos, and texts shows that public environmental events and digital advocacy were already connected (GMANews.TV, 2009b). Contemporary climate concern continues that relationship alongside attention to everyday choices and emotional well-being. The earlier campaign is helpful because it makes a shared gesture visible as an entry into participation, rather than a complete solution. The connection encourages visitors to consider how concern can be sustained through organizations, available services, and public decisions. Climate anxiety deserves recognition (Reyes et al., 2023), but it should not be assumed to produce the same actions in everyone.",
-    "domain": "Environmental",
-    "lens": "Time"
-  },
-  {
-    "id": "comparison-15",
-    "title": "Payatas Ondoy and places exposed to risk",
-    "intro": "Environmental danger gathers in particular places. Waste systems, housing, drainage, and development decisions shape who lives with that danger and who has the means to avoid it.",
-    "past": "The July 2000 Payatas landfill failure exposed the consequences of hazardous conditions around a waste site (Jafari et al., 2013). An engineering investigation identified interacting factors including heavy rain, elevated leachate, gas, and a steep slope (Jafari et al., 2013). During the 2009 Ondoy emergency, mobile transfers and text-based donations helped connect people with relief efforts (GMANews.TV, 2009a).",
-    "present": "Manila Bay reclamation raises questions about development and exposure. Reporting in 2023 described concerns about altered water flow and possible flooding impacts (GMA Integrated News, 2023).\n\nThe World Bank’s 2022 climate report estimates that, without action, climate-related economic damage could reach as much as 13.6 percent of Philippine GDP by 2040. This is an upper-end modeled outcome under the report’s assumptions, not an observed loss in 2026. The report also identifies unequal impacts, with poorer households especially exposed (World Bank Group, 2022).",
-    "synthesis": "The Payatas landfill failure, Ondoy, and present climate risks involve different physical processes (Jafari et al., 2013; World Bank Group, 2022). Their connection is the question of where danger accumulates and who has the means to respond. Remembering relief efforts after Ondoy (GMANews.TV, 2009a) can lead to a further question: what would protect a community before the next emergency? Housing, waste systems, drainage, and development decisions belong in that story alongside individual preparedness. A hazard map is useful when its location, date, hazard, and assumptions are understood.",
-    "domain": "Environmental",
-    "lens": "Space",
-    "presentSummary": "Past disasters raise a present question: what protects people before the next emergency? Climate projections and development debates direct attention to unequal exposure and prevention."
-  },
-  {
-    "id": "comparison-16",
-    "title": "Ukay ukay and the life of a good find",
-    "intro": "A secondhand garment carries a history into someone else's wardrobe. Finding the right piece can combine affordability with the pleasure of discovering something distinctive.",
-    "past": "Physical secondhand shops provided places to search through used clothing and judge an item's fit, material, and condition. Ukay-ukay's longer history matters here: it did not begin with the 2020s interest in sustainability (Biana, 2020). Hazel Biana's research considers it a possible sustainable-fashion model, with limitations (Biana, 2020).",
-    "present": "A secondhand search can now begin with a listing as well as a rack. Carousell’s review of activity from January through October 2024 found that Philippine users were most active on the platform between 9 and 11 p.m. Its regional comparison covers its own markets and categories, rather than all Filipino shoppers (Carousell, 2024).\n\nA photograph, description, and conversation with the seller now help a buyer judge a garment before meeting or arranging delivery. The chance to extend an item’s useful life remains part of the appeal. Biana’s analysis treats ukay-ukay as a possible sustainable-fashion model with limitations; buying secondhand alone does not establish the impact of an entire wardrobe (Biana, 2020).",
-    "synthesis": "The rack and the listing offer two ways to find a garment with a previous owner. The skill of judging condition and usefulness remains relevant as discovery moves between physical and digital settings (Biana, 2020; Carousell, 2024). The past offers a practical way to think about sustainability: how long will this item be worn, maintained, repaired, or passed on? Those are visitor questions, rather than a claim that a pictured upcycled item represents all ukay-ukay. A good find has a story after the purchase as well as before it.",
-    "domain": "Environmental",
-    "lens": "Space",
-    "presentSummary": "Secondhand discovery moves between racks and online listings. Condition, repeated use, and what happens after purchase matter alongside the excitement of a good find."
-  },
-  {
-    "id": "comparison-17",
-    "title": "Jeepneys rail lines and the daily journey",
-    "intro": "A commute shapes the time left for everything else. Waiting, transferring, and finding an affordable route are part of how people experience the city.",
-    "past": "Jeepneys and buses shared urban journeys with developing rail services. LRT-2 began opening in phases in 2003 (Light Rail Transit Authority, n.d.), while MRT-3's official history records full operations in 2000 (Metro Rail Transit Corporation, n.d.). The lines had separate development timelines and served different routes.",
-    "present": "E-bikes, electric vehicles, cycling, and public transport enter continuing debates about accessible mobility. Research on Filipino commuters’ e-bike adoption examines practical barriers and acceptance, and notes that environmental performance depends partly on the electricity supply (Gumasing, 2025).\n\nThe Department of Energy reported 66,685 hybrid, plug-in hybrid, and battery-electric vehicle sales for January–August 2026, or 24.7 percent of vehicle sales in that period. It also reported 1,876 registered charging stations by the end of August. The sales share includes hybrids; it is not a battery-electric-only figure or the share of every vehicle already on Philippine roads (Department of Energy, 2026).",
-    "synthesis": "Rail expansion in the 2000s and the growth of electric mobility change different parts of a journey (Light Rail Transit Authority, n.d.; Metro Rail Transit Corporation, n.d.; Department of Energy, 2026). Neither a new vehicle nor a national sales figure tells the whole commuter’s story. The useful comparison is the trip a person can actually make: its cost, waiting time, route, safety, and supporting infrastructure. Reading the periods together keeps public access and practical use in view alongside technological change.",
-    "domain": "Environmental",
-    "lens": "Technology",
-    "presentSummary": "Electric mobility is growing alongside public transport and other ways of travelling. A useful journey still depends on affordability, routes, safety, and supporting infrastructure."
-  },
-  {
-    "id": "comparison-18",
-    "title": "OPM bands and belonging through music",
-    "intro": "A band shirt can begin a conversation without a word. Music gives people something to recognize in one another and a way to carry a favorite performance into everyday life.",
-    "past": "Kamikazee and Sponge Cola were part of the period's recorded and live band culture. Contemporary coverage of the 2006 Kami nAPO Muna tribute project places both among participating performers (The Philippine Star, 2006), providing a specific record of their presence in the music scene.",
-    "present": "OPM can reach a listener through a recording, a concert, a short clip, or a playlist. Spotify’s 2024 Philippine anniversary report describes its Pinoy Music hub, including Tatak Pinoy, KALYE, and P-Pop on the Rise. These are examples of how one platform organizes discovery, not a complete measure of Filipino listening (Spotify, 2024).\n\nIn April 2025, Spotify included the Philippines in the expansion of AI Playlist in beta for Premium listeners. It lets users describe an idea and refine a suggested playlist. Choosing with a written prompt adds another route to music discovery; it is distinct from merely calling every personalized recommendation an ‘AI playlist’ (Spotify, 2025). Concerts, friends, and fan communities continue to offer other routes into music (Gabrillo, 2024).",
-    "synthesis": "The 2006 Kami nAPO Muna tribute brought bands into a shared recording project (The Philippine Star, 2006). A contemporary playlist also brings songs into a chosen sequence, although its selection can involve editors, listeners, and software in different ways (Spotify, 2024; Spotify, 2025). The connection is the act of finding music and giving it meaning. A recommendation may begin the encounter; singing along, sharing a track, or going to a gig makes it part of a relationship. Which song would you choose yourself, and which one did a platform introduce?",
-    "domain": "Aesthetics",
-    "lens": "Space",
-    "presentSummary": "OPM discovery spans gigs, clips, friends, and playlists. Curated selections and prompt-based tools add ways to encounter music while listeners continue to make it their own."
-  },
-  {
-    "id": "comparison-19",
-    "title": "Low rise denim and returning styles",
-    "intro": "One generation's old outfit can become another's new discovery. Returning styles reveal how an object can stay recognizable while acquiring a different meaning.",
-    "past": "Low-rise denim appeared among the period's fashion trends (Maddela, 2019). F4's popularity also made long hairstyles a recognizable media reference in the Philippines (Francisco, 2003). Contemporary reporting on Meteor Garden and later reflections on 2000s fashion document these associations.",
-    "present": "Preview’s 2023 denim guide discusses renewed interest in low-rise jeans alongside other silhouettes (Cruz, 2023). Its 2019 discussion of Y2K style shows the revival developing before the decade turned (Maddela, 2019). These are dated fashion examples, not a survey establishing what all Filipinos wear in 2026.\n\nThe return of an earlier look can mean something different to someone wearing it for the first time. Pairing an old silhouette with a new outfit allows nostalgia, discovery, and personal interpretation to coexist.",
-    "synthesis": "Returning styles make the past available as material for self-expression (Cruz, 2023; Francisco, 2003; Maddela, 2019). A wearer can recognize a look from childhood, encounter it through an older photograph, or simply like its shape. Revival therefore does not recreate a whole decade. It selects parts of an earlier style and gives them a place in another moment. The useful question is not only ‘Is it back?’ but ‘What changes when someone else wears it now?’",
-    "domain": "Aesthetics",
-    "lens": "Overall",
-    "presentSummary": "Low-rise denim’s revival offers an earlier silhouette to another generation. Dated fashion examples show reinterpretation, rather than a universal return to the 2000s wardrobe."
-  },
-  {
-    "id": "comparison-20",
-    "title": "Fast fashion and the outfit in the feed",
-    "intro": "A clothing video can reach someone who had no plans to shop. A demonstration makes a style imaginable, and a purchase link brings it within reach.",
-    "past": "Mall displays and celebrity-inspired looks offered ways to discover and imitate a desired appearance. Browsing connected clothing with leisure and the wish to try a different version of oneself. The physical trip gave that search a particular place and duration. The mall chronology (SM Prime Holdings, n.d.) and retrospective fashion reporting (Maddela, 2019) provide context for this curatorial comparison.",
-    "present": "Hauls, styling videos, and digital storefronts bring discovery, promotion, and purchasing closer together. A study of Filipino fast-fashion consumers examined purchase intentions in relation to social media and sustainability advocacy (Cayaban et al., 2023). Secondhand clothing can appear in the same media environment, although the sustainability of consumption depends on more than how an item is presented (Biana, 2020).",
-    "synthesis": "Mall displays and celebrity looks offered earlier routes from seeing an appearance to wanting to reproduce it. Contemporary hauls and storefront links bring those stages closer within a viewing session. The connection is useful for recognizing persuasion when it arrives as entertainment or advice. A familiar shopping experience helps visitors examine what an online presentation emphasizes and what it leaves out, including whether an item will remain useful. Research on purchase intentions supports attention to media influence without establishing that every viewer responds or purchases in the same way (Cayaban et al., 2023).",
-    "domain": "Aesthetics",
-    "lens": "Technology"
-  },
-  {
-    "id": "comparison-21",
-    "title": "Papaya soap glutathione and the filtered face",
-    "intro": "A beauty product and a camera filter offer different ways to change an appearance. Both can enter the moment when someone considers how they want to be seen.",
-    "past": "Papaya-soap businesses (Bayonet, 2008) and glutathione-supplement marketing (The Philippine Star, 2007) were documented features of beauty commerce. These records show commercial popularity, rather than establish product effectiveness. Mendoza's later study of the Philippine skin-whitening industry examines consumer information, trust, and regulation (Mendoza, 2014).",
-    "present": "A beauty filter can change the displayed image rather than the physical body. Reporting on AI-powered effects such as TikTok’s Bold Glamour describes convincing enhancement and concerns about appearance expectations (Diaz, 2023).\n\nA 2026 study examines links among AI beauty-filter use, negative body image, and appearance self-esteem through two studies, one with 468 social-media users and another with 312 BeautyPlus Cam users. Its findings give context for questions about idealized appearance. They do not measure Philippine usage or establish that every user experiences harm; the cross-sectional evidence also limits causal conclusions (Garg et al., 2026).",
-    "synthesis": "Papaya soap and glutathione products belong to a physical beauty market; a filter edits the image that other people see. These are different practices, connected here through the ideals they invite people to pursue (Mendoza, 2014; Garg et al., 2026). The change from a product to a software effect does not settle who defines a desirable face. What features does an effect change, whose appearance does it treat as the standard, and how does the unfiltered face feel afterward? The exhibit offers those questions without treating enhancement, popularity, safety, and personal worth as the same thing.",
-    "domain": "Aesthetics",
-    "lens": "Technology",
-    "presentSummary": "Beauty filters edit the displayed face while physical products remain part of beauty culture. New research raises questions about idealized appearance, with limits on what it can establish about Filipino users."
   }
 ];
 export const DOCUMENT_REFERENCES = [
-  {
-    "id": "dance-ref-otso2018",
-    "apa": "ABS-CBN Entertainment. (2018, October 14). The Kids’ Choice PH highlights: Bayani, itinuro ang Otso Otso dance kay AC [Video]. YouTube. https://www.youtube.com/watch?v=e8rq5B9jsBk",
-    "url": "https://www.youtube.com/watch?v=e8rq5B9jsBk"
-  },
-  {
-    "id": "dance-ref-pamela2020",
-    "apa": "ABS-CBN Entertainment. (2020, July 13). Vhong Navarro dances “Pamela One” | It’s Showtime [Video]. YouTube. https://www.youtube.com/watch?v=kvgj2eY8T4U",
-    "url": "https://www.youtube.com/watch?v=kvgj2eY8T4U"
-  },
   {
     "id": "doc-ref-01",
     "apa": "ABS-CBN. (2022, August 1). Fan-picked teleseryes in the last 3 decades to be recognized in “Jeepney TV Fan Favorite Awards”. ABS-CBN Newsroom. https://corporate.abs-cbn.com/newsroom/news-releases/2022/8/1/jeepney-tv-fan-favorite-awards-group-5-voting-open?lang=en",
@@ -272,11 +176,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.pep.ph/news/local/151314/11-top-rating-abs-cbn-teleseryes-of-all-time-a724-a710-20200510-lfrm3"
   },
   {
-    "id": "doc-ref-06",
-    "apa": "Anoc, A., & Cruz, H. J. (2024, July 14). Get to know the Nation’s Girl Group BINI. GMA Entertainment. https://www.gmanetwork.com/entertainment/photos/get-to-know-the-nations-girl-group-bini/20181/",
-    "url": "https://www.gmanetwork.com/entertainment/photos/get-to-know-the-nations-girl-group-bini/20181/"
-  },
-  {
     "id": "doc-ref-07",
     "apa": "Antonio, J. (2022, September 13). “Drag Race PH: Untucked”: Eva Le Queen explains why pageants matter to LGBT community. ABS-CBN News. https://www.abs-cbn.com/entertainment/09/13/22/eva-le-queen-explains-why-pageants-matter-to-lgbt-community",
     "url": "https://www.abs-cbn.com/entertainment/09/13/22/eva-le-queen-explains-why-pageants-matter-to-lgbt-community"
@@ -307,16 +206,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://billboardphilippines.com/events/k-power-100/bini-to-perform-cherry-on-top-and-pantropiko-at-billboard-k-power-100-livestream-2024/"
   },
   {
-    "id": "doc-ref-10",
-    "apa": "Bayonet, A. M. (2008, September 14). A natural friendship. The Philippine Star. https://www.philstar.com/lifestyle/sunday-life/2008/09/14/400327/natural-friendship",
-    "url": "https://www.philstar.com/lifestyle/sunday-life/2008/09/14/400327/natural-friendship"
-  },
-  {
-    "id": "doc-ref-11",
-    "apa": "Biana, H. T. (2020). The Philippine ukay-ukay culture as sustainable fashion. DLSU Business & Economics Review, 30(1), 154–164. https://doi.org/10.59588/2243-786X.1126",
-    "url": "https://doi.org/10.59588/2243-786X.1126"
-  },
-  {
     "id": "doc-ref-bietti-mayor2023",
     "apa": "Bietti, L. M., & Mayor, E. (2023). A longitudinal study of conversational remembering in WhatsApp group messages before, during, and after COVID-19 lockdown. Memory, Mind & Media, 2, Article e5. https://doi.org/10.1017/mem.2023.5",
     "url": "https://doi.org/10.1017/mem.2023.5"
@@ -332,34 +221,9 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.bsp.gov.ph/Sites/researchsite/Publications/BSP-Discussion-Papers/DP202601.pdf"
   },
   {
-    "id": "doc-ref-13",
-    "apa": "Carousell. (2024, November 26). Ukay-ukay goes digital on Carousell: Filipinos lead the region in secondhand fashion transactions, Gen Z users brings back “retro” 2000s digital cameras [Press release]. https://press.carousell.com/2024/11/26/ukay-ukay-goes-digital-on-carousell-filipinos-lead-the-region-in-secondhand-fashion-transactions-gen-z-users-brings-back-retro-2000s-digital-cameras/",
-    "url": "https://press.carousell.com/2024/11/26/ukay-ukay-goes-digital-on-carousell-filipinos-lead-the-region-in-secondhand-fashion-transactions-gen-z-users-brings-back-retro-2000s-digital-cameras/"
-  },
-  {
-    "id": "doc-ref-14",
-    "apa": "Cayaban, C. J. G., Prasetyo, Y. T., Persada, S. F., Borres, R. D., Gumasing, M. J. J., & Nadlifatin, R. (2023). The influence of social media and sustainability advocacy on the purchase intention of Filipino consumers in fast fashion. Sustainability, 15(11), Article 8502. https://doi.org/10.3390/su15118502",
-    "url": "https://doi.org/10.3390/su15118502"
-  },
-  {
     "id": "doc-ref-crisan2024",
     "apa": "Crisan, L. (2024, April 9). HD photos, shared albums and more on Messenger. Meta. https://about.fb.com/news/2024/04/hd-photos-shared-albums-and-more-on-messenger/",
     "url": "https://about.fb.com/news/2024/04/hd-photos-shared-albums-and-more-on-messenger/"
-  },
-  {
-    "id": "doc-ref-15",
-    "apa": "Cruz, N. (2023, February 18). 5 denim trends of 2023 to update your wardrobe. Preview.ph. https://www.preview.ph/fashion/denim-trends-2023-a00300-20230218",
-    "url": "https://www.preview.ph/fashion/denim-trends-2023-a00300-20230218"
-  },
-  {
-    "id": "doc-ref-doe2026",
-    "apa": "Department of Energy. (2026, September 23). EV adoption gains ground as DOE strengthens safety, charging ecosystem. https://doe.gov.ph/ev-adoption-gains-ground-as-doe-strengthens-safety-charging-ecosystem",
-    "url": "https://doe.gov.ph/ev-adoption-gains-ground-as-doe-strengthens-safety-charging-ecosystem"
-  },
-  {
-    "id": "doc-ref-16",
-    "apa": "Diaz, O. C. (2023, June 25). Beauty filters are now powered by AI, should we be scared? The National. https://www.thenationalnews.com/lifestyle/wellbeing/2023/06/25/beauty-filters-are-now-powered-by-ai-should-we-be-scared/",
-    "url": "https://www.thenationalnews.com/lifestyle/wellbeing/2023/06/25/beauty-filters-are-now-powered-by-ai-should-we-be-scared/"
   },
   {
     "id": "doc-ref-17",
@@ -377,19 +241,9 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.philstar.com/lifestyle/sunday-life/2003/06/29/211845/after-jackie-chan-and-jet-li-are-we-ready-f4-boys/amp/"
   },
   {
-    "id": "doc-ref-20",
-    "apa": "Francisco, B. (2003, September 20). The Meteor Garden fever. The Philippine Star. https://www.philstar.com/entertainment/2003/09/20/221300/meteor-garden-fever",
-    "url": "https://www.philstar.com/entertainment/2003/09/20/221300/meteor-garden-fever"
-  },
-  {
     "id": "doc-ref-21",
     "apa": "Gabrillo, J. (2024). Pop convergence: Musical multimedia in Manila. Oxford University Press. https://academic.oup.com/book/58171",
     "url": "https://academic.oup.com/book/58171"
-  },
-  {
-    "id": "doc-ref-garg2026",
-    "apa": "Garg, A., Goel, P., Rana, N. P., & Mishra, A. (2026). AI beauty filters, and appearance self-esteem: An empirical investigation. Journal of Consumer Behaviour, 25(4), 1678–1700. https://doi.org/10.1002/cb.70141",
-    "url": "https://doi.org/10.1002/cb.70141"
   },
   {
     "id": "dance-ref-gil2005",
@@ -407,11 +261,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://rollingstonephilippines.com/music/tracing-the-origins-of-p-pop/"
   },
   {
-    "id": "doc-ref-24",
-    "apa": "GMA Integrated News. (2023, August 16). Manila Bay reclamation could impact fishing, flooding—expert. GMA News Online. https://www.gmanetwork.com/news/topstories/metro/879129/manila-bay-reclamation-could-impact-fishing-flooding-expert/story/",
-    "url": "https://www.gmanetwork.com/news/topstories/metro/879129/manila-bay-reclamation-could-impact-fishing-flooding-expert/story/"
-  },
-  {
     "id": "doc-ref-25",
     "apa": "GMANews.TV. (2007a, December 20). AFP releases 53 Magdalo officers from detention. GMA News Online. https://www.gmanetwork.com/news/topstories/nation/73610/afp-releases-53-magdalo-officers-from-detention/story/",
     "url": "https://www.gmanetwork.com/news/topstories/nation/73610/afp-releases-53-magdalo-officers-from-detention/story/"
@@ -420,16 +269,6 @@ export const DOCUMENT_REFERENCES = [
     "id": "doc-ref-26",
     "apa": "GMANews.TV. (2007b, April 25). TriNoma 90% leased out, ready for May soft opening. GMA News Online. https://www.gmanetwork.com/news/money/companies/39823/trinoma-90-leased-out-ready-for-may-soft-opening/story/",
     "url": "https://www.gmanetwork.com/news/money/companies/39823/trinoma-90-leased-out-ready-for-may-soft-opening/story/"
-  },
-  {
-    "id": "doc-ref-27",
-    "apa": "GMANews.TV. (2009a, September 29). Globe, Smart waive cash transfer fees for Ondoy donations. GMA News Online. https://www.gmanetwork.com/news/money/companies/173409/globe-smart-waive-cash-transfer-fees-for-ondoy-donations/story/",
-    "url": "https://www.gmanetwork.com/news/money/companies/173409/globe-smart-waive-cash-transfer-fees-for-ondoy-donations/story/"
-  },
-  {
-    "id": "doc-ref-28",
-    "apa": "GMANews.TV. (2009b, March 21). Spread word of Earth Hour online, WWF asks Pinoys. GMA News Online. https://www.gmanetwork.com/news/topstories/nation/153602/spread-word-of-earth-hour-online-wwf-asks-pinoys/story/",
-    "url": "https://www.gmanetwork.com/news/topstories/nation/153602/spread-word-of-earth-hour-online-wwf-asks-pinoys/story/"
   },
   {
     "id": "doc-ref-29",
@@ -447,16 +286,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.spot.ph/newsfeatures/adulting/104345/best-practices-for-live-selling-in-the-philippines-a5229-20230408-lfrm"
   },
   {
-    "id": "doc-ref-31",
-    "apa": "Gumasing, M. J. J. (2025). Exploring factors influencing e-bike adoption among Filipino commuters: An integrated diffusion of innovation and technology acceptance model. World Electric Vehicle Journal, 16(2), Article 113. https://doi.org/10.3390/wevj16020113",
-    "url": "https://doi.org/10.3390/wevj16020113"
-  },
-  {
-    "id": "doc-ref-32",
-    "apa": "Jafari, N. H., Stark, T. D., & Merry, S. (2013). The July 10 2000 Payatas landfill slope failure. ISSMGE International Journal of Geoengineering Case Histories, 2(3), 208–228. https://doi.org/10.4417/IJGCH-02-03-03",
-    "url": "https://doi.org/10.4417/IJGCH-02-03-03"
-  },
-  {
     "id": "doc-ref-33",
     "apa": "King-Dejardin, A. M. (2021, March 9). Homeworking in the Philippines: Bad job? Good job? (ILO Working Paper No. 25). International Labour Organization. https://www.ilo.org/publications/homeworking-philippines-bad-job-good-job",
     "url": "https://www.ilo.org/publications/homeworking-philippines-bad-job-good-job"
@@ -472,11 +301,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.philstar.com/lifestyle/business-life/2001/05/15/85823/philippine-text-messaging-phenomenon"
   },
   {
-    "id": "doc-ref-36",
-    "apa": "Light Rail Transit Authority. (n.d.). Railway operations. https://www.lrta.gov.ph/railway-operations/",
-    "url": "https://www.lrta.gov.ph/railway-operations/"
-  },
-  {
     "id": "doc-ref-37",
     "apa": "Limos, M. A. (2021, January 21). What ever happened to Netopia? Esquire Philippines. https://www.esquiremag.ph/long-reads/features/where-is-netopia-now-a00293-20210121",
     "url": "https://www.esquiremag.ph/long-reads/features/where-is-netopia-now-a00293-20210121"
@@ -487,29 +311,14 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.philstar.com/entertainment/2004/05/22/250906/bayani-singer"
   },
   {
-    "id": "doc-ref-38",
-    "apa": "Maddela, O. (2019, October 3). These fashion experts want you to handle the revival of Y2K style wisely. Preview.ph. https://www.preview.ph/fashion/2000s-fashion-revival-jlo-a00190-20191003-lfrm",
-    "url": "https://www.preview.ph/fashion/2000s-fashion-revival-jlo-a00190-20191003-lfrm"
-  },
-  {
     "id": "doc-ref-39",
     "apa": "Marquez, M. (2022, October 21). “Drag Race Philippines”: A celebration of kings, queens, and in-betweens. PhilSTAR Life. https://philstarlife.com/geeky/814221-drag-race-philippines-celebration-kings-queens",
     "url": "https://philstarlife.com/geeky/814221-drag-race-philippines-celebration-kings-queens"
   },
   {
-    "id": "doc-ref-40",
-    "apa": "Mendoza, R. L. (2014). The skin whitening industry in the Philippines. Journal of Public Health Policy, 35(2), 219–238. https://doi.org/10.1057/jphp.2013.50",
-    "url": "https://doi.org/10.1057/jphp.2013.50"
-  },
-  {
     "id": "doc-ref-41",
     "apa": "Messenger, J. C., & Ghosheh, N. (Eds.). (2010). Offshoring and working conditions in remote work. Palgrave Macmillan; International Labour Office. https://www.ilo.org/publications/offshoring-and-working-conditions-remote-work",
     "url": "https://www.ilo.org/publications/offshoring-and-working-conditions-remote-work"
-  },
-  {
-    "id": "doc-ref-42",
-    "apa": "Metro Rail Transit Corporation. (n.d.). About MRTC. https://mrt3.com/index.php/menu-about.html",
-    "url": "https://mrt3.com/index.php/menu-about.html"
   },
   {
     "id": "doc-ref-43",
@@ -547,11 +356,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://escholarship.org/uc/item/5t1376v0"
   },
   {
-    "id": "doc-ref-51",
-    "apa": "Reyes, M. E. S., Carmen, B. P. B., Luminarias, M. E. P., Mangulabnan, S. A. N. B., & Ogunbode, C. A. (2023). An investigation into the relationship between climate change anxiety and mental health among Gen Z Filipinos. Current Psychology, 42, 7448–7456. https://doi.org/10.1007/s12144-021-02099-3",
-    "url": "https://doi.org/10.1007/s12144-021-02099-3"
-  },
-  {
     "id": "doc-ref-52",
     "apa": "Rico, J.-A., & de Leon, K. R. C. (2017). Mall culture and consumerism in the Philippines. In State of power 2017. Transnational Institute. https://www.tni.org/files/publication-downloads/stateofpower2017-mall-culture.pdf",
     "url": "https://www.tni.org/files/publication-downloads/stateofpower2017-mall-culture.pdf"
@@ -582,34 +386,9 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://www.smprime.com/our-history/"
   },
   {
-    "id": "doc-ref-56",
-    "apa": "Smart Communications. (2020, September 28). Smart expands nationwide 5G rollout to key VisMin areas. https://smart.com.ph/About/newsroom/full-news/2020/09/28/smart-expands-nationwide-5g-rollout-to-key-vismin-areas",
-    "url": "https://smart.com.ph/About/newsroom/full-news/2020/09/28/smart-expands-nationwide-5g-rollout-to-key-vismin-areas"
-  },
-  {
-    "id": "doc-ref-spotify2024",
-    "apa": "Spotify. (2024, November 1). Celebrating 10 years of Spotify in the Philippines. https://newsroom.spotify.com/2024-11-01/philippines-10-year-anniversary-ben-and-ben/",
-    "url": "https://newsroom.spotify.com/2024-11-01/philippines-10-year-anniversary-ben-and-ben/"
-  },
-  {
-    "id": "doc-ref-spotify2025",
-    "apa": "Spotify. (2025, April 24). Spotify expands AI Playlist in beta to Premium listeners in 40+ new markets. https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/",
-    "url": "https://newsroom.spotify.com/2025-04-24/spotify-expands-ai-playlist-in-beta-to-premium-listeners-in-40-new-markets/"
-  },
-  {
     "id": "doc-ref-57",
     "apa": "Supreme Court of the Philippines. (2008, December 23). Garcillano v. House of Representatives Committees, G.R. No. 170338. https://lawphil.net/judjuris/juri2008/dec2008/gr_170338_2008.html",
     "url": "https://lawphil.net/judjuris/juri2008/dec2008/gr_170338_2008.html"
-  },
-  {
-    "id": "doc-ref-47",
-    "apa": "The Philippine Star. (2006, September 3). A fitting tribute to the APO. https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo",
-    "url": "https://www.philstar.com/entertainment/2006/09/03/356083/fitting-tribute-apo"
-  },
-  {
-    "id": "doc-ref-48",
-    "apa": "The Philippine Star. (2007, October 8). Making business out of Pinoy’s vanity. https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity",
-    "url": "https://www.philstar.com/business/business-as-usual/2007/10/08/19282/making-business-out-pinoyrsquos-vanity"
   },
   {
     "id": "doc-ref-58",
@@ -627,11 +406,6 @@ export const DOCUMENT_REFERENCES = [
     "url": "https://doi.org/10.1177/15554120231201760"
   },
   {
-    "id": "doc-ref-61",
-    "apa": "World Bank Group. (2022). Philippines country climate and development report. https://thedocs.worldbank.org/en/doc/4ec3282919652f7545bc25c49c1811e4-0070012022/original/PHCCDR-FINAL-formatted.pdf",
-    "url": "https://thedocs.worldbank.org/en/doc/4ec3282919652f7545bc25c49c1811e4-0070012022/original/PHCCDR-FINAL-formatted.pdf"
-  },
-  {
     "id": "doc-ref-62",
     "apa": "Yamano, T., Maddawin, A., Thomas, M., & Poot, L. (2023, July). Gig economy employment during the pandemic: An analysis of GrabFood driver experiences in the Philippines (ADB Briefs No. 251). Asian Development Bank. https://doi.org/10.22617/BRF230265",
     "url": "https://doi.org/10.22617/BRF230265"
@@ -639,12 +413,12 @@ export const DOCUMENT_REFERENCES = [
 ];
 export const DOCUMENT_SCOPE = "The entries below identify the sources supporting the exhibit text. Company statements and platform listings document their own activities; research findings retain their stated scope. Some connections are curatorial interpretations across the cited examples, rather than claims that one historical artifact directly caused a later trend. Illustrative descriptions are not quotations or interview testimony. For Ong and Tapsell (2022), an institutional summary was consulted; the scope limitations for catalog and publisher records are identified in the exhibit text.";
 export const SYNOPSIS = [
-  "Always On The Philippine Pop Culture Time Machine explores how everyday Filipino experiences in the 2000s remain connected to life in the 2020s. Through twenty-one artifact comparisons, the museum follows friendship, work, shopping, public participation, entertainment, environmental concern, and personal style across two periods. Familiar examples such as Nokia phones, Friendster profiles, computer shops, television programs, and prepaid gaming cards introduce practices that continue through newer platforms and settings.",
-  "The journey centers on changes in time, space, and technology. Activities once organized around a rented computer session, a mall visit, or a television schedule now have additional routes through mobile devices and digital services. Older practices continue alongside newer ones: gaming remains social, shopping still involves persuasion, and music continues to help people express belonging. The comparisons also reveal continuing questions about access, working conditions, public trust, and whose experiences receive attention.",
-  "Each exhibit brings together its earlier setting, a present-day counterpart, and a synthesis explaining why the connection matters. Some relationships involve the continuation of a social practice; others involve reinterpretation, shared concerns, or lessons that help us assess contemporary culture. Together, the exhibits invite visitors to recognize what has changed and understand what the past can still help us see."
+  "Always-On follows Filipino relationships through time, space, and technology. Its twelve curated stops connect the 2000s, the 2020s, and possible 2030s futures. The wider Archive contains thirteen comparisons across Social, Economic, Political, and Cultural themes.",
+  "Historical and contemporary sections use credited media and research. Future sections introduce concrete museum concepts grounded in documented developments. Their proposed settings, access, protections, and adoption remain possibilities, rather than predictions or announced products.",
+  "The route asks what people can carry forward as media changes: time for family, a welcome for the barkada, respect for creative work, trustworthy participation, and care across distance. A more capable device does not settle who gets access or how people treat one another."
 ];
 export const CLOSING = [
-  "An old device or a familiar song can bring back a moment. Looking more closely reveals the arrangements around it: the price of access, the place where friends gathered, the schedule everyone followed, or the people whose work made an experience possible.",
-  "Across these exhibits, the 2020s appear as a period of expansion, overlap, and continuing negotiation. Older practices remain alongside newer platforms. The question is what these changing arrangements allow us to do, what they ask of us, and whose experiences they make easier to overlook.",
-  "As you leave, consider one familiar object from your own daily life. What would someone need to understand about your time in order to understand what it means to you?"
+  "The objects change. The responsibility to make room for one another continues.",
+  "A shared television, a rented computer, and a short message reveal how people organized time, access, and care. Today’s platforms add routes to those relationships. The 2030s concepts ask what we would choose to protect as those routes develop.",
+  "Which future would give the people around you more dignity, belonging, and choice? These scenarios invite that conversation. Their sources describe present-day foundations; the future remains something people help shape."
 ];

@@ -1,7 +1,7 @@
-import { PRESENT_IMAGES } from './present-media.js?v=dances-sb19-20261105-2';
+import { PRESENT_IMAGES, PRESENT_GALLERIES, COMPARISON_MEDIA } from './present-media.js?v=future-2030s-20261105-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
-import { esc } from './ui.js';
-import { disable, enable, isOn } from './audio.js?v=dances-sb19-20261105-2';
+import { esc } from './ui.js?v=future-2030s-20261105-1';
+import { disable, enable, isOn } from './audio.js?v=future-2030s-20261105-1';
 
 const image = (id, file, title, alt, caption, credit, source, extra = {}) => ({ id, type: 'image', src: `assets/sources/${file}`, title, alt, caption, credit, source, ...extra });
 const video = (id, youtube, title, caption, credit) => ({ id, type: 'video', youtube, title, caption, credit, source: `https://www.youtube.com/watch?v=${youtube}` });
@@ -49,21 +49,10 @@ const SETS = {
     ]
   },
   "ao-02": {
-    "title": "Dubbed Asianovela",
+    "title": "Television stories and shared viewing",
     "ids": [
-      "meteor"
-    ]
-  },
-  "ao-03": {
-    "title": "Primetime teleserye",
-    "ids": [
+      "meteor",
       "pangako"
-    ]
-  },
-  "ao-04": {
-    "title": "Reality-show SMS voting",
-    "ids": [
-      "starstruck"
     ]
   },
   "ao-05": {
@@ -82,24 +71,19 @@ const SETS = {
     ]
   },
   "ao-07": {
-    "title": "PisoNet machine",
+    "title": "Computer shops and shared access",
     "ids": [
-      "pisonet"
+      "pisonet",
+      "cafe",
+      "dota",
+      "netopia",
+      "ragnarok"
     ]
   },
   "ao-08": {
     "title": "Friendster profile",
     "ids": [
       "friendster"
-    ]
-  },
-  "ao-09": {
-    "title": "LAN café",
-    "ids": [
-      "cafe",
-      "dota",
-      "netopia",
-      "ragnarok"
     ]
   },
   "ao-10": {
@@ -115,16 +99,11 @@ const SETS = {
       "parlor"
     ]
   },
-  "ao-12": {
-    "title": "OPM band gig",
-    "ids": [
-      "opm"
-    ]
-  },
   "ao-13": {
-    "title": "Nokia texting",
+    "title": "Nokia messages and shared media",
     "ids": [
-      "nokia"
+      "nokia",
+      "nokia6600"
     ]
   },
   "ao-14": {
@@ -139,18 +118,6 @@ const SETS = {
       "estrada"
     ]
   },
-  "ao-16": {
-    "title": "3GP over Bluetooth",
-    "ids": [
-      "nokia6600"
-    ]
-  },
-  "ao-17": {
-    "title": "MP3 player, one earphone each",
-    "ids": [
-      "mp3"
-    ]
-  },
   "ao-18": {
     "title": "Padala from abroad",
     "ids": [
@@ -158,6 +125,11 @@ const SETS = {
     ]
   }
 };
+const ACTIVE_MEDIA_IDS = new Set([
+  ...Object.values(SETS).flatMap(set=>set.ids),
+  ...[...Object.values(PRESENT_GALLERIES),...Object.values(COMPARISON_MEDIA)].flat().map(key=>PRESENT_IMAGES[key].id)
+]);
+const ACTIVE_MEDIA = MEDIA.filter(m=>ACTIVE_MEDIA_IDS.has(m.id));
 const BY_ID = Object.fromEntries(MEDIA.map(m => [m.id, m]));
 const sourceLink = (url, text) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(text)}<span class="sr-only"> (opens in a new tab)</span></a>`;
 
@@ -193,7 +165,7 @@ export function artifactCardMediaHTML(id) {
   const set = SETS[id];
   const item = set && set.ids.map(key => BY_ID[key]).find(m => m.type === 'image');
   if (!item) return '';
-  return `${id === 'ao-01' ? '<p class="dance-artifact-meta">Dance artifact 01 of 03 · 2003 dance craze</p><h5 class="dance-artifact-title">The Spageti Song — SexBomb Girls</h5>' : ''}<figure class="artifact-card-media"><img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" width="720" height="480"><figcaption><span>${esc(CARD_LABELS[id])}</span>${sourceLink(item.source, item.license ? item.credit.split(' / ')[0] : 'Source & credit')}${item.license ? ` · ${sourceLink(item.licenseUrl, item.license)}` : ''}</figcaption></figure>${set.ids.map(key => BY_ID[key]).filter(m => m.type !== 'image').map(figureHTML).join('')}`;
+  return `${id === 'ao-01' ? '<p class="dance-artifact-meta">Dance artifact 01 of 03 · 2003 dance craze</p><h5 class="dance-artifact-title">The Spageti Song — SexBomb Girls</h5>' : ''}<figure class="artifact-card-media"><img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" width="720" height="480"><figcaption><span>${esc(CARD_LABELS[id])}</span>${sourceLink(item.source, item.license ? item.credit.split(' / ')[0] : 'Source & credit')}${item.license ? ` · ${sourceLink(item.licenseUrl, item.license)}` : ''}</figcaption></figure>${set.ids.map(key => BY_ID[key]).filter(m => m.id !== item.id).map(figureHTML).join('')}`;
 }
 
 export function artifactMediaHTML(id) {
@@ -202,14 +174,14 @@ export function artifactMediaHTML(id) {
 }
 
 export function archiveMediaHTML(domain = '', lens = '', era = '') {
-  const items = MEDIA.filter(m => m.domain && (!domain || domain === m.domain) && (!lens || lens === m.lens) && (!era || era === m.era));
+  const items = ACTIVE_MEDIA.filter(m => m.domain && (!domain || domain === m.domain) && (!lens || lens === m.lens) && (!era || era === m.era));
   if (!items.length) return '';
   return `<section class="archive-media" aria-labelledby="archive-media-title"><h3 id="archive-media-title">From the source collection</h3><p>Photographs related to the archive entries below.</p><div class="archive-media-grid">${items.map(figureHTML).join('')}</div></section>`;
 }
 
 function figureHTML(item) {
   const visual = item.type === 'image'
-    ? `<img class="media-original" src="${esc(item.src)}" alt="${esc(item.alt)}" decoding="async" loading="lazy">`
+    ? `<img class="media-original" src="${esc(item.src)}" alt="${esc(item.alt)}" width="720" height="480" decoding="async" loading="lazy">`
     : item.type === 'gallery'
     ? `<div class="media-source-gallery">${sourceLink(item.source, 'Browse public-viewing photographs ↗')}</div>`
     : `<div class="${item.type === 'post' ? 'media-post' : 'media-video'}" data-video-container="${esc(item.id)}"><button class="media-play${item.poster ? ' media-play--poster' : ''}" type="button" data-play-video="${esc(item.id)}">${item.poster ? `<img class="media-poster" src="${esc(item.poster)}" alt="${esc(item.posterAlt)}" width="480" height="360" loading="lazy" decoding="async">` : ''}<span class="media-play-symbol" aria-hidden="true">${item.type === 'post' ? '▧' : '▶'}</span><span>Load ${item.type === 'post' ? 'post' : 'video'}: ${esc(item.title)}</span><small>Loads a ${item.platform === 'facebook' ? 'Facebook' : 'YouTube'} ${item.type === 'post' ? 'post' : 'player'}.</small></button></div>`;
@@ -217,7 +189,7 @@ function figureHTML(item) {
 }
 
 export function mediaCreditsHTML() {
-  return `<section class="media-credits"><h4>Original images and videos</h4><p>The galleries contain documentary and reference media from the supplied links and credited supplementary sources. Dates, creators and context are credited beside each item; the surrounding pixel scenes remain reconstructions.</p><ul>${MEDIA.map(m => `<li>${sourceLink(m.source, m.title)} — ${esc(m.credit)}${m.license ? ` · ${sourceLink(m.licenseUrl, m.license)}` : ''}</li>`).join('')}</ul></section>`;
+  return `<section class="media-credits"><h4>Original images and videos</h4><p>The galleries contain documentary and reference media from the supplied links and credited supplementary sources. Dates, creators and context are credited beside each item; the surrounding pixel scenes remain reconstructions.</p><ul>${ACTIVE_MEDIA.map(m => `<li>${sourceLink(m.source, m.title)} — ${esc(m.credit)}${m.license ? ` · ${sourceLink(m.licenseUrl, m.license)}` : ''}</li>`).join('')}</ul></section>`;
 }
 
 export function mountMedia() {

@@ -1,26 +1,31 @@
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=dances-sb19-20261105-2';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=dances-sb19-20261105-2';
+import { futureArtifactHTML, futureConnection, futureComparisonHTML, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=future-2030s-20261105-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=future-2030s-20261105-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=future-2030s-20261105-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=dances-sb19-20261105-2';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=dances-sb19-20261105-2';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=future-2030s-20261105-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=future-2030s-20261105-1';
 import { SLOTS } from './slots.js';
 import { loadIndex } from './assets.js';
 import { wallet, passport } from './state.js';
 import { watchSteps, watchSections, watchProgress } from './scroll.js';
 import { placeholder } from './scenes.js';
-import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js';
-import { mountTransitions } from './exhibits/transitions.js?v=dances-sb19-20261105-2';
-import { mountTV } from './exhibits/tvguide.js?v=dances-sb19-20261105-2';
-import { mountStreet } from './exhibits/pisonet.js?v=dances-sb19-20261105-2';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=dances-sb19-20261105-2';
-import { mountChainText } from './exhibits/chaintext.js?v=dances-sb19-20261105-2';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=dances-sb19-20261105-2';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=dances-sb19-20261105-2';
+import { $, $$, esc, accession, citeText, img, go, reduceMotion, emit } from './ui.js?v=future-2030s-20261105-1';
+import { mountTransitions } from './exhibits/transitions.js?v=future-2030s-20261105-1';
+import { mountTV } from './exhibits/tvguide.js?v=future-2030s-20261105-1';
+import { mountStreet } from './exhibits/pisonet.js?v=future-2030s-20261105-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=future-2030s-20261105-1';
+import { mountChainText } from './exhibits/chaintext.js?v=future-2030s-20261105-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=future-2030s-20261105-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=future-2030s-20261105-1';
 
+const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
+const ALL_REFERENCES = [...DOCUMENT_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].sort((a,b)=>a.apa.localeCompare(b.apa));
+const LEGACY_STOPS = {'ao-03':'ao-02','ao-04':'ao-02','ao-09':'ao-07','ao-12':'ao-01','ao-16':'ao-13','ao-17':'ao-13'};
+const resolveStop = id => id.replace(/^(ao-\d+)(?=-|$)/, key=>LEGACY_STOPS[key]||key);
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
-const DOMAINS = ['Social', 'Economic', 'Political', 'Cultural', 'Environmental', 'Aesthetics'];
+const DOMAINS = ['Social', 'Economic', 'Political', 'Cultural'];
 const LENSES = ['Time', 'Space', 'Technology', 'Overall'];
 const LENS_LABEL = { Time: 'time', Space: 'space', Technology: 'technology', Overall: 'overall trend' };
 // Scrubbed steps (the fight crowd, the chain text) run two screens long. They are sized here,
@@ -41,22 +46,23 @@ function documentText(text) {
       if (!match) return esc(citation);
       const author = match[1], year = match[2];
       const prefix = aliases[author] || author.replace(/ et al\.$/, '').split(' & ')[0];
-      const ref = DOCUMENT_REFERENCES.find(ref => ref.apa.startsWith(prefix) && ref.apa.includes('(' + year));
+      const ref = ALL_REFERENCES.find(ref => ref.apa.startsWith(prefix) && ref.apa.includes('(' + year));
       return ref?.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(citation)}</a>` : esc(citation);
     }).join('; ') + ')';
   }).join('');
 }
 function documentReferencesHTML() {
-  return `<p>${esc(DOCUMENT_SCOPE)}</p><ul class="ref-list">${DOCUMENT_REFERENCES.map(ref => `<li>${ref.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.apa)}</a>` : esc(ref.apa)}</li>`).join('')}</ul>`;
+  return `<p>${esc(DOCUMENT_SCOPE)}</p><ul class="ref-list">${ALL_REFERENCES.map(ref => `<li>${ref.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.apa)}</a>` : esc(ref.apa)}</li>`).join('')}</ul>`;
 }
 function documentParagraphs(text) {
   return text.split(/\n\n+/).map(paragraph => `<p>${documentText(paragraph)}</p>`).join('');
 }
 function comparisonHTML(c, era = '') {
   return `<details class="archive-card document-comparison" id="${c.id}"><summary><span>${esc(c.domain)} · ${esc(LENS_LABEL[c.lens])}</span><h3>${esc(c.title)}</h3></summary><div class="comparison-copy"><p>${esc(c.intro)}</p>
-    ${era !== '2020s' ? `<h4>2000s</h4>${documentParagraphs(c.past)}` : ''}
-    ${era !== '2000s' ? `<h4>2020s</h4>${comparisonMediaHTML(c.id, era)}${documentParagraphs(c.present)}` : ''}
-    <h4>Synthesis</h4>${documentParagraphs(c.synthesis)}</div></details>`;
+    ${!era || era==='2000s' ? `<h4>2000s</h4>${documentParagraphs(c.past)}` : ''}
+    ${!era || era==='2020s' ? `<h4>2020s</h4>${comparisonMediaHTML(c.id,era)}${documentParagraphs(c.present)}` : ''}
+    ${!era || era==='2030s' ? `<section class="archive-futures" aria-label="Possible 2030s futures">${futureComparisonHTML(c.id)}</section>` : ''}
+    <h4>Past–present connection</h4>${documentParagraphs(c.synthesis)}</div></details>`;
 }
 
 const SHORT_LABELS = {
@@ -93,8 +99,8 @@ function renderArtifactStory(a) {
   $('#artifact-read-body').innerHTML = `<article class="artifact-story">
     ${a.id === 'ao-13' ? messageDemoHTML() : ''}
     ${a.details ? detailedStoryHTML(a.details, pastMedia, presentMedia) : c ? `<p class="story-intro">${esc(c.intro)}</p><h3>2000s</h3>${pastMedia}${documentParagraphs(c.past)}<h3>2020s</h3>${presentMedia}${documentParagraphs(c.present)}<h3>What connects them</h3>${documentParagraphs(c.synthesis)}` : `<h3>2000s</h3>${pastMedia}<p>${esc(a.body)}</p><h3>2020s</h3>${presentMedia}<p>${esc(a.now.body)}</p><p class="label-cite is-note">${esc(a.note)}</p>`}
-    ${c ? '<p class="story-note">Author–date links open the supporting sources. The Archive contains all 21 comparisons and the full reference list.</p>' : ''}
-    <button class="btn btn--plain" type="button" data-open="archive-dialog">Explore all 21 comparisons</button></article>`;
+    ${c ? '<p class="story-note">Author–date links open the supporting sources. The Archive contains all 13 comparisons and the full reference list.</p>' : ''}
+    <button class="btn btn--plain" type="button" data-open="archive-dialog">Explore all 13 comparisons</button></article>`;
 }
 
 function stepHTML(a) {
@@ -104,9 +110,9 @@ function stepHTML(a) {
   const details = a.details;
   const past = details ? details.past.map(documentParagraphs).join('') : documentParagraphs(c?.past || SHORT_LABELS[a.id] || a.body);
   const present = details ? details.present.map(documentParagraphs).join('') : documentParagraphs(c?.present || a.now.body);
-  const connection = details?.connection || c?.synthesis || 'The shared anticipation of a live event connects the reconstructed viewing scene with newer ways to follow a fight. Broadcasts, streams and clips add viewing routes; gathering with other people continues alongside personal screens.';
-  const sources = details ? `<details class="story-sources"><summary>Sources for this comparison</summary><ul>${details.sources.map(source => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join('')}</ul></details>` : '';
-  const next = ARTIFACTS[a.n];
+  const connection = futureConnection(a.id) || details?.connection || c?.synthesis || 'The shared anticipation of a live event connects the reconstructed viewing scene with newer ways to follow a fight. Broadcasts, streams and clips add viewing routes; gathering with other people continues alongside personal screens.';
+  const sources = details?.sources?.length ? `<details class="story-sources"><summary>Sources for this comparison</summary><ul>${details.sources.map(source => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join('')}</ul></details>` : '';
+  const next = ARTIFACTS[ARTIFACTS.indexOf(a) + 1];
   const nextZone = next && next.zone !== a.zone ? ZONES.find(z => z.n === next.zone) : null;
   const nextId = nextZone?.id || next?.id || 'pause';
   const nextTitle = nextZone ? `Zone ${nextZone.n} · ${nextZone.title}` : next?.title;
@@ -115,7 +121,7 @@ function stepHTML(a) {
       <div class="label-head"><span class="label-no">${no}</span><span>${esc(a.when)}, ${esc(a.medium.toLowerCase())}</span></div>
       <h3 id="${a.id}-title">${esc(a.title)}</h3>
       <p class="comparison-intro">${esc(details?.intro || c?.intro || SHORT_LABELS[a.id])}</p>
-      <nav class="comparison-jumps" aria-label="Jump within ${esc(a.title)}"><a href="#${a.id}-past">2000s</a><a href="#${a.id}-present">2020s</a><a href="#${a.id}-connection">The connection</a></nav>
+      <nav class="comparison-jumps" aria-label="Jump within ${esc(a.title)}"><a href="#${a.id}-past">2000s</a><a href="#${a.id}-present">2020s</a><a href="#${a.id}-future">2030s</a><a href="#${a.id}-connection">Connection</a></nav>
       <section class="artifact-era artifact-era--past" id="${a.id}-past" aria-labelledby="${a.id}-past-title"><h4 id="${a.id}-past-title">${esc(details?.pastHeading || '2000s')}</h4>
         ${artifactCardMediaHTML(a.id)}<div class="era-copy">${past}</div>
         ${a.id === 'ao-13' ? messageDemoHTML() : ''}
@@ -124,7 +130,8 @@ function stepHTML(a) {
       <section class="artifact-era artifact-era--present" id="${a.id}-present" aria-labelledby="${a.id}-present-title"><h4 id="${a.id}-present-title">${esc(details?.presentHeading || '2020s')}</h4>
         <p class="era-subtitle">${esc(a.now.title)}</p>${presentMediaHTML(a.id)}<div class="era-copy">${present}</div>
       </section>
-      <section class="artifact-connection" id="${a.id}-connection" aria-labelledby="${a.id}-connection-title"><h4 id="${a.id}-connection-title">What connects them</h4>${documentParagraphs(connection)}</section>
+      <section class="artifact-era artifact-era--future" id="${a.id}-future" aria-labelledby="${a.id}-future-title"><h4 id="${a.id}-future-title">2030s · Possible future</h4>${futureArtifactHTML(a.id)}</section>
+      <section class="artifact-connection" id="${a.id}-connection" aria-labelledby="${a.id}-connection-title"><h4 id="${a.id}-connection-title">The connection across eras</h4>${documentParagraphs(connection)}<p class="future-bridge-note">The 2030s scenario above extends this question into a possible future. Its setting and social protections remain choices people would need to make.</p></section>
       ${sources}
       <p class="story-note">Author–date links open the supporting sources. <button class="btn btn--plain" type="button" data-open="archive-dialog">Explore the Archive</button></p>
       <a class="comparison-next" href="#${nextId}">${next ? `Next · ${esc(nextTitle)}` : 'Continue to the closing reflection'} <span aria-hidden="true">↓</span></a>
@@ -149,9 +156,9 @@ function renderMap() {
       `<li><a href="#${a.id}" data-map-artifact="${a.id}"><span>${accession(a)}</span>${esc(a.title)}</a></li>`).join('')}</ul>`;
   $('#map-body').innerHTML = `
     <div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>2026, the ticket</small></a></div>
-    <div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s & 2020s</h3>${ZONES.map(zone).join('')}</div>
+    <div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s, 2020s & 2030s</h3>${ZONES.map(zone).join('')}</div>
     <div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div>
-    <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 21 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
+    <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 13 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
 function markMap() {
@@ -160,7 +167,7 @@ function markMap() {
 
 function renderPassport() {
   $('#passport-body').innerHTML = `
-    <p class="passport-summary">${passport.count()} of 18 artifacts stamped. An artifact is stamped after its heading has been on screen for a second.</p>
+    <p class="passport-summary">${activeStampCount()} of ${ARTIFACTS.length} exhibit stops stamped. An artifact is stamped after its heading has been on screen for a second.</p>
     <div class="passport-grid">${ARTIFACTS.map(a =>
       `<a class="passport-slot${passport.has(a.id) ? ' is-stamped' : ''}" data-zone="${a.zone}" href="#${a.id}"><span><b>${accession(a)}</b>${esc(a.title)}${passport.has(a.id) ? '<span class="sr-only">, stamped</span>' : ''}</span></a>`).join('')}</div>`;
 }
@@ -169,8 +176,8 @@ function renderArchive() {
   const chips = (name, values, all) => `<fieldset><legend>${name}</legend>${[all, ...values].map((v, i) =>
     `<label class="chip"><input type="radio" name="${name.toLowerCase()}" value="${i ? v : ''}"${i ? '' : ' checked'}><span>${v}</span></label>`).join('')}</fieldset>`;
   $('#archive-body').innerHTML = `
-    <details class="archive-section document-synopsis"><summary>About the 21 comparisons</summary>${SYNOPSIS.map(text => `<p>${esc(text)}</p>`).join('')}<p>The 21 comparisons below accompany 18 interactive stops. Three supplemental scenes—Pacquiao fight Sunday, PisoNet and the MP3 player—remain curatorial interpretations outside the supplied exhibit text.</p></details>
-    <details class="archive-filter-panel"><summary>Filter comparisons</summary><form class="filters" id="archive-filters">${chips('Domain', DOMAINS, 'All')}${chips('Lens', LENSES, 'All')}${chips('Era', ['2000s', '2020s'], 'Both')}</form></details>
+    <details class="archive-section document-synopsis"><summary>About the 13 comparisons</summary>${SYNOPSIS.map(text => `<p>${esc(text)}</p>`).join('')}<p>The thirteen comparisons accompany twelve curated stops. The tour combines overlapping television, computer-shop, and phone material. Pacquiao’s shared-viewing scene remains a supplemental curatorial interpretation. Possible futures are labeled scenarios and have their own research links.</p></details>
+    <details class="archive-filter-panel"><summary>Filter comparisons</summary><form class="filters" id="archive-filters">${chips('Domain', DOMAINS, 'All')}${chips('Lens', LENSES, 'All')}${chips('Era', ['2000s', '2020s', '2030s'], 'All eras')}</form></details>
     <p class="archive-count" id="archive-count"></p><div id="archive-media"></div>
     <div class="archive-list" id="archive-list"></div>
     <section class="archive-section"><h3>References for the exhibit text</h3>${documentReferencesHTML()}</section>`;
@@ -193,17 +200,17 @@ function renderFinale() {
   $('#credits').innerHTML = `<details><summary id="credits-title">Credits & media sources</summary>
     <p class="credit-ai">${esc(SITE.group)}, ${esc(SITE.project)}</p>
     <ul class="credit-list">${CREDITS.members.map(m => `<li>${esc(m.name)}: ${esc(m.role)}</li>`).join('')}</ul>
-    <p class="credit-ai">${esc(CREDITS.ai)}</p>${mediaCreditsHTML()}</details>`;
+    <p class="credit-ai">${esc(CREDITS.ai)}</p>${mediaCreditsHTML()}${futureCreditsHTML()}</details>`;
   $('#references').innerHTML = `<details><summary id="references-title">References & research notes</summary>
     ${documentReferencesHTML()}</details>`;
   updateFinalePassport();
 }
 
 function updateFinalePassport() {
-  const n = passport.count();
-  $('#finale-passport').textContent = n === 18
-    ? 'You collected all 18 interactive artifacts. Explore the Archive for all 21 comparisons and their synthesis.'
-    : `You collected ${n} of 18 artifacts. The map can take you back to the rest.`;
+  const n = activeStampCount();
+  $('#finale-passport').textContent = n === ARTIFACTS.length
+    ? 'You visited all 12 exhibit stops. Explore the Archive for the 13 comparisons and their possible futures.'
+    : `You visited ${n} of ${ARTIFACTS.length} exhibit stops. The map can take you back to the rest.`;
 }
 
 function fillSlots() {
@@ -352,14 +359,14 @@ function watchStamps() {
   for (const el of $$('.label[data-label]')) io.observe(el.querySelector('.label-head') || el);
   document.addEventListener('stamp', ({ detail }) => {
     $(`[data-label="${detail.id}"]`)?.classList.add('is-stamped');
-    $('#hud-count').textContent = detail.count;
+    $('#hud-count').textContent = activeStampCount();
     const btn = $('#hud-passport');
     btn.classList.remove('is-bumped');
     void btn.offsetWidth;
     btn.classList.add('is-bumped');
     markMap();
   });
-  $('#hud-count').textContent = passport.count();
+  $('#hud-count').textContent = activeStampCount();
 }
 
 function wireDialogs() {
@@ -406,7 +413,7 @@ function wireDialogs() {
     if (link && link.hash.length > 1) {
       e.preventDefault();
       link.closest('dialog')?.close();
-      go(link.hash.slice(1));
+      go(resolveStop(link.hash.slice(1)));
     }
   });
 }
@@ -469,7 +476,7 @@ function wireSound() {
 async function boot() {
   // A slow asset request must not pull a visitor back to the original deep link
   // after they have already scrolled, opened a story, or used the map.
-  const requestedId = location.hash.slice(1);
+  const requestedId = resolveStop(location.hash.slice(1));
   const arrivalId = ['void', 'upgrade', 'signoff'].includes(requestedId) ? 'pause' : requestedId;
   // Accession/era anchors remain valid when a revision changes the cards' heights.
   // Avoid restoring an obsolete pixel offset into a different artifact.
