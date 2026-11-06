@@ -1,4 +1,4 @@
-import { esc } from './ui.js?v=future-2030s-20261105-1';
+import { esc } from './ui.js?v=zone-futures-20261106-1';
 
 export const PRESENT_IMAGES = {
   "bini": {

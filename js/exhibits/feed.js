@@ -1,9 +1,9 @@
-import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=future-2030s-20261105-1';
+import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=zone-futures-20261106-1';
 // The 2020s feed groups artifacts that share the same comparison. Each connection appears
 // once, with all related accession numbers, so the collection does not repeat itself.
-import { ARTIFACTS, VOID_NOTES } from '../content.js?v=future-2030s-20261105-1';
-import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=future-2030s-20261105-1';
-import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js?v=future-2030s-20261105-1';
+import { ARTIFACTS, VOID_NOTES } from '../content.js?v=zone-futures-20261106-1';
+import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=zone-futures-20261106-1';
+import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js?v=zone-futures-20261106-1';
 import { broadcast } from '../scenes.js';
 
 const STILL = {

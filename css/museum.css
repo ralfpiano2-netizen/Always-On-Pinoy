@@ -1235,3 +1235,27 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .archive-futures .future-artifact + .future-artifact { border-top: 1px solid #c7b6d6; margin-top: 22px; padding-top: 20px; }
 .label .artifact-era .media-figure .media-original { display: block; width: 100%; height: clamp(260px,44svh,420px); object-fit: contain; }
 @media(max-width:480px) { .comparison-jumps { gap: 5px; font-size: 11px; } .comparison-jumps a { padding: 6px 7px; } .future-artifact > h5 { font-size: 25px; } }
+
+/* One future artifact culminates each zone. */
+.zone-future-step { scroll-margin-top: calc(var(--hud-h) + 20px); }
+.label.label-zone-future { border-top: 5px solid #8a6ca2; }
+.label-zone-future .label-head { color: #654d7e; flex-wrap: wrap; }
+.label-zone-future > h3 { font: 600 34px/1.15 var(--font-label); margin: 16px 0; }
+.future-zone-intro { font: 400 19px/1.6 var(--font-label); color: #54475d; margin: 0 0 24px; }
+.label-zone-future .future-values h4 { font: 600 23px/1.25 var(--font-label); margin: 0 0 10px; }
+.map-future { border-top: 1px solid #c7b6d6; margin-top: 10px; padding-top: 10px; }
+.map-future a { color: #674983; }
+@media (min-width:900px) { .step.zone-future-step { padding: calc(var(--hud-h) + 24px) 28px 72px 0; } }
+@media (max-width:899px) { .stage[data-active$="-future"] .zone-card { display: none; } }
+@media (max-width:480px) { .step.zone-future-step { padding-inline: 10px; } .label.label-zone-future { padding: 18px; } .label-zone-future > h3 { font-size: 30px; } }
+
+.future-today, .future-proposal { margin-block: 24px; }
+.future-today { padding: 16px; background: #e9eee9; border-left: 3px solid #6e8c7a; }
+.future-today h4, .future-proposal h4 { font: 600 23px/1.3 var(--font-label); margin: 0 0 12px; }
+.future-today p, .future-proposal p, .future-advances { font: 400 17px/1.65 var(--font-label); margin-bottom: 16px; }
+.future-advances { padding-left: 23px; }
+.future-advances li + li { margin-top: 8px; }
+.future-today .future-source-links { font-size: 12px; margin-bottom: 0; }
+
+.future-zone-jumps { margin-bottom: 24px; }
+.future-today h4[id], .future-proposal h4[id], .future-values[id] { scroll-margin-top: calc(var(--hud-h) + 80px); }

@@ -26,9 +26,19 @@ export function img(slot, alt = SLOTS[slot]?.alt ?? '') {
 
 // Jumps are instant: a smooth scroll would pass every stop on the way and set each one off.
 // Focus follows the jump, so keyboard and screen-reader visitors land where the page did.
-export function go(id) {
+export function resolveAnchor(id) {
   const aliases = {'ao-03':'ao-02','ao-04':'ao-02','ao-09':'ao-07','ao-12':'ao-01','ao-16':'ao-13','ao-17':'ao-13'};
   id = id.replace(/^(ao-\d+)(?=-|$)/, key=>aliases[key]||key);
+  const future = id.match(/^(ao-\d+)-future(?:-title)?$/);
+  if (future) {
+    const zone = ['ao-01','ao-02','ao-05','ao-06'].includes(future[1]) ? 1 : ['ao-07','ao-08','ao-10','ao-11'].includes(future[1]) ? 2 : 3;
+    return `zone-${zone}-future`;
+  }
+  return id;
+}
+
+export function go(id) {
+  id = resolveAnchor(id);
   const el = document.getElementById(id);
   if (!el) return;
   el.scrollIntoView({ behavior: 'instant', block: 'start' });

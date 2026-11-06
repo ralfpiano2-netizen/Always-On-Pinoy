@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=future-2030s-20261105-2';
+import { COMPARISONS } from './exhibit-text.js?v=zone-futures-20261106-1';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -332,8 +332,11 @@ tour['ao-18'].details = {
   presentHeading: '2020s · Payment channels and the person behind the transfer',
   present: [
     'Digital wallets, bank transfers, and QR payments are part of a changing payment landscape. The BSP’s 2024 retail-payment figures document that wider change, rather than the share of overseas remittances sent through an app (Bangko Sentral ng Pilipinas, 2025). The retail photographs here likewise illustrate payment interfaces, not particular OFW transfers.',
-    'A different interface does not settle the question of care. The museum asks visitors to look beyond a transaction confirmation: does the person sending support also receive attention, company, and understanding? The future presence window below extends that question into a proposed way of spending time together.'
+    'A different interface does not settle the question of care. The museum asks visitors to look beyond a transaction confirmation: does the person sending support also receive attention, company, and understanding? The presence window at the end of this zone extends that question into a proposed way of spending time together.'
   ],
   sources: [{title:'Torres (2006), Cebuana Lhuillier boosts remittance business',url:'https://www.philstar.com/business/2006/07/14/347271/cebuana-lhuillier-boosts-remittance-business'}]
 };
 tour['ao-18'].now.title = 'Changing payment channels, continuing family ties';
+
+tour['ao-14'].details.connection = 'The prepaid card and the digital wallet both ask a user to trust an interface with value. Their practical limits differ: a code must be redeemed, while a phone-based payment depends on an account, usable help, and a working service. Respect includes explaining those steps without taking away someone else’s control over their choices.';
+tour['ao-18'].details.connection = 'The remittance counter and the newer payment interface both sit within a relationship of support. Changing the route of a transfer does not replace the effort of earning, communicating, or caring across distance. The exhibit asks how a family can acknowledge the person sending support and make care reciprocal.';

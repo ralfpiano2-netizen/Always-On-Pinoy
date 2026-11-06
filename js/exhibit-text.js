@@ -413,8 +413,8 @@ export const DOCUMENT_REFERENCES = [
 ];
 export const DOCUMENT_SCOPE = "The entries below identify the sources supporting the exhibit text. Company statements and platform listings document their own activities; research findings retain their stated scope. Some connections are curatorial interpretations across the cited examples, rather than claims that one historical artifact directly caused a later trend. Illustrative descriptions are not quotations or interview testimony. For Ong and Tapsell (2022), an institutional summary was consulted; the scope limitations for catalog and publisher records are identified in the exhibit text.";
 export const SYNOPSIS = [
-  "Always-On follows Filipino relationships through time, space, and technology. Its twelve curated stops connect the 2000s, the 2020s, and possible 2030s futures. The wider Archive contains thirteen comparisons across Social, Economic, Political, and Cultural themes.",
-  "Historical and contemporary sections use credited media and research. Future sections introduce concrete museum concepts grounded in documented developments. Their proposed settings, access, protections, and adoption remain possibilities, rather than predictions or announced products.",
+  "Always-On follows Filipino relationships through time, space, and technology. Its twelve exhibit sets compare the 2000s and 2020s; one possible 2030s artifact culminates each of the three zones. The wider Archive contains thirteen comparisons across Social, Economic, Political, and Cultural themes.",
+  "Historical and contemporary sections use credited media and research. The three zone culminations introduce concrete museum concepts grounded in documented developments. Their proposed settings, access, protections, and adoption remain possibilities, rather than predictions or announced products.",
   "The route asks what people can carry forward as media changes: time for family, a welcome for the barkada, respect for creative work, trustworthy participation, and care across distance. A more capable device does not settle who gets access or how people treat one another."
 ];
 export const CLOSING = [
