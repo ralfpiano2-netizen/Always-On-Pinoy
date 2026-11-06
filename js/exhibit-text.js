@@ -56,8 +56,8 @@ export const COMPARISONS = [
   },
   {
     "id": "comparison-06",
-    "title": "Gaming cards remittances and the digital wallet",
-    "intro": "Scratch a card, enter a code, and physical money becomes access to a digital world. The prepaid gaming card captures an early encounter between cash and online consumption.",
+    "title": "Gaming cards, remittances, and the digital wallet",
+    "intro": "A prepaid code buys access; a remittance carries support to another person. Both depend on trust in the systems that move and redeem value.",
     "past": "Level Up! prepaid cards gave Ragnarok players paid access to the game (Gokongwei-Cheng, 2003). Remittance counters offered another way to move value across distance, including between overseas workers and their families (Torres, 2006). Contemporary reporting described Cebuana Lhuillier expanding its transfer partnerships in 2006 (Torres, 2006).",
     "present": "GCash, Maya, bank transfers, and QR Ph sit within a wider digital payment system. Digital payments accounted for 57.4 percent of monthly retail payment volume in 2024; this is a share of all digital payments, not an e-wallet-only statistic (Bangko Sentral ng Pilipinas, 2025).\n\nA 2026 research paper uses data from late 2019 through 2024 to examine digital payments and cash demand. It finds a negative long-run relationship, with results varying by payment measure and banknote denomination. This is evidence of changing payment patterns, not a finding that cash has disappeared or that every household has moved online (Canare & Galang, 2026).",
     "synthesis": "A gaming card converted money into access through a code; a remittance counter moved value toward a recipient elsewhere (Gokongwei-Cheng, 2003; Torres, 2006). A phone-based transfer offers another interface for moving value through an organized system. These examples share a dependence on trust: the payment must arrive, and the recipient must be able to use it. The newer interface can reduce steps while introducing questions about connectivity, account access, and what happens when a transaction fails. Cash and digital channels can continue to serve different needs.",

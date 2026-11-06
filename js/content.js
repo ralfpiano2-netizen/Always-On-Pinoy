@@ -1,4 +1,4 @@
-import { COMPARISONS } from './exhibit-text.js?v=future-2030s-20261105-1';
+import { COMPARISONS } from './exhibit-text.js?v=future-2030s-20261105-2';
 // Museum text: zones, the 18 artifact labels, guide captions, notifications and credits.
 // `cite` holds REFERENCES ids from sheet.js. A label with no listed source carries a
 // "Curatorial note:" instead. Research text that is quoted verbatim lives in sheet.js.
@@ -314,3 +314,26 @@ tour['ao-07'].details.sources = [];
 tour['ao-07'].now.title = 'Mobile games and the barkada';
 tour['ao-10'].title = 'Mall hangouts and shopping feeds';
 tour['ao-13'].title = 'Nokia messages and shared media';
+
+// Separate the two accession stories that share the Archive payment comparison.
+tour['ao-14'].details = {
+  intro: 'Scratch a card, enter a code, and cash becomes time inside an online world. This exhibit follows the relationship between paying, access, and trust.',
+  past: ['Level Up! prepaid cards gave Ragnarok players paid access to the game (Gokongwei-Cheng, 2003). The card made participation something purchased through a code; its value depended on being able to redeem that code and use the service.'],
+  present: [COMPARISONS.find(c=>c.id==='comparison-06').present],
+  sources: []
+};
+tour['ao-18'].details = {
+  intro: 'A remittance record names an amount; this exhibit asks us to notice the person sending it. Padala connects a family’s everyday needs with work carried out far from home.',
+  pastHeading: '2000s · Support across a counter and a distance',
+  past: [
+    'In 2006, reporting described Cebuana Lhuillier expanding partnerships with international money-transfer companies. Its representatives emphasized outlets in places with limited bank access and long opening hours (Torres, 2006). The counter was part of the infrastructure through which money could reach a recipient.',
+    'The claim stub and Mama’s message in this exhibit are reconstructions, rather than records from an actual household. They invite visitors to consider the effort behind an amount received: earning abroad, arranging a transfer, and finding time to tell someone at home. Families’ experiences of migration and support vary.'
+  ],
+  presentHeading: '2020s · Payment channels and the person behind the transfer',
+  present: [
+    'Digital wallets, bank transfers, and QR payments are part of a changing payment landscape. The BSP’s 2024 retail-payment figures document that wider change, rather than the share of overseas remittances sent through an app (Bangko Sentral ng Pilipinas, 2025). The retail photographs here likewise illustrate payment interfaces, not particular OFW transfers.',
+    'A different interface does not settle the question of care. The museum asks visitors to look beyond a transaction confirmation: does the person sending support also receive attention, company, and understanding? The future presence window below extends that question into a proposed way of spending time together.'
+  ],
+  sources: [{title:'Torres (2006), Cebuana Lhuillier boosts remittance business',url:'https://www.philstar.com/business/2006/07/14/347271/cebuana-lhuillier-boosts-remittance-business'}]
+};
+tour['ao-18'].now.title = 'Changing payment channels, continuing family ties';
