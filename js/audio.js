@@ -1,8 +1,8 @@
 // Sound. Nothing is created or downloaded until the visitor turns sound on. Every slot has a
 // synthesized stand-in (or silence), so the museum sounds right before any recording exists.
-import { asset } from './assets.js';
-import { SLOTS } from './slots.js';
-import { GUIDE } from './content.js?v=tambayan-navigation-20261108-1';
+import { asset } from './assets.js?v=debug-20261108-1';
+import { SLOTS } from './slots.js?v=debug-20261108-1';
+import { GUIDE } from './content.js?v=debug-20261108-1';
 
 let ctx = null;
 let master = null;

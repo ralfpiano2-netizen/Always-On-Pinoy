@@ -1,11 +1,11 @@
 // Zone 1, the TV day. A CRT in the sala, a wall clock that spins to each show's hour, the family
 // gathering in front of the set, and the newspaper TV guide that ran the household's schedule.
-import { wallet } from '../state.js';
-import { sfx, playMusic, playSlot } from '../audio.js?v=tambayan-navigation-20261108-1';
-import { onProgress } from '../scroll.js';
-import { $, $$, img, go, esc } from '../ui.js?v=tambayan-navigation-20261108-1';
-import { broadcast } from '../scenes.js';
-import { person, FAMILY, NEIGHBORS } from '../sprites.js';
+import { wallet } from '../state.js?v=debug-20261108-1';
+import { sfx, playMusic, playSlot } from '../audio.js?v=debug-20261108-1';
+import { onProgress } from '../scroll.js?v=debug-20261108-1';
+import { $, $$, img, go, esc } from '../ui.js?v=debug-20261108-1';
+import { broadcast } from '../scenes.js?v=debug-20261108-1';
+import { person, FAMILY, NEIGHBORS } from '../sprites.js?v=debug-20261108-1';
 
 // Each artifact step tunes the set. `day` 1 is the Sunday, so the wall clock spins forward.
 const SHOWS = {

@@ -3,14 +3,39 @@
 // writes its progress to --p (0 at its top edge, 1 when its bottom reaches the viewport bottom).
 // ponytail: main-thread scroll work; move hot scenes to animation-timeline: view() if low-end Android stutters.
 
-const MIDDLE = { rootMargin: '-50% 0px -50% 0px' };
+// Percentage root margins resolve against width, even on the vertical edges.
+// Use a real two-pixel band centered on the viewport's height instead.
+export function middleRootMargin(height) {
+  const h = Math.max(1, Math.round(height));
+  const top = Math.max(0, Math.floor(h / 2) - 1);
+  const bottom = Math.max(0, h - top - 2);
+  return `-${top}px 0px -${bottom}px 0px`;
+}
 
-function watchMiddle(selector, onEnter) {
-  const io = new IntersectionObserver(entries => {
-    for (const e of entries) if (e.isIntersecting) onEnter(e.target);
-  }, MIDDLE);
-  document.querySelectorAll(selector).forEach(el => io.observe(el));
-  return io;
+export function watchMiddle(selector, onEnter) {
+  const targets = [...document.querySelectorAll(selector)];
+  let io, last = null, resizeFrame = 0;
+  const select = () => {
+    const middle = innerHeight / 2;
+    const current = targets.find(el => {
+      const box = el.getBoundingClientRect();
+      return box.width > 0 && box.height > 0 && box.top <= middle && box.bottom > middle;
+    });
+    // Observer entries can be queued before a jump. Read the current geometry,
+    // rather than letting an old entry or callback order choose another stop.
+    if (current && current !== last) { last = current; onEnter(current); }
+  };
+  const refresh = () => {
+    resizeFrame = 0;
+    io?.disconnect();
+    io = new IntersectionObserver(select, { rootMargin: middleRootMargin(innerHeight) });
+    targets.forEach(el => io.observe(el));
+    select();
+  };
+  const resize = () => { if (!resizeFrame) resizeFrame = requestAnimationFrame(refresh); };
+  addEventListener('resize', resize, { passive: true });
+  refresh();
+  return { disconnect() { io.disconnect(); cancelAnimationFrame(resizeFrame); removeEventListener('resize', resize); } };
 }
 
 export const watchSteps = onEnter => watchMiddle('.step', onEnter);
@@ -24,6 +49,7 @@ let raf = 0;
 export function onProgress(el, fn) {
   if (!listeners.has(el)) listeners.set(el, []);
   listeners.get(el).push(fn);
+  if (last.has(el)) fn(last.get(el));
 }
 
 function frame() {

@@ -1,23 +1,23 @@
-import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=tambayan-navigation-20261108-1';
-import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=tambayan-navigation-20261108-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=tambayan-navigation-20261108-1';
+import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES } from './future.js?v=debug-20261108-1';
+import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=debug-20261108-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=tambayan-navigation-20261108-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=tambayan-navigation-20261108-1';
-import { SLOTS } from './slots.js';
-import { loadIndex } from './assets.js';
-import { wallet, passport } from './state.js';
-import { watchSteps, watchSections, watchProgress } from './scroll.js';
-import { placeholder } from './scenes.js';
-import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=tambayan-navigation-20261108-1';
-import { mountTransitions } from './exhibits/transitions.js?v=tambayan-navigation-20261108-1';
-import { mountTV } from './exhibits/tvguide.js?v=tambayan-navigation-20261108-1';
-import { mountStreet } from './exhibits/pisonet.js?v=tambayan-navigation-20261108-1';
-import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=tambayan-navigation-20261108-1';
-import { mountChainText } from './exhibits/chaintext.js?v=tambayan-navigation-20261108-1';
-import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=tambayan-navigation-20261108-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=tambayan-navigation-20261108-1';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=debug-20261108-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=debug-20261108-1';
+import { SLOTS } from './slots.js?v=debug-20261108-1';
+import { loadIndex } from './assets.js?v=debug-20261108-1';
+import { wallet, passport } from './state.js?v=debug-20261108-1';
+import { watchSteps, watchSections, watchProgress, watchMiddle } from './scroll.js?v=debug-20261108-1';
+import { placeholder } from './scenes.js?v=debug-20261108-1';
+import { $, $$, esc, accession, citeText, img, go, resolveAnchor, reduceMotion, emit } from './ui.js?v=debug-20261108-1';
+import { mountTransitions } from './exhibits/transitions.js?v=debug-20261108-1';
+import { mountTV } from './exhibits/tvguide.js?v=debug-20261108-1';
+import { mountStreet } from './exhibits/pisonet.js?v=debug-20261108-1';
+import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=debug-20261108-1';
+import { mountChainText } from './exhibits/chaintext.js?v=debug-20261108-1';
+import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=debug-20261108-1';
+import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=debug-20261108-1';
 
 const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
 const ALL_REFERENCES = [...DOCUMENT_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].sort((a,b)=>a.apa.localeCompare(b.apa));
@@ -173,7 +173,9 @@ function updateZoneNavigation(id,explicitEra) {
   nav.dataset.selectedArtifact=selected.id;
   const future=id.startsWith(`zone-${n}-future`);
   const present=$(`#${selected.id}-present`).getBoundingClientRect();
-  const era=explicitEra || (future ? '2030s' : present.top<=innerHeight/2 ? '2020s' : '2000s');
+  const connection=$(`#${selected.id}-connection`).getBoundingClientRect();
+  const atConnection=connection.top<=innerHeight/2 && connection.bottom>innerHeight/2;
+  const era=explicitEra || (future ? '2030s' : atConnection ? 'connection' : present.top<=innerHeight/2 ? '2020s' : '2000s');
   $('.zone-nav-context',nav).textContent=NAV_TITLES[selected.id];
   for (const a of $$('[data-zone-nav-artifact]',nav)) {
     if (!future && a.dataset.zoneNavArtifact===selected.id) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
@@ -186,14 +188,14 @@ function updateZoneNavigation(id,explicitEra) {
   if (menu) menu.innerHTML=`<p class="zone-nav-heading">Decades · ${esc(NAV_TITLES[selected.id])}</p><div class="zone-nav-links zone-nav-links--three"><a href="#${selected.id}-past">2000s</a><a href="#${selected.id}-present">2020s</a><a href="#zone-${n}-future">2030s</a></div>`;
 }
 function watchNavigationEras() {
-  const io=new IntersectionObserver(entries=>{
-    for (const entry of entries) if(entry.isIntersecting) {
-      const el=entry.target;
-      if(el.classList.contains('zone-future-step')) updateZoneNavigation(el.id,'2030s');
-      else updateZoneNavigation(el.closest('.step').dataset.step,el.id.endsWith('-present')?'2020s':'2000s');
-    }
-  },{rootMargin:'-45% 0px -45% 0px'});
-  for(const el of $$('.artifact-era, .zone-future-step')) io.observe(el);
+  return watchMiddle('.artifact-era, .artifact-connection, .future-proposal, .future-today, .future-values, .future-references', el => {
+    const step=el.closest('.step');
+    const future=step.classList.contains('zone-future-step');
+    const era=future ? '2030s' : el.classList.contains('artifact-connection') ? 'connection' : el.id.endsWith('-present') ? '2020s' : '2000s';
+    updateZoneNavigation(step.dataset.step,era);
+    const anchor=el.id || el.getAttribute('aria-labelledby');
+    if(anchor) mark(anchor);
+  });
 }
 
 function renderMap() {
@@ -223,7 +225,7 @@ function renderArchive() {
     `<label class="chip"><input type="radio" name="${name.toLowerCase()}" value="${i ? v : ''}"${i ? '' : ' checked'}><span>${v}</span></label>`).join('')}</fieldset>`;
   $('#archive-body').innerHTML = `
     <details class="archive-section document-synopsis"><summary>About the 13 comparisons</summary>${SYNOPSIS.map(text => `<p>${esc(text)}</p>`).join('')}<p>The thirteen comparisons accompany twelve curated stops. The tour combines overlapping television, computer-shop, and phone material. Pacquiao’s shared-viewing scene remains a supplemental curatorial interpretation. One sourced 2030s artifact closes each zone. The Archive preserves the past–present research; the three future culminations are in the main tour.</p></details>
-    <details class="archive-filter-panel"><summary>Filter comparisons</summary><form class="filters" id="archive-filters">${chips('Domain', DOMAINS, 'All')}${chips('Lens', LENSES, 'All')}${chips('Era', ['2000s', '2020s'], 'All eras')}</form></details>
+    <details class="archive-filter-panel"><summary>Filter comparisons</summary><form class="filters" id="archive-filters">${chips('Domain', DOMAINS, 'All')}${chips('Lens', LENSES, 'All')}${chips('Era', ['2000s', '2020s'], 'All eras')}<button class="btn btn--small btn--plain" type="reset">Reset filters</button></form></details>
     <p class="archive-count" id="archive-count"></p><div id="archive-media"></div>
     <div class="archive-list" id="archive-list"></div>
     <section class="archive-section"><h3>References for the exhibit text</h3>${documentReferencesHTML()}</section>`;
@@ -234,9 +236,10 @@ function renderArchive() {
     const rows = COMPARISONS.filter(c => (!d || c.domain === d) && (!l || c.lens === l));
     $('#archive-media').innerHTML = archiveMediaHTML(d, l, e);
     $('#archive-count').textContent = `${rows.length} of ${COMPARISONS.length} artifact comparisons${e ? ' · ' + e + ' with synthesis' : ''}`;
-    $('#archive-list').innerHTML = rows.map(c => comparisonHTML(c, e)).join('');
+    $('#archive-list').innerHTML = rows.length ? rows.map(c => comparisonHTML(c, e)).join('') : '<p class="archive-empty" role="status">No comparisons match these filters. Choose All or use Reset filters to see the collection again.</p>';
   };
   form.addEventListener('change', draw);
+  form.addEventListener('reset', () => requestAnimationFrame(draw));
   draw();
 }
 
@@ -262,12 +265,24 @@ function updateFinalePassport() {
 function fillSlots() {
   const debug = new URLSearchParams(location.search).has('slots');
   for (const el of $$('[data-slot-bg]')) {
+    for (const child of $$(':scope > [data-slot-rendered]', el)) child.remove();
+    delete el.dataset.placeholderOn;
     const slot = el.dataset.slotBg;
+    const fallback = () => {
+      if (el.dataset.placeholder) {
+        const template = document.createElement('template');
+        template.innerHTML = placeholder(el.dataset.placeholder);
+        for (const child of template.content.children) child.setAttribute('data-slot-rendered', '');
+        el.append(template.content);
+      } else el.dataset.placeholderOn = '';
+    };
     const art = img(slot, SLOTS[slot]?.alt ?? '');
-    if (art) { el.append(art); continue; }
-    if (el.dataset.placeholder) el.insertAdjacentHTML('beforeend', placeholder(el.dataset.placeholder));
-    else el.dataset.placeholderOn = '';
-    if (debug) el.insertAdjacentHTML('beforeend', `<span class="ph-tag">${slot}</span>`);
+    if (art) {
+      art.setAttribute('data-slot-rendered', '');
+      art.addEventListener('error', () => { if (art.isConnected) { art.remove(); fallback(); } }, { once: true });
+      el.append(art);
+    } else fallback();
+    if (debug) el.insertAdjacentHTML('beforeend', `<span class="ph-tag" data-slot-rendered>${slot}</span>`);
   }
 }
 
@@ -335,6 +350,16 @@ function showWallet({ balance, infinite }) {
 // reload, so a stale one would pull the visitor back to their last jump; a current one is also a
 // link to where they are. Safari limits how often the URL may change, so a refused update is skipped.
 function mark(id) {
+  const current=document.getElementById(location.hash.slice(1));
+  const part=current?.closest('.artifact-era, .artifact-connection, .future-proposal, .future-today, .future-values, .future-references');
+  if (part && current.closest('.step')?.dataset.step===id) {
+    const box=part.getBoundingClientRect();
+    if (box.top<=innerHeight/2 && box.bottom>innerHeight/2) return;
+  }
+  if (current?.closest('main > section')?.id===id) {
+    const box=current.getBoundingClientRect();
+    if (box.height>0 && box.bottom>44 && box.top<innerHeight) return;
+  }
   try { history.replaceState(null, '', id === 'lobby' ? location.pathname + location.search : `#${id}`); } catch { /* rate-limited */ }
 }
 
@@ -376,6 +401,7 @@ function activate(zoneEl, id) {
     const shows = layer.dataset.show.split(' ');
     const on = shows.includes('*') || shows.includes(id);
     layer.classList.toggle('is-on', on);
+    layer.inert = !on;
     if (on) layer.removeAttribute('aria-hidden'); else layer.setAttribute('aria-hidden', 'true');
   }
 }
@@ -464,6 +490,9 @@ function wireDialogs() {
       if(shortcuts && !matchMedia('(min-width:1200px)').matches) shortcuts.open=false;
       const destination=resolveStop(link.hash.slice(1));
       go(destination);
+      const target=document.getElementById(destination);
+      const targetZone=target?.closest('.zone');
+      if (targetZone && document.documentElement.dataset.stop!==targetZone.id) onSection(targetZone);
       // Returning to the start of the same zone need not trigger its section observer.
       if (ZONE_BY_ID[destination]) {
         const zone=ZONE_BY_ID[destination];
@@ -471,6 +500,17 @@ function wireDialogs() {
         updateZoneNavigation(destination);
         setClock(zone.clock);
         emit('step:enter',{id:destination,zone:zone.n});
+      } else if (targetZone) {
+        // A fast jump can return to the observer's last target before an
+        // intermediate intro was observed. Commit the clicked state now.
+        const step=target.closest('.step');
+        if (step) {
+          onStep(step);
+          const part=target.closest('.artifact-era, .artifact-connection');
+          const era=step.classList.contains('zone-future-step') ? '2030s' : part?.classList.contains('artifact-connection') ? 'connection' : part?.id.endsWith('-present') ? '2020s' : part?.id.endsWith('-past') ? '2000s' : undefined;
+          updateZoneNavigation(step.dataset.step,era);
+          mark(destination);
+        }
       }
     }
   });
@@ -558,14 +598,7 @@ async function boot() {
   wireSound();
   mountRingtones();
   wireTicket();
-  await loadIndex();
   fillSlots();
-  mountTransitions();
-  mountTV($('#zone-1'));
-  mountStreet($('#zone-2'));
-  mountNokia($('#zone-3'));
-  mountChainText($('#zone-3'));
-  for (const row of $$('.try')) row.closest('.label-interaction').hidden = row.childElementCount === 0;
   for (const z of ZONES) activate($(`#${z.id}`), z.id);
   lobby();
   setClock(null);
@@ -578,9 +611,28 @@ async function boot() {
   watchSteps(onStep);
   watchNavigationEras();
   watchProgress();
+  await loadIndex();
+  fillSlots();
+  mountTransitions();
+  mountTV($('#zone-1'));
+  mountStreet($('#zone-2'));
+  mountNokia($('#zone-3'));
+  mountChainText($('#zone-3'));
+  for (const row of $$('.try')) row.closest('.label-interaction').hidden = row.childElementCount === 0;
+  // Hydrating artwork and interactive devices must retain any navigation made
+  // while the index was loading, rather than resetting every room to its intro.
+  for (const z of ZONES) {
+    const zone=document.getElementById(z.id);
+    activate(zone, $('[data-stage]', zone).dataset.active || z.id);
+  }
   // Restore the requested artifact or era unless the visitor has already taken control.
-  if (arrivalId && !arrivalCancelled) document.getElementById(arrivalId)?.scrollIntoView({ behavior: 'instant' });
+  if (arrivalId && !arrivalCancelled) go(arrivalId);
   for (const type of arrivalStoppers) removeEventListener(type, cancelArrival);
+  const middle=innerHeight/2;
+  const section=$$('main > section').find(el=>{ const box=el.getBoundingClientRect(); return box.top<=middle && box.bottom>middle; });
+  if(section) onSection(section);
+  const step=$$('.step').find(el=>{ const box=el.getBoundingClientRect(); return box.top<=middle && box.bottom>middle; });
+  if(step) onStep(step);
 }
 
 boot();

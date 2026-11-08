@@ -933,6 +933,7 @@ html[data-era="2020"] .hud-clock { font-family: var(--font-ui); animation: clock
 .chip input:checked + span { background: var(--label-ink); color: var(--label-bg); border-color: var(--label-ink); }
 .chip input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
 .archive-count { font: 400 12px var(--font-mono); color: var(--label-dim); margin-bottom: 8px; }
+.archive-empty { padding: 18px; border: 1px solid var(--label-line); font: 400 17px/1.6 var(--font-label); }
 .archive-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; }
 .archive-card { padding: 14px; background: #fffdf8; border: 1px solid var(--label-line); border-radius: 2px; }
 .archive-card p:first-child { font: 500 12px/1.4 var(--font-mono); color: var(--sofa); margin-bottom: 6px; }

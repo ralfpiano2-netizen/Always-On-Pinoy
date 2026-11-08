@@ -1,4 +1,4 @@
-import { esc } from './ui.js?v=tambayan-navigation-20261108-1';
+import { esc } from './ui.js?v=debug-20261108-1';
 
 export const PRESENT_IMAGES = {
   "bini": {

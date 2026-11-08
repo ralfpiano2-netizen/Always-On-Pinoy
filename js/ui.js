@@ -1,7 +1,7 @@
 // Small DOM helpers shared by main.js and the exhibits.
-import { REFERENCES } from './sheet.js';
-import { SLOTS } from './slots.js';
-import { asset } from './assets.js';
+import { REFERENCES } from './sheet.js?v=debug-20261108-1';
+import { SLOTS } from './slots.js?v=debug-20261108-1';
+import { asset } from './assets.js?v=debug-20261108-1';
 
 const REF = Object.fromEntries(REFERENCES.map(r => [r.id, r]));
 

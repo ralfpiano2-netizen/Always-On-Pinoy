@@ -1,10 +1,10 @@
-import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=tambayan-navigation-20261108-1';
+import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=debug-20261108-1';
 // The 2020s feed groups artifacts that share the same comparison. Each connection appears
 // once, with all related accession numbers, so the collection does not repeat itself.
-import { ARTIFACTS, VOID_NOTES } from '../content.js?v=tambayan-navigation-20261108-1';
-import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=tambayan-navigation-20261108-1';
-import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js?v=tambayan-navigation-20261108-1';
-import { broadcast } from '../scenes.js';
+import { ARTIFACTS, VOID_NOTES } from '../content.js?v=debug-20261108-1';
+import { sfx, setAmbience, playMusic, isOn } from '../audio.js?v=debug-20261108-1';
+import { $, esc, accession, citeText, img, go, reduceMotion } from '../ui.js?v=debug-20261108-1';
+import { broadcast } from '../scenes.js?v=debug-20261108-1';
 
 const STILL = {
   'ao-01': 'void-dance', 'ao-04': 'void-concert', 'ao-06': 'void-rider', 'ao-09': 'void-esports',

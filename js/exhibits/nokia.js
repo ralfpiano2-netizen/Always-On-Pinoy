@@ -1,10 +1,10 @@
 // Zone 3, under the kumot. The Nokia (multi-tap, one peso a text, an inbox and Snake), the
 // scratch-off load card, a 3GP arriving over Bluetooth, one earphone each, and Mama's padala.
-import { multitap, KEYMAP } from '../logic.js';
-import { wallet } from '../state.js';
-import { sfx, playMusic, playSlot, isOn, state as audioState } from '../audio.js?v=tambayan-navigation-20261108-1';
-import { $, $$, esc } from '../ui.js?v=tambayan-navigation-20261108-1';
-import { person } from '../sprites.js';
+import { multitap, KEYMAP } from '../logic.js?v=debug-20261108-1';
+import { wallet } from '../state.js?v=debug-20261108-1';
+import { sfx, playMusic, playSlot, isOn, state as audioState } from '../audio.js?v=debug-20261108-1';
+import { $, $$, esc } from '../ui.js?v=debug-20261108-1';
+import { person } from '../sprites.js?v=debug-20261108-1';
 
 const REPLIES = ['eow dn! hehe. txt u l8r ;)', 'musta? d2 me sa skul. ingatz!', 'hahaha korni mo! gud nyt :)', 'ok po. GM ko 2 sa lahat ha'];
 const GREETING = 'eow! gising ka pa? tara, kwentuhan muna :)';
