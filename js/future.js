@@ -1,4 +1,4 @@
-import { esc } from './ui.js?v=realistic-futures-20261106-1';
+import { esc } from './ui.js?v=tambayan-navigation-20261108-1';
 
 export const FUTURE_REFERENCES = [
   {
@@ -46,7 +46,7 @@ export const FUTURE_REFERENCES = [
   {
     "id": "future-ref-roblox",
     "short": "Roblox, n.d.-a",
-    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 8, 2026, from",
     "url": "https://create.roblox.com/docs/ai/accelerated-workflows"
   },
   {
@@ -64,7 +64,7 @@ export const FUTURE_REFERENCES = [
   {
     "id": "future-ref-collab",
     "short": "Roblox, n.d.-b",
-    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 8, 2026, from",
     "url": "https://create.roblox.com/docs/projects/collaboration"
   },
   {
@@ -73,13 +73,6 @@ export const FUTURE_REFERENCES = [
     "title": "XREAL AURA: Wired XR glasses to watch, work, and play",
     "apa": "Izadi, S. (2026, October 28). XREAL AURA: Wired XR glasses to watch, work, and play. Google.",
     "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/"
-  },
-  {
-    "id": "future-ref-genie",
-    "short": "Rivas et al., 2026",
-    "title": "Project Genie: Experimenting with infinite, interactive worlds",
-    "apa": "Rivas, D., Breece, E., & Chambers, S. (2026, January 29). Project Genie: Experimenting with infinite, interactive worlds. Google.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/"
   },
   {
     "id": "future-ref-gs4d",
@@ -142,7 +135,7 @@ const SOURCE = {
   "roblox": {
     "id": "future-ref-roblox",
     "short": "Roblox, n.d.-a",
-    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "apa": "Roblox. (n.d.-a). AI on Roblox. Roblox Creator Hub. Retrieved November 8, 2026, from",
     "url": "https://create.roblox.com/docs/ai/accelerated-workflows"
   },
   "cube": {
@@ -160,7 +153,7 @@ const SOURCE = {
   "collab": {
     "id": "future-ref-collab",
     "short": "Roblox, n.d.-b",
-    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 6, 2026, from",
+    "apa": "Roblox. (n.d.-b). Collaboration. Roblox Creator Hub. Retrieved November 8, 2026, from",
     "url": "https://create.roblox.com/docs/projects/collaboration"
   },
   "aura": {
@@ -169,13 +162,6 @@ const SOURCE = {
     "title": "XREAL AURA: Wired XR glasses to watch, work, and play",
     "apa": "Izadi, S. (2026, October 28). XREAL AURA: Wired XR glasses to watch, work, and play. Google.",
     "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/"
-  },
-  "genie": {
-    "id": "future-ref-genie",
-    "short": "Rivas et al., 2026",
-    "title": "Project Genie: Experimenting with infinite, interactive worlds",
-    "apa": "Rivas, D., Breece, E., & Chambers, S. (2026, January 29). Project Genie: Experimenting with infinite, interactive worlds. Google.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/"
   },
   "gs4d": {
     "id": "future-ref-gs4d",
@@ -237,42 +223,42 @@ export const ZONE_FUTURES = [
     "id": "zone-2-future",
     "zone": 2,
     "next": "zone-3",
-    "kind": "world-engine",
-    "title": "Persistent AI world engine",
+    "kind": "virtual-tambayan",
+    "title": "AI co-created virtual tambayan",
     "screen": "A PLACE WE CAN RETURN TO",
     "labels": [
-      "PERSISTENT SHARED WORLD",
-      "CONSISTENT OBJECTS",
-      "EDITABLE AI GENERATION"
+      "ONE SHARED ROOM",
+      "AI-ASSISTED CREATION",
+      "HUMAN-APPROVED CHANGES"
     ],
-    "intro": "From the computer shop and profile page to a digital tambayan a barkada can build, change, and return to together.",
-    "delta": "From a short generated exploration to an enduring, editable multiplayer place whose objects and shared history stay consistent.",
-    "today": "Google’s January 2026 Project Genie prototype generated explorable worlds but limited generations to 60 seconds and reported imperfect physics, control, and latency. Roblox already supports AI creation and collaborative editing. Those are dated examples of current capabilities, not evidence that persistent multiplayer games or collaborative creation are new inventions.",
-    "scenario": "The future artifact is software: a saved digital barangay and the AI world engine that maintains it. A barkada could describe a place, generate editable streets and objects, and meet there across separate sessions. Changes would become durable shared state: a redesigned court, a completed mural, or a fan gathering space would remain when people return. Neural generation would work with a conventional simulation and shared server so that different players encounter the same objects and rules. The pictured workstation is a plausible access device; the advance is in the engine.",
-    "aiRole": "A world model would generate and extend environments while retaining a structured record of objects and events. A simulation layer would check collisions and agreed rules; shared state would resolve changes between players. Human creators would be able to inspect, revise, save, and export their work. Long-term consistency and controllable generation are the proposed advances.",
+    "intro": "From the computer shop, profile page, mall, and parlor to a small digital gathering place that friends living apart could help shape together.",
+    "delta": "More approachable co-creation inside one defined virtual room: friends could describe changes, review AI suggestions, and keep the shared design for their next visit.",
+    "today": "Roblox already documents AI-assisted asset creation and collaborative editing. Its February 2026 Cube beta generated functional objects using predefined structures. Saving a scene and sharing a multiplayer space are established game-platform capabilities. The proposed improvement is an easier, more reliable creation experience for non-specialist friends, rather than the invention of virtual worlds.",
+    "scenario": "The artifact is a saved virtual tambayan: one predefined room containing avatars, furnishings, shared artwork, and a record of contributions. Friends could ask AI to propose a decoration, a simple object, or a supported activity. They would preview and approve changes before adding them. An established game engine and server would handle saving, permissions, movement, and multiplayer interaction. The room could be accessed from an ordinary computer or compatible phone. The monitor in the image illustrates that access; the shared room is the digital artifact.",
+    "aiRole": "AI would interpret a request, suggest objects or decorations that fit supported templates, and explain how to edit them. It could help configure a small selection of tested activities. People would approve the result, retain undo and revision controls, and receive visible creative credit. Persistent storage and shared rules would remain the responsibility of the game platform.",
     "advances": [
-      "Generated worlds that retain editable object identities and changes across repeated sessions.",
-      "Several participants sharing one consistent simulation, instead of separate generated views that disagree.",
-      "Human control over revisions, contributor credit, and reusable scene data."
+      "Everyday-language requests that help beginners customize a bounded room, with locally evaluated Philippine-language support as a design goal.",
+      "Editable suggestions and previews that participants can approve, reject, or undo together.",
+      "More dependable use of supported object and activity templates, while ordinary platform systems retain the saved scene and contribution history."
     ],
-    "constraints": "Long-term memory, coherent physics, simultaneous edits, computing cost, and reliable export remain engineering goals. The proposal does not assume that scaling a short video world automatically creates a dependable multiplayer game.",
-    "connection": "Computer shops, Friendster, malls, and parlors offered different ways to be recognized by other people. A place acquires meaning because someone remembers that we were there and makes room for our return. A persistent digital tambayan could carry that continuity across distance. Its social test would be whether a newcomer can contribute, a queer member can be present without ridicule, and a friend with limited equipment can still join. The people who make art, organize gatherings, and care for the space deserve visible credit. AI can generate a setting; belonging grows from how its members treat one another.",
+    "constraints": "Generated objects and instructions would still need checking, and supported activities would be limited. Useful Philippine-language support, affordable access, device compatibility, and performance require testing. This is a modest 2030s design scenario; it makes no claim of a self-generating, unlimited world or a guaranteed commercial release.",
+    "connection": "Computer shops, Friendster, malls, and parlors offered places where people could recognize one another and express who they were. A shared virtual room could help a barkada keep that sense of place when work, study, or migration separates its members. Its meaning would lie in details made together: a mural someone contributed, a corner that recalls an old hangout, or a gathering arranged around different schedules. Pakikipagkapwa asks members to welcome a newcomer, respect queer expression, share decisions, and notice a friend whose equipment or connection is limited. Saving the room preserves a design. Remembering and caring for its people sustains the friendship.",
     "question": "Who gets to shape this shared place, and whose contribution will still be remembered?",
-    "foundation": "The January 2026 Genie announcement documents an early world-model prototype and its stated limits. Roblox documents existing AI-assisted creation and collaboration. The proposed contribution is persistent, controllable, shared neural-world generation; neither multiplayer editing nor a new computer case is being claimed as a future invention.",
+    "foundation": "Roblox’s AI documentation and Cube announcement support constrained AI-assisted object creation. Its collaboration documentation supports shared editing. The ITU source frames access as a condition of participation. These sources support components of the proposal; they do not announce this tambayan or establish its adoption in the 2030s. The future improvement is a more approachable, dependable combination of these capabilities within a limited room.",
     "sources": [
-      "genie",
       "roblox",
+      "cube",
       "collab",
       "access"
     ],
     "photo": {
-      "src": "https://prod.docsiteassets.roblox.com/assets/ai-landing/assistant-planning-mode.png",
-      "alt": "Roblox Studio documentation showing its existing AI Assistant planning interface.",
-      "caption": "Documented baseline · Roblox Studio AI Assistant, documentation reviewed November 6, 2026. This illustrates current creation tools; it is not Project Genie or the proposed world engine.",
-      "source": "roblox"
+      "src": "https://prod.docsiteassets.roblox.com/assets/studio/collaboration/Collaborative-Session.jpg",
+      "alt": "Roblox Studio documentation showing three creators editing the same scene with different colored selection markers.",
+      "caption": "Documented starting point · Collaborative editing in Roblox Studio, documentation reviewed November 8, 2026. This existing interface supports the proposal’s shared-editing foundation.",
+      "source": "collab"
     },
-    "conceptImage": "assets/concepts/persistent-ai-world-engine-2030s-v2.jpg",
-    "conceptAlt": "AI-generated photorealistic concept of a workstation showing a detailed editable digital Filipino barangay, a scene editor, and shared player markers."
+    "conceptImage": "assets/concepts/ai-co-created-virtual-tambayan-2030s-v3.jpg",
+    "conceptAlt": "AI-generated software concept showing one bounded virtual gathering room on a normal monitor, with avatars, shared artwork, and controls for reviewing AI suggestions."
   },
   {
     "id": "zone-3-future",
@@ -337,7 +323,7 @@ export function futureZoneHTML(zone) {
       <h3 id="${f.id}-title">${esc(f.title)}</h3><p class="future-zone-intro">${esc(f.intro)}</p><nav class="comparison-jumps future-zone-jumps" aria-label="Within the Zone ${zone} culmination"><a href="#${f.id}-today">Today</a><a href="#${f.id}-proposal">2030s</a><a href="#${f.id}-values">Connection</a><a href="#${f.id}-references">References</a></nav>
       <div class="future-artifact" data-future="${f.id}">
         <section class="future-proposal" aria-labelledby="${f.id}-proposal"><h4 id="${f.id}-proposal">The proposed advance · 2030s</h4>
-          <figure class="future-concept"><img src="${illustration}" alt="${esc(f.conceptAlt)}" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>AI-generated prototype visualization · OpenAI, 2026 · a proposed 2030s concept.</figcaption></figure>
+          <figure class="future-concept"><img src="${illustration}" alt="${esc(f.conceptAlt)}" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>AI-generated concept visualization · OpenAI, 2026 · a proposed 2030s concept.</figcaption></figure>
           <p class="future-capability"><strong>The change in capability</strong>${esc(f.delta)}</p>
           <ul class="future-features" aria-label="Concept features">${f.labels.map(text=>`<li>${esc(text.toLowerCase())}</li>`).join('')}</ul><p>${esc(f.scenario)}</p>
           <h4>What AI would improve</h4><p>${esc(f.aiRole)}</p><ul class="future-advances">${f.advances.map(text=>`<li>${esc(text)}</li>`).join('')}</ul>
@@ -351,4 +337,4 @@ export function futureZoneHTML(zone) {
       <a class="comparison-next" href="#${f.next}">${zone<3 ? `Continue to Zone ${zone+1}` : 'Continue to the closing reflection'} <span aria-hidden="true">↓</span></a>
     </div></article>`;
 }
-export function futureCreditsHTML() { return '<p>The three 2030s concept illustrations were generated with OpenAI image generation for this museum on November 6, 2026. They visualize proposed hardware and software; the people and settings are generated. They are not product announcements or documentary photographs. Real-world photographs and software illustrations are credited separately. Full research references appear within each future artifact.</p>'; }
+export function futureCreditsHTML() { return '<p>The three 2030s concept illustrations were generated with OpenAI image generation for this museum on November 6 and 8, 2026. They visualize proposed hardware and software; the people and settings are generated. They are not product announcements or documentary photographs. Real-world photographs and software illustrations are credited separately. Full research references appear within each future artifact.</p>'; }

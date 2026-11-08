@@ -1283,13 +1283,15 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .future-reference-list { padding-left: 18px; font: 400 14px/1.6 var(--font-label); overflow-wrap: anywhere; }
 .future-reference-list li + li { margin-top: 14px; }
 .future-reference-list a { text-decoration: underline; }
+/* Keep the expanded shortcuts within the scene at every breakpoint. */
+.zone > .stage .zone-card { max-height: calc(100svh - var(--hud-h) - 56px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
 @media (min-width:1200px) {
-  .zone > .stage .zone-card { max-height: calc(100svh - var(--hud-h) - 56px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-right: 3px; }
+  .zone > .stage .zone-card { padding-right: 3px; }
 }
 @media (max-width:1199px) {
   .zone-navigator { position: relative; }
   .zone-navigator > summary { padding: 8px 10px; border: 1px solid #bdaf99; border-radius: 3px; background: #f6f2e9; color: #201d19; text-align: left; }
-  .zone-navigator .zone-navigation { position: absolute; z-index: 6; left: 0; right: 0; top: 100%; max-height: 50svh; overflow: auto; overscroll-behavior: contain; box-shadow: 0 10px 30px #0003; }
+  .zone-navigator .zone-navigation { position: relative; margin-top: 4px; max-height: none; box-shadow: 0 10px 30px #0003; }
 }
 
 /* A visible capability difference separates a scenario from its present baseline. */
