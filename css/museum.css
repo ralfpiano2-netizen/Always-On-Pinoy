@@ -247,6 +247,16 @@ html[data-era="2020"] .hud-clock { font-family: var(--font-ui); animation: clock
 .ticket-meta dt { color: var(--label-dim); }
 .ticket-meta dd { margin: 2px 0 0; font-weight: 500; }
 .ticket-actions { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.ticket-enter {
+  width: 100%; min-height: 60px; padding: 14px 18px; justify-content: space-between;
+  border: 2px solid #74261e; border-radius: 3px; background: var(--sofa); color: #fffaf1;
+  font: 600 16px/1.35 var(--font-mono); text-align: left; text-decoration: none;
+  box-shadow: 0 4px 0 #74261e;
+}
+.ticket-enter:hover { background: #922e24; }
+.ticket-enter:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.ticket-enter:active { transform: translateY(3px); box-shadow: 0 1px 0 #74261e; }
+.ticket-enter-arrow { flex-shrink: 0; font-size: 25px; line-height: 1; }
 .ticket-hint { margin-top: 10px; font: 400 12px/1.35 var(--font-mono); color: var(--label-dim); }
 .ticket-stub {
   display: grid; align-content: center; justify-items: center; gap: 2px;
