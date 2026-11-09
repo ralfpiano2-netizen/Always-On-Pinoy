@@ -1311,3 +1311,25 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .future-engineering { padding: 16px 18px; border: 1px solid var(--label-line); margin: 24px 0; }
 .future-engineering p { margin-bottom: 0; }
 .future-concept img { image-rendering: auto; }
+
+/* Six sourced proposals close each aspect. Photos stay visible and retain their full framing. */
+.future-collection-note { font: 400 14px/1.6 var(--font-label); color: #5d5066; }
+.future-category-nav { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; margin: 18px 0 28px; }
+.future-category-nav a { display:flex; align-items:center; justify-content:center; min-height:44px; padding:8px 6px; border:1px solid #ad98bc; border-radius:3px; background:#f0eaf3; color:#483354; font:500 12px/1.4 var(--font-mono); text-align:center; text-decoration:none; overflow-wrap:anywhere; }
+.future-category-nav a:hover { background:#e2d6eb; }
+.future-category-nav a:focus-visible { outline:3px solid var(--red); outline-offset:3px; }
+.future-collection-card { border-top:2px solid #c7b6d6; padding-top:28px; margin-top:30px; scroll-margin-top:calc(var(--hud-h) + 20px); }
+.future-collection-card .future-category { margin:0 0 8px; color:#654d7e; font:500 12px/1.5 var(--font-mono); }
+.future-collection-card > h4 { font:600 29px/1.15 var(--font-label); overflow-wrap:anywhere; margin-bottom:18px; }
+.future-collection-card .future-concept { margin-inline:-18px; }
+.future-collection-card .future-concept img { width:100%; height:auto; aspect-ratio:3/2; object-fit:contain; border:0; }
+.future-collection-card .future-concept figcaption { padding:8px 18px 0; font-size:11px; }
+.future-collection-card .future-bridge { font-size:15px; color:#5d5066; }
+.future-collection-card .future-values h5 { font:600 20px/1.3 var(--font-label); margin:0 0 8px; }
+.future-collection-card .future-references { font:400 14px/1.6 var(--font-label); }
+.future-collection-card .future-references > p { font-size:14px; margin-top:12px; }
+.future-return { display:inline-block; margin:14px 0 8px; color:#654d7e; font:500 12px/1.5 var(--font-mono); text-underline-offset:3px; }
+.future-legacy-anchors span { display:block; scroll-margin-top:calc(var(--hud-h) + 20px); }
+.map-future-categories { margin:10px 0 0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); list-style:none; gap:6px; }
+.map-future-categories a { display:block; padding:6px; font-size:12px; }
+@media(max-width:480px) { .future-category-nav { grid-template-columns:repeat(2,minmax(0,1fr)); } .future-collection-card > h4 { font-size:26px; } }

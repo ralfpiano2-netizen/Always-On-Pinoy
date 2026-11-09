@@ -332,7 +332,7 @@ tour['ao-18'].details = {
   presentHeading: '2020s · Payment channels and the person behind the transfer',
   present: [
     'Digital wallets, bank transfers, and QR payments are part of a changing payment landscape. The BSP’s 2024 retail-payment figures document that wider change, rather than the share of overseas remittances sent through an app (Bangko Sentral ng Pilipinas, 2025). The retail photographs here likewise illustrate payment interfaces, not particular OFW transfers.',
-    'A different interface does not settle the question of care. The museum asks visitors to look beyond a transaction confirmation: does the person sending support also receive attention, company, and understanding? The presence window at the end of this zone extends that question into a proposed way of spending time together.'
+    'A different interface does not settle the question of care. The museum asks visitors to look beyond a transaction confirmation: does the person sending support also receive attention, company, and understanding? The proposed family telepresence service at the end of this zone extends that question into a proposed way of spending time together.'
   ],
   sources: [{title:'Torres (2006), Cebuana Lhuillier boosts remittance business',url:'https://www.philstar.com/business/2006/07/14/347271/cebuana-lhuillier-boosts-remittance-business'}]
 };
