@@ -83,6 +83,21 @@ export const REFERENCES = [
     "apa": "SM Prime Holdings. (2006). Annual report 2006: Expanding horizons, defining lifestyle. SM Prime Holdings, Inc. https://smprime.com/financial-reports/"
   },
   {
+    "id": "inquirerbiz2024",
+    "short": "Inquirer Business, 2024",
+    "apa": "Inquirer Business. (2024, October 26). TikTok Shop getting bigger slice of e-commerce sales. https://business.inquirer.net/?p=486688"
+  },
+  {
+    "id": "philstarlife2022",
+    "short": "PhilSTAR Life, 2022",
+    "apa": "PhilSTAR Life. (2022, August 24). LIST: Where to catch 'Drag Race Philippines' viewing parties and see the queens live. https://philstarlife.com/geeky/140320-drag-race-philippines-viewing-parties-live-shows"
+  },
+  {
+    "id": "philstar2005",
+    "short": "Philstar.com, 2005",
+    "apa": "Philstar.com. (2005, August 14). Palace stands by Defensor. https://www.philstar.com/headlines/2005/08/14/291432/palace-stands-defensor"
+  },
+  {
     "id": "toledo2023",
     "short": "Toledo & Vijandre, 2023",
     "apa": "Toledo, R., & Vijandre, C. (2023, March 29). The hardworking and enduring style of denim. PhilSTAR Life. https://philstarlife.com/in-the-paper/fashion-and-beauty/the-hardworking-and-enduring-style-of-denim"
@@ -232,7 +247,7 @@ export const ARCHIVE = [
     "domain": "Political",
     "lens": "Time",
     "era": "2000s",
-    "text": "In the 2000s, political timelines were dictated by episodic broadcast events and scandal releases like the Hello Garci wiretapped tapes that triggered sudden national impeachment hearings (GMA News, 2007; Rafael, 2003). This created scheduled, crisis-driven political moments where citizens responded to real-time broadcast media and SMS updates (Lichauco, 2001; Rafael, 2003)."
+    "text": "In the 2000s, political timelines were dictated by episodic broadcast events and scandal releases like the Hello Garci wiretapped tapes that triggered sudden national impeachment hearings (Philstar.com, 2005; Rafael, 2003). This created scheduled, crisis-driven political moments where citizens responded to real-time broadcast media and SMS updates (Lichauco, 2001; Rafael, 2003)."
   },
   {
     "domain": "Political",
@@ -376,19 +391,19 @@ export const ARCHIVE = [
     "domain": "Aesthetics",
     "lens": "Time",
     "era": "2000s",
-    "text": "In the 2000s, aesthetic temporal trends were anchored to physical OPM band live gigs and seasonal fashion releases, where youth dedicated leisure routines to live music venues and physical mall shopping (Inquirer, 2022; Toledo & Vijandre, 2023). This time-bound cycle meant personal style evolved gradually through shared physical subcultures (Inquirer, 2022; Toledo & Vijandre, 2023)."
+    "text": "In the 2000s, aesthetic temporal trends were anchored to physical OPM band live gigs and seasonal fashion releases, where youth dedicated leisure routines to live music venues and physical mall shopping (Toledo & Vijandre, 2023). This time-bound cycle meant personal style evolved gradually through shared physical subcultures (Toledo & Vijandre, 2023)."
   },
   {
     "domain": "Aesthetics",
     "lens": "Time",
     "era": "2020s",
-    "text": "In contrast, 2020s aesthetic time is defined by rapid, on-demand digital fast-fashion hauls and micro-trend cycles operating continuously across online supply chains (Gabrillo, 2024; Toledo & Vijandre, 2023). Today, consumers adopt and cycle through viral fashion styles instantaneously via short-form video feeds like TikTok (Gabrillo, 2024; Roque, 2024)."
+    "text": "In contrast, 2020s aesthetic time is defined by rapid, on-demand digital fast-fashion hauls and micro-trend cycles operating continuously across online supply chains (Gabrillo, 2024; Toledo & Vijandre, 2023). Today, consumers increasingly discover and buy fashion styles through short-form video feeds like TikTok (Gabrillo, 2024; Inquirer Business, 2024)."
   },
   {
     "domain": "Aesthetics",
     "lens": "Space",
     "era": "2000s",
-    "text": "In the 2000s, beauty and fashion styles physically manifested in localized public spaces and suburban malls through signature Asian shag haircuts and ultra-low-waist denim jeans (Inquirer, 2022; Toledo & Vijandre, 2023). These physical spaces served as the primary canvas for youth identity and visual self-expression within immediate urban gathering spots (Inquirer, 2022; Toledo & Vijandre, 2023)."
+    "text": "In the 2000s, beauty and fashion styles physically manifested in localized public spaces and suburban malls through signature Asian shag haircuts and ultra-low-waist denim jeans (Toledo & Vijandre, 2023). These physical spaces served as the primary canvas for youth identity and visual self-expression within immediate urban gathering spots (Toledo & Vijandre, 2023)."
   },
   {
     "domain": "Aesthetics",
