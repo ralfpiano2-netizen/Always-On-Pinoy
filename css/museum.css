@@ -1333,3 +1333,22 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .map-future-categories { margin:10px 0 0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); list-style:none; gap:6px; }
 .map-future-categories a { display:block; padding:6px; font-size:12px; }
 @media(max-width:480px) { .future-category-nav { grid-template-columns:repeat(2,minmax(0,1fr)); } .future-collection-card > h4 { font-size:26px; } }
+
+/* Every category/aspect stays together across the three decades. */
+.chronology-example.label { background:transparent; border:0; border-radius:0; box-shadow:none; padding:0; margin:0 0 28px; width:auto; max-width:none; }
+.chronology-artifact-title { font:600 23px/1.3 var(--font-label); margin:18px 0; }
+.chronology-era > h4 { border-bottom:2px solid #c9b89e; padding-bottom:14px; }
+.chronology-example .artifact-era { margin-top:12px; border:0; padding-top:0; }
+.chronology-example .artifact-era > h4 { font-size:16px; }
+.chronology-connection { margin:20px 0; padding:16px; background:#ece7dc; }
+.chronology-connection summary { cursor:pointer; font:500 13px/1.5 var(--font-mono); }
+.chronology-connection .artifact-connection { border:0; padding-top:16px; }
+.chronology-future { scroll-margin-top:calc(var(--hud-h) + 20px); }
+.chronology-future .future-collection-card { margin-top:30px; }
+.chronology-future .future-collection-card > h4::before { content:'2030 · '; }
+.chronology-example, .chronology-era { scroll-margin-top:calc(var(--hud-h) + 20px); }
+.map-artifacts .comparison-jumps { margin:4px 0 14px; gap:5px; }
+.map-artifacts .comparison-jumps a { padding:7px; font-size:11px; }
+
+.chronology-label > .comparison-jumps a { display:inline-flex; min-height:44px; align-items:center; padding:9px 15px; border:1px solid #b8a78c; border-radius:3px; color:#302820; background:#f6efe1; text-decoration:none; }
+.chronology-label > .comparison-jumps a:hover { background:#e7d5b6; }

@@ -588,7 +588,7 @@ function referenceHTML(key) {
  const r=SOURCES[key];
  return `<li>${esc(r.apa)} <a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">Source ↗</a></li>`;
 }
-function artifactHTML(a) {
+export function futureArtifactHTML(a) {
  return `<section class="future-proposal future-collection-card" id="${a.htmlId}" data-future="${a.id}" aria-labelledby="${a.htmlId}-title">
   <p class="future-category">${esc(categoryName(a))} · ${esc(a.aspect)} · 2030</p>
   <h4 id="${a.htmlId}-title">${esc(a.title)}</h4>
@@ -602,7 +602,7 @@ function artifactHTML(a) {
    <ol class="future-reference-list">${[...a.sources].sort((x,y)=>SOURCES[x].apa.localeCompare(SOURCES[y].apa)).map(referenceHTML).join('')}</ol>
    <p class="future-scope">The sources document present-day foundations. The 2030 workflow, design, and image are proposed interpretations.</p>
   </details>
-  <a class="future-return" href="#zone-${a.zone}-future">Back to the six categories ↑</a>
+  <a class="future-return" href="#${a.htmlId.replace(/^future-/,'')}">Back to this comparison ↑</a>
  </section>`;
 }
 export function futureZoneHTML(zone) {
@@ -613,7 +613,7 @@ export function futureZoneHTML(zone) {
   <p class="future-collection-note">Choose a category, or continue down through all six. Images and stories are visible directly.</p>
   <nav class="future-category-nav" aria-label="Zone ${zone} future categories">${items.map(a=>`<a href="#${a.htmlId}">${esc(categoryShort(a))}</a>`).join('')}</nav>
   <div class="future-legacy-anchors" aria-hidden="true">${['today','proposal','values','references'].map(part=>`<span id="${f.id}-${part}"></span>`).join('')}</div>
-  ${items.map(artifactHTML).join('')}
+  ${items.map(futureArtifactHTML).join('')}
   <a class="comparison-next" href="#${f.next}">${zone<3?`Continue to Zone ${zone+1}`:'Continue to the closing reflection'} <span aria-hidden="true">↓</span></a>
  </div></article>`;
 }

@@ -1,10 +1,11 @@
-import { futureZoneHTML, ZONE_FUTURES, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=future-collection-20261109-1';
+import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=chronology-20261109-1';
+import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=chronology-20261109-1';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
 import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=debug-20261108-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=future-collection-20261109-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=future-collection-20261109-1';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=chronology-20261109-1';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=chronology-20261109-1';
 import { SLOTS } from './slots.js?v=debug-20261108-1';
 import { loadIndex } from './assets.js?v=debug-20261108-1';
 import { wallet, passport } from './state.js?v=debug-20261108-1';
@@ -17,13 +18,16 @@ import { mountStreet } from './exhibits/pisonet.js?v=debug-20261108-1';
 import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=debug-20261108-1';
 import { mountChainText } from './exhibits/chaintext.js?v=debug-20261108-1';
 import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=debug-20261108-1';
-import { artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=debug-20261108-1';
+import { MEDIA, artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=debug-20261108-1';
 
 const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
-const ALL_REFERENCES = [...DOCUMENT_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].sort((a,b)=>a.apa.localeCompare(b.apa));
+const ALL_REFERENCES = [...new Map([...DOCUMENT_REFERENCES, ...WORKSHEET_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].map(r=>[r.url || r.apa,r])).values()].sort((a,b)=>a.apa.localeCompare(b.apa));
 const resolveStop = resolveAnchor;
 const BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
 const ZONE_BY_ID = Object.fromEntries(ZONES.map(z => [z.id, z]));
+const GROUP_BY_ID=Object.fromEntries(CHRONOLOGY_GROUPS.map(g=>[g.id,g]));
+const groupFor=id=>GROUP_BY_ID[id] || CHRONOLOGY_GROUPS.find(g=>g.members.includes(id));
+const futureFor=g=>FUTURE_ARTIFACTS.find(a=>a.zone===g.zone && (a.category.startsWith('Others')?'Others':a.category)===g.category);
 const DOMAINS = ['Social', 'Economic', 'Political', 'Cultural'];
 const LENSES = ['Time', 'Space', 'Technology', 'Overall'];
 const LENS_LABEL = { Time: 'time', Space: 'space', Technology: 'technology', Overall: 'overall trend' };
@@ -138,59 +142,80 @@ function stepHTML(a) {
   </article>`;
 }
 
+function worksheetMedia(key) {
+  const aliases={nokia:'nokia',estrada:'edsa',messenger:'present-messenger',protest:'present-protest',gento:'present-sb19'};
+  const m=MEDIA.find(m=>m.id===(aliases[key] || key) || m.id===`present-${key}`);
+  if(!m || m.type!=='image') return '';
+  return `<figure class="artifact-card-media"><img src="${esc(m.src)}" alt="${esc(m.alt)}" width="720" height="480" loading="lazy" decoding="async"><figcaption><span>${esc(m.title)}</span><p>${esc(m.caption)}</p><a href="${esc(m.source)}" target="_blank" rel="noopener noreferrer">${esc(m.credit)} · Source ↗</a></figcaption></figure>`;
+}
+function worksheetEra(g,era) {
+  const c=COMPARISONS.find(c=>c.id===g.comparison);
+  let text=c ? (era==='past'?c.past:c.present) : g[era];
+  const parts=text.split('\n');
+  let title='',body=text;
+  if(!c && parts.length>1 && parts[0].length<120 && !/[.!?]$/.test(parts[0])){title=parts.shift();body=parts.join('\n');}
+  let media=worksheetMedia(g.photos[era==='past'?0:1]);
+  if(g.id==='social-time') {
+    const t=document.createElement('template');t.innerHTML=era==='past'?artifactCardMediaHTML('ao-13'):presentMediaHTML('ao-13');
+    media=t.content.querySelector('figure')?.outerHTML || media;
+  }
+  if(g.id==='cultural-technology'){const t=document.createElement('template');t.innerHTML=artifactCardMediaHTML('ao-02');media=era==='past'?(t.content.querySelector('figure')?.outerHTML || ''):presentMediaHTML('ao-01');}
+  if(g.id.startsWith('political-') && g.id!=='political-technology') {
+    const t=document.createElement('template');t.innerHTML=era==='past'?artifactCardMediaHTML('ao-15'):presentMediaHTML('ao-15');
+    media=t.content.querySelector('figure')?.outerHTML || media;
+  }
+  return `${title?`<h5 class="chronology-artifact-title">${esc(title)}</h5>`:''}${media}${documentParagraphs(body)}`;
+}
+function chronologyHTML(g,index) {
+  const f=futureFor(g),examples=g.members.map(id=>BY_ID[id]);
+  const old=examples.map(a=>{const t=document.createElement('template');t.innerHTML=stepHTML(a);for(const h of t.content.querySelectorAll('.artifact-era > h4'))h.classList.add('sr-only');for(const subtitle of t.content.querySelectorAll('.era-subtitle'))subtitle.remove();return {a,el:t.content};});
+  const eraHTML=era=>old.length?old.map(({a,el})=>`<div data-scene="${a.id}" class="chronology-example${era==='past'?' label':''}" ${era==='past'?`id="${a.id}" data-label="${a.id}" ${LONG.has(a.id)?'data-progress':''}`:''}><h5 class="chronology-artifact-title label-head">${accession(a)} · ${esc(era==='past'?a.title:a.now.title)}</h5>${el.querySelector(`#${a.id}-${era}`).outerHTML}</div>`).join(''):worksheetEra(g,era);
+  const connections=old.map(({el})=>el.querySelector('.artifact-connection')?.outerHTML || '').join('');
+  const next=CHRONOLOGY_GROUPS[index+1];
+  return `<article class="step chronology-step" id="${g.id}" data-step="${g.id}" data-category="${esc(g.category)}" aria-labelledby="${g.id}-title"><div class="label label-comparison chronology-label">
+   <div class="label-head"><span class="label-no">${esc(g.label)}</span><span>2000s → 2020s → 2030</span></div>
+   <h3 id="${g.id}-title">${esc(g.label)}</h3>
+   <p class="comparison-intro">Follow this comparison through the 2000s, the 2020s, and a possible 2030.</p>
+   <nav class="comparison-jumps" aria-label="Decades for ${esc(g.label)}"><a href="#${g.id}-past">2000s</a><a href="#${g.id}-present">2020s</a><a href="#${f.htmlId}">2030</a></nav>
+   <section class="artifact-era chronology-era" id="${g.id}-past" data-era="2000s" aria-labelledby="${g.id}-past-title"><h4 id="${g.id}-past-title">2000s · ${esc(g.label)}</h4>${eraHTML('past')}</section>
+   <section class="artifact-era chronology-era" id="${g.id}-present" data-era="2020s" aria-labelledby="${g.id}-present-title"><h4 id="${g.id}-present-title">2020s · ${esc(g.label)}</h4>${eraHTML('present')}${connections?`<details class="chronology-connection"><summary>What connects the past and present?</summary>${connections}</details>`:''}</section>
+   <div class="chronology-future" data-era="2030" ${g.category==='Social'?`id="zone-${g.zone}-future"`:''}>${futureArtifactHTML(f)}</div>
+   <a class="comparison-next" href="#${next?.id || 'pause'}">${next?`Next · ${esc(next.label)}`:'Continue to the closing reflection'} ↓</a>
+  </div></article>`;
+}
 function renderSteps() {
-  for (const z of ZONES) {
-    const intro = `<article class="step" data-step="${z.id}">
-      <div class="label label-intro" role="group" aria-label="Zone ${z.n} introduction, ${esc(z.title)}"><div class="label-head"><span class="label-no">Zone ${z.n}</span><span>Zone introduction</span></div>
-      <p class="label-body">${esc(z.intro)}</p></div></article>`;
-    $(`[data-zone-steps="${z.n}"]`).innerHTML = intro + ARTIFACTS.filter(a => a.zone === z.n).map(stepHTML).join('') + futureZoneHTML(z.n);
+  for(const z of ZONES) {
+    const groups=CHRONOLOGY_GROUPS.filter(g=>g.zone===z.n);
+    const intro=`<article class="step" data-step="${z.id}"><div class="label label-intro" role="group" aria-label="Zone ${z.n} introduction, ${esc(z.title)}"><div class="label-head"><span class="label-no">Zone ${z.n}</span><span>Zone introduction</span></div><p class="label-body">${esc(z.intro)}</p><p>Each category follows 2000s → 2020s → 2030 before the next category begins.</p><nav class="future-category-nav" aria-label="Zone ${z.n} categories">${groups.map(g=>`<a href="#${g.id}">${esc(g.category)}</a>`).join('')}</nav></div></article>`;
+    $(`[data-zone-steps="${z.n}"]`).innerHTML=intro+groups.map(g=>chronologyHTML(g,CHRONOLOGY_GROUPS.indexOf(g))).join('');
   }
 }
-
-const NAV_TITLES = {
-  'ao-01':'Dance crazes','ao-02':'Television stories','ao-05':'Pacquiao viewing','ao-06':'BPO night shift',
-  'ao-07':'Computer shops','ao-08':'Friendster profile','ao-10':'Mall hangouts','ao-11':'Parlor & pageant',
-  'ao-13':'Nokia messages','ao-14':'Prepaid access','ao-15':'EDSA II texts','ao-18':'Padala from abroad'
-};
-const ASPECTS = ['Time','Space','Technology'];
+const ASPECTS=['Time','Space','Technology'];
 function renderZoneNavigation() {
-  for (const z of ZONES) {
-    const entries=ARTIFACTS.filter(a=>a.zone===z.n),first=entries[0];
-    $(`#${z.id} .zone-card`).insertAdjacentHTML('beforeend',`<details class="zone-navigator" ${matchMedia('(min-width:1200px)').matches ? 'open' : ''}>
-      <summary>Jump through the museum</summary><nav class="zone-navigation" id="zone-navigation-${z.n}" data-selected-artifact="${first.id}" aria-label="Zone ${z.n} shortcuts">
-        <div class="zone-nav-group"><p class="zone-nav-heading">Aspects</p><div class="zone-nav-links zone-nav-links--three">${ZONES.map(other=>`<a href="#${other.id}" ${other.n===z.n ? 'aria-current="location"' : ''}>${ASPECTS[other.n-1]}</a>`).join('')}</div></div>
-        <div class="zone-nav-group"><p class="zone-nav-heading">Artifacts in this zone</p><div class="zone-nav-links zone-nav-links--artifacts">${entries.map(a=>`<a href="#${a.id}" data-zone-nav-artifact="${a.id}"><span>${accession(a)}</span>${esc(NAV_TITLES[a.id])}</a>`).join('')}</div></div>
-        <div class="zone-nav-group"><p class="zone-nav-heading">Decades</p><p class="zone-nav-context">${esc(NAV_TITLES[first.id])}</p><div class="zone-nav-links zone-nav-links--three"><a data-zone-nav-era="2000s" href="#${first.id}-past">2000s</a><a data-zone-nav-era="2020s" href="#${first.id}-present">2020s</a><a data-zone-nav-era="2030" href="#zone-${z.n}-future">2030</a></div><p class="zone-nav-note">2030 opens six future proposals across the six categories.</p></div>
-      </nav></details>`);
-  }
+ for(const z of ZONES) {
+  const groups=CHRONOLOGY_GROUPS.filter(g=>g.zone===z.n),first=groups[0];
+  $(`#${z.id} .zone-card`).insertAdjacentHTML('beforeend',`<details class="zone-navigator" ${matchMedia('(min-width:1200px)').matches?'open':''}><summary>Jump through the museum</summary><nav class="zone-navigation" id="zone-navigation-${z.n}" data-selected-artifact="${first.id}" aria-label="Zone ${z.n} shortcuts"><div class="zone-nav-group"><p class="zone-nav-heading">Aspects</p><div class="zone-nav-links zone-nav-links--three">${ZONES.map(other=>`<a href="#${other.id}" ${other.n===z.n?'aria-current="location"':''}>${ASPECTS[other.n-1]}</a>`).join('')}</div></div><div class="zone-nav-group"><p class="zone-nav-heading">Categories</p><div class="zone-nav-links zone-nav-links--artifacts">${groups.map(g=>`<a href="#${g.id}" data-zone-nav-artifact="${g.id}">${esc(g.category)}</a>`).join('')}</div></div><div class="zone-nav-group"><p class="zone-nav-heading">Decades</p><p class="zone-nav-context">${esc(first.label)}</p><div class="zone-nav-links zone-nav-links--three"><a data-zone-nav-era="2000s" href="#${first.id}-past">2000s</a><a data-zone-nav-era="2020s" href="#${first.id}-present">2020s</a><a data-zone-nav-era="2030" href="#${futureFor(first).htmlId}">2030</a></div><p class="zone-nav-note">Each category keeps its three decades together.</p></div></nav></details>`);
+ }
 }
 function updateZoneNavigation(id,explicitEra) {
-  const artifact=BY_ID[id];
-  const n=artifact?.zone || Number(id.match(/^zone-(\d)/)?.[1]);
-  const nav=$(`#zone-navigation-${n}`);
-  if (!nav) return;
-  const selected=artifact || BY_ID[nav.dataset.selectedArtifact] || ARTIFACTS.find(a=>a.zone===n);
-  nav.dataset.selectedArtifact=selected.id;
-  const future=id.startsWith(`zone-${n}-future`);
-  const present=$(`#${selected.id}-present`).getBoundingClientRect();
-  const connection=$(`#${selected.id}-connection`).getBoundingClientRect();
-  const atConnection=connection.top<=innerHeight/2 && connection.bottom>innerHeight/2;
-  const era=explicitEra || (future ? '2030' : atConnection ? 'connection' : present.top<=innerHeight/2 ? '2020s' : '2000s');
-  $('.zone-nav-context',nav).textContent=NAV_TITLES[selected.id];
-  for (const a of $$('[data-zone-nav-artifact]',nav)) {
-    if (!future && a.dataset.zoneNavArtifact===selected.id) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
-  }
-  for (const a of $$('[data-zone-nav-era]',nav)) {
-    a.href='#'+(a.dataset.zoneNavEra==='2030' ? `zone-${n}-future` : `${selected.id}-${a.dataset.zoneNavEra==='2000s'?'past':'present'}`);
-    if (a.dataset.zoneNavEra===era) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
-  }
-  const menu=$('#map-current');
-  if (menu) menu.innerHTML=`<p class="zone-nav-heading">Decades · ${esc(NAV_TITLES[selected.id])}</p><div class="zone-nav-links zone-nav-links--three"><a href="#${selected.id}-past">2000s</a><a href="#${selected.id}-present">2020s</a><a href="#zone-${n}-future">2030</a></div>`;
+ const group=groupFor(id),n=group?.zone || Number(id.match(/^zone-(\d)/)?.[1]);
+ const nav=$(`#zone-navigation-${n}`);if(!nav)return;
+ const selected=group || GROUP_BY_ID[nav.dataset.selectedArtifact] || CHRONOLOGY_GROUPS.find(g=>g.zone===n);
+ nav.dataset.selectedArtifact=selected.id;
+ const parts=[...document.querySelectorAll(`#${selected.id} > .chronology-label > [data-era]`)];
+ const visible=parts.find(el=>{const b=el.getBoundingClientRect();return b.top<=innerHeight/2&&b.bottom>innerHeight/2;});
+ const era=explicitEra || visible?.dataset.era || '2000s';
+ $('.zone-nav-context',nav).textContent=selected.label;
+ for(const a of $$('[data-zone-nav-artifact]',nav)){if(a.dataset.zoneNavArtifact===selected.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}
+ const links=()=>`<div class="zone-nav-links zone-nav-links--three">${['2000s','2020s','2030'].map(e=>`<a href="#${e==='2030'?futureFor(selected).htmlId:selected.id+'-'+(e==='2000s'?'past':'present')}">${e}</a>`).join('')}</div>`;
+ for(const a of $$('[data-zone-nav-era]',nav)){const e=a.dataset.zoneNavEra;a.href='#'+(e==='2030'?futureFor(selected).htmlId:selected.id+'-'+(e==='2000s'?'past':'present'));if(e===era)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}
+ const menu=$('#map-current');if(menu)menu.innerHTML=`<p class="zone-nav-heading">Decades · ${esc(selected.label)}</p>${links()}`;
+ if(era==='2030'){activate(document.getElementById(`zone-${n}`),`zone-${n}-future`);setClock('2030');}
 }
 function watchNavigationEras() {
-  return watchMiddle('.artifact-era, .artifact-connection, .future-proposal, .future-today, .future-values, .future-references', el => {
+  return watchMiddle('.chronology-era, .future-proposal', el => {
     const step=el.closest('.step');
-    const future=step.classList.contains('zone-future-step');
+    const future=!!el.closest('.chronology-future');
     const era=future ? '2030' : el.classList.contains('artifact-connection') ? 'connection' : el.id.endsWith('-present') ? '2020s' : '2000s';
     updateZoneNavigation(step.dataset.step,era);
     const anchor=el.id || el.getAttribute('aria-labelledby');
@@ -199,14 +224,8 @@ function watchNavigationEras() {
 }
 
 function renderMap() {
-  const zone = z => `<a class="map-stop" href="#${z.id}"><strong>Zone ${z.n}: ${esc(z.title)}</strong><small>${esc(z.place)}</small></a>
-    <ul class="map-artifacts">${ARTIFACTS.filter(a => a.zone === z.n).map(a =>
-      `<li><a href="#${a.id}" data-map-artifact="${a.id}"><span>${accession(a)}</span>${esc(a.title)}</a></li>`).join('')}<li class="map-future"><a href="#zone-${z.n}-future"><span>2030</span>${esc(ZONE_FUTURES.find(f=>f.zone===z.n).title)}</a><ul class="map-future-categories">${FUTURE_ARTIFACTS.filter(a=>a.zone===z.n).map(a=>`<li><a href="#${a.htmlId}">${esc(a.category.startsWith('Others')?'Others · Aesthetics':a.category)}</a></li>`).join('')}</ul></li></ul>`;
-  $('#map-body').innerHTML = `
-    <div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>2026, the ticket</small></a></div>
-    <div class="map-wing" id="map-current"><p class="zone-nav-heading">Decades · Dance crazes</p><div class="zone-nav-links zone-nav-links--three"><a href="#ao-01-past">2000s</a><a href="#ao-01-present">2020s</a><a href="#zone-1-future">2030</a></div></div><div class="map-wing"><h3>“${esc(SITE.wing2000)}” · 2000s, 2020s & 2030</h3>${ZONES.map(zone).join('')}</div>
-    <div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div>
-    <div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">All 13 comparisons & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
+ const zone=z=>`<a class="map-stop" href="#${z.id}"><strong>Zone ${z.n}: ${esc(z.title)}</strong><small>${esc(z.place)}</small></a><ul class="map-artifacts">${CHRONOLOGY_GROUPS.filter(g=>g.zone===z.n).map(g=>`<li><a href="#${g.id}"><strong>${esc(g.label)}</strong></a><nav class="comparison-jumps" aria-label="${esc(g.label)} decades"><a href="#${g.id}-past">2000s</a><a href="#${g.id}-present">2020s</a><a href="#${futureFor(g).htmlId}">2030</a></nav></li>`).join('')}</ul>`;
+ $('#map-body').innerHTML=`<div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>The ticket</small></a></div><div class="map-wing" id="map-current"></div><div class="map-wing"><h3>18 comparisons · 2000s → 2020s → 2030</h3>${ZONES.map(zone).join('')}</div><div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div><div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">Research archive & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
 function markMap() {
@@ -224,7 +243,7 @@ function renderArchive() {
   const chips = (name, values, all) => `<fieldset><legend>${name}</legend>${[all, ...values].map((v, i) =>
     `<label class="chip"><input type="radio" name="${name.toLowerCase()}" value="${i ? v : ''}"${i ? '' : ' checked'}><span>${v}</span></label>`).join('')}</fieldset>`;
   $('#archive-body').innerHTML = `
-    <details class="archive-section document-synopsis"><summary>About the 13 comparisons</summary>${SYNOPSIS.map(text => `<p>${esc(text)}</p>`).join('')}<p>The thirteen comparisons accompany twelve curated stops. The tour combines overlapping television, computer-shop, and phone material. Pacquiao’s shared-viewing scene remains a supplemental curatorial interpretation. Six 2030 proposals close each zone, covering Social, Economic, Political, Cultural, Environmental, and Others / Aesthetics. The Archive preserves the past–present research; all eighteen future artifacts appear in the main tour.</p></details>
+    <details class="archive-section document-synopsis"><summary>About the 13 comparisons</summary>${SYNOPSIS.map(text => `<p>${esc(text)}</p>`).join('')}<p>The thirteen comparisons accompany twelve curated stops. The tour combines overlapping television, computer-shop, and phone material. Pacquiao’s shared-viewing scene remains a supplemental curatorial interpretation. The main tour has eighteen category-and-aspect comparisons, each ordered 2000s → 2020s → 2030. Social, Economic, Political, Cultural, Environmental, and Others / Aesthetics each appear under Time, Space, and Technology. Additional historical entries use the supplied worksheet. The Archive preserves the thirteen developed research comparisons.</p></details>
     <details class="archive-filter-panel"><summary>Filter comparisons</summary><form class="filters" id="archive-filters">${chips('Domain', DOMAINS, 'All')}${chips('Lens', LENSES, 'All')}${chips('Era', ['2000s', '2020s'], 'All eras')}<button class="btn btn--small btn--plain" type="reset">Reset filters</button></form></details>
     <p class="archive-count" id="archive-count"></p><div id="archive-media"></div>
     <div class="archive-list" id="archive-list"></div>
@@ -258,7 +277,7 @@ function renderFinale() {
 function updateFinalePassport() {
   const n = activeStampCount();
   $('#finale-passport').textContent = n === ARTIFACTS.length
-    ? 'You visited all 12 exhibit stops. The three future collections extend these comparisons through eighteen 2030 proposals. Explore the Archive for the 13 research comparisons.'
+    ? 'You visited all 12 exhibit stops. Eighteen category-and-aspect comparisons each connect the 2000s, 2020s, and a 2030 proposal. Explore the Archive for the 13 research comparisons.'
     : `You visited ${n} of ${ARTIFACTS.length} exhibit stops. The map can take you back to the rest.`;
 }
 
@@ -385,7 +404,7 @@ function onSection(section) {
     const active = step?.dataset.step ?? id;
     activate(section, active);
     updateZoneNavigation(active);
-    setClock(active.endsWith('-future') ? '2030' : BY_ID[active]?.clock ?? ZONE_BY_ID[id].clock);
+    setClock(clockForStep(active));
     mark(active);
   }
   if (!ZONE_BY_ID[id]) mark(id);
@@ -396,6 +415,7 @@ function onSection(section) {
 // Points a zone's stage at a step (or at the zone itself, its intro) and swaps the scene layers.
 function activate(zoneEl, id) {
   const stage = zoneEl.querySelector('[data-stage]');
+  id=groupFor(id)?.members[0] || (groupFor(id)?`zone-${groupFor(id).zone}-future`:id);
   stage.dataset.active = id;
   for (const layer of $$('[data-show]', stage)) {
     const shows = layer.dataset.show.split(' ');
@@ -406,13 +426,19 @@ function activate(zoneEl, id) {
   }
 }
 
+function clockForStep(id) {
+ const g=groupFor(id);if(!g)return BY_ID[id]?.clock ?? ZONE_BY_ID[id]?.clock ?? null;
+ const b=document.getElementById(futureFor(g).htmlId)?.getBoundingClientRect();
+ return b && b.top<=innerHeight/2 && b.bottom>innerHeight/2 ? '2030' : BY_ID[g.members[0]]?.clock ?? ZONES.find(z=>z.n===g.zone).clock;
+}
+
 function onStep(step) {
   const id = step.dataset.step;
   const zoneEl = step.closest('.zone');
   if (zoneEl) { activate(zoneEl, id); updateZoneNavigation(id); }
   mark(id);
-  setClock(id.endsWith('-future') ? '2030' : BY_ID[id]?.clock ?? ZONE_BY_ID[id]?.clock ?? null);
-  emit('step:enter', { id, zone: Number(zoneEl?.dataset.zone) });
+  setClock(clockForStep(id));
+  emit('step:enter', { id: groupFor(id)?.members[0] || id, zone: Number(zoneEl?.dataset.zone) });
 }
 
 function watchStamps() {
@@ -507,7 +533,7 @@ function wireDialogs() {
         if (step) {
           onStep(step);
           const part=target.closest('.artifact-era, .artifact-connection');
-          const era=step.classList.contains('zone-future-step') ? '2030' : part?.classList.contains('artifact-connection') ? 'connection' : part?.id.endsWith('-present') ? '2020s' : part?.id.endsWith('-past') ? '2000s' : undefined;
+          const era=target.closest('.chronology-future') ? '2030' : part?.classList.contains('artifact-connection') ? 'connection' : part?.id.endsWith('-present') ? '2020s' : part?.id.endsWith('-past') ? '2000s' : undefined;
           updateZoneNavigation(step.dataset.step,era);
           mark(destination);
         }
@@ -610,6 +636,7 @@ async function boot() {
   watchSections(onSection);
   watchSteps(onStep);
   watchNavigationEras();
+  watchMiddle('.chronology-example',el=>{const a=BY_ID[el.dataset.scene];if(!a)return;activate(el.closest('.zone'),a.id);setClock(a.clock);emit('step:enter',{id:a.id,zone:a.zone});});
   watchProgress();
   await loadIndex();
   fillSlots();
