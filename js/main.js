@@ -180,7 +180,7 @@ function chronologyHTML(g,index) {
    <section class="artifact-era chronology-era" id="${g.id}-past" data-era="2000s" aria-labelledby="${g.id}-past-title"><h4 id="${g.id}-past-title">2000s · ${esc(g.label)}</h4>${eraHTML('past')}</section>
    <section class="artifact-era chronology-era" id="${g.id}-present" data-era="2020s" aria-labelledby="${g.id}-present-title"><h4 id="${g.id}-present-title">2020s · ${esc(g.label)}</h4>${eraHTML('present')}${connections?`<details class="chronology-connection"><summary>What connects the past and present?</summary>${connections}</details>`:''}</section>
    <div class="chronology-future" data-era="2030" ${g.category==='Social'?`id="zone-${g.zone}-future"`:''}>${futureArtifactHTML(f)}</div>
-   <a class="comparison-next" href="#${next?.id || 'pause'}">${next?`Next · ${esc(next.label)}`:'Continue to the closing reflection'} ↓</a>
+   <a class="comparison-next" href="#${next?.id || 'pause'}">${next?`Next · ${esc(next.label)}`:'Continue to the museum exit'} ↓</a>
   </div></article>`;
 }
 function renderSteps() {
@@ -225,7 +225,7 @@ function watchNavigationEras() {
 
 function renderMap() {
  const zone=z=>`<a class="map-stop" href="#${z.id}"><strong>Zone ${z.n}: ${esc(z.title)}</strong><small>${esc(z.place)}</small></a><ul class="map-artifacts">${CHRONOLOGY_GROUPS.filter(g=>g.zone===z.n).map(g=>`<li><a href="#${g.id}"><strong>${esc(g.label)}</strong></a><nav class="comparison-jumps" aria-label="${esc(g.label)} decades"><a href="#${g.id}-past">2000s</a><a href="#${g.id}-present">2020s</a><a href="#${futureFor(g).htmlId}">2030</a></nav></li>`).join('')}</ul>`;
- $('#map-body').innerHTML=`<div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>The ticket</small></a></div><div class="map-wing" id="map-current"></div><div class="map-wing"><h3>18 comparisons · 2000s → 2020s → 2030</h3>${ZONES.map(zone).join('')}</div><div class="map-wing"><a class="map-stop" href="#pause"><strong>Your pause</strong><small>Closing reflection, credits and references</small></a></div><div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">Research archive & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
+ $('#map-body').innerHTML=`<div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>The ticket</small></a></div><div class="map-wing" id="map-current"></div><div class="map-wing"><h3>18 comparisons · 2000s → 2020s → 2030</h3>${ZONES.map(zone).join('')}</div><div class="map-wing"><a class="map-stop" href="#pause"><strong>Museum exit</strong><small>Closing reflection, credits and references</small></a></div><div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">Research archive & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
 function markMap() {

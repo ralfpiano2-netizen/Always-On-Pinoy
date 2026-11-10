@@ -7,8 +7,8 @@
 <meta name="description" content="A scroll-through museum of Philippine pop culture. Twelve past–present exhibit sets and eighteen possible 2030 artifacts explore Philippine pop culture through images, evidence, and shared values.">
 <meta name="theme-color" content="#0b0c12">
 <link rel="icon" href="favicon.png" sizes="32x32">
-<link rel="stylesheet" href="css/museum.css?v=chronology-20261109-2-nav">
-<script type="module" src="js/main.js?v=image-repair-20261109-1"></script>
+<link rel="stylesheet" href="css/museum.css?v=museum-exit-20261109-1">
+<script type="module" src="js/main.js?v=museum-exit-20261109-1"></script>
 </head>
 <body>
 <a class="skip-link" href="#zone-1">Skip to the first zone</a>
@@ -99,8 +99,22 @@
   </section>
 
   <section id="pause" data-era="pause" aria-labelledby="pause-title">
-    <div class="pause-quiet"><p class="pause-word" id="pause-title">Pause.</p></div>
-    <article class="finale">
+    <div class="museum-exit">
+      <a class="exit-door" href="#closing-reflection" aria-label="Continue through the museum exit to the closing reflection">
+        <span class="exit-door-sign" aria-hidden="true">EXIT</span>
+        <span class="exit-door-window" aria-hidden="true"><span>SALAMAT</span><span>Thank you</span></span>
+        <span class="exit-door-handle" aria-hidden="true"></span>
+        <span class="exit-door-bottom" aria-hidden="true"></span>
+      </a>
+      <div class="exit-message">
+        <p class="exit-eyebrow">End of the museum</p>
+        <h2 id="pause-title">Thank you for visiting.</h2>
+        <p>You have travelled through the 2000s, the 2020s, and possible futures. Take a moment to reflect on the relationships and values we carry forward.</p>
+        <a class="btn btn--ink" href="#closing-reflection">Read the closing reflection ↓</a>
+        <a class="exit-revisit" href="#lobby">Return to the entrance</a>
+      </div>
+    </div>
+    <article class="finale" id="closing-reflection" tabindex="-1">
       <h2>What we carry into 2030</h2>
       <p class="finale-lede" id="conclusion"></p>
       <div class="impacts" id="impacts"></div>
