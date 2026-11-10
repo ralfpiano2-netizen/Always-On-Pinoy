@@ -154,7 +154,7 @@ export const ARCHIVE = [
     "domain": "Social",
     "lens": "Space",
     "era": "2020s",
-    "text": "In the 2020s, popular culture socialization spaces have transitioned into borderless, cloud-based platforms like Discord servers, Messenger group chats, and mobile gaming lobbies ( Mobile Legends: Bang Bang ), where youth assemble 24/7 for multiplayer voice calls, digital hangouts, and mobile esports without geographical or physical location constraints (Esports Charts, 2024; Gabrillo, 2024)."
+    "text": "In the 2020s, popular culture socialization spaces have transitioned into borderless, cloud-based platforms like Discord servers, Messenger group chats, and mobile gaming lobbies (Mobile Legends: Bang Bang), where youth assemble 24/7 for multiplayer voice calls, digital hangouts, and mobile esports without geographical or physical location constraints (Esports Charts, 2024; Gabrillo, 2024)."
   },
   {
     "domain": "Social",
