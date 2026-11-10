@@ -1352,3 +1352,5 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 
 .chronology-label > .comparison-jumps a { display:inline-flex; min-height:44px; align-items:center; padding:9px 15px; border:1px solid #b8a78c; border-radius:3px; color:#302820; background:#f6efe1; text-decoration:none; }
 .chronology-label > .comparison-jumps a:hover { background:#e7d5b6; }
+
+.media-unavailable { padding:22px; margin:0; border:1px dashed #b8a78c; background:#eee7d9; color:#534a3c; font:400 15px/1.6 var(--font-label); }

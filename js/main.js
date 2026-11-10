@@ -1,11 +1,11 @@
-import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=chronology-20261109-1';
-import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=chronology-20261109-1';
+import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=chronology-20261109-2';
+import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=chronology-20261109-2';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
 import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=debug-20261108-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
-import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=chronology-20261109-1';
-import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=chronology-20261109-1';
+import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=chronology-20261109-2';
+import { COMPARISONS, DOCUMENT_REFERENCES, DOCUMENT_SCOPE, SYNOPSIS, CLOSING } from './exhibit-text.js?v=chronology-20261109-2';
 import { SLOTS } from './slots.js?v=debug-20261108-1';
 import { loadIndex } from './assets.js?v=debug-20261108-1';
 import { wallet, passport } from './state.js?v=debug-20261108-1';
@@ -597,7 +597,19 @@ function wireSound() {
   $('#caption-skip').addEventListener('click', stopGuide);
 }
 
+function wireSourceImageFallbacks() {
+  const recover=img=>{
+    if(!(img instanceof HTMLImageElement) || !img.closest('figure') || img.dataset.unavailable)return;
+    img.dataset.unavailable='true';
+    const note=document.createElement('p');note.className='media-unavailable';
+    note.textContent='This source image is currently unavailable. Open the credited source below to view the original.';
+    img.replaceWith(note);
+  };
+  document.addEventListener('error',e=>recover(e.target),true);
+}
+
 async function boot() {
+  wireSourceImageFallbacks();
   // A slow asset request must not pull a visitor back to the original deep link
   // after they have already scrolled, opened a story, or used the map.
   const requestedId = resolveStop(location.hash.slice(1));
