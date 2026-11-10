@@ -1354,3 +1354,6 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .chronology-label > .comparison-jumps a:hover { background:#e7d5b6; }
 
 .media-unavailable { padding:22px; margin:0; border:1px dashed #b8a78c; background:#eee7d9; color:#534a3c; font:400 15px/1.6 var(--font-label); }
+
+/* Keep decade headings below both the HUD and the sticky decade buttons. */
+.chronology-era, .chronology-example, .chronology-future .future-proposal { scroll-margin-top:calc(var(--hud-h) + 88px); }
