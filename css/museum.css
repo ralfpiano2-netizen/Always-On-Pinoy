@@ -1072,7 +1072,7 @@ html[data-effects="off"] .stamp { display: none; }
 .stamp { right: 4px; transform: rotate(-10deg) scale(1); }
 html[data-effects="off"] :is(.hud-clock, .ps-blink, .profile-name, .pause-btn) { animation: none !important; }
 html[data-effects="off"] .card-media * { animation-play-state: paused !important; }
-html[data-effects="off"] #glitter { visibility: hidden; }
+html[data-fairy="off"] #glitter { visibility: hidden; }
 .label-actions { display: flex; margin-top: 14px; }
 .sms-demo { width: 100%; margin: 14px 0; padding: 14px; background: #e0e8cb; color: #26321c; border: 1px solid #849369; border-radius: 2px; }
 .sms-demo-title { margin-bottom: 10px; font: 500 13px/1.4 var(--font-mono); }
@@ -1379,3 +1379,8 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 
 /* Keep decade headings below both the HUD and the sticky decade buttons. */
 .chronology-era, .chronology-example, .chronology-future .future-proposal { scroll-margin-top:calc(var(--hud-h) + 88px); }
+
+/* Fairy dust arrow: a sparkle-tipped cursor for mouse users; links and buttons keep their pointer. */
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-fairy="off"]) { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 2l0 19 5-4.5 3.4 8 3.2-1.4-3.4-7.8H19z' fill='%23fff' stroke='%23231a2e' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M24 3v7M20.5 6.5h7' stroke='%23d94f8a' stroke-width='2'/%3E%3Cpath d='M25 14v4M23 16h4' stroke='%23f2d24b' stroke-width='1.6'/%3E%3C/svg%3E") 3 2, auto; }
+}
