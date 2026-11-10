@@ -1,7 +1,7 @@
 import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=chronology-20261109-2';
 import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=chronology-20261109-2';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
-import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=debug-20261108-1';
+import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=image-repair-20261109-1';
 // Boot: render every label and dialog from the content modules, fill asset slots, then drive the
 // HUD, the passport and each stage from the scroll observers.
 import { SITE, ZONES, TOUR_ARTIFACTS as ARTIFACTS, LOBBY_NOTES, CREDITS } from './content.js?v=chronology-20261109-2';
@@ -18,7 +18,7 @@ import { mountStreet } from './exhibits/pisonet.js?v=debug-20261108-1';
 import { mountNokia, messageDemoHTML } from './exhibits/nokia.js?v=debug-20261108-1';
 import { mountChainText } from './exhibits/chaintext.js?v=debug-20261108-1';
 import { enable, disable, isOn, sfx, setAmbience, playMusic, playGuide, stopGuide } from './audio.js?v=debug-20261108-1';
-import { MEDIA, artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=debug-20261108-1';
+import { MEDIA, artifactCardMediaHTML, artifactMediaHTML, archiveMediaHTML, mediaCreditsHTML, mountMedia } from './media.js?v=image-repair-20261109-1';
 
 const activeStampCount = () => ARTIFACTS.filter(a=>passport.has(a.id)).length;
 const ALL_REFERENCES = [...new Map([...DOCUMENT_REFERENCES, ...WORKSHEET_REFERENCES, ...FUTURE_REFERENCES.map(r=>({...r,apa:r.apa+' '+r.url}))].map(r=>[r.url || r.apa,r])).values()].sort((a,b)=>a.apa.localeCompare(b.apa));

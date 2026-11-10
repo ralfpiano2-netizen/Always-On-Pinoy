@@ -1,4 +1,4 @@
-import { PRESENT_IMAGES, PRESENT_GALLERIES, COMPARISON_MEDIA } from './present-media.js?v=debug-20261108-1';
+import { PRESENT_IMAGES, PRESENT_GALLERIES, COMPARISON_MEDIA } from './present-media.js?v=image-repair-20261109-1';
 // Original media from the group's source sheet, kept distinct from the pixel reconstructions.
 import { esc } from './ui.js?v=debug-20261108-1';
 import { disable, enable, isOn } from './audio.js?v=debug-20261108-1';

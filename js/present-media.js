@@ -46,22 +46,22 @@ export const PRESENT_IMAGES = {
   "reels": {
     "id": "present-reels",
     "type": "image",
-    "src": "https://about.fb.com/wp-content/uploads/2023/05/Facebook-Reels-Updates_Header.jpg",
+    "src": "https://cassette.sphdigital.com.sg/image/hardwarezone/fa5ea83ca938b90c7cb3bbb05013e4a1b8a880be04b73181f6ced64c08512b98?q=85&w=660",
     "title": "Recommended video feeds · 2023",
-    "alt": "Meta’s interface illustration of Facebook Reels personalization controls.",
-    "caption": "Meta’s May 2023 product illustration shows Reels personalization. It documents the platform’s interface, not an individual Filipino user’s feed.",
-    "credit": "Meta Newsroom",
-    "source": "https://about.fb.com/news/2023/05/discover-and-personalize-facebook-reels/"
+    "alt": "A hand holds a phone displaying Facebook Reels’ Show more and Show less controls.",
+    "caption": "Meta’s 2023 Reels product photograph, reproduced by HardwareZone, shows the Show more and Show less controls on a phone.",
+    "credit": "Meta, via HardwareZone",
+    "source": "https://www.hardwarezone.com.sg/lifestyle/apps/tech-news-meta-adds-new-controls-facebook-reels-more-personalisation"
   },
   "messenger": {
     "id": "present-messenger",
     "type": "image",
-    "src": "https://about.fb.com/wp-content/uploads/2024/04/Messenger-Media-Improvements_Header.jpg",
+    "src": "https://www.sammobile.com/wp-content/uploads/2024/04/Facebook-Messenger-Shared-Album.jpg",
     "title": "Shared photos and group chats · 2024",
     "alt": "Meta’s illustration of a shared photo album in Messenger.",
-    "caption": "Official April 2024 product illustration of shared media in Messenger. The conversation shown is demonstration material, not a private conversation collected for the museum.",
-    "credit": "Meta / Messenger",
-    "source": "https://about.fb.com/news/2024/04/hd-photos-shared-albums-and-more-on-messenger/"
+    "caption": "Meta’s April 2024 Messenger shared-album demonstration, reproduced by SamMobile. The sample group chat illustrates how friends can keep photos together.",
+    "credit": "Meta / Messenger, via SamMobile",
+    "source": "https://www.sammobile.com/news/facebook-messenger-high-resolution-images-100mb-files/"
   },
   "selling": {
     "id": "present-selling",

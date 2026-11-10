@@ -1,4 +1,4 @@
-import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=debug-20261108-1';
+import { PRESENT_IMAGES, PRESENT_MEDIA } from '../present-media.js?v=image-repair-20261109-1';
 // The 2020s feed groups artifacts that share the same comparison. Each connection appears
 // once, with all related accession numbers, so the collection does not repeat itself.
 import { ARTIFACTS, VOID_NOTES } from '../content.js?v=debug-20261108-1';
