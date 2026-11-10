@@ -207,7 +207,7 @@ function upgrade(reduce) {
   onProgress(section, draw);
 }
 
-// Wing 1 only: the cursor (or a dragging finger) leaves pixel sparkles, like an old profile page.
+// Fairy dust: the cursor (or a dragging finger) leaves pixel sparkles, like an old profile page. Runs across the whole museum.
 function glitter() {
   const canvas = $('#glitter');
   const g = canvas.getContext('2d');
@@ -235,7 +235,7 @@ function glitter() {
     raf = sparks.length ? requestAnimationFrame(draw) : 0;
   };
   const spawn = (x, y) => {
-    if (document.documentElement.dataset.effects !== 'on' || document.documentElement.dataset.era !== '2000' || reduceMotion()) return;
+    if (document.documentElement.dataset.fairy === 'off' || reduceMotion()) return;
     for (let i = 0; i < 2; i++) {
       sparks.push({
         x: x + (Math.random() - 0.5) * 16, y: y + (Math.random() - 0.5) * 16, fall: 0.3 + Math.random() * 0.6,
