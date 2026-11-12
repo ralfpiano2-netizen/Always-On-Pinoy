@@ -79,7 +79,7 @@ export const CHRONOLOGY_GROUPS = [
     "zone": 1,
     "aspect": "Time",
     "category": "Others",
-    "label": "Others · Aesthetics · Time",
+    "label": "Others · Music and aesthetics · Time",
     "members": [],
     "comparison": null,
     "past": "Y2K garments remembered across time\nA recognizable cut or silhouette can outlast its first period of popularity. Maddela’s retrospective revisits early-2000s fashion references and expert views about their revival. The garment becomes an artifact for examining selective nostalgia: later wearers can adopt one feature without recreating all the social conditions of the original decade (Maddela, 2019).",
