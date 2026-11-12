@@ -1,4 +1,4 @@
-import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=photos-20261112';
+import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=research-20261112';
 import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=photos-20261112';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
 import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=image-repair-20261109-1';
