@@ -302,6 +302,15 @@ export const CREDITS = {
 const TOUR_IDS = ["ao-01", "ao-02", "ao-05", "ao-06", "ao-07", "ao-08", "ao-10", "ao-11", "ao-13", "ao-14", "ao-15", "ao-18"];
 export const TOUR_ARTIFACTS = ARTIFACTS.filter(a => TOUR_IDS.includes(a.id));
 const tour = Object.fromEntries(TOUR_ARTIFACTS.map(a => [a.id,a]));
+tour['ao-05'].details = {
+  intro: 'On fight Sunday, who made room for someone else to watch?',
+  pastHeading: '2000s · A seat at the public screening',
+  past: ['When Pacquiao fought Miguel Cotto in 2009, residents watched the live telecast at San Andres gym in Manila, where the city served free lugaw. At Fernando Air Base in Lipa, soldiers brought their families to watch in a hangar (Villar, 2009). Sharing the fight could mean something as practical as making space on a bench.'],
+  presentHeading: '2020s · One fight, several ways to tune in',
+  present: ['For the 2025 Mario Barrios bout, viewers in the Philippines could buy live access through Cignal, SatLite or the Pilipinas LIVE app. One Sports+ also scheduled a later broadcast (Ganglani, 2025). A family following the same fight could choose a viewing time around a work shift.'],
+  connection: 'The Manila screening gave people a time and place to meet. The later broadcast raises a question for families today: if someone misses the opening bell, who waits to watch with them?',
+  sources: []
+};
 tour['ao-02'].title = 'Television stories and shared viewing';
 tour['ao-07'].title = 'Computer shops and shared access';
 tour['ao-07'].comparison = 'comparison-03';

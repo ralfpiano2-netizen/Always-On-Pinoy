@@ -268,6 +268,17 @@ export const CHRONOLOGY_GROUPS = [
 ];
 export const WORKSHEET_REFERENCES = [
   {
+    "key": "(Villar, 2009)",
+    "apa": "Villar, J. (2009, November 16). Jampacked crowds cheer historic win. The Philippine Star.",
+    "url": "https://www.philstar.com/sports/2009/11/16/523550/jampacked-crowds-cheer-historic-win"
+  },
+  {
+    "key": "(Ganglani, 2025)",
+    "apa": "Ganglani, N. (2025, July 11). How to watch Pacquiao in his comeback fight against Barrios. ALL-STAR.",
+    "url": "https://all-starmagazine.com/news-and-updates/how-to-watch-pacquiao-in-his-comeback-fight-against-barrios/"
+  }
+,
+  {
     "id": "dance-ref-otso2018",
     "apa": "ABS-CBN Entertainment. (2018, October 14). The Kids’ Choice PH highlights: Bayani, itinuro ang Otso Otso dance kay AC [Video]. YouTube. https://www.youtube.com/watch?v=e8rq5B9jsBk",
     "url": "https://www.youtube.com/watch?v=e8rq5B9jsBk"
