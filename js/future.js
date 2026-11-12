@@ -218,11 +218,11 @@ export const FUTURE_ARTIFACTS = [
     "id": "F-SOC-T",
     "category": "Social",
     "aspect": "Time",
-    "title": "AI assisted shared premiere night",
+    "title": "Family premiere night",
     "bridge": "Television appointments and short SMS invitations connect with present-day group chats and conflicting school, work, and family schedules.",
     "foundation": "YouTube Premieres already combines a scheduled video release with a shared countdown and live chat (YouTube Help, n.d.). Google’s Help me schedule uses calendar availability and email context to suggest meeting times. This supplies an AI coordination foundation; the family service below is our proposed extension (Google, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a family viewing service could coordinate that appointment with availability people voluntarily share. AI could compare time zones and rest periods, suggest an agreed replay session when the live premiere is inconvenient, and explain why a time suits the group. Relatives would approve the plan and decide whether to enable a small video sidebar. This proposes better coordination across services, rather than claiming that scheduled online viewing is new.",
-    "advance": "Extend scheduled online viewing and AI scheduling into a family-approved appointment that respects time zones, shifts, and the option to decline.",
+    "scenario": "A possible 2030 entertainment release could offer a regular family premiere alongside agreed catch-up sessions. Relatives in different places would choose a session that respects work, school, and rest. The program could include locally reviewed captions and a brief conversation prompt after an episode. AI scheduling would be optional support; the cultural artifact is the shared appointment and episode experience. Rights holders would approve access, while families could watch through ordinary screens and decline any invitation.",
+    "advance": "A shared release format that makes family conversation part of watching, with scheduling assistance available when useful.",
     "values": "The television appointment becomes a question of whose time matters. A family shows care when it accommodates the relative coming off a shift instead of expecting everyone to be available on demand.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
     "sources": [
@@ -234,7 +234,7 @@ export const FUTURE_ARTIFACTS = [
     "zone": 1,
     "htmlId": "future-social-time",
     "image": "assets/future-2030/f-soc-t.jpg?v=photos-20261112",
-    "alt": "AI-generated proposed 2030 scene: AI assisted shared premiere night",
+    "alt": "AI-generated illustration of a proposed 2030 scene: Family premiere night",
     "imageCaption": "AI-generated 2030 scenario · Inspired by YouTube Premieres (YouTube Help, n.d.)",
     "revisedPhotography": true,
     "researchNotes": [
@@ -251,7 +251,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A new episode becomes a family appointment again. In this possible 2030 format, relatives choose a premiere or catch-up session together, with room for shift work, distance, and the person who needs to rest."
   },
   {
     "id": "F-SOC-S",
@@ -260,7 +261,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI assisted public Wi Fi access hub",
     "bridge": "The computer-shop chair and Friendster profile connect with current multiplayer lobbies and online gathering places.",
     "foundation": "Mercurio documents the DICT’s expansion of free Wi-Fi in Philippine public places, including geographically isolated communities (Mercurio, 2021). Microsoft lists Filipino speech recognition and neural voices, while warning that language support differs by feature. These are components for an optional spoken help service, not proof of universal local-language access (Microsoft, n.d.).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a public access hub could combine maintained connectivity with optional Filipino-language voice help, clear connection notices, and a human assistance point. AI could guide a user through an access problem without requesting unrelated personal information. Staff would review recurring failures and provide an ordinary non-AI access route. The improvement is dependable assistance and inclusion around familiar infrastructure, rather than a new kind of router.",
+    "scenario": "By 2030, a public access hub could combine maintained connectivity with optional Filipino-language voice help, clear connection notices, and a human assistance point. AI could guide a user through an access problem without requesting unrelated personal information. Staff would review recurring failures and provide an ordinary non-AI access route. The improvement is dependable assistance and inclusion around familiar infrastructure, rather than a new kind of router.",
     "advance": "Join public connectivity with tested spoken assistance and a human help point, retaining a straightforward non-AI access route.",
     "values": "Free access has value when someone can actually use it. Pakikipagkapwa appears in a volunteer patiently helping an older resident, making public space welcoming across age and confidence levels.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -290,29 +291,31 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "Public internet should come with someone willing to help. This 2030 access hub pairs a familiar connection with spoken guidance and a human assistance point, so confidence and age do not decide who can join in."
   },
   {
     "id": "F-SOC-X",
     "category": "Social",
     "aspect": "Technology",
-    "title": "AI assisted shared listening with group approval",
+    "title": "OPM listening circle",
     "bridge": "Keypad messages and padala connect with video calls and the continuing separation of overseas workers from their families.",
     "foundation": "Spotify Jam already offers a shared queue and recommendations for a group (Spotify, 2023). Spotify’s 2024 AI Playlist announcement documents music selection from written prompts, initially in selected markets. The proposed group-approval and participation review would extend those existing capabilities (Spotify, 2024).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a shared listening service could add an optional fairness review that shows whose selections dominate, explains a proposed balance, and asks the group to approve changes. Members could keep private listening history out of the session, set content preferences, or contribute without surrendering the queue to an automatic selection. The advance would be more transparent group control and inclusion across participating services; it would require evaluation with real users.",
-    "advance": "Add a transparent review of whose choices dominate a shared queue, with proposed changes approved by the group.",
+    "scenario": "By 2030, an OPM listening series could pair a neighborhood meetup with a shared online queue. Participants would take turns choosing a song and adding a short memory or artist credit; listeners joining remotely could contribute to the same session. Local musicians could host an occasional discussion under agreed performance and licensing terms. Recommendations would remain optional and the group could review whose selections dominate. The improvement would be a repeatable cultural gathering with fair participation, rather than another personalized feed.",
+    "advance": "Bring shared queues into a recurring OPM gathering where members introduce songs, recognize artists, and make room for different tastes.",
     "values": "Friendship makes room for another person’s taste. Sharing a speaker becomes meaningful when the quieter friend can contribute a song and decline an algorithm’s suggestion without embarrassment.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
     "sources": [
       "photo-spotify",
-      "spotify-ai"
+      "spotify-ai",
+      "photo-gig"
     ],
     "existing": "Existing foundation with a proposed 2030 improvement",
     "embodiment": "Software and familiar devices, illustrated in a realistic Filipino setting.",
     "zone": 3,
     "htmlId": "future-social-technology",
     "image": "assets/future-2030/f-soc-x.jpg?v=photos-20261112",
-    "alt": "AI-generated proposed 2030 scene: AI assisted shared listening with group approval",
+    "alt": "AI-generated illustration of a proposed 2030 scene: OPM listening circle",
     "imageCaption": "AI-generated 2030 scenario · Inspired by Spotify Jam (Spotify, 2023)",
     "revisedPhotography": true,
     "researchNotes": [
@@ -327,9 +330,16 @@ export const FUTURE_ARTIFACTS = [
         "sources": [
           "spotify-ai"
         ]
+      },
+      {
+        "text": "Angan describes local gigs as independent communities formed around music, providing a Philippine setting for a recurring listening gathering",
+        "sources": [
+          "photo-gig"
+        ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "Pass the speaker, share an OPM song, and tell the story behind it. A possible 2030 listening circle combines a shared queue with regular meetups, giving the quietest friend a turn instead of letting recommendations set the whole mood."
   },
   {
     "id": "F-ECO-T",
@@ -338,7 +348,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI assisted night shift and rest planner",
     "bridge": "The BPO night-shift schedule connects with remote work, platform tasks, and AI-assisted service jobs.",
     "foundation": "Huynh’s Philippine labour-market brief describes uneven AI adoption and changes to tasks, particularly in IT-BPM work; exposure to AI does not itself mean a job is eliminated (Huynh, 2026). Article 86 recognizes night-shift differential within the Labor Code’s coverage rules. Google’s scheduling feature supplies a separate example of AI-assisted time coordination (Labor Code of the Philippines, 1974; Google, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a worker-controlled planner could connect verified attendance, applicable pay rules, and personal care commitments. AI would explain a proposed shift change, show the additional-pay component separately, and flag conflicts with agreed rest. The worker could question an entry before payroll closes. Employers and qualified staff would remain responsible for rule application and corrections; an AI estimate would not establish legal entitlement or replace human review.",
+    "scenario": "By 2030, a worker-controlled planner could connect verified attendance, applicable pay rules, and personal care commitments. AI would explain a proposed shift change, show the additional-pay component separately, and flag conflicts with agreed rest. The worker could question an entry before payroll closes. Employers and qualified staff would remain responsible for rule application and corrections; an AI estimate would not establish legal entitlement or replace human review.",
     "advance": "Connect reviewed attendance, applicable pay information, and care commitments in a worker-controlled plan with a correction route.",
     "values": "The headset links income with the hours a worker cannot spend at home. Respect for labor includes understandable pay and protected recovery, so that providing for a family does not make fatigue invisible.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -370,7 +380,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A shift is part of a life, not just a row in a timetable. A worker-controlled 2030 planner would make pay assumptions, rest conflicts, and care commitments easier to question before a schedule becomes final."
   },
   {
     "id": "F-ECO-S",
@@ -379,7 +390,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI assisted live selling and gig merchandise stall",
     "bridge": "Mall browsing and the sari-sari counter connect with present-day live selling and small-business creator sessions.",
     "foundation": "TikTok reports Philippine sellers using live commerce and training programs. This is the platform’s own account, rather than independent evidence of typical earnings (TikTok, 2026). Angan describes independent Filipino gig communities. Retrieval-augmented generation offers a technical basis for drafting answers from a selected information collection, which this proposal would adapt to seller-approved stock and product records (Angan, 2023; Lewis et al., 2020).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a merchandise stall could connect in-person sales, a livestream, and one seller-approved stock record. AI could draft item descriptions, group repeated customer questions, and flag a potential oversell before an order is confirmed. The seller would check claims, handle returns, and approve changes. The proposal brings together existing channels around a small venue; it does not assume that ordinary live selling will first appear in 2030.",
+    "scenario": "By 2030, a merchandise stall could connect in-person sales, a livestream, and one seller-approved stock record. AI could draft item descriptions, group repeated customer questions, and flag a potential oversell before an order is confirmed. The seller would check claims, handle returns, and approve changes. The proposal brings together existing channels around a small venue; it does not assume that ordinary live selling will first appear in 2030.",
     "advance": "Coordinate in-person and livestream sales around one seller-approved stock record, with questions and overselling warnings checked by the seller.",
     "values": "Buying a shirt can support the local scene as well as express fandom. Trust depends on the seller answering for the goods and artists retaining control over their designs and income.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -411,7 +422,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "The shirt on a gig’s merch table can also reach a fan watching from home. One checked stock record would help a small seller serve both audiences while artists keep control over their designs."
   },
   {
     "id": "F-ECO-X",
@@ -420,7 +432,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI-assisted payment and padala app",
     "bridge": "Scratch-card codes and remittance counters connect with digital wallets, QR payments, and cross-border transfers.",
     "foundation": "The BSP reports the growth of Philippine digital payments and identifies inclusion, interoperability, and consumer welfare as priorities (Bangko Sentral ng Pilipinas, 2025). Retrieval-augmented generation combines document retrieval with generated language. It is a technical foundation for an assistant explaining verified provider information; the paper does not demonstrate a payment app or authorize a transfer (Lewis et al., 2020).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, an assistant inside a supported payment app or website could explain a transfer in familiar language before a person confirms it. It would show the intended recipient, total fees, the amount expected to arrive, a delivery estimate, and a route to a human adviser using verified provider data. AI could flag a mismatch for review; authentication and transfer execution would remain with the regulated payment service. The artifact is this understandable review workflow, not an additional gadget.",
+    "scenario": "By 2030, an assistant inside a supported payment app or website could explain a transfer in familiar language before a person confirms it. It would show the intended recipient, total fees, the amount expected to arrive, a delivery estimate, and a route to a human adviser using verified provider data. AI could flag a mismatch for review; authentication and transfer execution would remain with the regulated payment service. The artifact is this understandable review workflow, not an additional gadget.",
     "advance": "Explain verified fees, recipient details, and expected delivery in familiar language before the user confirms through the regulated provider.",
     "values": "Respect means helping someone understand a transaction without taking control of their money. Convenience should include the less confident user and the relative paying fees.",
     "conditions": "Provider integration, accurate disclosures, authentication, and error recovery are essential. AI does not eliminate fraud or authorize transfers by itself.",
@@ -449,7 +461,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "Before sending support, understand what will arrive. This possible payment review explains fees, recipient details, and delivery expectations in familiar language, with the sender retaining the final choice."
   },
   {
     "id": "F-POL-T",
@@ -458,7 +471,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI assisted public hearing follow up viewer",
     "bridge": "The circulating SMS invitation to EDSA connects with reposts, public-issue threads, and questions about what happens after attention fades.",
     "foundation": "PhilstarLIVE documents an online Senate hearing on July 16, 2024, providing a concrete Philippine example of public proceedings distributed through video (PhilstarLIVE, 2024). Speech-recognition tools and retrieval-augmented generation supply components for a searchable transcript and source-linked explanations. The hearing archive and follow-up workflow below would still need editorial checking (Microsoft, n.d.; Lewis et al., 2020).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a hearing viewer could connect the recording with a searchable transcript, source-linked summaries, and a dated follow-up list. AI could propose chapter markers and retrieve the passage behind a summary; an editor would check names, quotations, and corrections. Visitors could return to unresolved questions after the live broadcast ends. The improvement is an accountable path from watching to checking and following up, not simply another livestream.",
+    "scenario": "By 2030, a hearing viewer could connect the recording with a searchable transcript, source-linked summaries, and a dated follow-up list. AI could propose chapter markers and retrieve the passage behind a summary; an editor would check names, quotations, and corrections. Visitors could return to unresolved questions after the live broadcast ends. The improvement is an accountable path from watching to checking and following up, not simply another livestream.",
     "advance": "Connect the recording, checked transcript, cited summaries, and dated follow-up so public attention can continue after the broadcast.",
     "values": "Pananagutan requires patience after the moment of public attention. Remembering a commitment and checking its context can matter as much as sharing a dramatic clip.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -490,7 +503,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "The hearing ends; the question should not disappear. A 2030 viewer could connect a recording to checked transcripts, source-linked summaries, and dated follow-ups, making commitments easier to revisit after the viral clip fades."
   },
   {
     "id": "F-POL-S",
@@ -499,7 +513,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI meeting concierge for barangay assemblies",
     "bridge": "Physical assemblies and street gatherings connect with online meetings, livestream comments, and remote participation.",
     "foundation": "Section 397 of the Local Government Code establishes barangay assemblies as a setting for community discussion (Republic Act No. 7160, 1991). Zoom documents host-controlled waiting-room admission and announced custom AI agents for coordinating workflows. Topic queues and invitations into a barangay discussion would be a proposed integration of those components (Zoom, n.d.; Zoom, 2026).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, an AI concierge could receive inquiries before an online or hybrid assembly, suggest topic groups, and display a clear speaking queue. When a topic is due, the system could invite relevant residents from their waiting group into the main room under the moderator’s rules. Residents could correct a grouping and the moderator could override admission decisions. Phone, text, and in-person participation would need an equivalent route; remote attendance arrangements would still require official approval.",
+    "scenario": "By 2030, an AI concierge could receive inquiries before an online or hybrid assembly, suggest topic groups, and display a clear speaking queue. When a topic is due, the system could invite relevant residents from their waiting group into the main room under the moderator’s rules. Residents could correct a grouping and the moderator could override admission decisions. Phone, text, and in-person participation would need an equivalent route; remote attendance arrangements would still require official approval.",
     "advance": "Group inquiries and show speaking turns before a moderator-controlled invitation into the main meeting room.",
     "values": "Being invited is not the same as being heard. Pakikipagkapwa requires a fair turn for the distant worker and quiet resident, with the final responsibility remaining with human organizers.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -531,7 +545,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A public meeting needs a fair turn, not just an invitation. An online concierge could group questions and show the queue, while a human moderator decides when residents enter the discussion."
   },
   {
     "id": "F-POL-X",
@@ -540,7 +555,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "Source-tracing card for civic media",
     "bridge": "Forwarded recordings and chain messages connect with edited clips, synthetic media, and rapid political circulation.",
     "foundation": "C2PA records available media origin and editing history, but explicitly states that provenance alone cannot establish whether content is factually true (Coalition for Content Provenance and Authenticity, n.d.). UNDP’s iVerify describes source consultation, independent review, published evidence, and later corrections. This supplies a human verification model for the proposed civic-media card (United Nations Development Programme, n.d.).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a civic-media card could present available origin records, edit history, original context, and links to independent checks before a clip is forwarded. AI would help find matching material and summarize discrepancies, with uncertainty shown. The card would separate provenance from factual accuracy and invite a user to read the supporting record. A missing credential would not automatically label a post false.",
+    "scenario": "By 2030, a civic-media card could present available origin records, edit history, original context, and links to independent checks before a clip is forwarded. AI would help find matching material and summarize discrepancies, with uncertainty shown. The card would separate provenance from factual accuracy and invite a user to read the supporting record. A missing credential would not automatically label a post false.",
     "advance": "Present available origin records alongside context and independent checks in an everyday sharing workflow, with uncertainty and corrections visible.",
     "values": "Care for a community includes refusing to turn uncertainty into an accusation. Accountability protects both informed discussion and the dignity of people shown in a clip.",
     "conditions": "Credentials can be absent or incomplete. Provenance does not certify truth, and AI matching can make mistakes.",
@@ -569,17 +584,18 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "Before forwarding a dramatic clip, see where it came from. A civic-media card could put available edit history beside context and independent checks, while showing what is still uncertain."
   },
   {
     "id": "F-CUL-T",
     "category": "Cultural",
     "aspect": "Time",
-    "title": "Shared immersive P-pop concert pass",
+    "title": "Shared P-pop concert screening",
     "bridge": "Noontime dance crazes and Pacquiao Sundays connect with present-day P-pop fandoms, streams, and watch parties.",
     "foundation": "Apple’s 2025 Metallica release demonstrates a recorded 180-degree immersive concert captured from selected viewpoints, rather than unrestricted movement through a live show (Apple, 2025). SharePlay already supports synchronized media experiences during calls. Combining licensed Filipino performances, synchronized sessions, and checked captions is the proposed next step (Apple, 2021).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a Philippine concert service could let a barkada reserve the same session of a licensed, recorded performance across compatible headsets and ordinary screens. AI could index the performance and draft captions for review; synchronization would keep the group on the same segment. Selected recorded viewpoints would be offered without promising unrestricted live volumetric movement. Artists and rights holders would approve access and reuse. This extends existing immersive recordings and synchronized playback into a more inclusive shared appointment.",
-    "advance": "Offer an agreed shared session for licensed recorded Filipino performances across supported immersive and ordinary screens.",
+    "scenario": "A possible 2030 P-pop release could include licensed concert chapters for synchronized barkada screenings in community venues and at home. A screening ticket would connect the performance with checked captions, performer credits, and an optional scheduled artist conversation where feasible. Selected recorded immersive views could complement ordinary screens. Artists and rights holders would approve distribution and reuse; the proposal does not promise free access or unrestricted movement through a live concert. The advance is a shared cultural release format that welcomes people who cannot attend the original show.",
+    "advance": "Connect a recorded P-pop release with shared screenings, accessible captions, artist recognition, and an agreed time to gather.",
     "values": "The shared event matters through the time people reserve together and the labor they recognize. Friendship includes welcoming a member watching through a simpler screen.",
     "conditions": "Licensing, capture quality, viewing comfort, delay, and cost limit the proposal. The source concert itself is recorded 180-degree video.",
     "sources": [
@@ -591,7 +607,7 @@ export const FUTURE_ARTIFACTS = [
     "zone": 1,
     "htmlId": "future-cultural-time",
     "image": "assets/future-2030/f-cul-t.jpg",
-    "alt": "Proposed 2030 visualization: Shared-session concert wrist token and immersive eyewear",
+    "alt": "AI-generated illustration of a proposed 2030 scene: Shared P-pop concert screening",
     "imageCaption": "AI-generated 2030 scenario · Illustrative people, interfaces, records and example amounts.",
     "researchNotes": [
       {
@@ -607,17 +623,18 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A P-pop concert release becomes a barkada occasion. This possible 2030 screening format brings licensed performances to shared sessions in community venues and at home, with ordinary screens welcome alongside immersive viewing."
   },
   {
     "id": "F-CUL-S",
     "category": "Cultural",
     "aspect": "Space",
-    "title": "AI assisted hybrid drag viewing party",
+    "title": "Community drag showcase",
     "bridge": "The parlor, barangay pageant, and local gig connect with drag streaming, viewing parties, and online performance discovery.",
     "foundation": "Licsi identifies Philippine venues where Drag Race fans gathered for viewing parties and appearances by performers, grounding this scenario in existing queer social spaces (Licsi, 2022). Microsoft documents speech-to-text and translation capabilities with language-specific limits. UNESCO addresses digital cultural access and artistic freedom; neither source establishes this future venue service (Microsoft, n.d.; UNESCO, 2022).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a community venue could coordinate a licensed screening, opt-in remote participation, and checked live captions within one service. AI might draft captions and identify passages needing correction, while the venue and performers decide what may be recorded or shared. A moderator would protect guests’ privacy and keep control over remote access. The improvement would be more accessible, locally governed participation, not the invention of the viewing party.",
-    "advance": "Coordinate a locally governed licensed screening, checked captions, and opt-in remote participation without taking control away from the venue.",
+    "scenario": "By 2030, a community-run venue could offer a recurring program pairing local drag performances with licensed screenings where permitted. The program would identify performers, provide reviewed captions for supported segments, and offer opt-in remote attendance. Guests and artists would choose what may be recorded. Ticketing and reuse agreements would need to support the people who sustain the venue. Technical assistance would serve the event; the future artifact is an artist-controlled show program and its continuing audience.",
+    "advance": "Extend a community venue’s program through accessible, consent-based participation while keeping performers and local organizers in control.",
     "values": "Queer belonging is sustained by the people who make room for one another. A larger audience should strengthen the venue and its performers, while respecting a guest’s choice to remain off camera.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
     "sources": [
@@ -630,7 +647,7 @@ export const FUTURE_ARTIFACTS = [
     "zone": 2,
     "htmlId": "future-cultural-space",
     "image": "assets/future-2030/f-cul-s.jpg?v=photos-20261112",
-    "alt": "AI-generated proposed 2030 scene: AI assisted hybrid drag viewing party",
+    "alt": "AI-generated illustration of a proposed 2030 scene: Community drag showcase",
     "imageCaption": "AI-generated 2030 scenario · Inspired by Drag Race Philippines viewing parties (Licsi, 2022)",
     "revisedPhotography": true,
     "researchNotes": [
@@ -648,7 +665,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "The future artifact is a show program: local drag, a shared screening, and a chance to meet the people behind the performance. By 2030, a community venue could connect nearby audiences and opt-in remote guests without surrendering control of its stage."
   },
   {
     "id": "F-CUL-X",
@@ -657,7 +675,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "AI drafts with human reviewed community subtitles",
     "bridge": "OPM and novelty-song revivals connect with P-pop clips, dance covers, and music reaching audiences across languages.",
     "foundation": "Burt describes Viki’s community of volunteer fan translators, showing that subtitles can be a form of audience participation and cultural exchange (Burt, 2021). Microsoft’s language-support documentation establishes existing speech and translation components. Human judgment about jokes, code-switching, and cultural meaning remains a requirement of the proposed workflow (Microsoft, n.d.).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a subtitling workspace could combine AI drafts with context notes, shared glossaries, clear uncertainty flags, and approval by a named language editor. The human reviewer would choose how to handle jokes, honorifics, and expressions that lose meaning in literal translation. Corrections and contributor credits would remain attached to the approved version. This proposes a more accountable workflow; it does not assume that an AI draft understands every cultural context or that volunteer work should replace fairly recognized labor.",
+    "scenario": "By 2030, a subtitling workspace could combine AI drafts with context notes, shared glossaries, clear uncertainty flags, and approval by a named language editor. The human reviewer would choose how to handle jokes, honorifics, and expressions that lose meaning in literal translation. Corrections and contributor credits would remain attached to the approved version. This proposes a more accountable workflow; it does not assume that an AI draft understands every cultural context or that volunteer work should replace fairly recognized labor.",
     "advance": "Link AI drafts, shared context notes, named human review, corrections, and contributor credits in one accountable subtitling workflow.",
     "values": "A subtitle carries someone else’s voice. Cultural respect means making meaning accessible while acknowledging the translators whose judgment helps a new audience understand it.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -687,7 +705,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A subtitle can carry a joke, a memory, or an expression that deserves care. This 2030 workflow keeps translators’ judgment and credits attached to AI-assisted drafts, helping stories travel without flattening their meaning."
   },
   {
     "id": "F-ENV-T",
@@ -696,7 +715,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "Heat-aware fiesta and community-event planner",
     "bridge": "A scheduled Earth Hour gesture connects with climate concern and decisions about when communities gather for sport, performance, and celebration.",
     "foundation": "PAGASA publishes heat-index information and cautions that reported values can be corrected and station data may contain gaps or errors (PAGASA, n.d.). Google’s AI scheduling announcement demonstrates suggestions based on calendar context. The proposal would add reviewed environmental information to event coordination; it does not claim that this scheduling tool forecasts local weather (Google, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, an event planner could combine current official advisories, local observations, and the needs of performers, vendors, and audiences. AI would suggest alternative times and explain whose activities would be affected. Organizers would review the options and publish changes through online and offline channels. The artifact would show environmental care becoming part of the timetable of an ordinary celebration.",
+    "scenario": "By 2030, an event planner could combine current official advisories, local observations, and the needs of performers, vendors, and audiences. AI would suggest alternative times and explain whose activities would be affected. Organizers would review the options and publish changes through online and offline channels. The artifact would show environmental care becoming part of the timetable of an ordinary celebration.",
     "advance": "Help organizers compare event times using current reviewed advisories, with human decisions and accessible change notices.",
     "values": "Collective joy carries a duty to consider those waiting, working, or performing outdoors. Care means adapting the event instead of leaving vulnerable participants to absorb the burden.",
     "conditions": "Local conditions and data can change. Organizers must use current official advice and qualified local assessment, not treat an AI suggestion as a safety guarantee.",
@@ -725,7 +744,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A fiesta timetable can show care for the people working in the heat. This possible planner helps organizers compare times using current advisories, with people checking decisions and sharing changes beyond social media."
   },
   {
     "id": "F-ENV-S",
@@ -734,7 +754,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "Community-reviewed hazard and access map",
     "bridge": "The Payatas and Ondoy material connects with present-day hazard maps and unequal exposure across neighborhoods.",
     "foundation": "HazardHunterPH generates indicative location-based assessments using government hazard information and distinguishes them from official assessment reports (GeoRisk Philippines, n.d.). Retrieval-augmented generation supplies a method for producing language from retrieved documents. Here it would be adapted to explain dated, reviewed records; the research does not establish a safe route or a local hazard prediction (Lewis et al., 2020).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a community map could combine indicative hazard layers with reviewed information about meeting places, accessibility barriers, and service interruptions. AI would turn the records into plain-language explanations and identify information that needs updating. Residents and local authorities would validate changes. The artifact could inform discussions about where to hold a gathering or invest in access, while uncertainty and the source date remain visible.",
+    "scenario": "By 2030, a community map could combine indicative hazard layers with reviewed information about meeting places, accessibility barriers, and service interruptions. AI would turn the records into plain-language explanations and identify information that needs updating. Residents and local authorities would validate changes. The artifact could inform discussions about where to hold a gathering or invest in access, while uncertainty and the source date remain visible.",
     "advance": "Make dated technical and local records understandable and correctable without treating a generated explanation as a safety clearance.",
     "values": "Bayanihan includes noticing unequal exposure and listening to residents whose routes or homes are easily overlooked. Shared knowledge should guide prevention and collective responsibility.",
     "conditions": "A map cannot guarantee that a route or place is safe. Privacy, missing records, current advisories, and professional assessment remain important.",
@@ -763,7 +783,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A map becomes useful when residents can question and update it. This 2030 proposal joins dated hazard information with reviewed local knowledge, without pretending that a generated explanation can guarantee safety."
   },
   {
     "id": "F-ENV-X",
@@ -772,7 +793,7 @@ export const FUTURE_ARTIFACTS = [
     "title": "Repairable phone with an AI repair passport",
     "bridge": "The Nokia handset and the memory of keeping a device useful connect with rapid upgrades and growing electronic waste.",
     "foundation": "Fairphone provides diagnostics, replaceable components, and repair guides. ITU identifies limited repair options and shorter product life cycles among the challenges behind growing global electronic waste (Fairphone, n.d.; International Telecommunication Union, 2024). Document retrieval combined with generated explanations offers a foundation for finding model-specific repair information. Linking it to verified service history and local parts remains a proposed integration (Lewis et al., 2020).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a repairable phone could carry an owner-controlled record of replaced parts, software support, and checked service work. AI would interpret device diagnostics and retrieve model-specific instructions or suggest a qualified repairer. The advance would join repair information with local parts and service availability. A repairer would verify faults and repair decisions, while the passport makes a secondhand device’s history easier to understand.",
+    "scenario": "By 2030, a repairable phone could carry an owner-controlled record of replaced parts, software support, and checked service work. AI would interpret device diagnostics and retrieve model-specific instructions or suggest a qualified repairer. The advance would join repair information with local parts and service availability. A repairer would verify faults and repair decisions, while the passport makes a secondhand device’s history easier to understand.",
     "advance": "Connect model-specific instructions, verified repairs, and local service availability in a record an owner can retain when a device is resold.",
     "values": "Pagpapahalaga can include maintaining an object and respecting the skilled person who repairs it. An upgrade gains meaning when it avoids shifting waste onto another community.",
     "conditions": "Parts, software support, safe servicing, and trusted records are necessary. AI diagnosis and a repairable design alone do not prove lower lifecycle impact.",
@@ -803,16 +824,17 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "Keep the phone; keep its repair story. An owner-controlled passport could connect replaced parts, checked servicing, and useful instructions, making repair and secondhand ownership easier to understand."
   },
   {
     "id": "F-OTH-T",
     "category": "Others — Music and aesthetics",
     "aspect": "Time",
-    "title": "AI assisted independent gig timetable",
+    "title": "Independent gig running order",
     "bridge": "The fashion revivals in the past and present panels show how cultural styles return. This future proposal broadens Others to the local music scene, focusing on the time and labor that sustain a shared night out.",
     "foundation": "Angan portrays Philippine gigs as independent communities of artists, organizers, venues, and listeners (Angan, 2023). Google already uses AI to suggest meeting times from calendar information. The museum adapts that coordination idea to soundchecks, travel, and performers’ agreed availability; the article does not describe a gig-management product (Google, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a gig scheduling app could compare a venue’s running order with musicians’ agreed availability, soundcheck needs, and travel constraints. AI would suggest changes for the organizer and performers to approve, with the reason and effect on each act visible. A late change could trigger an agreed notice to ticket holders. The app would support coordination, while people retain decisions about fees, repertoire, and working conditions.",
+    "scenario": "By 2030, a gig scheduling app could compare a venue’s running order with musicians’ agreed availability, soundcheck needs, and travel constraints. AI would suggest changes for the organizer and performers to approve, with the reason and effect on each act visible. A late change could trigger an agreed notice to ticket holders. The app would support coordination, while people retain decisions about fees, repertoire, and working conditions.",
     "advance": "Coordinate a gig’s running order around soundcheck, travel, and day-job constraints with performers approving changes.",
     "values": "A night of music rests on work that audiences may never see. Keeping a set on time and making room for a musician’s day job or journey home recognizes the person behind the performance.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
@@ -842,17 +864,18 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A good gig starts before the first song. A shared running order could make room for soundchecks, day jobs, and the journey home, with performers approving changes rather than quietly absorbing them."
   },
   {
     "id": "F-OTH-S",
     "category": "Others — Aesthetics",
     "aspect": "Space",
-    "title": "AI-assisted ukay, repair, and swap booth",
+    "title": "Rewear, repair and swap pop-up",
     "bridge": "The ukay rack and barkada mall trip connect with online resale and a renewed interest in older garments.",
     "foundation": "UNEP’s textile roadmap connects changes in consumption with production practices and enabling infrastructure; it does not treat one resale transaction as proof of sustainability (United Nations Environment Programme, 2023). Doppl demonstrates experimental AI outfit visualization. A neighborhood service could combine a preview with real garment inspection and a tailor’s judgment, while keeping simulated fit distinct from actual condition (Rambhia & Kemelmacher-Shlizerman, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, a neighborhood booth could connect physical garment inspection with local repair, exchange, and resale listings. AI would draft descriptions from photographs and suggest possible alterations for a tailor to assess. Users could meet, compare actual fabric and condition, and decide without relying on a simulated image. The artifact would be a shared service where an older garment acquires another useful life.",
-    "advance": "Connect local inspection, repair skills, and searchable resale stock, using AI only for proposals people can check.",
+    "scenario": "A possible 2030 neighborhood pop-up could combine a secondhand rack, a swap rail, a tailor’s repair appointments, and garment story tags showing previous alterations. A shared listing could help visitors find sizes or book a repair before arriving. Optional AI previews could suggest a restyling idea, while a person checks the actual fabric, fit, condition, and cost. The future artifact is the repaired garment and its continuing story, supported by a dependable local service. Environmental benefits would need to be assessed rather than assumed from a single swap.",
+    "advance": "Connect repair, exchange, and repeated wear in a local fashion gathering, with digital previews supporting actual inspection and skilled work.",
     "values": "Resourcefulness is strengthened by fair exchange and respect for tailors and sellers. Affordable self-expression should carry dignity rather than a stigma about buying secondhand.",
     "conditions": "Cleanliness, truthful condition records, prices, transport, and repair capacity affect outcomes. The booth does not automatically make every transaction sustainable.",
     "sources": [
@@ -864,7 +887,7 @@ export const FUTURE_ARTIFACTS = [
     "zone": 2,
     "htmlId": "future-others-space",
     "image": "assets/future-2030/f-oth-s.jpg",
-    "alt": "Proposed 2030 visualization: Fabric-analysis hoop linking inspection, alteration, and exchange",
+    "alt": "AI-generated illustration of a proposed 2030 scene: Rewear, repair and swap pop-up",
     "imageCaption": "AI-generated 2030 scenario · Illustrative people, interfaces, records and example amounts.",
     "researchNotes": [
       {
@@ -880,17 +903,18 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "The next outfit could already be in the neighborhood. This possible 2030 pop-up brings secondhand finds, repair skills, and a swap rail together, making repeated wear part of personal style rather than something to hide."
   },
   {
     "id": "F-OTH-X",
     "category": "Others — Aesthetics",
     "aspect": "Technology",
-    "title": "AI styling that preserves the user’s complexion",
+    "title": "Morena style lookbook",
     "bridge": "Beauty-product imagery and filtered faces connect with generative try-on tools and questions about who sets an acceptable appearance.",
     "foundation": "Doshi introduces the ten-shade Monk Skin Tone Scale as a resource for more inclusive technology development and evaluation (Doshi, 2022). Rambhia and Kemelmacher-Shlizerman demonstrate AI outfit visualization through Doppl. Preserving a user-approved likeness and evaluating results across diverse complexions are the museum’s proposed improvements, not guarantees made by either source (Rambhia & Kemelmacher-Shlizerman, 2025).",
-    "scenario": "Building on the research above, the museum proposes this possible extension. By 2030, an outfit preview service could preserve the user’s chosen complexion and proportions, explain simulated details, and make automatic appearance changes optional. Developers could test results across a broader range of skin tones, publish limitations, and offer correction and deletion controls. A customer would approve the likeness before trying a look. The generated screen’s swatches are illustrative; they are not a calibrated reproduction of the official scale.",
-    "advance": "Make simulated styling more controllable and transparent, with user-approved complexion settings and evaluation across diverse users.",
+    "scenario": "By 2030, a Filipino style lookbook could show locally available outfits across varied complexions and body types, with maker credits and clear distinctions between photographed garments and simulated previews. Users could explore styles without automatic skin-lightening or body reshaping. Optional AI visualization would preserve a user-approved likeness and disclose uncertain garment details; customers could return to actual measurements, fabric inspection, and a tailor’s advice. The proposed advance is a more inclusive fashion presentation with evaluated rendering and user control, rather than a promise of perfect virtual fit.",
+    "advance": "Make diversity visible in fashion presentation and give users control over simulations, corrections, and deletion of their images.",
     "values": "Dignity includes seeing oneself represented without being treated as a problem to correct. The useful advance is more choice and accountable evaluation, rather than an expectation that everyone must look lighter or more alike.",
     "conditions": "The people, interfaces, and settings are AI-generated illustrations. The proposed integration would require local testing, permission, and human review.",
     "sources": [
@@ -902,7 +926,7 @@ export const FUTURE_ARTIFACTS = [
     "zone": 3,
     "htmlId": "future-others-technology",
     "image": "assets/future-2030/f-oth-x.jpg?v=photos-20261112",
-    "alt": "AI-generated proposed 2030 scene: AI styling that preserves the user’s complexion",
+    "alt": "AI-generated illustration of a proposed 2030 scene: Morena style lookbook",
     "imageCaption": "AI-generated 2030 scenario · Inspired by the Monk Skin Tone Scale (Doshi, 2022)",
     "revisedPhotography": true,
     "researchNotes": [
@@ -919,7 +943,8 @@ export const FUTURE_ARTIFACTS = [
         ]
       }
     ],
-    "citationRevision": "2026-11-12"
+    "citationRevision": "2026-11-12",
+    "preview": "A future style lookbook should make room for the person looking at it. The proposal features varied Filipino complexions and body types, real garments, and optional previews that keep automatic skin-lightening switched off."
   }
 ];
 
@@ -947,15 +972,19 @@ export function futureArtifactHTML(a) {
   <p class="future-category">${esc(categoryName(a))} · ${esc(a.aspect)} · 2030</p>
   <h4 id="${a.htmlId}-title">${esc(a.title)}</h4>
   <figure class="future-concept"><img src="${a.image}" alt="${esc(a.alt)}" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>${esc(a.imageCaption)}</figcaption></figure>
-  ${researchHTML(a)}
-  <p class="future-bridge">${esc(a.bridge)}</p>
-  <p><strong>Proposed 2030 improvement.</strong> ${esc(a.scenario)}</p>
-  <p class="future-capability"><strong>The proposed improvement</strong>${esc(a.advance)}</p>
+  <p class="future-preview">${esc(a.preview)}</p>
+  <p class="future-citation-row">Research basis: ${a.sources.map(citationHTML).join('; ')}.</p>
   <div class="future-values" id="${a.htmlId}-values"><h5>What we carry forward</h5><p>${esc(a.values)}</p></div>
-  <details class="future-research future-references" id="${a.htmlId}-references"><summary>Current foundations &amp; APA references</summary>
+  <details class="future-story" id="${a.htmlId}-story"><summary>Read more · story &amp; research</summary>
+   <p class="future-bridge">${esc(a.bridge)}</p>
+   <p><strong>Proposed 2030 improvement.</strong> ${esc(a.scenario)}</p>
+   <p class="future-capability"><strong>What improves</strong>${esc(a.advance)}</p>
+   ${researchHTML(a)}
+   <p class="future-scope">The sources describe existing foundations. This 2030 extension is a museum proposal.</p>
+  </details>
+  <details class="future-research future-references" id="${a.htmlId}-references"><summary>APA references &amp; practical limits</summary>
    <p><strong>Practical limits.</strong> ${esc(a.conditions)}</p>
    <ol class="future-reference-list">${[...a.sources].sort((x,y)=>SOURCES[x].apa.localeCompare(SOURCES[y].apa)).map(referenceHTML).join('')}</ol>
-   <p class="future-scope">The sources document present-day foundations. The 2030 workflow, design, and image are proposed interpretations.</p>
   </details>
   <a class="future-return" href="#${a.htmlId.replace(/^future-/,'')}">Back to this comparison ↑</a>
  </section>`;

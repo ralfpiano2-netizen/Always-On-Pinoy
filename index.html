@@ -7,9 +7,9 @@
 <meta name="description" content="A scroll-through museum of Philippine pop culture. Twelve past–present exhibit sets and eighteen possible 2030 artifacts explore Philippine pop culture through images, evidence, and shared values.">
 <meta name="theme-color" content="#0b0c12">
 <link rel="icon" href="favicon.png" sizes="32x32">
-<link rel="stylesheet" href="css/museum.css?v=research-20261112">
-<script type="module" src="js/main.js?v=research-20261112"></script>
-<script type="module" src="js/readmore.js?v=readmore-20261111-1"></script>
+<link rel="stylesheet" href="css/museum.css?v=feedback-20261112">
+<script type="module" src="js/main.js?v=feedback-20261112"></script>
+<script type="module" src="js/readmore.js?v=feedback-20261112"></script>
 </head>
 <body>
 <a class="skip-link" href="#zone-1">Skip to the first zone</a>
@@ -18,7 +18,7 @@
   <p class="hud-clock" id="hud-clock">9:41</p>
   <p class="hud-load" id="hud-load" hidden><span class="hud-word">Load </span><span id="hud-load-value">₱5.00</span></p>
   <div class="hud-actions">
-    <button hidden class="hud-btn" id="hud-passport" type="button" aria-haspopup="dialog"><span class="hud-word">Passport </span><span id="hud-count">0</span>/12</button>
+    <button class="hud-btn" id="hud-passport" type="button" aria-haspopup="dialog"><span class="hud-word">Passport </span><span id="hud-count">0</span>/12</button>
     <button class="hud-btn" id="hud-map" type="button" aria-haspopup="dialog">Menu</button>
     <button hidden class="hud-btn hud-archive" type="button" aria-haspopup="dialog" data-open="archive-dialog">Archive</button>
     <button class="hud-btn" id="hud-sound" type="button" aria-pressed="false">Sound off</button>
@@ -46,7 +46,7 @@
           <button class="btn btn--ink" id="enter-sound" type="button" hidden>Enter with sound</button>
           <button class="btn ticket-enter" id="enter-silent" type="button"><span>Enter the museum</span><span class="ticket-enter-arrow" aria-hidden="true">→</span></button>
         </div>
-        <p class="ticket-credit">By Group 8: Ralf Kevin Piano, Catherine Gatilago and Jonathan Restua</p>
+        <div class="ticket-credit" aria-label="Museum creators"><strong>Created by Group 8 · A1106</strong><span>Ralf Kevin Piano</span><span>Catherine Gatilago</span><span>Jonathan Restua</span><a href="#museum-team">Meet the team ↓</a></div>
 <p class="ticket-hint">Scroll at your own pace. Follow each category through the 2000s, 2020s, and a possible 2030, together in one comparison. Tap Sound on for 2000s OPM ringtones.</p>
       </div>
       <div class="ticket-stub" aria-hidden="true"><span>No.</span><span>0008</span></div>
@@ -114,7 +114,7 @@
         <p>You have travelled through the 2000s, the 2020s, and possible futures. Take a moment to reflect on the relationships and values we carry forward.</p>
         <a class="btn btn--ink" href="#closing-reflection">Read the closing reflection ↓</a>
         <a class="exit-revisit" href="#lobby">Return to the entrance</a>
-<p class="exit-credit">Made by Group 8: Ralf Kevin Piano, Catherine Gatilago and Jonathan Restua. Full credits follow the closing reflection.</p>
+<p class="exit-credit">Made by Group 8: Ralf Kevin Piano, Catherine Gatilago and Jonathan Restua. <a href="#museum-team">Meet the team ↓</a></p>
       </div>
     </div>
     <article class="finale" id="closing-reflection" tabindex="-1">
@@ -122,6 +122,11 @@
       <p class="finale-lede" id="conclusion"></p>
       <div class="impacts" id="impacts"></div>
       <div class="finale-passport" id="finale-passport"></div>
+      <section class="museum-team" id="museum-team" aria-labelledby="museum-team-title"><h3 id="museum-team-title">Meet Group 8</h3><ul>
+<li><strong>Ralf Kevin Piano</strong><p>Curation, research, copywriting, design, web integration, quality assurance, and final report.</p></li>
+<li><strong>Catherine Gatilago</strong><p>Artifact images, links and keywords; review and prototype testing.</p></li>
+<li><strong>Jonathan Restua</strong><p>Artifact images, links and keywords; review and prototype testing.</p></li>
+</ul></section>
       <section class="credits" id="credits" aria-labelledby="credits-title"></section>
       <section class="references" id="references" aria-labelledby="references-title"></section>
       <p class="finale-actions"><a class="btn btn--ink" href="#zone-1">Revisit the artifacts</a> <button class="btn btn--plain" type="button" data-open="archive-dialog">Open the archive</button></p>

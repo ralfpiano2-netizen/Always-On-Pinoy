@@ -1072,7 +1072,7 @@ html[data-effects="off"] .stamp { display: none; }
 .stamp { right: 4px; transform: rotate(-10deg) scale(1); }
 html[data-effects="off"] :is(.hud-clock, .ps-blink, .profile-name, .pause-btn) { animation: none !important; }
 html[data-effects="off"] .card-media * { animation-play-state: paused !important; }
-html[data-effects="off"] #glitter { visibility: hidden; }
+html[data-fairy="off"] #glitter { visibility: hidden; }
 .label-actions { display: flex; margin-top: 14px; }
 .sms-demo { width: 100%; margin: 14px 0; padding: 14px; background: #e0e8cb; color: #26321c; border: 1px solid #849369; border-radius: 2px; }
 .sms-demo-title { margin-bottom: 10px; font: 500 13px/1.4 var(--font-mono); }
@@ -1380,6 +1380,18 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 /* Keep decade headings below both the HUD and the sticky decade buttons. */
 .chronology-era, .chronology-example, .chronology-future .future-proposal { scroll-margin-top:calc(var(--hud-h) + 88px); }
 
+/* Fairy dust arrow: a sparkle-tipped cursor for mouse users; links and buttons keep their pointer. */
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-fairy="off"]) { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 2l0 19 5-4.5 3.4 8 3.2-1.4-3.4-7.8H19z' fill='%23fff' stroke='%23231a2e' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M24 3v7M20.5 6.5h7' stroke='%23d94f8a' stroke-width='2'/%3E%3Cpath d='M25 14v4M23 16h4' stroke='%23f2d24b' stroke-width='1.6'/%3E%3C/svg%3E") 3 2, auto; }
+}
+
+/* Shorter labels: "Read more" and names on the ticket and exit. */
+.rm-hidden { display: none !important; }
+.rm-clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+.readmore-btn { margin: 4px 0 14px; }
+.ticket-credit, .exit-credit { font: 500 13px/1.5 var(--font-mono, monospace); margin: 12px 0 0; opacity: .85; }
+
+
 /* Research is visible without expanding the future story. */
 .future-evidence { margin:18px 0; padding:16px; background:#ebe8dd; border-left:3px solid #6c6655; color:#29271f; }
 .future-evidence h5 { margin:0 0 10px; font:600 13px/1.5 var(--font-mono); }
@@ -1387,3 +1399,28 @@ html[data-effects="off"] #glitter { visibility: hidden; }
 .future-evidence p:last-child { margin-bottom:0; }
 .future-evidence a,.future-reference-list a { overflow-wrap:anywhere; }
 .future-source-scope { font-size:13px; line-height:1.6; color:#514c41; margin:6px 0 14px; }
+
+/* Feedback revision: compact reading, visible values and authorship. */
+.future-preview { font-size:18px; line-height:1.65; margin:18px 0 12px; }
+.future-citation-row { font:400 12px/1.7 var(--font-label); color:#4e4b40; margin:10px 0 18px; }
+.future-citation-row a { overflow-wrap:anywhere; }
+.future-story { margin:18px 0 12px; border:1px solid #b9ad99; border-radius:3px; padding:12px 14px; }
+.future-story > summary { cursor:pointer; font:600 14px/1.5 var(--font-mono); min-height:24px; }
+.future-story[open] > summary { margin-bottom:16px; }
+.future-story p { font-size:16px; line-height:1.65; }
+.future-values { margin:18px 0; }
+.readmore-btn { min-height:44px; border:1px solid #8a7a62; padding:8px 14px; border-radius:3px; color:#241e16; background:#f5eddd; }
+.rm-clamp { -webkit-line-clamp:3; line-clamp:3; }
+.ticket-credit { opacity:1; margin-top:20px; padding-top:15px; border-top:1px solid #c7b99f; color:#29251f; }
+.ticket-credit strong { display:block; font:600 13px/1.5 var(--font-mono); margin-bottom:6px; }
+.ticket-credit span { display:block; font:500 15px/1.6 var(--font-label); }
+.ticket-credit a { display:inline-block; margin-top:8px; color:inherit; text-underline-offset:3px; }
+.museum-team { margin:32px 0; padding:24px; background:#f4eddf; border:1px solid #bfad8e; color:#29251f; scroll-margin-top:calc(var(--hud-h) + 20px); }
+.museum-team h3 { font:600 27px/1.25 var(--font-label); margin:0 0 18px; }
+.museum-team ul { list-style:none; margin:0; padding:0; display:grid; gap:18px; }
+.museum-team strong { display:block; font:600 19px/1.4 var(--font-label); }
+.museum-team p { font-size:14px; line-height:1.6; margin:4px 0 0; }
+.exit-credit { opacity:1; font-size:14px; }
+.exit-credit a { color:inherit; }
+#hud-passport { display:inline-flex; align-items:center; gap:3px; }
+@media(max-width:480px) { .museum-team { padding:18px; } .future-preview { font-size:17px; } .future-story { padding:10px 12px; } }

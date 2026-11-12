@@ -1,4 +1,4 @@
-import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=research-20261112';
+import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=feedback-20261112';
 import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=photos-20261112';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
 import { presentMediaHTML, comparisonMediaHTML } from './present-media.js?v=image-repair-20261109-1';
@@ -164,7 +164,7 @@ function worksheetEra(g,era) {
     const t=document.createElement('template');t.innerHTML=era==='past'?artifactCardMediaHTML('ao-15'):presentMediaHTML('ao-15');
     media=t.content.querySelector('figure')?.outerHTML || media;
   }
-  return `${title?`<h5 class="chronology-artifact-title">${esc(title)}</h5>`:''}${media}${documentParagraphs(body)}`;
+  return `${title?`<h5 class="chronology-artifact-title">${esc(title)}</h5>`:''}${media}<div class="era-copy">${documentParagraphs(body)}</div>`;
 }
 function chronologyHTML(g,index) {
   const f=futureFor(g),examples=g.members.map(id=>BY_ID[id]);
@@ -225,7 +225,7 @@ function watchNavigationEras() {
 
 function renderMap() {
  const zone=z=>`<a class="map-stop" href="#${z.id}"><strong>Zone ${z.n}: ${esc(z.title)}</strong><small>${esc(z.place)}</small></a><ul class="map-artifacts">${CHRONOLOGY_GROUPS.filter(g=>g.zone===z.n).map(g=>`<li><a href="#${g.id}"><strong>${esc(g.label)}</strong></a><nav class="comparison-jumps" aria-label="${esc(g.label)} decades"><a href="#${g.id}-past">2000s</a><a href="#${g.id}-present">2020s</a><a href="#${futureFor(g).htmlId}">2030</a></nav></li>`).join('')}</ul>`;
- $('#map-body').innerHTML=`<div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>The ticket</small></a></div><div class="map-wing" id="map-current"></div><div class="map-wing"><h3>18 comparisons · 2000s → 2020s → 2030</h3>${ZONES.map(zone).join('')}</div><div class="map-wing"><a class="map-stop" href="#pause"><strong>Museum exit</strong><small>Closing reflection, credits and references</small></a></div><div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">Research archive & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
+ $('#map-body').innerHTML=`<div class="map-wing"><a class="map-stop" href="#lobby"><strong>Lobby</strong><small>The ticket</small></a></div><div class="map-wing" id="map-current"></div><div class="map-wing"><h3>18 comparisons · 2000s → 2020s → 2030</h3>${ZONES.map(zone).join('')}</div><div class="map-wing"><a class="map-stop" href="#pause"><strong>Museum exit</strong><small>Closing reflection, credits and references</small></a><a class="map-stop" href="#museum-team"><strong>Meet Group 8</strong><small>Ralf Kevin Piano · Catherine Gatilago · Jonathan Restua</small></a></div><div class="map-wing menu-tools"><button class="btn" type="button" data-open="passport-dialog">Your passport</button><button class="btn" type="button" data-open="archive-dialog">Research archive & references</button><button class="btn btn--plain" id="extra-effects" type="button" aria-pressed="false">Extra effects: off</button></div>${ringtonePanelHTML()}`;
 }
 
 function markMap() {
