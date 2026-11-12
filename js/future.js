@@ -24,14 +24,14 @@ const SOURCES = {
   },
   "iverify": {
     "id": "future-ref-iverify",
-    "short": "United Nations Development Programme, n.d.",
+    "short": "United Nations Development Programme",
     "apa": "United Nations Development Programme. (n.d.). iVerify. Retrieved November 12, 2026, from",
     "url": "https://www.undp.org/digital/iverify",
     "supports": "Source-based fact checking, independent review, publication, and later correction. It is an international foundation, not evidence of deployment in every Philippine locality."
   },
   "credentials": {
     "id": "future-ref-credentials",
-    "short": "Coalition for Content Provenance and Authenticity, n.d.",
+    "short": "Coalition for Content Provenance and Authenticity",
     "apa": "Coalition for Content Provenance and Authenticity. (n.d.). C2PA and Content Credentials explainer (Version 2.4).",
     "url": "https://spec.c2pa.org/specifications/specifications/2.4/explainer/Explainer.html",
     "supports": "Tamper-evident origin and editing records. Provenance alone cannot establish that a claim is true; absent credentials do not establish falsity."
@@ -59,28 +59,28 @@ const SOURCES = {
   },
   "speech": {
     "id": "future-ref-speech",
-    "short": "Microsoft, n.d.",
+    "short": "Microsoft",
     "apa": "Microsoft. (n.d.). Language and voice support for Azure Speech. Microsoft Learn. Retrieved November 12, 2026, from",
     "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support",
     "supports": "Speech capabilities vary by language and function. Local code-switching and performance audio still require validation."
   },
   "heat": {
     "id": "future-ref-heat",
-    "short": "PAGASA, n.d.",
+    "short": "PAGASA",
     "apa": "Philippine Atmospheric, Geophysical and Astronomical Services Administration. (n.d.). Heat index. Retrieved November 12, 2026, from",
     "url": "https://www.pagasa.dost.gov.ph/weather/heat-index/",
     "supports": "Published heat-index observations and data limitations. It does not guarantee conditions at a specific future event."
   },
   "hazard": {
     "id": "future-ref-hazard",
-    "short": "GeoRisk Philippines, n.d.",
+    "short": "GeoRisk Philippines",
     "apa": "GeoRisk Philippines. (n.d.). About HazardHunterPH. Retrieved November 12, 2026, from",
     "url": "https://hazardhunter.georisk.gov.ph/about-hazardhunterph",
     "supports": "Indicative location-based assessments using government hazard data. It is not an all-clear or real-time route-safety guarantee."
   },
   "repair": {
     "id": "future-ref-repair",
-    "short": "Fairphone, n.d.",
+    "short": "Fairphone",
     "apa": "Fairphone. (n.d.). Here’s how you can repair your Fairphone device yourself. Retrieved November 12, 2026, from",
     "url": "https://www.fairphone.com/repairs",
     "supports": "Repairable components, guides, and diagnosis already exist. Local repair networks and the proposed AI repair passport need separate implementation."
@@ -115,14 +115,14 @@ const SOURCES = {
   },
   "zoomwaiting": {
     "id": "future-ref-zoomwaiting",
-    "short": "Zoom, n.d.",
+    "short": "Zoom",
     "apa": "Zoom. (n.d.). Enabling and customizing the waiting room. Zoom Support. Retrieved November 12, 2026, from",
     "url": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0059359",
     "supports": "Current waiting-room and host-admission controls. AI topic grouping, visible inquiry queues, and coordinated invitation are proposed integrations."
   },
   "photo-youtube": {
     "id": "future-ref-photo-youtube",
-    "short": "YouTube Help, n.d.",
+    "short": "YouTube Help",
     "apa": "YouTube Help. (n.d.). Premiere a new video. Google.",
     "url": "https://support.google.com/youtube/answer/9080341",
     "supports": "Verified help page; no publication date shown."
@@ -220,7 +220,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Time",
     "title": "Family premiere night",
     "bridge": "Television appointments and short SMS invitations connect with present-day group chats and conflicting school, work, and family schedules.",
-    "foundation": "YouTube Premieres already combines a scheduled video release with a shared countdown and live chat (YouTube Help, n.d.). Google’s Help me schedule uses calendar availability and email context to suggest meeting times. This supplies an AI coordination foundation; the family service below is our proposed extension (Google, 2025).",
+    "foundation": "YouTube Premieres already combines a scheduled video release with a shared countdown and live chat (YouTube Help). Google’s Help me schedule uses calendar availability and email context to suggest meeting times. This supplies an AI coordination foundation; the family service below is our proposed extension (Google, 2025).",
     "scenario": "A possible 2030 entertainment release could offer a regular family premiere alongside agreed catch-up sessions. Relatives in different places would choose a session that respects work, school, and rest. The program could include locally reviewed captions and a brief conversation prompt after an episode. AI scheduling would be optional support; the cultural artifact is the shared appointment and episode experience. Rights holders would approve access, while families could watch through ordinary screens and decline any invitation.",
     "advance": "A shared release format that makes family conversation part of watching, with scheduling assistance available when useful.",
     "values": "The television appointment becomes a question of whose time matters. A family shows care when it accommodates the relative coming off a shift instead of expecting everyone to be available on demand.",
@@ -235,7 +235,7 @@ export const FUTURE_ARTIFACTS = [
     "htmlId": "future-social-time",
     "image": "assets/future-2030/f-soc-t.jpg?v=photos-20261112",
     "alt": "AI-generated illustration of a proposed 2030 scene: Family premiere night",
-    "imageCaption": "AI-generated 2030 scenario · Inspired by YouTube Premieres (YouTube Help, n.d.)",
+    "imageCaption": "AI-generated 2030 scenario · Inspired by YouTube Premieres (YouTube Help)",
     "revisedPhotography": true,
     "researchNotes": [
       {
@@ -260,7 +260,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Space",
     "title": "AI assisted public Wi Fi access hub",
     "bridge": "The computer-shop chair and Friendster profile connect with current multiplayer lobbies and online gathering places.",
-    "foundation": "Mercurio documents the DICT’s expansion of free Wi-Fi in Philippine public places, including geographically isolated communities (Mercurio, 2021). Microsoft lists Filipino speech recognition and neural voices, while warning that language support differs by feature. These are components for an optional spoken help service, not proof of universal local-language access (Microsoft, n.d.).",
+    "foundation": "Mercurio documents the DICT’s expansion of free Wi-Fi in Philippine public places, including geographically isolated communities (Mercurio, 2021). Microsoft lists Filipino speech recognition and neural voices, while warning that language support differs by feature. These are components for an optional spoken help service, not proof of universal local-language access (Microsoft).",
     "scenario": "By 2030, a public access hub could combine maintained connectivity with optional Filipino-language voice help, clear connection notices, and a human assistance point. AI could guide a user through an access problem without requesting unrelated personal information. Staff would review recurring failures and provide an ordinary non-AI access route. The improvement is dependable assistance and inclusion around familiar infrastructure, rather than a new kind of router.",
     "advance": "Join public connectivity with tested spoken assistance and a human help point, retaining a straightforward non-AI access route.",
     "values": "Free access has value when someone can actually use it. Pakikipagkapwa appears in a volunteer patiently helping an older resident, making public space welcoming across age and confidence levels.",
@@ -470,7 +470,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Time",
     "title": "AI assisted public hearing follow up viewer",
     "bridge": "The circulating SMS invitation to EDSA connects with reposts, public-issue threads, and questions about what happens after attention fades.",
-    "foundation": "PhilstarLIVE documents an online Senate hearing on July 16, 2024, providing a concrete Philippine example of public proceedings distributed through video (PhilstarLIVE, 2024). Speech-recognition tools and retrieval-augmented generation supply components for a searchable transcript and source-linked explanations. The hearing archive and follow-up workflow below would still need editorial checking (Microsoft, n.d.; Lewis et al., 2020).",
+    "foundation": "PhilstarLIVE documents an online Senate hearing on July 16, 2024, providing a concrete Philippine example of public proceedings distributed through video (PhilstarLIVE, 2024). Speech-recognition tools and retrieval-augmented generation supply components for a searchable transcript and source-linked explanations. The hearing archive and follow-up workflow below would still need editorial checking (Microsoft; Lewis et al., 2020).",
     "scenario": "By 2030, a hearing viewer could connect the recording with a searchable transcript, source-linked summaries, and a dated follow-up list. AI could propose chapter markers and retrieve the passage behind a summary; an editor would check names, quotations, and corrections. Visitors could return to unresolved questions after the live broadcast ends. The improvement is an accountable path from watching to checking and following up, not simply another livestream.",
     "advance": "Connect the recording, checked transcript, cited summaries, and dated follow-up so public attention can continue after the broadcast.",
     "values": "Pananagutan requires patience after the moment of public attention. Remembering a commitment and checking its context can matter as much as sharing a dramatic clip.",
@@ -512,7 +512,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Space",
     "title": "AI meeting concierge for barangay assemblies",
     "bridge": "Physical assemblies and street gatherings connect with online meetings, livestream comments, and remote participation.",
-    "foundation": "Section 397 of the Local Government Code establishes barangay assemblies as a setting for community discussion (Republic Act No. 7160, 1991). Zoom documents host-controlled waiting-room admission and announced custom AI agents for coordinating workflows. Topic queues and invitations into a barangay discussion would be a proposed integration of those components (Zoom, n.d.; Zoom, 2026).",
+    "foundation": "Section 397 of the Local Government Code establishes barangay assemblies as a setting for community discussion (Republic Act No. 7160, 1991). Zoom documents host-controlled waiting-room admission and announced custom AI agents for coordinating workflows. Topic queues and invitations into a barangay discussion would be a proposed integration of those components (Zoom; Zoom, 2026).",
     "scenario": "By 2030, an AI concierge could receive inquiries before an online or hybrid assembly, suggest topic groups, and display a clear speaking queue. When a topic is due, the system could invite relevant residents from their waiting group into the main room under the moderator’s rules. Residents could correct a grouping and the moderator could override admission decisions. Phone, text, and in-person participation would need an equivalent route; remote attendance arrangements would still require official approval.",
     "advance": "Group inquiries and show speaking turns before a moderator-controlled invitation into the main meeting room.",
     "values": "Being invited is not the same as being heard. Pakikipagkapwa requires a fair turn for the distant worker and quiet resident, with the final responsibility remaining with human organizers.",
@@ -528,7 +528,7 @@ export const FUTURE_ARTIFACTS = [
     "htmlId": "future-political-space",
     "image": "assets/future-2030/f-pol-s.jpg?v=photos-20261112",
     "alt": "AI-generated proposed 2030 scene: AI meeting concierge for barangay assemblies",
-    "imageCaption": "AI-generated 2030 scenario · Inspired by barangay assemblies and online meeting controls (Republic Act No. 7160, 1991; Zoom, n.d.)",
+    "imageCaption": "AI-generated 2030 scenario · Inspired by barangay assemblies and online meeting controls (Republic Act No. 7160, 1991; Zoom)",
     "revisedPhotography": true,
     "researchNotes": [
       {
@@ -554,7 +554,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Technology",
     "title": "Source-tracing card for civic media",
     "bridge": "Forwarded recordings and chain messages connect with edited clips, synthetic media, and rapid political circulation.",
-    "foundation": "C2PA records available media origin and editing history, but explicitly states that provenance alone cannot establish whether content is factually true (Coalition for Content Provenance and Authenticity, n.d.). UNDP’s iVerify describes source consultation, independent review, published evidence, and later corrections. This supplies a human verification model for the proposed civic-media card (United Nations Development Programme, n.d.).",
+    "foundation": "C2PA records available media origin and editing history, but explicitly states that provenance alone cannot establish whether content is factually true (Coalition for Content Provenance and Authenticity). UNDP’s iVerify describes source consultation, independent review, published evidence, and later corrections. This supplies a human verification model for the proposed civic-media card (United Nations Development Programme).",
     "scenario": "By 2030, a civic-media card could present available origin records, edit history, original context, and links to independent checks before a clip is forwarded. AI would help find matching material and summarize discrepancies, with uncertainty shown. The card would separate provenance from factual accuracy and invite a user to read the supporting record. A missing credential would not automatically label a post false.",
     "advance": "Present available origin records alongside context and independent checks in an everyday sharing workflow, with uncertainty and corrections visible.",
     "values": "Care for a community includes refusing to turn uncertainty into an accusation. Accountability protects both informed discussion and the dignity of people shown in a clip.",
@@ -632,7 +632,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Space",
     "title": "Community drag showcase",
     "bridge": "The parlor, barangay pageant, and local gig connect with drag streaming, viewing parties, and online performance discovery.",
-    "foundation": "Licsi identifies Philippine venues where Drag Race fans gathered for viewing parties and appearances by performers, grounding this scenario in existing queer social spaces (Licsi, 2022). Microsoft documents speech-to-text and translation capabilities with language-specific limits. UNESCO addresses digital cultural access and artistic freedom; neither source establishes this future venue service (Microsoft, n.d.; UNESCO, 2022).",
+    "foundation": "Licsi identifies Philippine venues where Drag Race fans gathered for viewing parties and appearances by performers, grounding this scenario in existing queer social spaces (Licsi, 2022). Microsoft documents speech-to-text and translation capabilities with language-specific limits. UNESCO addresses digital cultural access and artistic freedom; neither source establishes this future venue service (Microsoft; UNESCO, 2022).",
     "scenario": "By 2030, a community-run venue could offer a recurring program pairing local drag performances with licensed screenings where permitted. The program would identify performers, provide reviewed captions for supported segments, and offer opt-in remote attendance. Guests and artists would choose what may be recorded. Ticketing and reuse agreements would need to support the people who sustain the venue. Technical assistance would serve the event; the future artifact is an artist-controlled show program and its continuing audience.",
     "advance": "Extend a community venue’s program through accessible, consent-based participation while keeping performers and local organizers in control.",
     "values": "Queer belonging is sustained by the people who make room for one another. A larger audience should strengthen the venue and its performers, while respecting a guest’s choice to remain off camera.",
@@ -674,7 +674,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Technology",
     "title": "AI drafts with human reviewed community subtitles",
     "bridge": "OPM and novelty-song revivals connect with P-pop clips, dance covers, and music reaching audiences across languages.",
-    "foundation": "Burt describes Viki’s community of volunteer fan translators, showing that subtitles can be a form of audience participation and cultural exchange (Burt, 2021). Microsoft’s language-support documentation establishes existing speech and translation components. Human judgment about jokes, code-switching, and cultural meaning remains a requirement of the proposed workflow (Microsoft, n.d.).",
+    "foundation": "Burt describes Viki’s community of volunteer fan translators, showing that subtitles can be a form of audience participation and cultural exchange (Burt, 2021). Microsoft’s language-support documentation establishes existing speech and translation components. Human judgment about jokes, code-switching, and cultural meaning remains a requirement of the proposed workflow (Microsoft).",
     "scenario": "By 2030, a subtitling workspace could combine AI drafts with context notes, shared glossaries, clear uncertainty flags, and approval by a named language editor. The human reviewer would choose how to handle jokes, honorifics, and expressions that lose meaning in literal translation. Corrections and contributor credits would remain attached to the approved version. This proposes a more accountable workflow; it does not assume that an AI draft understands every cultural context or that volunteer work should replace fairly recognized labor.",
     "advance": "Link AI drafts, shared context notes, named human review, corrections, and contributor credits in one accountable subtitling workflow.",
     "values": "A subtitle carries someone else’s voice. Cultural respect means making meaning accessible while acknowledging the translators whose judgment helps a new audience understand it.",
@@ -714,7 +714,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Time",
     "title": "Heat-aware fiesta and community-event planner",
     "bridge": "A scheduled Earth Hour gesture connects with climate concern and decisions about when communities gather for sport, performance, and celebration.",
-    "foundation": "PAGASA publishes heat-index information and cautions that reported values can be corrected and station data may contain gaps or errors (PAGASA, n.d.). Google’s AI scheduling announcement demonstrates suggestions based on calendar context. The proposal would add reviewed environmental information to event coordination; it does not claim that this scheduling tool forecasts local weather (Google, 2025).",
+    "foundation": "PAGASA publishes heat-index information and cautions that reported values can be corrected and station data may contain gaps or errors (PAGASA). Google’s AI scheduling announcement demonstrates suggestions based on calendar context. The proposal would add reviewed environmental information to event coordination; it does not claim that this scheduling tool forecasts local weather (Google, 2025).",
     "scenario": "By 2030, an event planner could combine current official advisories, local observations, and the needs of performers, vendors, and audiences. AI would suggest alternative times and explain whose activities would be affected. Organizers would review the options and publish changes through online and offline channels. The artifact would show environmental care becoming part of the timetable of an ordinary celebration.",
     "advance": "Help organizers compare event times using current reviewed advisories, with human decisions and accessible change notices.",
     "values": "Collective joy carries a duty to consider those waiting, working, or performing outdoors. Care means adapting the event instead of leaving vulnerable participants to absorb the burden.",
@@ -753,7 +753,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Space",
     "title": "Community-reviewed hazard and access map",
     "bridge": "The Payatas and Ondoy material connects with present-day hazard maps and unequal exposure across neighborhoods.",
-    "foundation": "HazardHunterPH generates indicative location-based assessments using government hazard information and distinguishes them from official assessment reports (GeoRisk Philippines, n.d.). Retrieval-augmented generation supplies a method for producing language from retrieved documents. Here it would be adapted to explain dated, reviewed records; the research does not establish a safe route or a local hazard prediction (Lewis et al., 2020).",
+    "foundation": "HazardHunterPH generates indicative location-based assessments using government hazard information and distinguishes them from official assessment reports (GeoRisk Philippines). Retrieval-augmented generation supplies a method for producing language from retrieved documents. Here it would be adapted to explain dated, reviewed records; the research does not establish a safe route or a local hazard prediction (Lewis et al., 2020).",
     "scenario": "By 2030, a community map could combine indicative hazard layers with reviewed information about meeting places, accessibility barriers, and service interruptions. AI would turn the records into plain-language explanations and identify information that needs updating. Residents and local authorities would validate changes. The artifact could inform discussions about where to hold a gathering or invest in access, while uncertainty and the source date remain visible.",
     "advance": "Make dated technical and local records understandable and correctable without treating a generated explanation as a safety clearance.",
     "values": "Bayanihan includes noticing unequal exposure and listening to residents whose routes or homes are easily overlooked. Shared knowledge should guide prevention and collective responsibility.",
@@ -792,7 +792,7 @@ export const FUTURE_ARTIFACTS = [
     "aspect": "Technology",
     "title": "Repairable phone with an AI repair passport",
     "bridge": "The Nokia handset and the memory of keeping a device useful connect with rapid upgrades and growing electronic waste.",
-    "foundation": "Fairphone provides diagnostics, replaceable components, and repair guides. ITU identifies limited repair options and shorter product life cycles among the challenges behind growing global electronic waste (Fairphone, n.d.; International Telecommunication Union, 2024). Document retrieval combined with generated explanations offers a foundation for finding model-specific repair information. Linking it to verified service history and local parts remains a proposed integration (Lewis et al., 2020).",
+    "foundation": "Fairphone provides diagnostics, replaceable components, and repair guides. ITU identifies limited repair options and shorter product life cycles among the challenges behind growing global electronic waste (Fairphone; International Telecommunication Union, 2024). Document retrieval combined with generated explanations offers a foundation for finding model-specific repair information. Linking it to verified service history and local parts remains a proposed integration (Lewis et al., 2020).",
     "scenario": "By 2030, a repairable phone could carry an owner-controlled record of replaced parts, software support, and checked service work. AI would interpret device diagnostics and retrieve model-specific instructions or suggest a qualified repairer. The advance would join repair information with local parts and service availability. A repairer would verify faults and repair decisions, while the passport makes a secondhand device’s history easier to understand.",
     "advance": "Connect model-specific instructions, verified repairs, and local service availability in a record an owner can retain when a device is resold.",
     "values": "Pagpapahalaga can include maintaining an object and respecting the skilled person who repairs it. An upgrade gains meaning when it avoids shifting waste onto another community.",

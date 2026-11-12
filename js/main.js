@@ -48,9 +48,10 @@ function documentText(text) {
       const match = citation.match(/^(.*), ((?:19|20)\d{2}[ab]?|n\.d\.)$/);
       if (!match) return esc(citation);
       const author = match[1], year = match[2];
+      const label = year === "n.d." ? author : citation;
       const prefix = aliases[author] || author.replace(/ et al\.$/, '').split(' & ')[0];
       const ref = ALL_REFERENCES.find(ref => ref.apa.startsWith(prefix) && ref.apa.includes('(' + year));
-      return ref?.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(citation)}</a>` : esc(citation);
+      return ref?.url ? `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>` : esc(label);
     }).join('; ') + ')';
   }).join('');
 }
