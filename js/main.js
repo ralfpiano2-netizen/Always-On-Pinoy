@@ -1,3 +1,4 @@
+import { openingHTML, transitionHTML, activityHTML, mountVisitor } from './visitor.js?v=human-20261112';
 import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=citation-labels-2';
 import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=photos-20261112';
 import { ringtonePanelHTML, mountRingtones } from './ringtones.js?v=debug-20261108-1';
@@ -176,11 +177,13 @@ function chronologyHTML(g,index) {
   return `<article class="step chronology-step" id="${g.id}" data-step="${g.id}" data-category="${esc(g.category)}" aria-labelledby="${g.id}-title"><div class="label label-comparison chronology-label">
    <div class="label-head"><span class="label-no">${esc(g.label)}</span><span>2000s → 2020s → 2030</span></div>
    <h3 id="${g.id}-title">${esc(g.label)}</h3>
-   <p class="comparison-intro">Follow this comparison through the 2000s, the 2020s, and a possible 2030.</p>
+   ${openingHTML(index)}
    <nav class="comparison-jumps" aria-label="Decades for ${esc(g.label)}"><a href="#${g.id}-past">2000s</a><a href="#${g.id}-present">2020s</a><a href="#${f.htmlId}">2030</a></nav>
    <section class="artifact-era chronology-era" id="${g.id}-past" data-era="2000s" aria-labelledby="${g.id}-past-title"><h4 id="${g.id}-past-title">2000s · ${esc(g.label)}</h4>${eraHTML('past')}</section>
    <section class="artifact-era chronology-era" id="${g.id}-present" data-era="2020s" aria-labelledby="${g.id}-present-title"><h4 id="${g.id}-present-title">2020s · ${esc(g.label)}</h4>${eraHTML('present')}${connections?`<details class="chronology-connection"><summary>What connects the past and present?</summary>${connections}</details>`:''}</section>
+   ${activityHTML(g.id)}
    <div class="chronology-future" data-era="2030" ${g.category==='Social'?`id="zone-${g.zone}-future"`:''}>${futureArtifactHTML(f)}</div>
+   ${transitionHTML(g,next)}
    <a class="comparison-next" href="#${next?.id || 'pause'}">${next?`Next · ${esc(next.label)}`:'Continue to the museum exit'} ↓</a>
   </div></article>`;
 }
@@ -627,6 +630,7 @@ async function boot() {
   for (const type of arrivalStoppers) addEventListener(type, cancelArrival, { passive: true, once: true });
   if (reduceMotion()) document.documentElement.classList.add('reduce-motion');
   renderSteps();
+  mountVisitor();
   renderZoneNavigation();
   renderMap();
   renderArchive();
