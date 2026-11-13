@@ -135,7 +135,17 @@ export function mountLearning() {
   content.querySelector('#edit-certificate').onclick=()=>passport(opener);
   content.querySelector('#download-certificate').onclick=()=>downloadCertificate(certificate,content.querySelector('#download-status'));
  }
- function close() {dialog.close();opener?.focus({preventScroll:true});}
+ function close() {
+  dialog.close();opener?.focus({preventScroll:true});
+  requestAnimationFrame(()=>{
+   if(document.querySelector('dialog[open]'))return;
+   const visible=[...document.querySelectorAll('.learning-card')].find(card=>{
+    const rect=card.getBoundingClientRect(),id=card.id.replace('checkpoint-','');
+    return !seen.has(id)&&Math.min(rect.bottom,innerHeight*.9)-Math.max(rect.top,48)>=rect.height*.25;
+   });
+   if(visible)show(checkpoints.find(c=>c.id===visible.id.replace('checkpoint-','')),visible.querySelector('button'));
+  });
+ }
  dialog.addEventListener('click',event=>{if(event.target.closest('[data-learning-close]'))close();});
  dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
  document.addEventListener('click',event=>{
@@ -147,17 +157,11 @@ export function mountLearning() {
  badge.onclick=()=>passport(badge);
  update();
  // Offer each checkpoint once when its card reaches the reading area.
- const pending=new Map();
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
   const id=entry.target.id.replace('checkpoint-','');
-  clearTimeout(pending.get(id));
-  if(!entry.isIntersecting||seen.has(id))return;
-  pending.set(id,setTimeout(()=>{
-   const rect=entry.target.getBoundingClientRect();
-   if(seen.has(id)||rect.top<40||rect.bottom>innerHeight||document.querySelector('dialog[open]')||document.visibilityState!=='visible')return;
-   show(checkpoints.find(c=>c.id===id),entry.target.querySelector('button'));
-  },850));
- }),{threshold:.65});
+  if(!entry.isIntersecting||seen.has(id)||document.querySelector('dialog[open]')||document.visibilityState!=='visible')return;
+  show(checkpoints.find(c=>c.id===id),entry.target.querySelector('button'));
+ }),{threshold:.25,rootMargin:'-48px 0px -10% 0px'});
 
  document.querySelectorAll('.learning-card').forEach(el=>observer.observe(el));
 }
