@@ -11,13 +11,13 @@ const checkpoints = [
    answers:['Both can become occasions to reserve time and make room for other people.','Both require every viewer to own the newest device.','Both prove that all Filipino families watch together.'], correct:0,
    explanation:'Shared viewing can create an occasion to gather. The 2009 screenings are documented examples, while the 2030 P-pop screening is a proposal inspired by existing concert formats.',
    source:['Villar (2009), public fight screenings','https://www.philstar.com/sports/2009/11/16/523550/jampacked-crowds-cheer-historic-win'] },
- { id:'timeline', group:'social-space', title:'Build the timeline', kind:'game' },
+ { id:'timeline', group:'social-space', title:'Snapshot Safari', kind:'game' },
  { id:'shop', group:'economic-space', title:'More than a transaction', kind:'question',
    question:'What should we notice when comparing mall hangouts and live selling?',
    answers:['Live selling has replaced every physical mall.','Every shopping interaction creates a close friendship.','Shopping also involves places, people and access, which change across settings.'], correct:2,
    explanation:'A mall can be a place to spend time together, while a livestream connects buyers and sellers through another setting. The museum asks who can participate and how.',
    source:['SM Prime, company history','https://www.smprime.com/our-history/'] },
- { id:'match', group:'others-space', title:'Match the everyday practice', kind:'game' },
+ { id:'match', group:'others-space', title:'Barkada Basket', kind:'game' },
  { id:'padala', group:'economic-technology', title:'The person behind the padala', kind:'question',
    question:'What does the shift from remittance counters to digital payment channels teach us?',
    answers:['Methods can change while communicating and caring across distance still take effort.','A faster transfer automatically improves a family relationship.','Retail digital-payment statistics measure every overseas remittance.'], correct:0,
@@ -58,6 +58,7 @@ export function mountLearning() {
  document.body.append(dialog);
  const content=dialog.querySelector('#learning-content'),title=dialog.querySelector('h2');
  let opener,active,certificate;
+ let stopGame=()=>{};
  const badge=document.createElement('button');badge.type='button';badge.className='learning-badge';document.body.append(badge);
  const final=document.createElement('section');final.id='master-certificate';final.className='learning-finale';
  document.querySelector('#visitor-closing').after(final);
@@ -69,7 +70,7 @@ export function mountLearning() {
  }
  function show(c,source) {
   if(document.querySelector('dialog[open]'))return;
-  opener=source||document.querySelector('[data-checkpoint="'+c.id+'"]');active=c;seen.add(c.id);title.textContent=c.title;
+  stopGame();opener=source||document.querySelector('[data-checkpoint="'+c.id+'"]');active=c;seen.add(c.id);title.textContent=c.title;
   if(c.kind==='question')question(c);else if(c.id==='timeline')timelineGame(c);else matchGame(c);
   dialog.showModal();
  }
@@ -90,31 +91,53 @@ export function mountLearning() {
   award(c);content.innerHTML='<p class="learning-feedback" role="status">'+esc(message)+'</p><p>Stamp earned · 10 points. You now have '+complete.size+' of 7 stamps.</p><button class="btn btn--ink" type="button" data-learning-close>Continue exploring</button>';
  }
  function timelineGame(c) {
-  let selected=[];
-  content.innerHTML='<p>Tap the three artifacts in order from earliest to latest. The final scene is a proposed future.</p><ol class="timeline-slots" aria-label="Your timeline"></ol><div class="learning-choices">'+[timeline[2],timeline[0],timeline[1]].map(t=>'<button class="btn" type="button" data-era="'+t.id+'">'+esc(t.label)+'</button>').join('')+'</div><p class="learning-feedback" role="status"></p><button class="btn btn--plain" type="button" data-timeline-reset>Start again</button>';
-  const buttons=[...content.querySelectorAll('[data-era]')];
-  content.querySelector('[data-timeline-reset]').onclick=()=>timelineGame(c);
-  buttons.forEach(button=>button.onclick=()=>{
-   const item=timeline.find(t=>t.id===button.dataset.era);
-   if(item.id!==timeline[selected.length].id){content.querySelector('[role=status]').textContent='That belongs later. Start with the prepaid texting artifact.';return;}
-   selected.push(item.id);button.disabled=true;
-   const li=document.createElement('li');li.textContent=item.label;content.querySelector('ol').append(li);
-   content.querySelector('[role=status]').textContent='Placed in order. Choose the next artifact.';
-   if(selected.length===3)finishGame(c,'Timeline complete. Texts, shared albums and a proposed family premiere show different ways to make time for one another.');
-  });
+  stopGame();let hits=0,ended=false,timer;
+  const artifacts=['Nokia keypad','PisoNet','Friendster','MP3 player','Prepaid card'];
+  content.innerHTML='<p>Aim your camera! Tap each moving 2000s artifact to photograph it. Collect five snapshots.</p><p class="arcade-score" role="status">Snapshots: 0 / 5</p><div class="arcade-field snapshot-field"><button type="button" class="snapshot-target">📷 Nokia keypad</button></div><button type="button" class="btn" id="steady-camera">Steady camera</button>';
+  const target=content.querySelector('.snapshot-target'),field=content.querySelector('.arcade-field');
+  let steady=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function move(){if(ended)return;target.style.left=Math.round(Math.random()*Math.max(0,field.clientWidth-target.offsetWidth-12))+'px';target.style.top=20+Math.round(Math.random()*180)+'px';}
+  timer=setInterval(()=>{if(!steady)move();},1100);move();
+  content.querySelector('#steady-camera').onclick=event=>{steady=!steady;event.currentTarget.textContent=steady?'Move targets':'Steady camera';};
+  target.onclick=()=>{
+   hits++;content.querySelector('[role=status]').textContent='Snapshots: '+hits+' / 5';
+   if(hits===5){ended=true;clearInterval(timer);finishGame(c,'Five artifacts photographed! Everyday objects help us remember how people kept in touch, shared access and carried music.');return;}
+   target.textContent='📷 '+artifacts[hits];move();
+  };
+  stopGame=()=>{ended=true;clearInterval(timer);};
  }
  function matchGame(c) {
-  let index=0;
-  function round() {
-   content.innerHTML='<p>Match each artifact with the practice it represents. Match '+(index+1)+' of 3.</p><p class="match-artifact">'+esc(pairs[index].artifact)+'</p><div class="learning-choices">'+[pairs[2],pairs[0],pairs[1]].map(p=>'<button class="btn" type="button" data-practice="'+esc(p.practice)+'">'+esc(p.practice)+'</button>').join('')+'</div><p class="learning-feedback" role="status"></p>';
-   content.querySelectorAll('[data-practice]').forEach(button=>button.onclick=()=>{
-    if(button.dataset.practice!==pairs[index].practice){content.querySelector('[role=status]').textContent='Try again. Think about how someone would use this artifact.';return;}
-    index++;if(index===pairs.length)finishGame(c,'All three matched. Small objects can reveal how people communicate, share access and keep things useful.');else round();
-   });
+  stopGame();let caught=0,lane=1,falling,frame,ended=false,playing=false,lastDrop=0,slow=false;
+  const drops=[['Text',0],['Song',2],['Spam',1],['Photo',0],['Song',1],['Spam',2],['Text',2],['Photo',1]];
+  let next=0;
+  content.innerHTML='<p>Move your basket to catch Text, Song and Photo keepsakes. Let Spam fall past. Catch five to earn your stamp.</p><p class="arcade-score" role="status">Caught: 0 / 5</p><div class="arcade-field basket-field" tabindex="0" aria-label="Barkada Basket play area. Use left and right arrow keys."><span class="falling-keepsake" hidden></span><span class="keepsake-basket" aria-hidden="true">▰</span></div><div class="basket-controls"><button type="button" class="btn" data-lane="0">Left</button><button type="button" class="btn" data-lane="1">Middle</button><button type="button" class="btn" data-lane="2">Right</button></div><button type="button" class="btn btn--ink" id="basket-start">Start game</button> <button type="button" class="btn" id="basket-slow" aria-pressed="false">Slower drops</button>';
+  const field=content.querySelector('.basket-field'),item=content.querySelector('.falling-keepsake'),basket=content.querySelector('.keepsake-basket'),status=content.querySelector('[role=status]'),start=content.querySelector('#basket-start');
+  function steer(value){lane=Math.max(0,Math.min(2,value));basket.style.left=(lane*33.333+16.667)+'%';content.querySelectorAll('[data-lane]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.lane)===lane)));}
+  steer(lane);
+  content.querySelectorAll('[data-lane]').forEach(b=>b.onclick=()=>steer(Number(b.dataset.lane)));
+  field.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();steer(lane+(event.key==='ArrowLeft'?-1:1));}});
+  field.addEventListener('pointerdown',event=>{const rect=field.getBoundingClientRect();steer(Math.floor((event.clientX-rect.left)/rect.width*3));});
+  content.querySelector('#basket-slow').onclick=event=>{slow=!slow;event.currentTarget.setAttribute('aria-pressed',String(slow));event.currentTarget.textContent=slow?'Normal speed':'Slower drops';};
+  function tick(time){
+   if(ended||!playing)return;
+   if(!falling){const [name,position]=drops[next++%drops.length];falling={name,lane:position,progress:0};item.hidden=false;item.textContent=name;item.style.left=(position*33.333+16.667)+'%';lastDrop=time;}
+   falling.progress+=Math.min(time-lastDrop,50)/(slow?5200:3000);lastDrop=time;
+   item.style.top=(falling.progress*(field.clientHeight-65))+'px';
+   if(falling.progress>=1){
+    if(lane===falling.lane){
+     if(falling.name==='Spam')status.textContent='Let spam pass. Caught: '+caught+' / 5';
+     else {caught++;status.textContent='Keepsake caught! '+caught+' / 5';}
+    }else status.textContent='Keep going! Caught: '+caught+' / 5';
+    falling=null;item.hidden=true;
+    if(caught>=5){ended=true;finishGame(c,'Five keepsakes saved! Sharing a message, photograph or song can give someone a place in a shared memory.');return;}
+   }
+   frame=requestAnimationFrame(tick);
   }
-  round();
+  start.onclick=()=>{playing=!playing;start.textContent=playing?'Pause':'Resume';if(playing){lastDrop=performance.now();frame=requestAnimationFrame(tick);}else cancelAnimationFrame(frame);};
+  stopGame=()=>{ended=true;cancelAnimationFrame(frame);};
  }
  function passport(source) {
+  stopGame();
   if(dialog.open)dialog.close();
   opener=source;active=null;title.textContent='Your learning passport';
   content.innerHTML='<p>'+complete.size+' of 7 stamps · '+complete.size*10+' / 70 points</p><p>Five questions and two games. Earn each stamp once, with unlimited retries.</p><ul class="learning-stamps">'+checkpoints.map(c=>'<li><span>'+ (complete.has(c.id)?'✓':'○')+' '+esc(c.title)+'</span><button type="button" class="btn btn--plain" data-review="'+c.id+'">'+(complete.has(c.id)?'Review':'Open')+'</button></li>').join('')+'</ul>'+(complete.size===7?'<form id="certificate-form"><label for="certificate-name">Your name on the certificate</label><input id="certificate-name" name="name" autocomplete="name" maxlength="70" required placeholder="Enter your full name"><button type="submit" class="btn btn--ink">Preview my certificate</button><p role="status" id="certificate-status"></p></form>':'<p>Collect the remaining stamps to unlock your name field and certificate.</p>');
@@ -136,16 +159,9 @@ export function mountLearning() {
   content.querySelector('#download-certificate').onclick=()=>downloadCertificate(certificate,content.querySelector('#download-status'));
  }
  function close() {
-  dialog.close();opener?.focus({preventScroll:true});
-  requestAnimationFrame(()=>{
-   if(document.querySelector('dialog[open]'))return;
-   const visible=[...document.querySelectorAll('.learning-card')].find(card=>{
-    const rect=card.getBoundingClientRect(),id=card.id.replace('checkpoint-','');
-    return !seen.has(id)&&Math.min(rect.bottom,innerHeight*.9)-Math.max(rect.top,48)>=rect.height*.25;
-   });
-   if(visible)show(checkpoints.find(c=>c.id===visible.id.replace('checkpoint-','')),visible.querySelector('button'));
-  });
+  stopGame();dialog.close();opener?.focus({preventScroll:true});scheduleCheckpoint();
  }
+
  dialog.addEventListener('click',event=>{if(event.target.closest('[data-learning-close]'))close();});
  dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
  document.addEventListener('click',event=>{
@@ -156,14 +172,33 @@ export function mountLearning() {
  });
  badge.onclick=()=>passport(badge);
  update();
- // Offer each checkpoint once when its card reaches the reading area.
- const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-  const id=entry.target.id.replace('checkpoint-','');
-  if(!entry.isIntersecting||seen.has(id)||document.querySelector('dialog[open]')||document.visibilityState!=='visible')return;
-  show(checkpoints.find(c=>c.id===id),entry.target.querySelector('button'));
- }),{threshold:.25,rootMargin:'-48px 0px -10% 0px'});
+ // Recheck positions on scrolling and after other museum dialogs close.
+ // This also works when a checkpoint entered view while the tab was inactive.
+ const cards=[...document.querySelectorAll('.learning-card')];
+ let scheduled=false;
+ function checkPosition() {
+  scheduled=false;
+  const visible=cards.filter(card=>{
+   const rect=card.getBoundingClientRect();
+   return rect.bottom>64&&rect.top<innerHeight*.85;
+  });
+  for(const card of cards)if(!visible.includes(card)&&!complete.has(card.id.replace('checkpoint-','')))seen.delete(card.id.replace('checkpoint-',''));
+  if(document.querySelector('dialog[open]'))return;
+  const card=visible.find(card=>!seen.has(card.id.replace('checkpoint-','')));
+  if(card)show(checkpoints.find(c=>c.id===card.id.replace('checkpoint-','')),card.querySelector('button'));
+ }
+ function scheduleCheckpoint() {
+  if(scheduled)return;scheduled=true;requestAnimationFrame(checkPosition);
+ }
+ addEventListener('scroll',scheduleCheckpoint,{passive:true});
+ addEventListener('resize',scheduleCheckpoint,{passive:true});
+ addEventListener('hashchange',scheduleCheckpoint);
+ document.addEventListener('visibilitychange',scheduleCheckpoint);
+ document.addEventListener('close',scheduleCheckpoint,true);
+ const observer=new IntersectionObserver(scheduleCheckpoint,{threshold:0});
+ cards.forEach(card=>observer.observe(card));
+ scheduleCheckpoint();
 
- document.querySelectorAll('.learning-card').forEach(el=>observer.observe(el));
 }
 function downloadCertificate(certificate,status) {
  const canvas=document.createElement('canvas');canvas.width=2000;canvas.height=1414;
