@@ -1499,3 +1499,5 @@ html[data-fairy="off"] #glitter { visibility: hidden; }
 .basket-controls{display:flex;gap:.5rem;margin-bottom:1rem}
 .basket-controls button{flex:1;padding:.6rem}
 .basket-controls button[aria-pressed=true]{background:#9b6b2d;color:white}
+
+.snapshot-target img{display:block;width:72px;height:72px;object-fit:contain;margin:0 auto .4rem;background:#fff8e8}

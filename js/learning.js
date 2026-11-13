@@ -29,16 +29,6 @@ const checkpoints = [
    explanation:'Origin and edit history can inform a check, while the claim still needs context and evidence. Responsibility includes avoiding accusations that the evidence cannot support.',
    source:['C2PA, provenance explainer','https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html'] }
 ];
-const timeline = [
- {id:'sms',label:'2000s · Prepaid Nokia texts'},
- {id:'album',label:'2020s · Messenger shared albums'},
- {id:'premiere',label:'2030 proposal · Family premiere night'}
-];
-const pairs = [
- {artifact:'Nokia keypad phone',practice:'Compose a short text'},
- {artifact:'PisoNet computer',practice:'Share a timed, paid session'},
- {artifact:'Ukay-ukay garment',practice:'Inspect, reuse and repair clothing'}
-];
 const key='always-on-learning-v1';
 function readProgress() {
  try { const saved=JSON.parse(localStorage.getItem(key));return new Set(Array.isArray(saved)?saved.filter(id=>checkpoints.some(c=>c.id===id)):[]); }
@@ -57,7 +47,7 @@ export function mountLearning() {
  dialog.innerHTML='<div class="learning-dialog-head"><h2 id="learning-title"></h2><button type="button" class="btn btn--plain" data-learning-close>Close</button></div><div class="learning-dialog-body" id="learning-content"></div>';
  document.body.append(dialog);
  const content=dialog.querySelector('#learning-content'),title=dialog.querySelector('h2');
- let opener,active,certificate;
+ let opener,certificate;
  let stopGame=()=>{};
  const badge=document.createElement('button');badge.type='button';badge.className='learning-badge';document.body.append(badge);
  const final=document.createElement('section');final.id='master-certificate';final.className='learning-finale';
@@ -70,7 +60,7 @@ export function mountLearning() {
  }
  function show(c,source) {
   if(document.querySelector('dialog[open]'))return;
-  stopGame();opener=source||document.querySelector('[data-checkpoint="'+c.id+'"]');active=c;seen.add(c.id);title.textContent=c.title;
+  stopGame();opener=source||document.querySelector('[data-checkpoint="'+c.id+'"]');seen.add(c.id);title.textContent=c.title;
   if(c.kind==='question')question(c);else if(c.id==='timeline')timelineGame(c);else matchGame(c);
   dialog.showModal();
  }
@@ -92,17 +82,17 @@ export function mountLearning() {
  }
  function timelineGame(c) {
   stopGame();let hits=0,ended=false,timer;
-  const artifacts=['Nokia keypad','PisoNet','Friendster','MP3 player','Prepaid card'];
-  content.innerHTML='<p>Aim your camera! Tap each moving 2000s artifact to photograph it. Collect five snapshots.</p><p class="arcade-score" role="status">Snapshots: 0 / 5</p><div class="arcade-field snapshot-field"><button type="button" class="snapshot-target">📷 Nokia keypad</button></div><button type="button" class="btn" id="steady-camera">Steady camera</button>';
+  const artifacts=[['Nokia keypad','nokia.jpg'],['PisoNet','pisonet-2010.jpg'],['Friendster','friendster-pink-hearts.jpg'],['MP3 player','ipod-nano.png'],['Prepaid card','prepaid-recollection.jpg']];
+  content.innerHTML='<p>Aim your camera! Tap each moving 2000s artifact to photograph it. Collect five snapshots.</p><p class="arcade-score" role="status">Snapshots: 0 / 5</p><div class="arcade-field snapshot-field"><button type="button" class="snapshot-target"><img src="assets/sources/nokia.jpg" alt="">📷 Nokia keypad</button></div><button type="button" class="btn" id="steady-camera">Steady camera</button>';
   const target=content.querySelector('.snapshot-target'),field=content.querySelector('.arcade-field');
   let steady=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function move(){if(ended)return;target.style.left=Math.round(Math.random()*Math.max(0,field.clientWidth-target.offsetWidth-12))+'px';target.style.top=20+Math.round(Math.random()*180)+'px';}
+  function move(){if(ended)return;target.style.left=Math.round(Math.random()*Math.max(0,field.clientWidth-target.offsetWidth-12))+'px';target.style.top=Math.round(Math.random()*Math.max(0,field.clientHeight-target.offsetHeight-12))+'px';}
   timer=setInterval(()=>{if(!steady)move();},1100);move();
   content.querySelector('#steady-camera').onclick=event=>{steady=!steady;event.currentTarget.textContent=steady?'Move targets':'Steady camera';};
   target.onclick=()=>{
    hits++;content.querySelector('[role=status]').textContent='Snapshots: '+hits+' / 5';
    if(hits===5){ended=true;clearInterval(timer);finishGame(c,'Five artifacts photographed! Everyday objects help us remember how people kept in touch, shared access and carried music.');return;}
-   target.textContent='📷 '+artifacts[hits];move();
+   target.innerHTML='<img src="assets/sources/'+artifacts[hits][1]+'" alt="">📷 '+esc(artifacts[hits][0]);move();
   };
   stopGame=()=>{ended=true;clearInterval(timer);};
  }
@@ -139,7 +129,7 @@ export function mountLearning() {
  function passport(source) {
   stopGame();
   if(dialog.open)dialog.close();
-  opener=source;active=null;title.textContent='Your learning passport';
+  opener=source;title.textContent='Your learning passport';
   content.innerHTML='<p>'+complete.size+' of 7 stamps · '+complete.size*10+' / 70 points</p><p>Five questions and two games. Earn each stamp once, with unlimited retries.</p><ul class="learning-stamps">'+checkpoints.map(c=>'<li><span>'+ (complete.has(c.id)?'✓':'○')+' '+esc(c.title)+'</span><button type="button" class="btn btn--plain" data-review="'+c.id+'">'+(complete.has(c.id)?'Review':'Open')+'</button></li>').join('')+'</ul>'+(complete.size===7?'<form id="certificate-form"><label for="certificate-name">Your name on the certificate</label><input id="certificate-name" name="name" autocomplete="name" maxlength="70" required placeholder="Enter your full name"><button type="submit" class="btn btn--ink">Preview my certificate</button><p role="status" id="certificate-status"></p></form>':'<p>Collect the remaining stamps to unlock your name field and certificate.</p>');
   content.insertAdjacentHTML('beforeend','<button class="btn btn--plain" type="button" id="restart-learning">Start a new challenge</button>');
   content.querySelector('#restart-learning').onclick=()=>{complete.clear();seen.clear();try{localStorage.removeItem(key);}catch{}update();passport(source);};
