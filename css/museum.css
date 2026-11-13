@@ -1501,3 +1501,13 @@ html[data-fairy="off"] #glitter { visibility: hidden; }
 .basket-controls button[aria-pressed=true]{background:#9b6b2d;color:white}
 
 .snapshot-target img{display:block;width:72px;height:72px;object-fit:contain;margin:0 auto .4rem;background:#fff8e8}
+
+/* Crisp pixel sprites retain their small-grid edges at every screen size. */
+.catch-sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block;user-select:none}
+.keepsake-basket{bottom:8px;font-size:initial;line-height:normal;width:84px;height:68px}
+.keepsake-basket .catch-sprite{width:84px;height:68px}
+.falling-keepsake{padding:0;background:transparent;border-radius:0;width:56px;height:56px}
+.falling-keepsake .catch-sprite{width:56px;height:56px}
+.catch-legend{display:flex;flex-wrap:wrap;gap:.6rem 1rem;font:700 .85rem monospace}
+.catch-legend span{display:flex;align-items:center;gap:.4rem}
+.catch-legend .catch-sprite{width:24px;height:24px;object-fit:contain}

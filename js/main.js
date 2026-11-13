@@ -1,4 +1,4 @@
-import { checkpointHTML, mountLearning } from './learning.js?v=arcade-20261113-2';
+import { checkpointHTML, mountLearning } from './learning.js?v=pixel-catch-20261113';
 import { openingHTML, transitionHTML, mountVisitor } from './visitor.js?v=human-20261112';
 import { futureArtifactHTML, futureCreditsHTML, FUTURE_REFERENCES, FUTURE_ARTIFACTS } from './future.js?v=citation-labels-2';
 import { CHRONOLOGY_GROUPS, WORKSHEET_REFERENCES } from './chronology-data.js?v=photos-20261112';

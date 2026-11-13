@@ -1,0 +1,115 @@
+// Pixel maps share the museum's small-grid sprite approach.
+const palette={
+ k:'#181c28',b:'#754422',w:'#fff7df',g:'#d6e6da',
+ a:'#b87836',h:'#efc76c',d:'#925425',y:'#f1b94b',
+ p:'#9f77c5',v:'#d9b9ed',r:'#d65359',s:'#f99086',
+ t:'#549bac',c:'#95d8df',l:'#58865b',n:'#a1bc6a'
+};
+const maps={
+ Basket:[
+ '.......kkkkkk.......',
+ '.....kkhhhhhhkk.....',
+ '....khhkkkkkkhhk....',
+ '...khhk......khhk...',
+ '...khk........khk...',
+ '...khk........khk...',
+ '.kkkkkkkkkkkkkkkkkk.',
+ 'khhhhhhhhhhhhhhhhhhk',
+ 'khaaaaaaaaaaaaaaaahk',
+ '.kadyadyadyadyadyak.',
+ '.kayadyadyadyadyadk.',
+ '..kdyadyadyadyadyk..',
+ '..kayadyadyadyadyk..',
+ '...kdyadyadyadyk...',
+ '...kaaaaaaaaaaak...',
+ '....kkkkkkkkkkk....'
+ ],
+ Text:[
+ '................',
+ '................',
+ '.kkkkkkkkkkkkkk.',
+ 'kwwwwwwwwwwwwwwk',
+ 'kwcwwwwwwwwwwcwk',
+ 'kwwcwwwwwwwwcwwk',
+ 'kwwwcwwwwwwcwwwk',
+ 'kwwwwcwwwwcwwwwk',
+ 'kwwwwwccccwwwwwk',
+ 'kwwwwcwwwwcwwwwk',
+ 'kwwwcwwwwwwcwwwk',
+ 'kwwcwwwwwwwwcwwk',
+ 'kwwwwwwwwwwwwwwk',
+ '.kkkkkkkkkkkkkk.',
+ '................',
+ '................'
+ ],
+ Song:[
+ '................',
+ '.....kkkkkkkkkk.',
+ '.....kvvvvvvvvk.',
+ '.....kppppppppk.',
+ '.....kppkkkkppk.',
+ '.....kppk..kppk.',
+ '.....kppk..kppk.',
+ '.....kppk..kppk.',
+ '.....kppk..kppk.',
+ '..kkkkppk..kppk.',
+ '.kvvvvppk.kkppk.',
+ '.kppppppkkvvppk.',
+ '.kppppppkkppppk.',
+ '..kkkkkk.kppppk.',
+ '..........kkkk..',
+ '................'
+ ],
+ Photo:[
+ '................',
+ '.kkkkkkkkkkkkkk.',
+ '.kwwwwwwwwwwwwk.',
+ '.kwttttttttttwk.',
+ '.kwtthhttttttwk.',
+ '.kwtthhttttttwk.',
+ '.kwttttttttttwk.',
+ '.kwtttttlttttwk.',
+ '.kwtttlllttttwk.',
+ '.kwtnnlllltttwk.',
+ '.kwnnnlllllttwk.',
+ '.kwnnnnllllllwk.',
+ '.kwwwwwwwwwwwwk.',
+ '.kwwwwwwwwwwwwk.',
+ '.kkkkkkkkkkkkkk.',
+ '................'
+ ],
+ Spam:[
+ '................',
+ '.....kkkkkk.....',
+ '....krrrrrrk....',
+ '...krrrssrrrk...',
+ '..krrrswwsrrrk..',
+ '.krrrrswwsrrrrk.',
+ '.krrrrswwsrrrrk.',
+ '.krrrrswwsrrrrk.',
+ '.krrrrswwsrrrrk.',
+ '.krrrrrssrrrrrk.',
+ '.krrrrrrrrrrrrk.',
+ '..krrrswwsrrrk..',
+ '...krrswwsrrk...',
+ '....krrrrrrk....',
+ '.....kkkkkk.....',
+ '................'
+ ]
+};
+const sprites=new Map();
+export function catchSprite(name) {
+ if(!sprites.has(name)){
+  const rows=maps[name],canvas=document.createElement('canvas');
+  canvas.width=Math.max(...rows.map(row=>row.length));canvas.height=rows.length;
+  const context=canvas.getContext('2d');
+  rows.forEach((row,y)=>[...row].forEach((pixel,x)=>{
+   if(palette[pixel]){context.fillStyle=palette[pixel];context.fillRect(x,y,1,1);}
+  }));
+  sprites.set(name,canvas.toDataURL('image/png'));
+ }
+ return sprites.get(name);
+}
+export function catchSpriteHTML(name,alt=name) {
+ return '<img class="catch-sprite" src="'+catchSprite(name)+'" alt="'+alt+'" draggable="false">';
+}
