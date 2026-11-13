@@ -147,11 +147,18 @@ export function mountLearning() {
  badge.onclick=()=>passport(badge);
  update();
  // Offer each checkpoint once when its card reaches the reading area.
+ const pending=new Map();
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
   const id=entry.target.id.replace('checkpoint-','');
-  if(!entry.isIntersecting||seen.has(id)||document.querySelector('dialog[open]')||document.visibilityState!=='visible')return;
-  show(checkpoints.find(c=>c.id===id),entry.target.querySelector('button'));
+  clearTimeout(pending.get(id));
+  if(!entry.isIntersecting||seen.has(id))return;
+  pending.set(id,setTimeout(()=>{
+   const rect=entry.target.getBoundingClientRect();
+   if(seen.has(id)||rect.top<40||rect.bottom>innerHeight||document.querySelector('dialog[open]')||document.visibilityState!=='visible')return;
+   show(checkpoints.find(c=>c.id===id),entry.target.querySelector('button'));
+  },850));
  }),{threshold:.65});
+
  document.querySelectorAll('.learning-card').forEach(el=>observer.observe(el));
 }
 function downloadCertificate(certificate,status) {
