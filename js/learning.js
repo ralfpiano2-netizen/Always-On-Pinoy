@@ -101,7 +101,7 @@ export function mountLearning() {
   stopGame();let caught=0,lane=1,falling,frame,ended=false,playing=false,lastDrop=0,slow=false;
   const drops=[['Text',0],['Song',2],['Spam',1],['Photo',0],['Song',1],['Spam',2],['Text',2],['Photo',1]];
   let next=0;
-  content.innerHTML='<p>Move your basket to catch Text, Song and Photo keepsakes. Let Spam fall past. Catch five to earn your stamp.</p><p class="arcade-score" role="status">Caught: 0 / 5</p><div class="arcade-field basket-field" tabindex="0" aria-label="Barkada Basket play area. Use left and right arrow keys."><span class="falling-keepsake" hidden></span><span class="keepsake-basket" aria-hidden="true">'+catchSpriteHTML('Basket','')+'</span></div><div class="basket-controls"><button type="button" class="btn" data-lane="0">Left</button><button type="button" class="btn" data-lane="1">Middle</button><button type="button" class="btn" data-lane="2">Right</button></div><button type="button" class="btn btn--ink" id="basket-start">Start game</button> <button type="button" class="btn" id="basket-slow" aria-pressed="false">Slower drops</button>';
+  content.innerHTML='<p>Move your basket to catch Text, Song and Photo keepsakes. Let Spam fall past. Catch five to earn your stamp. Drops start slow and speed up with each catch.</p><p class="arcade-score" role="status">Caught: 0 / 5</p><div class="arcade-field basket-field" tabindex="0" aria-label="Barkada Basket play area. Use left and right arrow keys."><span class="falling-keepsake" hidden></span><span class="keepsake-basket" aria-hidden="true">'+catchSpriteHTML('Basket','')+'</span></div><div class="basket-controls"><button type="button" class="btn" data-lane="0">Left</button><button type="button" class="btn" data-lane="1">Middle</button><button type="button" class="btn" data-lane="2">Right</button></div><button type="button" class="btn btn--ink" id="basket-start">Start game</button> <button type="button" class="btn" id="basket-slow" aria-pressed="false">Slower drops</button>';
   const field=content.querySelector('.basket-field'),item=content.querySelector('.falling-keepsake'),basket=content.querySelector('.keepsake-basket'),status=content.querySelector('[role=status]'),start=content.querySelector('#basket-start');
   function steer(value){lane=Math.max(0,Math.min(2,value));basket.style.left=(lane*33.333+16.667)+'%';content.querySelectorAll('[data-lane]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.lane)===lane)));}
   field.insertAdjacentHTML('beforebegin','<div class="catch-legend">'+['Text','Song','Photo','Spam'].map(name=>'<span>'+catchSpriteHTML(name,'')+' '+name+'</span>').join('')+'</div>');
@@ -112,8 +112,8 @@ export function mountLearning() {
   content.querySelector('#basket-slow').onclick=event=>{slow=!slow;event.currentTarget.setAttribute('aria-pressed',String(slow));event.currentTarget.textContent=slow?'Normal speed':'Slower drops';};
   function tick(time){
    if(ended||!playing)return;
-   if(!falling){const [name,position]=drops[next++%drops.length];falling={name,lane:position,progress:0};item.hidden=false;item.innerHTML=catchSpriteHTML(name,name==='Text'?'Text message':name==='Song'?'Music note':name==='Photo'?'Photograph':'Spam warning');item.style.left=(position*33.333+16.667)+'%';lastDrop=time;}
-   falling.progress+=Math.min(time-lastDrop,50)/(slow?5200:3000);lastDrop=time;
+   if(!falling){const [name,position]=drops[next++%drops.length];falling={name,lane:position,progress:0,duration:5000-caught*700};item.hidden=false;item.innerHTML=catchSpriteHTML(name,name==='Text'?'Text message':name==='Song'?'Music note':name==='Photo'?'Photograph':'Spam warning');item.style.left=(position*33.333+16.667)+'%';lastDrop=time;}
+   falling.progress+=Math.min(time-lastDrop,50)/(falling.duration*(slow?1.7:1));lastDrop=time;
    item.style.top=(falling.progress*(field.clientHeight-112))+'px';
    if(falling.progress>=1){
     if(lane===falling.lane){
